@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_network_page_resource_title">資源監聽</string>
+    <string name="ref_network_page_log_title">網路記錄檔</string>
+    <string name="ref_network_page_resources_hint">下列是網頁載入中的資源記錄檔。</string>
+    <string name="ref_network_page_log_hint">封鎖清單位於 %1$s\n你可以編輯這個清單，或長按下列項目以選擇是否封鎖。</string>
+    <string name="ref_network_page_resources_empty">此網頁無資源。</string>
+    <string name="ref_network_page_resources_note">\n在播放音樂或影片時，更容易偵測媒體檔案。在部分網站資源監聽無法運作。</string>
+    <string name="ref_network_page_empty">空空如也…</string>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_search_page_title">検索設定</string>
+    <string name="ref_search_page_engines">検索エンジン</string>
+    <string name="ref_search_page_suggestions">検索サジェスト</string>
+    <string name="ref_search_page_suggestion_hint">アドレスバーに表示する項目を選択します</string>
+    <string name="ref_search_page_favorites">スピードダイヤル</string>
+    <string name="ref_search_page_bookmarks">ブックマーク</string>
+    <string name="ref_search_page_tabs">開いているタブ</string>
+    <string name="ref_search_page_history">履歴</string>
+    <string name="ref_search_page_toolbar">検索ツールバー</string>
+    <string name="ref_search_page_disabled">無効</string>
+    <string name="ref_search_page_enable_toolbar">検索ツールバーを有効にする</string>
+    <string name="ref_search_page_default">デフォルト</string>
+    <string name="ref_search_page_edit">編集</string>
+    <string name="ref_search_page_new">新規作成</string>
+    <string name="ref_search_page_delete">削除</string>
+    <string name="ref_search_page_title_hint">タイトル</string>
+    <string name="ref_search_page_address_hint">アドレス</string>
+    <string name="ref_search_page_required">%s が必要です</string>
+    <string name="ref_search_page_invalid_url">URLが無効です</string>
+</resources>

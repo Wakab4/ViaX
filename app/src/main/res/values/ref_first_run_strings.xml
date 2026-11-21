@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_first_run_agree">Agree</string>
+    <string name="ref_first_run_refusal">You need to agree and accept all the terms before you start using our service.</string>
+    <string name="ref_first_run_logo_description">ViaX</string>
+    <string name="ref_first_run_hint">Message</string>
+    <string name="ref_first_run_disagree">Disagree</string>
+    <string name="ref_first_run_exit">Exit</string>
+    <string name="ref_first_run_source_summary">By using Via, you agree to our %1$s and %2$s.</string>
+    <string name="ref_first_run_privacy">Privacy policy</string>
+    <string name="ref_first_run_terms">Terms of use</string>
+    <string name="ref_first_run_welcome">Welcome</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_engine_title">糟糕</string>
+    <string name="ref_engine_missing">Android System WebView 未正确安装。现在去安装？</string>
+    <string name="ref_engine_install">安装</string>
+    <string name="ref_engine_exit">关闭应用</string>
+    <string name="ref_engine_crash">真的非常非常抱歉，应用发生了闪退。</string>
+    <string name="ref_engine_restart">重启应用</string>
+    <string name="ref_engine_open_with">选择程序打开</string>
+</resources>

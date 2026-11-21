@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_bookmark_form_edit_bookmark">编辑书签</string>
+  <string name="ref_bookmark_form_edit_folder">编辑文件夹</string>
+  <string name="ref_bookmark_form_done">完成</string>
+  <string name="ref_bookmark_form_select_folder">选择文件夹</string>
+  <string name="ref_bookmark_form_root">根目录</string>
+  <string name="ref_bookmark_form_title_hint">标题</string>
+  <string name="ref_bookmark_form_url_hint">地址</string>
+  <string name="ref_bookmark_form_folder_hint">文件夹</string>
+  <string name="ref_bookmark_form_favorite">添加到主页收藏</string>
+  <string name="ref_bookmark_form_added">已添加书签</string>
+  <string name="ref_bookmark_form_new_folder">新建文件夹</string>
+  <string name="ref_bookmark_form_add_bookmark">添加书签</string>
+  <string name="ref_bookmark_form_required">%s 为必填项</string>
+</resources>

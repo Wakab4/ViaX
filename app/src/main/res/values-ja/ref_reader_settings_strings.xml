@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_reader_settings_title">リーダービューモード</string>
+    <string name="ref_reader_settings_confirmation">リーダービューモードを開く前にメニューを表示する</string>
+    <string name="ref_reader_settings_confirmation_on">アドレスバーのアイコンをタップしたときに、リーダービューモードを起動します。</string>
+    <string name="ref_reader_settings_confirmation_off">アドレスバーのアイコンをタップしたときに、メニューを表示します。</string>
+    <string name="ref_reader_settings_appearance">スタイル設定</string>
+    <string name="ref_reader_settings_font_size">フォントサイズ</string>
+    <string name="ref_reader_settings_css">カスタムCSS設定</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_favorite_manage">管理最愛</string>
+    <string name="ref_favorite_done">完成</string>
+    <string name="ref_favorite_deleted">\"%1$s\" 已刪除</string>
+    <string name="ref_favorite_undo">復原</string>
+    <string name="ref_favorite_edit">編輯最愛</string>
+    <string name="ref_favorite_remove">刪除</string>
+</resources>

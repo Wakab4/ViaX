@@ -1,0 +1,15 @@
+<resources>
+    <string name="ref_script_resource_title" formatted="false">资源信息</string>
+    <string name="ref_script_resource_missing" formatted="false">资源不存在，脚本可能无法正常运行。你想要下载此资源吗？</string>
+    <string name="ref_script_resource_url" formatted="false">链接</string>
+    <string name="ref_script_resource_path" formatted="false">文件路径</string>
+    <string name="ref_script_resource_updated" formatted="false">更新于</string>
+    <string name="ref_script_resource_size" formatted="false">大小</string>
+    <string name="ref_script_resource_view" formatted="false">查看</string>
+    <string name="ref_script_resource_download" formatted="false">下载</string>
+    <string name="ref_script_resource_copy" formatted="false">复制链接</string>
+    <string name="ref_script_resource_just_now" formatted="false">刚刚</string>
+    <string name="ref_script_resource_downloading" formatted="false">正在开始下载…</string>
+    <string name="ref_script_resource_download_failed">下载 %1$s 失败</string>
+    <string name="ref_script_resource_copied" formatted="false">已复制链接</string>
+</resources>

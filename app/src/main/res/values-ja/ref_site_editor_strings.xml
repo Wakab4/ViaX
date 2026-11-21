@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="ref_site_all_edit">編集</string>
+    <string name="ref_site_all_add">新規作成</string>
+    <string name="ref_site_all_title">全てのサイト</string>
+    <string name="ref_site_section_basic">基本設定</string>
+    <string name="ref_site_section_content">コンテンツ</string>
+    <string name="ref_site_section_permissions">権限設定</string>
+    <string name="ref_site_editor_enable">\"%1$s\"のサイト別設定を有効にする</string>
+    <string name="ref_site_section_advanced">高度な設定</string>
+    <string name="ref_site_editor_title">サイト別設定</string>
+</resources>

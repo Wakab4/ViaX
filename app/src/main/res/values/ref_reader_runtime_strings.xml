@@ -1,0 +1,8 @@
+<resources>
+<string name="ref_reader_unsupported_site">It cannot work on this site.</string>
+<string name="ref_reader_requires_http">It can only work with \"http\" or \"https\" URLs.</string>
+<string name="ref_reader_requires_javascript">It can only work if JavaScript is allowed.</string>
+<string name="ref_reader_closed">Reader is hidden</string>
+<string name="ref_reader_opened">Reader is shown</string>
+<string name="ref_reader_page_incomplete">The page has not fully loaded</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_desktop_mode">桌面網站</string>
+    <string name="ref_desktop_disabled">%s 已關閉</string>
+    <string name="ref_desktop_enabled">%s 已開啟</string>
+</resources>

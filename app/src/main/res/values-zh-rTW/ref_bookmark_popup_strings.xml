@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_bookmark_popup_add">新增書籤</string>
+    <string name="ref_bookmark_popup_edit">編輯書籤</string>
+    <string name="ref_bookmark_popup_title_hint">標題</string>
+    <string name="ref_bookmark_popup_url_hint">網址</string>
+    <string name="ref_bookmark_popup_folder_hint">資料夾</string>
+    <string name="ref_bookmark_popup_favorite">新增至首頁</string>
+    <string name="ref_bookmark_popup_delete">刪除</string>
+    <string name="ref_bookmark_popup_up">向上導航</string>
+    <string name="ref_bookmark_popup_select_folder">選擇資料夾</string>
+    <string name="ref_bookmark_popup_search">搜尋</string>
+    <string name="ref_bookmark_popup_new">新增</string>
+    <string name="ref_bookmark_popup_empty">空空如也…</string>
+    <string name="ref_bookmark_popup_root">根路徑</string>
+    <string name="ref_bookmark_popup_deleted">\"%1$s\" 已刪除</string>
+    <string name="ref_bookmark_popup_added">已成功新增書籤</string>
+</resources>

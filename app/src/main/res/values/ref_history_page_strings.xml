@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_history_page_title">History</string>
+    <string name="ref_history_page_empty">Empty</string>
+    <string name="ref_history_page_incognito">History will not be recorded when you are in \"Incognito mode\".</string>
+</resources>

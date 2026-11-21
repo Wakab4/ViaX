@@ -1,0 +1,9 @@
+<resources>
+    <string name="ref_script_resource_view" formatted="false">開く</string>
+    <string name="ref_script_resource_download" formatted="false">ダウンロード</string>
+    <string name="ref_script_resource_copy" formatted="false">アドレスをコピー</string>
+    <string name="ref_script_resource_just_now" formatted="false">たった今</string>
+    <string name="ref_script_resource_downloading" formatted="false">ダウンロード中…</string>
+    <string name="ref_script_resource_download_failed">%1$s のダウンロードが失敗しました</string>
+    <string name="ref_script_resource_copied" formatted="false">アドレスをコピーしました</string>
+</resources>

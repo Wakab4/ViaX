@@ -1,0 +1,7 @@
+<resources>
+    <integer name="page_transition_duration">220</integer>
+    <fraction name="page_foreground_offset">100%</fraction>
+    <fraction name="page_background_offset">-30%</fraction>
+    <dimen name="page_previous_offset">-66dp</dimen>
+    <item type="id" name="record_page_stack" />
+</resources>

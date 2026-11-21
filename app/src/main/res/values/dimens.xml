@@ -1,0 +1,5 @@
+<resources>
+    <dimen name="menu_label_size">11sp</dimen>
+    <dimen name="page_info_title_size">16sp</dimen>
+    <dimen name="page_info_action_size">14sp</dimen>
+</resources>

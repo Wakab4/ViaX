@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-feature android:name="android.hardware.camera.any" android:required="false" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-feature android:name="android.hardware.microphone" android:required="false" />
+    <uses-feature android:name="android.hardware.location" android:required="false" />
+    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+    <queries>
+        <intent><action android:name="android.intent.action.VIEW" /><data android:mimeType="*/*" /></intent>
+        <intent><action android:name="android.intent.action.VIEW" /><category android:name="android.intent.category.BROWSABLE" /><data android:scheme="*" /></intent>
+        <intent><action android:name="android.intent.action.VIEW" /><data android:mimeType="video/*" /></intent>
+        <intent><action android:name="android.intent.action.TTS_SERVICE" /></intent>
+        <intent><action android:name="android.intent.action.SEND" /><data android:mimeType="message/rfc822" /></intent>
+        <package android:name="com.dv.adm.pay" /><package android:name="com.dv.adm" />
+        <package android:name="idm.internet.download.manager.plus" /><package android:name="idm.internet.download.manager" />
+        <package android:name="idm.internet.download.manager.adm.lite" /><package android:name="com.vanda_adm.vanda" />
+        <package android:name="org.freedownloadmanager.fdm" /><package android:name="com.dv.get" />
+        <package android:name="com.tachibana.downloader" /><package android:name="com.gianlu.aria2app" />
+        <package android:name="com.gopeed" /><package android:name="com.gopeed.gopeed" />
+        <package android:name="com.abdownloadmanager" /><package android:name="com.fluxdown.app" />
+    </queries>
+
+    <application
+        android:name=".PureApplication"
+        android:allowBackup="false"
+        android:supportsRtl="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.PureBrowser"
+        android:usesCleartextTraffic="true">
+        <meta-data
+            android:name="android.webkit.WebView.EnableSafeBrowsing"
+            android:value="true" />
+        <service android:name=".feature.download.DownloadService" android:exported="false" android:foregroundServiceType="dataSync" />
+        <receiver android:name=".feature.download.service.DownloadCommandReceiver" android:exported="false" />
+        <service android:name=".feature.readaloud.ReadAloudService" android:exported="false" android:foregroundServiceType="mediaPlayback" />
+        <service android:name=".feature.customtabs.service.CustomTabsConnectionService" android:exported="true">
+            <intent-filter><action android:name="android.support.customtabs.action.CustomTabsService" /></intent-filter>
+        </service>
+        <receiver android:name=".feature.readaloud.ReadAloudReceiver" android:exported="false" />
+        <provider android:name=".feature.download.DownloadFileProvider" android:authorities="${applicationId}.downloads" android:exported="false" android:grantUriPermissions="true" />
+        <provider android:name="androidx.core.content.FileProvider" android:authorities="${applicationId}.provider"
+            android:exported="false" android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/native_file_provider_paths" />
+        </provider>
+
+        <activity android:name=".feature.search.entry.SearchIntentActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:label="@string/ref_search_widget_entry_label" android:exported="true" android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.PROCESS_TEXT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.WEB_SEARCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <receiver android:name=".feature.search.widget.SearchWidgetProvider" android:exported="true">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/ref_search_widget_provider" />
+        </receiver>
+        <receiver android:name=".feature.search.widget.TransparentSearchWidgetProvider" android:exported="true">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/ref_search_widget_transparent_provider" />
+        </receiver>
+        <activity android:name=".feature.customtabs.CustomTabActivity" android:exported="false"
+            android:taskAffinity="${applicationId}.customtab" android:persistableMode="persistNever"
+            android:resizeableActivity="true" android:supportsPictureInPicture="true"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"
+            android:configChanges="smallestScreenSize|screenSize|screenLayout|orientation|keyboardHidden|uiMode|density" />
+        <activity android:name=".feature.customtabs.CustomTabsTrampolineActivity" android:exported="true"
+            android:taskAffinity="" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http" /><data android:scheme="https" /><data android:scheme="via" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http" /><data android:scheme="https" /><data android:scheme="via" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http" /><data android:scheme="https" /><data android:scheme="inline" />
+                <data android:scheme="file" /><data android:scheme="content" /><data android:scheme="via" />
+                <data android:mimeType="text/html" /><data android:mimeType="text/plain" />
+                <data android:mimeType="application/xhtml+xml" /><data android:mimeType="application/vnd.wap.xhtml+xml" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".BrowserActivity"
+            android:supportsPictureInPicture="true"
+            android:launchMode="singleTask"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|screenSize|smallestScreenSize|keyboardHidden|uiMode|density"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.APP_BROWSER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+
+    </application>
+</manifest>
+

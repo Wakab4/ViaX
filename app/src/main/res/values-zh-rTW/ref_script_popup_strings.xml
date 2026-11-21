@@ -1,0 +1,22 @@
+<resources>
+    <string name="ref_script_popup_edit">編輯</string>
+    <string name="ref_script_popup_manager">在設定中檢視</string>
+    <string name="ref_script_popup_add">新增指令碼</string>
+    <string name="ref_script_popup_disabled">已停用</string>
+    <string name="ref_script_popup_empty">空空如也…</string>
+    <string name="ref_script_popup_global">啟用指令碼</string>
+    <string name="ref_script_popup_enabled">已啟用</string>
+    <string name="ref_script_popup_interval_15days">每 15 天</string>
+    <string name="ref_script_popup_interval_3days">每 3 天</string>
+    <string name="ref_script_popup_interval_daily">每天</string>
+    <string name="ref_script_popup_interval_weekly">每週</string>
+    <string name="ref_script_popup_exclude">排除 %1$s</string>
+    <string name="ref_script_popup_excluded">指令碼 %1$s 將不會執行在 %2$s 上。</string>
+    <string name="ref_script_popup_back">向上導航</string>
+    <string name="ref_script_popup_interval_never">從不</string>
+    <string name="ref_script_popup_global_enabled">指令碼已啟用</string>
+    <string name="ref_script_popup_title">指令碼</string>
+    <string name="ref_script_popup_for_site">作用於 %1$s 的指令碼</string>
+    <string name="ref_script_popup_update">更新</string>
+    <string name="ref_script_popup_auto_update">自動更新</string>
+</resources>

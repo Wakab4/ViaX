@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_history_all">All time</string>
+    <string name="ref_history_clear_title">Delete history from</string>
+    <string name="ref_history_delete_one">Are you sure you want to delete %1$s?</string>
+    <string name="ref_history_delete_many">Are you sure you want to delete %1$d items?</string>
+    <string name="ref_history_period_count">%1$s (%2$d)</string>
+    <string name="ref_history_last_hour">The last hour</string>
+    <string name="ref_history_last_week">Last 7 days</string>
+    <string name="ref_history_today">Today</string>
+    <string name="ref_history_yesterday">Today and yesterday</string>
+</resources>

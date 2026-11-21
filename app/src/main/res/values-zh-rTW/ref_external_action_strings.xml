@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_external_share_title">分享</string>
+  <string name="ref_external_open_title">其它應用開啟</string>
+  <string name="ref_external_unavailable">無關聯的應用程式來開啟連結</string>
+</resources>

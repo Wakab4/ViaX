@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_about_document_contact">联系我们</string>
+    <string name="ref_about_document_glean">拾穗</string>
+    <string name="ref_about_document_translate">协助翻译</string>
+    <string name="ref_about_document_website">官方网站</string>
+    <string name="ref_about_document_privacy">隐私政策</string>
+    <string name="ref_about_document_title">关于</string>
+    <string name="ref_about_document_terms">使用协议</string>
+</resources>

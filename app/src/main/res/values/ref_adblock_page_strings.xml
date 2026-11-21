@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<plurals name="ref_adblock_page_rule_count"><item quantity="zero">0 filter</item><item quantity="one">1 filter</item><item quantity="other">%d filters</item></plurals>
+<string name="ref_adblock_page_edit">Edit</string>
+<string name="ref_adblock_page_invalid_rules">The following filters are not in the correct format:</string>
+<string name="ref_adblock_page_warning">Warning</string>
+<string name="ref_adblock_page_invalid_url">The URL is invalid.</string>
+<string name="ref_adblock_page_download_started">Starting download…</string>
+<string name="ref_adblock_page_delete_message">Are you sure you want to delete %1$s?</string>
+<string name="ref_adblock_page_address">URL</string>
+<string name="ref_adblock_page_edit_subscription">Edit filter subscription</string>
+<string name="ref_adblock_page_unsaved">The modified content has not been saved. Do you want to save it?</string>
+<string name="ref_adblock_page_save_exit">Save &amp; Exit</string>
+<string name="ref_adblock_page_statistics">Enabled: %1$d ads blocked, %2$s saved</string>
+<string name="ref_adblock_page_copy_link">Copy link</string>
+<string name="ref_adblock_page_add_subscription">Add filter subscription</string>
+<string name="ref_adblock_page_builtin">Enable built-in filters</string>
+<string name="ref_adblock_page_title">Ad blocking</string>
+<string name="ref_adblock_page_builtin_detail">Built-in filters only block common ads</string>
+<string name="ref_adblock_page_more">Learn more</string>
+<string name="ref_adblock_page_notice">Message</string>
+<string name="ref_adblock_page_exists">The filter subscription already exists.</string>
+<string name="ref_adblock_page_subscription_detail">%1$s, %2$s</string>
+<string name="ref_adblock_page_delete">Delete</string>
+<string name="ref_adblock_page_subscriptions">Filter subscriptions</string>
+<string name="ref_adblock_page_subscriptions_detail">Subscribe to Adblock Plus filter lists</string>
+<string name="ref_adblock_page_disabled">Disabled</string>
+<string name="ref_adblock_page_copied">Link copied successfully</string>
+<string name="ref_adblock_page_custom_rules">Custom filters</string>
+<string name="ref_adblock_page_custom_rules_detail">Including custom filters and marked ads</string>
+<string name="ref_adblock_page_new">New</string>
+<string name="ref_adblock_page_exit">Exit</string>
+<string name="ref_adblock_page_custom">Custom URL</string>
+<string name="ref_adblock_page_fulltext">Expand webpage content automatically</string>
+<string name="ref_adblock_page_fulltext_detail">Expand collapsed content automatically when open a webpage</string>
+<string name="ref_adblock_page_update">Update</string>
+<string name="ref_adblock_page_updated">Filter subscriptions update completed.</string>
+<string name="ref_adblock_page_automatic">Update interval</string>
+<string name="ref_adblock_page_preview">Preview</string>
+<string name="ref_adblock_page_never">has not been updated</string>
+<string name="ref_adblock_page_update_started">Starting update…</string>
+<string name="ref_adblock_page_rules_hint">One filter per line.</string>
+<string name="ref_adblock_page_help">Help</string>
+<string name="ref_adblock_page_save">Save</string>
+<string name="ref_adblock_page_help_content">Via supports almost all Adblock Plus filters. \nYou can block requests from example.com with a filter such as: \n||example.com^ (or simply: example.com) \n\nWildcard is acceptable such as: \n||example.com/js/ads_*.js \n\nFor webpage elements use a filter such as: \nexample.com###ad \n\nYou can unblock special requests with a filter such as: \n@@||example.com^</string>
+<string name="ref_adblock_page_updated_time">updated %1$s</string>
+</resources>

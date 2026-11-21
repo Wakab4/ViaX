@@ -1,0 +1,12 @@
+<resources>
+    <integer name="ref_ai_chat_duration">160</integer>
+    <integer name="ref_ai_preview_stationary_duration">240</integer>
+    <style name="ref_ai_chat_bottom_animation" parent="">
+        <item name="android:windowEnterAnimation">@anim/ref_ai_chat_bottom_enter</item>
+        <item name="android:windowExitAnimation">@anim/ref_ai_chat_bottom_exit</item>
+    </style>
+    <style name="ref_ai_chat_top_animation" parent="">
+        <item name="android:windowEnterAnimation">@anim/ref_ai_chat_top_enter</item>
+        <item name="android:windowExitAnimation">@anim/ref_ai_chat_top_exit</item>
+    </style>
+</resources>

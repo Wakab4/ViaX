@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="download_manager_search" type="id" />
+    <item name="download_manager_categories" type="id" />
+    <item name="download_manager_category_group" type="id" />
+    <item name="download_category_all" type="id" />
+    <item name="download_category_document" type="id" />
+    <item name="download_category_archive" type="id" />
+    <item name="download_category_apk" type="id" />
+    <item name="download_category_image" type="id" />
+    <item name="download_category_video" type="id" />
+    <item name="download_category_audio" type="id" />
+    <item name="download_category_other" type="id" />
+</resources>

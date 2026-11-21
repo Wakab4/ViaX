@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="ref_library_host_bookmarks">Bookmarks</string>
+<string name="ref_library_host_history">History</string>
+<string name="ref_library_host_offline">Saved pages</string>
+<string name="ref_library_host_back">Navigation up</string>
+<string name="ref_library_host_move">Move</string>
+<string name="ref_library_host_open">On</string>
+</resources>

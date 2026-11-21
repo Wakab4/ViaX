@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_external_share_title">共有</string>
+  <string name="ref_external_open_title">開く</string>
+  <string name="ref_external_unavailable">リンクを開くためのアプリが見つかりません</string>
+</resources>

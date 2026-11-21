@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_library_history_other_year">yyyy年 MM月 dd日 EEE曜日</string>
+    <string name="ref_library_history_current_year">MM月 dd日 EEE曜日</string>
+    <string name="ref_library_history_today">今日</string>
+    <string name="ref_library_history_yesterday">昨日</string>
+    <string name="ref_library_drag_description">並び替え</string>
+</resources>

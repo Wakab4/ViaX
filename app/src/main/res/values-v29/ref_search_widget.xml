@@ -1,0 +1,5 @@
+<resources>
+    <style name="ref_search_widget_icon_style" parent="">
+        <item name="android:tint">?android:attr/colorAccent</item>
+    </style>
+</resources>

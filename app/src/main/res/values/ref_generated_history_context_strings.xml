@@ -1,0 +1,11 @@
+<resources>
+    <string name="ref_generated_history_context_copy_link">Copy link</string>
+    <string name="ref_generated_history_context_delete">Delete</string>
+    <string name="ref_generated_history_context_clear">Delete all</string>
+    <string name="ref_generated_history_context_background">Open in background</string>
+    <string name="ref_generated_history_context_new_tab">Open in new tab</string>
+    <string name="ref_generated_history_context_share">Share</string>
+    <string name="ref_generated_history_context_customize">Customize menu</string>
+    <string name="ref_generated_history_context_confirm">Are you sure you want to proceed?</string>
+    <string name="ref_generated_history_context_more">More options</string>
+</resources>

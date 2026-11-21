@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_site_permission_title">%1$s 請求使用</string>
+  <string name="ref_site_permission_line">- %1$s</string>
+  <string name="ref_site_permission_remember">不再詢問</string>
+  <string name="ref_site_permission_allow">允許</string>
+  <string name="ref_site_permission_deny">拒絕</string>
+  <string name="ref_site_permission_location_title">位置存取</string>
+  <string name="ref_site_permission_location_message">%1$s 想要使用你的位置資訊。</string>
+  <string name="ref_site_permission_resource">%1$s：%2$s</string>
+  <string name="ref_site_permission_microphone">麥克風</string>
+  <string name="ref_site_permission_microphone_detail">用於提供網頁需要的語音輸入或音訊錄製等功能</string>
+  <string name="ref_site_permission_camera">攝影機</string>
+  <string name="ref_site_permission_camera_detail">用於提供網站需要的拍照或錄製等功能</string>
+</resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<plurals name="ref_adblock_page_rule_count"><item quantity="other">%d フィルター</item></plurals>
+<string name="ref_adblock_page_edit">編集</string>
+<string name="ref_adblock_page_warning">警告</string>
+<string name="ref_adblock_page_invalid_url">URLが無効です</string>
+<string name="ref_adblock_page_download_started">ダウンロード中…</string>
+<string name="ref_adblock_page_delete_message">%1$s を削除してもよろしいですか？</string>
+<string name="ref_adblock_page_address">アドレス</string>
+<string name="ref_adblock_page_edit_subscription">購読中のフィルターを編集します</string>
+<string name="ref_adblock_page_statistics">%1$d件の広告がブロックされ、%2$s節約しました</string>
+<string name="ref_adblock_page_copy_link">アドレスをコピー</string>
+<string name="ref_adblock_page_add_subscription">購読するフィルターを登録します</string>
+<string name="ref_adblock_page_builtin">デフォルトのブロックフィルターを適用する</string>
+<string name="ref_adblock_page_title">広告ブロック</string>
+<string name="ref_adblock_page_builtin_detail">デフォルトのフィルターは一般的な広告のみをブロックします。</string>
+<string name="ref_adblock_page_more">さらに詳しく（英語サイト）</string>
+<string name="ref_adblock_page_notice">メッセージ</string>
+<string name="ref_adblock_page_exists">このフィルターは既に登録されています</string>
+<string name="ref_adblock_page_subscription_detail">%1$s, %2$s</string>
+<string name="ref_adblock_page_delete">削除</string>
+<string name="ref_adblock_page_subscriptions">購読フィルターリスト</string>
+<string name="ref_adblock_page_subscriptions_detail">登録されているAdblock Plusフィルターのリストです</string>
+<string name="ref_adblock_page_disabled">無効</string>
+<string name="ref_adblock_page_copied">アドレスをコピーしました</string>
+<string name="ref_adblock_page_custom_rules">カスタムフィルター</string>
+<string name="ref_adblock_page_custom_rules_detail">マークされた広告を含むフィルター</string>
+<string name="ref_adblock_page_new">新規作成</string>
+<string name="ref_adblock_page_exit">終了</string>
+<string name="ref_adblock_page_custom">カスタム</string>
+<string name="ref_adblock_page_update">アップデート</string>
+<string name="ref_adblock_page_updated">購読中のフィルターの更新が完了しました</string>
+<string name="ref_adblock_page_preview">プレビュー</string>
+<string name="ref_adblock_page_never">更新されていません</string>
+<string name="ref_adblock_page_help">ヘルプ</string>
+<string name="ref_adblock_page_save">保存</string>
+<string name="ref_adblock_page_help_content">ViaはほとんどのAdblock Plusフィルターに対応しています。 \n次のように設定することで、「example.com」をブロックする任意のフィルターを作成することができます。 \n||example.com^ (もしくはシンプルにexample.com) \n\nワイルドカードは次のように使用できます。: \n||example.com/js/ads_*.js \n\nホワイトリストに登録したい場合は次のように設定を行います。: \n@@||example.com^ \n\n次のようなWEBページ上の要素の場合: \nexample.com###ad</string>
+<string name="ref_adblock_page_updated_time">%1$s をアップデートしました</string>
+</resources>

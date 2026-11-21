@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_first_run_agree">同意並繼續</string>
+    <string name="ref_first_run_refusal">你需要同意並接受全部條款後才能開始使用我們的服務。</string>
+    <string name="ref_first_run_logo_description">ViaX</string>
+    <string name="ref_first_run_hint">訊息</string>
+    <string name="ref_first_run_disagree">不同意</string>
+    <string name="ref_first_run_exit">關閉</string>
+    <string name="ref_first_run_source_summary">在使用 Via 前，你需要認真閱讀並同意我們的 %1$s 和 %2$s。</string>
+    <string name="ref_first_run_privacy">隱私權原則</string>
+    <string name="ref_first_run_terms">使用協議</string>
+    <string name="ref_first_run_welcome">歡迎</string>
+</resources>

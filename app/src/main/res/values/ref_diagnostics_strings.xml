@@ -1,0 +1,7 @@
+<resources>
+    <string name="ref_diagnostics_title">Debugging info</string>
+    <string name="ref_diagnostics_delete">Delete</string>
+    <string name="ref_diagnostics_delete_message">Are you sure you want to delete %1$s?</string>
+    <string name="ref_diagnostics_wait">Wait a moment…</string>
+    <string name="ref_diagnostics_share">Share</string>
+</resources>

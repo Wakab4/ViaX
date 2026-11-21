@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="site_page_content" type="id" />
+    <item name="site_page_list" type="id" />
+</resources>

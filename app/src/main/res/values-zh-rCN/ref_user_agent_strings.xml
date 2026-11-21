@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_ua_delete">删除</string>
+    <string name="ref_ua_edit">编辑</string>
+    <string name="ref_ua_new">新建</string>
+    <string name="ref_ua_save">保存</string>
+    <string name="ref_ua_title">浏览器标识</string>
+    <string name="ref_ua_unsaved_title">提示</string>
+    <string name="ref_ua_discard">退出</string>
+    <string name="ref_ua_name_hint">标题</string>
+    <string name="ref_ua_unsaved_message">修改的内容未保存，是否保存？</string>
+    <string name="ref_ua_save_exit">保存并退出</string>
+    <string name="ref_ua_advanced">高级</string>
+    <string name="ref_ua_empty_name">标题不能为空</string>
+    <string name="ref_ua_empty_value">浏览器标识不能为空</string>
+    <string name="ref_ua_desktop_title">电脑模式下的浏览器标识</string>
+    <string name="ref_ua_reduction_title">简化浏览器标识</string>
+    <string name="ref_ua_reduction_detail">从浏览器标识中移除设备信息及次要版本信息</string>
+</resources>

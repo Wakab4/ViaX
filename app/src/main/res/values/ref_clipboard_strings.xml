@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_clipboard_confirm_message" formatted="false">Are you sure you want to copy text from %DOMAIN%?</string>
+</resources>

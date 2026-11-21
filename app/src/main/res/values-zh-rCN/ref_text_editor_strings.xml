@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_text_editor_html">HTML 代码</string>
+    <string name="ref_text_editor_css">自定义 CSS</string>
+    <string name="ref_text_editor_untitled">无标题</string>
+    <string name="ref_text_editor_save">保存</string>
+    <string name="ref_text_editor_notice">提示</string>
+    <string name="ref_text_editor_unsaved">修改的内容未保存，是否保存？</string>
+    <string name="ref_text_editor_save_exit">保存并退出</string>
+    <string name="ref_text_editor_exit">退出</string>
+</resources>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_qr_prompt_copy">アドレスをコピー</string>
+  <string name="ref_qr_prompt_copied">アドレスをコピーしました</string>
+</resources>

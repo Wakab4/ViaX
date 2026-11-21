@@ -1,0 +1,5 @@
+<resources>
+<string name="ref_filter_update_started">ダウンロード中…</string>
+<string name="ref_filter_update_completed">購読中のフィルターの更新が完了しました</string>
+</resources>
+

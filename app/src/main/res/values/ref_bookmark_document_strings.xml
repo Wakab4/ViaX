@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_bookmark_document_imported">%1$d bookmarks imported</string>
+    <string name="ref_bookmark_document_import_failed">Couldn\'t import bookmarks from file!</string>
+    <string name="ref_bookmark_document_export_empty">No bookmarks</string>
+    <string name="ref_bookmark_document_exported">Bookmarks exported successfully</string>
+    <string name="ref_bookmark_document_failure">Operation failed</string>
+</resources>

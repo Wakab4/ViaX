@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="ref_library_host_bookmarks">書籤</string>
+<string name="ref_library_host_history">歷史記錄</string>
+<string name="ref_library_host_offline">已儲存網頁</string>
+<string name="ref_library_host_back">向上導航</string>
+<string name="ref_library_host_move">移動</string>
+<string name="ref_library_host_open">開啟</string>
+</resources>

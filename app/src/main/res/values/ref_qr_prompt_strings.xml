@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_qr_prompt_too_long">The link is too long to generate a QR code</string>
+  <string name="ref_qr_prompt_copy">Copy link</string>
+  <string name="ref_qr_prompt_copied">Link copied successfully</string>
+</resources>

@@ -1,0 +1,22 @@
+<resources>
+    <string name="ref_script_popup_edit">Edit</string>
+    <string name="ref_script_popup_manager">View in settings</string>
+    <string name="ref_script_popup_add">New script</string>
+    <string name="ref_script_popup_disabled">Disabled</string>
+    <string name="ref_script_popup_empty">Empty</string>
+    <string name="ref_script_popup_global">Enable scripts</string>
+    <string name="ref_script_popup_enabled">Enabled</string>
+    <string name="ref_script_popup_interval_15days">Every 15 days</string>
+    <string name="ref_script_popup_interval_3days">Every 3 days</string>
+    <string name="ref_script_popup_interval_daily">Every day</string>
+    <string name="ref_script_popup_interval_weekly">Every week</string>
+    <string name="ref_script_popup_exclude">Exclude %1$s</string>
+    <string name="ref_script_popup_excluded">Script %1$s will not run on %2$s.</string>
+    <string name="ref_script_popup_back">Navigation up</string>
+    <string name="ref_script_popup_interval_never">Never</string>
+    <string name="ref_script_popup_global_enabled">Scripts enabled</string>
+    <string name="ref_script_popup_title">Scripts</string>
+    <string name="ref_script_popup_for_site">Scripts for %1$s</string>
+    <string name="ref_script_popup_update">Update</string>
+    <string name="ref_script_popup_auto_update">Update interval</string>
+</resources>

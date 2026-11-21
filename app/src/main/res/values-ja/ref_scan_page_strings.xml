@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="ref_scan_page_title">QRコード（二次元バーコード）をスキャン</string>
+<string name="ref_scan_page_not_found">QRコードが見つかりませんでした</string>
+<string name="ref_scan_page_torch">フラッシュ</string>
+<string name="ref_scan_page_gallery">画像からQRコードをスキャンします</string>
+<string name="ref_scan_page_permission_denied">権限へのアクセス許可が必要です。</string>
+<string name="ref_scan_page_result_title">QRコードのスキャン結果</string>
+</resources>

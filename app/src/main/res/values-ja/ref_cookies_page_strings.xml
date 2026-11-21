@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_cookie_page_block_third_party">サードパーティーCookieをブロック</string>
+    <string name="ref_cookie_page_blocked">ブロック</string>
+    <string name="ref_cookie_page_title">Cookies</string>
+    <string name="ref_cookie_page_enabled_detail">サイトにCookieの保存と読み取りを許可する</string>
+</resources>

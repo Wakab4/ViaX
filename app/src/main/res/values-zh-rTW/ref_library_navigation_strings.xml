@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_library_open_background">背景開啟</string>
+    <string name="ref_library_open_new_tab">開啟新視窗</string>
+    <string name="ref_library_context_delete">刪除</string>
+    <string name="ref_library_copy_link">複製連結</string>
+    <string name="ref_library_context_share">分享</string>
+    <string name="ref_library_opened_background">已在背景開啟</string>
+    <string name="ref_library_link_copied">成功複製連結</string>
+</resources>

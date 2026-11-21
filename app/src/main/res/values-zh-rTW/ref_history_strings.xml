@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_history_all">所有時間</string>
+    <string name="ref_history_clear_title">清除瀏覽歷史</string>
+    <string name="ref_history_delete_one">你確定刪除 %1$s 嗎？</string>
+    <string name="ref_history_delete_many">你確定刪除 %1$d 個條目嗎？</string>
+    <string name="ref_history_period_count">%1$s (%2$d)</string>
+    <string name="ref_history_last_hour">過去一小時</string>
+    <string name="ref_history_last_week">過去 7 天</string>
+    <string name="ref_history_today">今天</string>
+    <string name="ref_history_yesterday">今天和昨天</string>
+</resources>

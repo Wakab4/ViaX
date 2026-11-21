@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_redirect_setting_allow">允許</string>
+  <string name="ref_redirect_setting_ask">重定向到非同源頁面前先詢問</string>
+</resources>

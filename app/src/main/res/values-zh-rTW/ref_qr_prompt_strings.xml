@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_qr_prompt_too_long">連結太長，無法生成二維碼</string>
+  <string name="ref_qr_prompt_copy">複製連結</string>
+  <string name="ref_qr_prompt_copied">成功複製連結</string>
+</resources>

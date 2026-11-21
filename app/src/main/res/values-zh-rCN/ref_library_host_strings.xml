@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="ref_library_host_bookmarks">书签</string>
+<string name="ref_library_host_history">历史</string>
+<string name="ref_library_host_offline">离线页面</string>
+<string name="ref_library_host_back">向上导航</string>
+<string name="ref_library_host_move">移动</string>
+<string name="ref_library_host_open">打开</string>
+</resources>

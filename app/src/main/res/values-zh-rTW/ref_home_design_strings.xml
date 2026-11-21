@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_home_design_title">自訂外觀</string>
+    <string name="ref_home_design_homepage_hint">你想要將它設定為首頁嗎？</string>
+    <string name="ref_home_design_logo">Logo</string>
+    <string name="ref_home_design_search">搜尋框</string>
+    <string name="ref_home_design_background">背景</string>
+    <string name="ref_home_design_favorites">最愛</string>
+    <string name="ref_home_design_advanced">進階</string>
+</resources>

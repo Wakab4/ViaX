@@ -1,0 +1,12 @@
+<resources>
+    <string name="ref_skin_default">Default</string>
+    <string name="ref_skin_title">Skins</string>
+    <string name="ref_skin_import">Load skin</string>
+    <string name="ref_skin_import_failed">Load skin failed</string>
+    <string name="ref_skin_delete">Delete</string>
+    <string name="ref_skin_delete_message">Are you sure you want to delete %1$s?</string>
+    <string name="ref_skin_changed">Skin changed</string>
+    <string name="ref_skin_restart_message">This will take effect the next time you open the app. Would you like to restart it now to take effect immediately?</string>
+    <string name="ref_skin_restart">Restart</string>
+    <string name="ref_document_picker_error">Operation failed</string>
+</resources>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_start_restore_prompt">你想要還原上次工作階段未關閉的分頁嗎？</string>
+</resources>

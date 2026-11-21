@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="viax_logo_left">#5CCEFA</color>
+    <color name="viax_logo_middle">#F4A9B7</color>
+    <color name="viax_logo_right">#73CDBA</color>
+    <color name="viax_icon_background">#FFFFFF</color>
+</resources>

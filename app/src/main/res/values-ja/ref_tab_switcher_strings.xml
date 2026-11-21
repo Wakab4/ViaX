@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="ref_tab_switcher_close_all">全てのタブを閉じる</string>
+    <string name="ref_tab_switcher_close_others">他のタブを閉じる</string>
+    <string name="ref_tab_switcher_close_below">下のタブを閉じる</string>
+    <string name="ref_tab_switcher_close_above">上のタブを閉じる</string>
+    <string name="ref_tab_switcher_copy_link">アドレスをコピー</string>
+    <string name="ref_tab_switcher_new_tab">新しいタブ</string>
+    <string name="ref_tab_switcher_duplicate">タブを複製する</string>
+    <string name="ref_tab_switcher_title">タブ</string>
+    <string name="ref_tab_switcher_copied">アドレスをコピーしました</string>
+    <string name="ref_tab_switcher_untitled">空白のページ</string>
+</resources>

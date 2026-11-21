@@ -1,0 +1,10 @@
+<resources>
+<string name="ref_font_delete">刪除</string>
+<string name="ref_font_edit">編輯</string>
+<string name="ref_font_new">新增</string>
+<string name="ref_font_default">預設值</string>
+<string name="ref_font_title">字型</string>
+<string name="ref_font_rename">重新命名</string>
+<string name="ref_font_operation_failed">操作失敗</string>
+<string name="ref_font_import_error">新增字型失敗，錯誤碼：%1$d</string>
+</resources>

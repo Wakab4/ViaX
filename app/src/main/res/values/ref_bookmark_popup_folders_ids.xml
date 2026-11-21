@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="bookmark_popup_folders_up" type="id" />
+    <item name="bookmark_popup_folders_title" type="id" />
+    <item name="bookmark_popup_folders_add" type="id" />
+    <item name="bookmark_popup_folders_search" type="id" />
+    <item name="bookmark_popup_folders_query" type="id" />
+    <item name="bookmark_popup_folders_create_row" type="id" />
+    <item name="bookmark_popup_folders_name" type="id" />
+    <item name="bookmark_popup_folders_confirm" type="id" />
+    <item name="bookmark_popup_folders_empty" type="id" />
+</resources>

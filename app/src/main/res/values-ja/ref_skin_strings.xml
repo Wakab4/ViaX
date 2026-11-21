@@ -1,0 +1,7 @@
+<resources>
+    <string name="ref_skin_default">デフォルト</string>
+    <string name="ref_skin_delete">削除</string>
+    <string name="ref_skin_delete_message">%1$s を削除してもよろしいですか？</string>
+    <string name="ref_skin_restart">再起動</string>
+    <string name="ref_document_picker_error">失敗しました</string>
+</resources>

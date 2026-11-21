@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_text_editor_html">HTML 程式碼</string>
+    <string name="ref_text_editor_css">新增自訂 CSS</string>
+    <string name="ref_text_editor_untitled">無標題</string>
+    <string name="ref_text_editor_save">儲存</string>
+    <string name="ref_text_editor_notice">訊息</string>
+    <string name="ref_text_editor_unsaved">修改的內容未儲存，是否儲存？</string>
+    <string name="ref_text_editor_exit">關閉</string>
+</resources>

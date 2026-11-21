@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_saved_save_title">儲存網頁</string>
+    <string name="ref_saved_page_title">已儲存網頁</string>
+    <string name="ref_saved_local_error">僅支援 \"http\" 或 \"https\" 開頭的網址</string>
+    <string name="ref_saved_delete_failed_prefix">刪除失敗，此檔案位於下載路徑：</string>
+    <string name="ref_saved_page_empty">空空如也…</string>
+    <string name="ref_saved_name_hint">標題</string>
+    <string name="ref_saved_page_hint">這些是儲存的網頁。網路離線時，你也可以開啟。</string>
+    <string name="ref_saved_as_pdf">儲存為 PDF</string>
+    <string name="ref_saved_notice">網頁已儲存到 \"書籤 &gt; 儲存網頁\" 中</string>
+    <string name="ref_saved_view">檢視</string>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_image_page_delete">删除</string>
+    <string name="ref_image_page_add">添加例外网站</string>
+    <string name="ref_image_page_allow">允许</string>
+    <string name="ref_image_page_allowed">允许</string>
+    <string name="ref_image_page_block">禁止</string>
+    <string name="ref_image_page_blocked">已禁止</string>
+    <string name="ref_image_page_exception">例外</string>
+    <string name="ref_image_page_mode_wifi">仅 Wi-Fi 有图</string>
+    <string name="ref_image_page_mode_block">无图模式</string>
+    <string name="ref_image_page_mode_show">有图模式</string>
+    <string name="ref_image_page_title">图像</string>
+    <string name="ref_image_page_add_allow">允许特定网站显示图像。</string>
+    <string name="ref_image_page_add_block">禁止特定网站加载图像。</string>
+    <string name="ref_image_page_show_detail">允许网站显示图像</string>
+    <string name="ref_image_page_wifi_detail">仅在 Wi-Fi 连接时允许网页显示图像</string>
+</resources>

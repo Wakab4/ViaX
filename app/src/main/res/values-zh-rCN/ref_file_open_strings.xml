@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_pdf_preview_title">预览</string>
+    <string name="ref_file_open_empty">无可用打开方式查看此文件</string>
+    <string name="ref_file_open_pdf">预览 PDF</string>
+    <string name="ref_file_open_title">其它应用打开</string>
+</resources>

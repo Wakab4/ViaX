@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_favorite_form_add_to">ショートカットを追加</string>
+    <string name="ref_favorite_form_add">お気に入りに追加</string>
+    <string name="ref_favorite_form_added">スピードダイヤルに追加しました。</string>
+    <string name="ref_favorite_context_sort">並び替え</string>
+</resources>

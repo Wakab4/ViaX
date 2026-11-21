@@ -1,0 +1,5 @@
+<resources>
+<string name="ref_script_update_started">Starting update…</string>
+<string name="ref_script_update_completed">Scripts update completed.</string>
+</resources>
+

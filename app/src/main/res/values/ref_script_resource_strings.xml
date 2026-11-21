@@ -1,0 +1,15 @@
+<resources>
+    <string name="ref_script_resource_title" formatted="false">Resource info</string>
+    <string name="ref_script_resource_missing" formatted="false">The resource does not exist and the script may not work properly. Do you want to download it?</string>
+    <string name="ref_script_resource_url" formatted="false">URL</string>
+    <string name="ref_script_resource_path" formatted="false">File path</string>
+    <string name="ref_script_resource_updated" formatted="false">Updated</string>
+    <string name="ref_script_resource_size" formatted="false">Size</string>
+    <string name="ref_script_resource_view" formatted="false">View</string>
+    <string name="ref_script_resource_download" formatted="false">Download</string>
+    <string name="ref_script_resource_copy" formatted="false">Copy link</string>
+    <string name="ref_script_resource_just_now" formatted="false">just now</string>
+    <string name="ref_script_resource_downloading" formatted="false">Starting download…</string>
+    <string name="ref_script_resource_download_failed">Download %1$s failed</string>
+    <string name="ref_script_resource_copied" formatted="false">Link copied successfully</string>
+</resources>

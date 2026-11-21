@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_image_page_delete">Delete</string>
+    <string name="ref_image_page_add">Add site exception</string>
+    <string name="ref_image_page_allow">Allow</string>
+    <string name="ref_image_page_allowed">Allowed</string>
+    <string name="ref_image_page_block">Block</string>
+    <string name="ref_image_page_blocked">Blocked</string>
+    <string name="ref_image_page_exception">Exception</string>
+    <string name="ref_image_page_mode_wifi">Show images only via Wi-Fi</string>
+    <string name="ref_image_page_mode_block">Block images</string>
+    <string name="ref_image_page_mode_show">Show images</string>
+    <string name="ref_image_page_title">Images</string>
+    <string name="ref_image_page_add_allow">Show images for a specific site.</string>
+    <string name="ref_image_page_add_block">Block images for a specific site.</string>
+    <string name="ref_image_page_show_detail">Allow sites to load images</string>
+    <string name="ref_image_page_wifi_detail">Allow sites to load images only via Wi-Fi</string>
+</resources>

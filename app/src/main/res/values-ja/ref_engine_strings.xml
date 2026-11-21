@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_engine_missing">WebViewが正常にインストールしていません。インストールしますか？</string>
+    <string name="ref_engine_install">インストール</string>
+    <string name="ref_engine_exit">終了</string>
+    <string name="ref_engine_crash">申し訳ございません、Viaがクラッシュしました。</string>
+    <string name="ref_engine_restart">再起動</string>
+    <string name="ref_engine_open_with">アプリ選択</string>
+</resources>

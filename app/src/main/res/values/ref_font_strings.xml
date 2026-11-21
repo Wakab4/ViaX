@@ -1,0 +1,10 @@
+<resources>
+<string name="ref_font_delete">Delete</string>
+<string name="ref_font_edit">Edit</string>
+<string name="ref_font_new">New</string>
+<string name="ref_font_default">Default</string>
+<string name="ref_font_title">Font</string>
+<string name="ref_font_rename">Rename</string>
+<string name="ref_font_operation_failed">Operation failed</string>
+<string name="ref_font_import_error">Unable to add font, error code: %1$d</string>
+</resources>

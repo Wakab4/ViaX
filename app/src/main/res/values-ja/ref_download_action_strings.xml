@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="ref_download_action_open">開く</string>
+<string name="ref_download_action_copy">テキストをコピー</string>
+<string name="ref_download_action_unavailable">このファイルを開くためのアプリがありません</string>
+<string name="ref_download_action_delete_complete">このアイテムを削除しますか？</string>
+<string name="ref_download_action_restart_body">ダウンロード済みの %1$s を削除して再ダウンロードしますか？</string>
+<string name="ref_download_action_delete_partial">ファイルも含めて削除されます。復元は出来ないので注意してください。</string>
+<string name="ref_download_action_missing">ファイルがありません</string>
+<string name="ref_download_action_delete_files">ダウンロードしたファイルも削除する</string>
+<string name="ref_download_action_copied">アドレスをコピーしました</string>
+</resources>

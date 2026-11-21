@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="ref_download_directory_default">默认目录</string>
+<string name="ref_download_directory_choose">选择一个目录…</string>
+<string name="ref_download_directory_permission_body">下载目录的存储权限已被撤销。请重新选择下载目录。</string>
+<string name="ref_download_directory_title">下载目录</string>
+<string name="ref_download_directory_permission_title">没有权限</string>
+</resources>

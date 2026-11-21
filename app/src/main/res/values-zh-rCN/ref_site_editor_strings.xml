@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="ref_site_all_edit">编辑</string>
+    <string name="ref_site_all_add">新建</string>
+    <string name="ref_site_all_title">所有网站</string>
+    <string name="ref_site_section_basic">基本</string>
+    <string name="ref_site_section_content">内容</string>
+    <string name="ref_site_section_permissions">权限</string>
+    <string name="ref_site_editor_enable">启用 \"%1$s\" 的网站设定</string>
+    <string name="ref_site_editor_reset_message">你确定重置 %1$s 的网站设定吗？</string>
+    <string name="ref_page_font_site_hint">仅对当前网站生效</string>
+    <string name="ref_site_section_advanced">高级</string>
+    <string name="ref_site_editor_title">网站设定</string>
+    <string name="ref_site_all_conflict">%1$s 的网站设定已存在。</string>
+    <string name="ref_site_editor_reset_title">重置网站设定</string>
+</resources>

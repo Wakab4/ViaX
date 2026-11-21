@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_search_page_title">搜索设置</string>
+    <string name="ref_search_page_engines">搜索引擎</string>
+    <string name="ref_search_page_suggestions">搜索建议</string>
+    <string name="ref_search_page_suggestion_hint">使用地址栏时，从下列内容获取建议</string>
+    <string name="ref_search_page_favorites">收藏</string>
+    <string name="ref_search_page_bookmarks">书签</string>
+    <string name="ref_search_page_tabs">标签页</string>
+    <string name="ref_search_page_history">历史</string>
+    <string name="ref_search_page_search_history">搜索历史</string>
+    <string name="ref_search_page_toolbar">搜索工具栏</string>
+    <string name="ref_search_page_enabled">已启用</string>
+    <string name="ref_search_page_disabled">已禁用</string>
+    <string name="ref_search_page_enable_toolbar">启用搜索工具栏</string>
+    <string name="ref_search_page_engine_section">搜索引擎</string>
+    <string name="ref_search_page_default">默认</string>
+    <string name="ref_search_page_edit">编辑</string>
+    <string name="ref_search_page_new">新建</string>
+    <string name="ref_search_page_delete">删除</string>
+    <string name="ref_search_page_title_hint">标题</string>
+    <string name="ref_search_page_address_hint">地址</string>
+    <string name="ref_search_page_shortcut_hint">搜索快捷词</string>
+    <string name="ref_search_page_shortcut_help">输入“快捷词 + 空格 + 搜索内容”即可使用此引擎搜索，例如“g Via”。快捷词支持最多 16 个不含空格的字符，留空则禁用。</string>
+    <string name="ref_search_page_invalid_shortcut">快捷词无效</string>
+    <string name="ref_search_page_duplicate_shortcut">该快捷词已被使用</string>
+    <string name="ref_search_page_empty_title">标题不能为空</string>
+    <string name="ref_search_page_required">%s 为必填项</string>
+    <string name="ref_search_page_invalid_url">链接无效。</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_library_open_background">Open in background</string>
+    <string name="ref_library_open_new_tab">Open in new tab</string>
+    <string name="ref_library_context_delete">Delete</string>
+    <string name="ref_library_copy_link">Copy link</string>
+    <string name="ref_library_context_share">Share</string>
+    <string name="ref_library_opened_background">New tab opened in the background</string>
+    <string name="ref_library_link_copied">Link copied successfully</string>
+</resources>

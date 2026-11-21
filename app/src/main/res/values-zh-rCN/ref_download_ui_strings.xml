@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_download_ui_title">下载</string>
+    <string name="ref_download_ui_search">搜索</string>
+    <string name="ref_download_ui_new">新建</string>
+    <string name="ref_download_ui_edit">编辑</string>
+    <string name="ref_download_ui_done">完成</string>
+    <string name="ref_download_ui_select_all">全选</string>
+    <string name="ref_download_ui_cancel_all">取消全选</string>
+    <string name="ref_download_ui_delete">删除</string>
+    <string name="ref_download_ui_delete_count">删除(%1$d)</string>
+    <string name="ref_download_ui_all">全部</string>
+    <string name="ref_download_ui_document">文档</string>
+    <string name="ref_download_ui_archive">压缩包</string>
+    <string name="ref_download_ui_apk">安装包</string>
+    <string name="ref_download_ui_image">图片</string>
+    <string name="ref_download_ui_video">视频</string>
+    <string name="ref_download_ui_audio">音频</string>
+    <string name="ref_download_ui_other">其它</string>
+    <string name="ref_download_ui_open_with">其它应用打开</string>
+    <string name="ref_download_ui_rename">重命名</string>
+    <string name="ref_download_ui_restart">重新下载</string>
+    <string name="ref_download_ui_copy_link">复制下载链接</string>
+    <string name="ref_download_ui_share">分享</string>
+    <string name="ref_download_ui_scan">扫描二维码</string>
+    <string name="ref_download_ui_size_only">%1$s</string>
+    <string name="ref_download_ui_size_total">%1$s/%2$s</string>
+    <string name="ref_download_ui_size_status">%1$s • %2$s</string>
+    <string name="ref_download_ui_paused">已暂停</string>
+    <string name="ref_download_ui_waiting_network">等待网络连接</string>
+    <string name="ref_download_ui_not_available">N/A</string>
+    <string name="ref_download_ui_size_speed_time">%1$s • %2$s • %3$s</string>
+    <string name="ref_download_ui_size_speed">%1$s • %2$s</string>
+    <string name="ref_download_ui_pause">暂停</string>
+    <string name="ref_download_ui_resume">恢复</string>
+    <string name="ref_download_ui_unknown_time">-</string>
+    <string name="ref_download_ui_failed">下载失败</string>
+    <string name="ref_download_ui_failed_detail">下载失败：%1$s</string>
+    <string name="ref_download_ui_up">向上导航</string>
+</resources>

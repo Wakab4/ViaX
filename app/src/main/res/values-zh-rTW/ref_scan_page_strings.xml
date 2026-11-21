@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="ref_scan_page_title">掃描二維碼</string>
+<string name="ref_scan_page_permission_hint">點按螢幕授予相機權限以掃碼</string>
+<string name="ref_scan_page_no_camera">無相機</string>
+<string name="ref_scan_page_not_found">未檢測到二維碼</string>
+<string name="ref_scan_page_torch">開關閃光燈</string>
+<string name="ref_scan_page_gallery">掃描圖片中的二維碼</string>
+<string name="ref_scan_page_back">向上導航</string>
+<string name="ref_scan_page_permission_denied">無權限。立即設定嗎？</string>
+<string name="ref_scan_page_result_title">二維碼掃描結果</string>
+</resources>

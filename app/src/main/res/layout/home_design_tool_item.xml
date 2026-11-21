@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/ref_home_tool_feedback"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/home_design_tool_icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:id="@+id/home_design_tool_title"
+        android:textSize="11sp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:paddingLeft="4dp"
+        android:paddingTop="2dp"
+        android:paddingRight="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:layout_below="@id/home_design_tool_icon"
+        android:lineSpacingExtra="0dp" />
+    <TextView
+        android:id="@+id/home_design_tool_detail"
+        android:textSize="11sp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:paddingLeft="4dp"
+        android:paddingTop="2dp"
+        android:paddingRight="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:layout_below="@id/home_design_tool_title"
+        android:lineSpacingExtra="4dp" />
+</RelativeLayout>

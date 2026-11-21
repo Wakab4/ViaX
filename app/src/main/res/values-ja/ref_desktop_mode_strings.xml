@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_desktop_mode">デスクトップモード</string>
+    <string name="ref_desktop_disabled">%s を無効化しました</string>
+    <string name="ref_desktop_enabled">%s を有効化しました</string>
+</resources>

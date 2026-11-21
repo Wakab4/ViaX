@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_first_run_reference_summary">%1$s：以下 %2$s 和 %3$s 屬於參考專案 Via。</string>
+    <string name="ref_first_run_document_failure">無法開啟參考文件，請檢查系統 WebView 是否可用。</string>
+    <string name="ref_first_run_back">返回</string>
+</resources>

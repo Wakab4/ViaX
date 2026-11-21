@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_bookmark_more_add">新增書籤</string>
+    <string name="ref_bookmark_more_folder">新增資料夾</string>
+    <string name="ref_bookmark_more_sort">排序方式</string>
+    <string name="ref_bookmark_more_hide_details">隱藏細節</string>
+    <string name="ref_bookmark_more_show_details">顯示細節</string>
+    <string name="ref_bookmark_more_import">匯入書籤</string>
+    <string name="ref_bookmark_more_export">匯出書籤</string>
+    <string name="ref_bookmark_more_sort_oldest">最舊的優先</string>
+    <string name="ref_bookmark_more_sort_newest">最新的優先</string>
+    <string name="ref_bookmark_more_sort_name">名稱順序</string>
+    <string name="ref_bookmark_more_title">更多</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_home_page_title">Homepage</string>
+  <string name="ref_home_bookmarks_title">Bookmarks</string>
+  <string name="ref_home_search_title">Search</string>
+</resources>

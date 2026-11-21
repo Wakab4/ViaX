@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="ref_download_notification_channel">Download contents</string>
+<string name="ref_download_notification_foreground_channel">Foreground notification</string>
+<string name="ref_download_notification_resume">Resume</string>
+<string name="ref_download_notification_complete">Download completed</string>
+<string name="ref_download_notification_foreground_title">Via is downloading files</string>
+<string name="ref_download_notification_pause">Pause</string>
+<string name="ref_download_notification_foreground_body">Tap to view downloads</string>
+<string name="ref_download_notification_general">General</string>
+</resources>

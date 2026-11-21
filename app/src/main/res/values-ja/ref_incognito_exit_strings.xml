@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_incognito_exit_title">すべてのタブを閉じる</string>
+  <string name="ref_incognito_exit_message">シークレットモードを解除する際に、すべてのタブを閉じますか？</string>
+  <string name="ref_incognito_exit_close">閉じる</string>
+  <string name="ref_incognito_exit_keep">保持する</string>
+</resources>

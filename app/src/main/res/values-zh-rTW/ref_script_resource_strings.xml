@@ -1,0 +1,15 @@
+<resources>
+    <string name="ref_script_resource_title" formatted="false">資源資訊</string>
+    <string name="ref_script_resource_missing" formatted="false">資源不存在，指令碼可能無法正常執行。你想要下載此資源嗎？</string>
+    <string name="ref_script_resource_url" formatted="false">連結</string>
+    <string name="ref_script_resource_path" formatted="false">檔案路徑</string>
+    <string name="ref_script_resource_updated" formatted="false">更新於</string>
+    <string name="ref_script_resource_size" formatted="false">大小</string>
+    <string name="ref_script_resource_view" formatted="false">檢視</string>
+    <string name="ref_script_resource_download" formatted="false">下載</string>
+    <string name="ref_script_resource_copy" formatted="false">複製連結</string>
+    <string name="ref_script_resource_just_now" formatted="false">剛剛</string>
+    <string name="ref_script_resource_downloading" formatted="false">正在開始下載…</string>
+    <string name="ref_script_resource_download_failed">下載 %1$s 失敗</string>
+    <string name="ref_script_resource_copied" formatted="false">成功複製連結</string>
+</resources>

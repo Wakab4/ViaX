@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_home_design_title">定制</string>
+    <string name="ref_home_design_homepage_hint">你想要将它设置为主页吗？</string>
+    <string name="ref_home_design_logo">Logo</string>
+    <string name="ref_home_design_search">搜索框</string>
+    <string name="ref_home_design_background">背景</string>
+    <string name="ref_home_design_favorites">收藏</string>
+    <string name="ref_home_design_advanced">高级</string>
+</resources>

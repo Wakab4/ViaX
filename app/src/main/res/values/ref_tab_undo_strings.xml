@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="ref_tab_undo_closed_count">
+        <item quantity="zero">0 tab closed</item>
+        <item quantity="one">1 tab closed</item>
+        <item quantity="other">%d tabs closed</item>
+    </plurals>
+    <string name="ref_tab_undo_closed_title">Closed %1$s</string>
+    <string name="ref_tab_undo_action">Undo</string>
+    <string name="ref_tab_undo_untitled">Untitled</string>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_bookmark_document_imported">%1d つのブックマークを読み込みました</string>
+    <string name="ref_bookmark_document_import_failed">読み込めませんでした</string>
+    <string name="ref_bookmark_document_export_empty">ブックマークはありません</string>
+    <string name="ref_bookmark_document_exported">ブックマークのエクスポートが完了しました</string>
+    <string name="ref_bookmark_document_failure">失敗しました</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_external_app_details_title">Open app</string>
+    <string name="ref_external_app_question_name">Allow website to open %1$s?</string>
+    <string name="ref_external_app_open">Open</string>
+    <string name="ref_external_app_copied">Link copied successfully</string>
+    <string name="ref_external_app_failed">Operation failed</string>
+    <string name="ref_external_app_question">Allow website to open your app?</string>
+</resources>

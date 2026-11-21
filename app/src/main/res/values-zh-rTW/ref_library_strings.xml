@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <plurals name="ref_library_item_count">
+        <item quantity="other">%d 個專案</item>
+    </plurals>
+  <string name="ref_library_folder_description">%1$s 資料夾</string>
+</resources>

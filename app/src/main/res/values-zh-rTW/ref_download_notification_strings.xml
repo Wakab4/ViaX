@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="ref_download_notification_channel">下載內容</string>
+<string name="ref_download_notification_foreground_channel">前景通知</string>
+<string name="ref_download_notification_resume">復原</string>
+<string name="ref_download_notification_complete">下載已完成</string>
+<string name="ref_download_notification_foreground_title">Via 正在下載檔案</string>
+<string name="ref_download_notification_pause">暫停</string>
+<string name="ref_download_notification_foreground_body">點按即可檢視下載內容</string>
+<string name="ref_download_notification_general">一般</string>
+</resources>

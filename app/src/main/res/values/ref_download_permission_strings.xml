@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="ref_download_manual_accept">Download</string>
+<string name="ref_download_manual_address">URL</string>
+<string name="ref_download_permission_denied">Permission denied. Would you like to set it in settings now?</string>
+<string name="ref_download_manual_unsupported">It can only work with \"http\" or \"https\" URLs.</string>
+<string name="ref_download_manual_name">File name</string>
+</resources>

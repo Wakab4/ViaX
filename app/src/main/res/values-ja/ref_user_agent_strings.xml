@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_ua_delete">削除</string>
+    <string name="ref_ua_edit">編集</string>
+    <string name="ref_ua_new">新規作成</string>
+    <string name="ref_ua_save">保存</string>
+    <string name="ref_ua_title">ユーザーエージェント</string>
+    <string name="ref_ua_unsaved_title">メッセージ</string>
+    <string name="ref_ua_discard">終了</string>
+    <string name="ref_ua_name_hint">タイトル</string>
+    <string name="ref_ua_advanced">高度な設定</string>
+    <string name="ref_ua_desktop_title">デスクトップモードでのユーザーエージェント</string>
+    <string name="ref_ua_reduction_title">ユーザーエージェントの簡略化</string>
+    <string name="ref_ua_reduction_detail">ユーザーエージェントからデバイス情報およびマイナーバージョン情報を削除します</string>
+</resources>

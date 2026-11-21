@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_favorite_manage">スピードダイヤル マネージャー</string>
+    <string name="ref_favorite_done">完了</string>
+    <string name="ref_favorite_deleted">\"%1$s\" は削除されました</string>
+    <string name="ref_favorite_undo">元に戻す</string>
+    <string name="ref_favorite_edit">スピードダイヤルを編集</string>
+    <string name="ref_favorite_remove">削除</string>
+</resources>

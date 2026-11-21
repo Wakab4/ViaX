@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_pdf_preview_title">Preview</string>
+    <string name="ref_file_open_empty">No available ways to open this file.</string>
+    <string name="ref_file_open_pdf">Preview PDF</string>
+    <string name="ref_file_open_title">Open with</string>
+</resources>

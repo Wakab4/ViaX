@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_home_page_title">主页</string>
+  <string name="ref_home_bookmarks_title">书签</string>
+  <string name="ref_home_search_title">搜索</string>
+</resources>

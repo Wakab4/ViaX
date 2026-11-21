@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="ref_site_all_edit">編輯</string>
+    <string name="ref_site_all_add">新增</string>
+    <string name="ref_site_all_title">所有網站</string>
+    <string name="ref_site_section_basic">基本</string>
+    <string name="ref_site_section_content">內容</string>
+    <string name="ref_site_section_permissions">權限</string>
+    <string name="ref_site_editor_enable">啟用 \"%1$s\" 網站設定</string>
+    <string name="ref_site_editor_reset_message">你確定重設 %1$s 的網站設定嗎？</string>
+    <string name="ref_page_font_site_hint">僅對目前網站生效</string>
+    <string name="ref_site_section_advanced">進階</string>
+    <string name="ref_site_editor_title">網站設定</string>
+    <string name="ref_site_editor_reset_title">重設網站設定</string>
+</resources>

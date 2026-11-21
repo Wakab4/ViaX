@@ -1,0 +1,18 @@
+<resources>
+    <integer name="ref_menu_animation_duration">160</integer>
+    <string name="ref_menu_images">@string/ref_menu_images_allow</string>
+    <string-array name="ref_menu_orientation">
+        <item>@string/ref_menu_orientation_system</item>
+        <item>@string/ref_menu_orientation_auto</item>
+        <item>@string/ref_menu_orientation_portrait</item>
+        <item>@string/ref_menu_orientation_landscape</item>
+    </string-array>
+    <style name="Animation.PureBrowser.MenuBottom" parent="">
+        <item name="android:windowEnterAnimation">@anim/ref_menu_bottom_enter</item>
+        <item name="android:windowExitAnimation">@anim/ref_menu_bottom_exit</item>
+    </style>
+    <style name="Animation.PureBrowser.MenuTop" parent="">
+        <item name="android:windowEnterAnimation">@anim/ref_menu_top_enter</item>
+        <item name="android:windowExitAnimation">@anim/ref_menu_top_exit</item>
+    </style>
+</resources>

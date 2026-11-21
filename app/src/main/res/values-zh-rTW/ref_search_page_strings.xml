@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_search_page_title">搜尋設定</string>
+    <string name="ref_search_page_engines">搜尋引擎</string>
+    <string name="ref_search_page_suggestions">搜尋建議</string>
+    <string name="ref_search_page_suggestion_hint">使用位址列時，從下列內容獲取建議</string>
+    <string name="ref_search_page_favorites">最愛</string>
+    <string name="ref_search_page_bookmarks">書籤</string>
+    <string name="ref_search_page_tabs">分頁</string>
+    <string name="ref_search_page_history">歷史記錄</string>
+    <string name="ref_search_page_search_history">搜尋歷史</string>
+    <string name="ref_search_page_toolbar">搜尋工具列</string>
+    <string name="ref_search_page_enabled">已啟用</string>
+    <string name="ref_search_page_disabled">已停用</string>
+    <string name="ref_search_page_enable_toolbar">啟用搜尋工具列</string>
+    <string name="ref_search_page_engine_section">搜尋引擎</string>
+    <string name="ref_search_page_default">預設值</string>
+    <string name="ref_search_page_edit">編輯</string>
+    <string name="ref_search_page_new">新增</string>
+    <string name="ref_search_page_delete">刪除</string>
+    <string name="ref_search_page_title_hint">標題</string>
+    <string name="ref_search_page_address_hint">網址</string>
+    <string name="ref_search_page_empty_title">標題不能為空</string>
+    <string name="ref_search_page_required">%s 為必填項</string>
+    <string name="ref_search_page_invalid_url">網址無效。</string>
+</resources>

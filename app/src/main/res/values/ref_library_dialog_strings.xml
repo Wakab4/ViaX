@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_library_dialog_background">Open in background</string>
+  <string name="ref_library_dialog_foreground">Open in new tab</string>
+  <string name="ref_library_dialog_edit">Edit</string>
+  <string name="ref_library_dialog_favorite">Add to homepage</string>
+  <string name="ref_library_dialog_delete">Delete</string>
+  <string name="ref_library_dialog_copy">Copy link</string>
+  <string name="ref_library_dialog_delete_folder_title">Would you like to delete this folder?</string>
+  <string name="ref_library_dialog_delete_folder_message">Bookmarks in folder %1$s will also be deleted. Are you sure?</string>
+  <string name="ref_library_dialog_delete_item_message">Are you sure you want to delete %1$s?</string>
+  <string name="ref_library_dialog_delete_selected_message">Are you sure you want to proceed?</string>
+  <string name="ref_library_dialog_copied">Link copied successfully</string>
+  <string name="ref_library_dialog_added_home">Added to homepage successfully</string>
+  <string name="ref_library_dialog_delete_multiple_message">Are you sure you want to delete %1$d items?</string>
+  <string name="ref_library_dialog_share">Share</string>
+</resources>

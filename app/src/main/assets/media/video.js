@@ -1,0 +1,2 @@
+function findVideoElement(){var a=null,b=document.fullscreenElement||document.mozFullScreenElement||document.webkitFullscreenElement||document.msFullscreenElement;b&&(a="VIDEO"===b.tagName?b:firstVideoElement(b));a||(a=firstVideoElement(document));if(!a){b=document.getElementsByTagName("iframe");for(var c=0,d=b.length;c<d&&!(a=b[c].contentDocument||b[c].contentWindow.document,a=firstVideoElement(a));c++);}return a?/game/i.test(a.className+" "+a.id)?null:a:null}
+function firstVideoElement(a){if(!a)return null;a=a.getElementsByTagName("video");return 0>=a.length?null:a[0]};

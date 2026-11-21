@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_about_document_contact">Contact us</string>
+    <string name="ref_about_document_glean">Glean</string>
+    <string name="ref_about_document_translate">Help us translate</string>
+    <string name="ref_about_document_website">Official website</string>
+    <string name="ref_about_document_privacy">Privacy policy</string>
+    <string name="ref_about_document_title">About</string>
+    <string name="ref_about_document_terms">Terms of use</string>
+</resources>

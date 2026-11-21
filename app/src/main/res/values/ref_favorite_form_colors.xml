@@ -1,0 +1,4 @@
+<resources>
+    <color name="ref_favorite_field_text">#DE000000</color>
+    <color name="ref_favorite_field_hint">#8A000000</color>
+</resources>

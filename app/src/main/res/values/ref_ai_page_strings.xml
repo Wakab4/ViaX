@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_ai_page_settings">AI settings</string>
+    <string name="ref_ai_page_backends">AI service provider</string>
+    <string name="ref_ai_page_prompts">AI prompt</string>
+    <string name="ref_ai_page_none">None</string>
+    <string name="ref_ai_page_custom">Custom</string>
+    <string name="ref_ai_page_system">System prompt</string>
+    <string name="ref_ai_page_message">Message template</string>
+    <string name="ref_ai_page_variables">Available variables</string>
+    <string name="ref_ai_page_page_url">The URL of the webpage.</string>
+    <string name="ref_ai_page_page_title">The title of the webpage.</string>
+    <string name="ref_ai_page_page_content">The plain text content of the webpage.</string>
+    <string name="ref_ai_page_input">The input box content.</string>
+    <string name="ref_ai_page_time">Current time yyyy-MM-dd HH:mm:ss EEEE (ZZZZ).</string>
+    <string name="ref_ai_page_model">Model ID</string>
+    <string name="ref_ai_page_key">API key</string>
+    <string name="ref_ai_page_management">Open the API Key generation and management page</string>
+    <string name="ref_ai_page_content">Content</string>
+    <string name="ref_ai_page_verify">Validate</string>
+    <string name="ref_ai_page_failed">Validate failed</string>
+    <string name="ref_ai_page_verified">Validate success</string>
+    <string name="ref_ai_page_wait">Wait a moment…</string>
+    <string name="ref_ai_page_add_model">Add model</string>
+    <string name="ref_ai_page_empty">Empty</string>
+    <string name="ref_ai_page_error_empty">No messages</string>
+    <string name="ref_ai_page_error_backend">No AI service provider</string>
+    <string name="ref_ai_page_error_incomplete">No completion</string>
+    <string name="ref_ai_page_error_configuration">AI service provider invalid</string>
+    <string name="ref_ai_page_error_unknown">Unknown error: %1$s</string>
+    <string name="ref_ai_page_error_http">HTTP error: %1$d\n\n%2$s</string>
+</resources>

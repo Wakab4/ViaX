@@ -1,0 +1,40 @@
+* { padding:0; margin:0; box-sizing:border-box; user-drag:none; -webkit-user-drag:none; }
+html { height:100%; -webkit-focus-ring-color:transparent; -webkit-tap-highlight-color:{{TAP}}; font-family:ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica,Apple Color Emoji,Arial,sans-serif,Segoe UI Emoji,Segoe UI Symbol; }
+body { min-height:100%; max-width:100%; width:600px; margin:auto; text-align:center; }
+#gesture-indicator { height:100%; width:100%; max-width:600px; position:absolute; top:0; bottom:0; z-index:0; overflow:hidden; word-break:break-all; }
+#content { position:absolute; max-width:600px; width:100%; }
+.logo { color:{{FOREGROUND}}; font-size:{{LOGO_FONT}}px; {{LOGO_WEIGHT}} {{LOGO_STYLE}} white-space:normal; word-wrap:break-word; overflow:auto; text-decoration:none; }
+{{LOGO_IMAGE_RULE}}
+{{NIGHT_IMAGE_RULE}}
+span { display:block; overflow:hidden; padding-left:5px; vertical-align:middle; }
+.search_part { display:table; vertical-align:middle; width:90%; max-width:600px; margin:0 auto 20px; padding:0; }
+.search.icon { width:12px; height:12px; border:solid 2px currentColor; border-radius:100%; -webkit-transform:rotate(-45deg); transform:rotate(-45deg); text-align:center; margin:auto; }
+.search.icon:before { content:''; position:absolute; top:10px; left:3px; height:5px; width:2px; background-color:currentColor; }
+.search_bar_wrapper { position:relative; display:table; width:100%; margin:15px auto 0; }
+.search_bar { position:relative; display:table; width:100%; margin:0; }
+#search_input { height:46px; padding:0 12px; width:100%; outline:none; border:none; font-size:15px; background-color:transparent; }
+#search_submit { display:none; outline:none; height:46px; width:56px; float:right; font-size:15px; font-weight:bold; border:none; background-color:transparent; padding:0 10px; }
+#search_bar_trigger { position:absolute; inset:0; z-index:1; width:100%; height:46px; padding:0; border:0; border-radius:{{SEARCH_RADIUS}}px; background:transparent; color:inherit; }
+#search_bar_trigger:focus-visible { outline:2px solid currentColor; outline-offset:2px; }
+.search_bar { {{BORDER}}:{{STROKE_WIDTH}}px solid {{STROKE}}; border-radius:{{SEARCH_RADIUS}}px; background:{{FILL}}; {{BLUR}} }
+.search_bar { color:{{INPUT}}; }
+.search.icon, #search_input, #search_submit { color:inherit; }
+.opSug_wpr { background:{{SUGGESTION_FILL}}; {{BLUR}} border:{{STROKE_WIDTH}}px solid {{STROKE}}; border-radius:0 0 {{SEARCH_RADIUS}}px {{SEARCH_RADIUS}}px; overflow-y:scroll; line-height:normal; position:absolute; width:100%; max-width:600px; margin:-{{STROKE_WIDTH}}px 0 0; z-index:9999; }
+.opSug_wpr::-webkit-scrollbar { width:0; }
+.opSug_wpr table { background:none; padding:0; width:100%; border-spacing:0; }
+.opSug_wpr tr { padding:0; margin:0; display:table-row; vertical-align:inherit; border-color:inherit; }
+.opSug_wpr tr:hover { color:#FFF; background:#7B90E3; }
+.opSug_wpr td { color:{{SUGGESTION_TEXT}}; font-size:14px; padding:10px 17px; background:none; text-align:left; vertical-align:middle; font:14px verdana; text-decoration:none; text-indent:0; }
+.search_bar_active { border-radius:{{SEARCH_RADIUS}}px {{SEARCH_RADIUS}}px 0 0; }
+.search_bar_active { color:{{SUGGESTION_TEXT}}; background:{{SUGGESTION_FILL}}; }
+#bookmark_part { text-align:center; max-width:600px; background-color:transparent; margin:0 auto; padding:0; border-radius:0; }
+#box_container { text-align:left; margin:0 auto; font-size:0; }
+.box { vertical-align:top; margin:4px 9px 4px; width:{{FAVORITE_WIDTH}}px; border:0; position:relative; display:inline-block; text-align:center; }
+.box a { width:100%; height:100%; position:absolute; left:0; top:0; }
+.overlay { position:absolute; left:0; top:0; border-radius:{{FAVORITE_RADIUS}}px; width:{{FAVORITE_WIDTH}}px; height:{{FAVORITE_HEIGHT}}px; }
+.title { border-radius:{{FAVORITE_RADIUS}}px; color:{{FAVORITE_TEXT}}; width:{{FAVORITE_WIDTH}}px; line-height:{{FAVORITE_HEIGHT}}px; height:{{FAVORITE_HEIGHT}}px; font-size:15px; }
+.url { color:{{FOREGROUND}}; margin:2px 0 0; width:{{FAVORITE_WIDTH}}px; height:20px; line-height:20px; white-space:normal; word-wrap:break-word; overflow:hidden; text-overflow:clip; ms-text-overflow:clip; font-size:10px; }
+{{GRID_RULES}}
+{{POSITION_RULES}}
+{{RTL_RULE}}
+.sort-ghost { opacity:0.3; }

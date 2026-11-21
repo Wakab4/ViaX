@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_history_page_title">履歴</string>
+    <string name="ref_history_page_empty">表示できる項目はありません</string>
+    <string name="ref_history_page_incognito">シークレットモード中です。シークレットモードでは履歴は保存されません。</string>
+</resources>

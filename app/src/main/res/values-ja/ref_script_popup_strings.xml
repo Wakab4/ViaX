@@ -1,0 +1,8 @@
+<resources>
+    <string name="ref_script_popup_edit">編集</string>
+    <string name="ref_script_popup_add">スクリプトの追加</string>
+    <string name="ref_script_popup_disabled">無効</string>
+    <string name="ref_script_popup_empty">表示できる項目はありません</string>
+    <string name="ref_script_popup_title">スクリプト</string>
+    <string name="ref_script_popup_update">アップデート</string>
+</resources>

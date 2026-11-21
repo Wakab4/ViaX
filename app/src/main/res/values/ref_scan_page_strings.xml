@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="ref_scan_page_title">Scan QR code</string>
+<string name="ref_scan_page_permission_hint">Tap the screen to grant camera permission \nto scan the code</string>
+<string name="ref_scan_page_no_camera">No camera</string>
+<string name="ref_scan_page_not_found">QR code not detected</string>
+<string name="ref_scan_page_torch">Switch flash</string>
+<string name="ref_scan_page_gallery">Scan QR code from image</string>
+<string name="ref_scan_page_back">Navigation up</string>
+<string name="ref_scan_page_permission_denied">Permission denied. Would you like to set it in settings now?</string>
+<string name="ref_scan_page_result_title">QR code scan result</string>
+</resources>

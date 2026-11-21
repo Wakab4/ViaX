@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="web_dialog_title">Message</string>
+  <string name="web_dialog_site_title">Message from %1$s</string>
+  <string name="web_dialog_mute_minute">Ignore this site message for a minute</string>
+  <string name="web_dialog_leave_title">Confirm to leave</string>
+  <string name="web_dialog_leave">Leave</string>
+  <string name="web_dialog_stay">Stay</string>
+  <string name="web_dialog_form_title">Form resubmission</string>
+  <string name="web_dialog_form_message">Would you like to resend the data?</string>
+</resources>

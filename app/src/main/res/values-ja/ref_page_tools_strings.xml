@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_page_orientation_title">画面の向き</string>
+  <string name="ref_page_orientation_follow">システム設定</string>
+  <string name="ref_page_orientation_auto">自動回転</string>
+  <string name="ref_page_orientation_portrait">縦向き</string>
+  <string name="ref_page_orientation_landscape">横向き</string>
+</resources>

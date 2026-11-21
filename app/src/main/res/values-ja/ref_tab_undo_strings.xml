@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="ref_tab_undo_closed_count">
+        <item quantity="zero">タブを 0 個閉じました</item>
+        <item quantity="one">タブを 1 個閉じました</item>
+        <item quantity="other">タブを %d 個閉じました</item>
+    </plurals>
+    <string name="ref_tab_undo_closed_title">%1$s を閉じました</string>
+    <string name="ref_tab_undo_action">元に戻す</string>
+    <string name="ref_tab_undo_untitled">空白のページ</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_favorite_manage">Favorite manager</string>
+    <string name="ref_favorite_done">Done</string>
+    <string name="ref_favorite_deleted">\"%1$s\" has been deleted</string>
+    <string name="ref_favorite_undo">Undo</string>
+    <string name="ref_favorite_edit">Edit favorite</string>
+    <string name="ref_favorite_remove">Delete</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_bookmark_form_edit_bookmark">編集</string>
+  <string name="ref_bookmark_form_edit_folder">フォルダーを編集</string>
+  <string name="ref_bookmark_form_done">完了</string>
+  <string name="ref_bookmark_form_root">ルートフォルダー</string>
+  <string name="ref_bookmark_form_title_hint">タイトル</string>
+  <string name="ref_bookmark_form_url_hint">アドレス</string>
+  <string name="ref_bookmark_form_folder_hint">フォルダー</string>
+  <string name="ref_bookmark_form_favorite">ショートカットを追加</string>
+  <string name="ref_bookmark_form_added">追加しました</string>
+  <string name="ref_bookmark_form_new_folder">新しいフォルダ</string>
+  <string name="ref_bookmark_form_add_bookmark">ブックマークに追加</string>
+  <string name="ref_bookmark_form_required">%s が必要です</string>
+</resources>

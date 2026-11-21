@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_redirect_page_title">頁面重定向</string>
+  <string name="ref_redirect_page_add_allow">允許特定網站重定向到任何頁面。</string>
+  <string name="ref_redirect_page_add_ask">在特定網站重定向到非同源頁面前先詢問。</string>
+  <string name="ref_redirect_page_global_allow">允許頁面重定向到任何頁面</string>
+  <string name="ref_redirect_page_global_ask">當頁面重定向到非同源頁面前先詢問</string>
+  <string name="ref_redirect_page_ask_section">先詢問</string>
+  <string name="ref_redirect_page_allowed">允許</string>
+  <string name="ref_redirect_page_exception">例外</string>
+  <string name="ref_redirect_page_add">新增例外網站</string>
+  <string name="ref_redirect_page_delete">刪除</string>
+  <string name="ref_redirect_page_default">%1$s（預設）</string>
+</resources>

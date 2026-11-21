@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="ref_ai_dialog_all_topics">所有主題</string>
+<string name="ref_ai_dialog_new_topic">新主題</string>
+<string name="ref_ai_dialog_message">訊息</string>
+<string name="ref_ai_dialog_chat_any">尬聊</string>
+<string name="ref_ai_dialog_send">傳送</string>
+<string name="ref_ai_dialog_stop">停止</string>
+<string name="ref_ai_dialog_copy_all">複製全文</string>
+<string name="ref_ai_dialog_preview">預覽</string>
+<string name="ref_ai_dialog_export_chat">匯出聊天</string>
+<string name="ref_ai_dialog_clear_messages">清除訊息</string>
+<string name="ref_ai_dialog_confirm_clear">確認清除</string>
+<string name="ref_ai_dialog_select_model">選擇模型</string>
+<string name="ref_ai_dialog_untitled">無標題</string>
+<string name="ref_ai_dialog_no_messages">無訊息</string>
+<string name="ref_ai_dialog_just_now">剛剛</string>
+<string name="ref_ai_dialog_export_success">資料匯出成功</string>
+<string name="ref_ai_dialog_markdown">Markdown</string>
+<string name="ref_ai_dialog_plain">純文字</string>
+<string name="ref_ai_dialog_missing_message">空空如也…</string>
+<string name="ref_ai_dialog_notice">訊息</string>
+<string name="ref_ai_dialog_export_path">匯出資料至：%1$s</string>
+<string name="ref_ai_dialog_delete">刪除</string>
+<string name="ref_ai_dialog_copied">成功複製文字</string>
+<string name="ref_ai_dialog_delete_message">你確定刪除 %1$s 嗎？</string>
+<string name="ref_ai_dialog_delete_many">你確定刪除 %1$d 個條目嗎？</string>
+</resources>

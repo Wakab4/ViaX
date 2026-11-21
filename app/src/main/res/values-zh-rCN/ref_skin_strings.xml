@@ -1,0 +1,12 @@
+<resources>
+    <string name="ref_skin_default">默认</string>
+    <string name="ref_skin_title">皮肤</string>
+    <string name="ref_skin_import">加载皮肤</string>
+    <string name="ref_skin_import_failed">加载皮肤失败</string>
+    <string name="ref_skin_delete">删除</string>
+    <string name="ref_skin_delete_message">你确定删除 %1$s 吗？</string>
+    <string name="ref_skin_changed">皮肤已变更</string>
+    <string name="ref_skin_restart_message">这将在下次启动应用时生效，你希望立即重启应用以生效吗？</string>
+    <string name="ref_skin_restart">重启应用</string>
+    <string name="ref_document_picker_error">操作失败</string>
+</resources>

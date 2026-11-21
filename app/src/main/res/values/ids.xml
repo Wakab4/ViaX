@@ -1,0 +1,33 @@
+<resources>
+    <item type="id" name="page_fullscreen_request" />
+    <item type="id" name="settings_page_list" />
+    <item type="id" name="font_settings_list" />
+    <item type="id" name="browser_root_container" />
+    <item type="id" name="browser_inline_panels" />
+    <item type="id" name="home_favorite_pages" />
+    <item type="id" name="home_favorite_icon" />
+    <item type="id" name="home_favorite_remove" />
+    <item type="id" name="home_favorite_caption" />
+    <item type="id" name="home_favorite_title" />
+    <item type="id" name="home_favorite_url" />
+    <item type="id" name="home_favorite_title_scroll" />
+    <item type="id" name="home_favorite_url_scroll" />
+    <item type="id" name="home_favorite_positive" />
+    <item type="id" name="home_favorite_negative" />
+    <item type="id" name="home_favorite_back" />
+    <item type="id" name="home_design_preview" />
+    <item type="id" name="home_design_tools" />
+    <item type="id" name="home_design_tabs" />
+    <item type="id" name="home_design_hint" />
+    <item type="id" name="home_design_set_home" />
+    <item type="id" name="home_design_logo" />
+    <item type="id" name="home_design_search" />
+    <item type="id" name="home_design_background" />
+    <item type="id" name="home_design_favorites" />
+    <item type="id" name="home_design_advanced" />
+    <item type="id" name="download_panel_pages" />
+    <item type="id" name="translation_bridge" />
+    <item type="id" name="user_script_bridge" />
+    <item name="web_context_point" type="id" />
+    <item name="native_page_bridge" type="id" />
+</resources>

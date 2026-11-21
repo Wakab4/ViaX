@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_site_permission_title">%1$s 请求使用</string>
+  <string name="ref_site_permission_unknown">未知网站</string>
+  <string name="ref_site_permission_line">- %1$s</string>
+  <string name="ref_site_permission_remember">不再询问</string>
+  <string name="ref_site_permission_allow">允许</string>
+  <string name="ref_site_permission_deny">拒绝</string>
+  <string name="ref_site_permission_location_title">允许网站访问地理位置</string>
+  <string name="ref_site_permission_location_message">%1$s 想要使用你的位置信息。</string>
+  <string name="ref_site_permission_resource">%1$s：%2$s</string>
+  <string name="ref_site_permission_microphone">麦克风</string>
+  <string name="ref_site_permission_microphone_detail">用于提供网页需要的语音输入或音频录制等功能</string>
+  <string name="ref_site_permission_camera">摄像头</string>
+  <string name="ref_site_permission_camera_detail">用于提供网站需要的拍照或录像等功能</string>
+</resources>

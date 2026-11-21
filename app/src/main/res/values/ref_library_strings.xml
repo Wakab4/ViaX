@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <plurals name="ref_library_item_count">
+        <item quantity="zero">0 item</item>
+        <item quantity="one">1 item</item>
+        <item quantity="other">%d items</item>
+    </plurals>
+  <string name="ref_library_folder_description">%1$s folder</string>
+</resources>

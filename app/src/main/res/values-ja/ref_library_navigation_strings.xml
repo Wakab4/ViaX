@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_library_open_background">バックグラウンドタブで開く</string>
+    <string name="ref_library_open_new_tab">新しいタブで開く</string>
+    <string name="ref_library_context_delete">削除</string>
+    <string name="ref_library_copy_link">アドレスをコピー</string>
+    <string name="ref_library_context_share">共有</string>
+    <string name="ref_library_link_copied">アドレスをコピーしました</string>
+</resources>

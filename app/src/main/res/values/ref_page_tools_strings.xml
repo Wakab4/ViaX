@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_page_orientation_title">Orientation</string>
+  <string name="ref_page_tool_changed">%1$s is set as %2$s</string>
+  <string name="ref_page_orientation_follow">System</string>
+  <string name="ref_page_orientation_auto">Auto</string>
+  <string name="ref_page_orientation_portrait">Portrait</string>
+  <string name="ref_page_orientation_landscape">Landscape</string>
+  <string-array name="ref_page_orientation_options">
+    <item>@string/ref_page_orientation_follow</item>
+    <item>@string/ref_page_orientation_auto</item>
+    <item>@string/ref_page_orientation_portrait</item>
+    <item>@string/ref_page_orientation_landscape</item>
+  </string-array>
+</resources>

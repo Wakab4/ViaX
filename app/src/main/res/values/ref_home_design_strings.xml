@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_home_design_title">Customization</string>
+    <string name="ref_home_design_homepage_hint">Would you like to set it as homepage?</string>
+    <string name="ref_home_design_logo">Logo</string>
+    <string name="ref_home_design_search">Search bar</string>
+    <string name="ref_home_design_background">Background</string>
+    <string name="ref_home_design_favorites">Favorites</string>
+    <string name="ref_home_design_advanced">Advanced</string>
+</resources>

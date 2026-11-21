@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="ref_download_notification_complete">ダウンロード完了</string>
+<string name="ref_download_notification_foreground_title">Viaがファイルをダウンロード中です</string>
+<string name="ref_download_notification_pause">一時停止</string>
+<string name="ref_download_notification_foreground_body">タップしてダウンロードを表示</string>
+<string name="ref_download_notification_general">一般</string>
+</resources>

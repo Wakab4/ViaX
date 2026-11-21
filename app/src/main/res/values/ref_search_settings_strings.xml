@@ -1,0 +1,3 @@
+<resources>
+    <string name="ref_search_settings_shortcut_help">输入“快捷词 + 空格 + 搜索内容”即可使用此引擎搜索，例如“g Via”。快捷词支持最多 16 个不含空格的字符，留空则禁用。</string>
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="ref_generated_history_context_copy_link">複製連結</string>
+    <string name="ref_generated_history_context_delete">刪除</string>
+    <string name="ref_generated_history_context_clear">清空</string>
+    <string name="ref_generated_history_context_background">背景開啟</string>
+    <string name="ref_generated_history_context_new_tab">開啟新視窗</string>
+    <string name="ref_generated_history_context_share">分享</string>
+    <string name="ref_generated_history_context_customize">自訂選單</string>
+    <string name="ref_generated_history_context_confirm">你確定繼續嗎？</string>
+    <string name="ref_generated_history_context_more">更多選項</string>
+</resources>

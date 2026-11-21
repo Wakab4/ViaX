@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_script_page_editor_hint">コード (JavaScript)</string>
+    <string name="ref_script_page_add">スクリプトの追加</string>
+    <string name="ref_script_page_help">ヘルプ</string>
+    <string name="ref_script_page_more">さらに詳しく（英語サイト）</string>
+    <string name="ref_script_page_default">デフォルト</string>
+    <string name="ref_script_page_default_format">%1$s （デフォルト）</string>
+    <string name="ref_script_page_advanced">高度な設定</string>
+    <string name="ref_script_page_reset">リセット</string>
+    <string name="ref_script_page_download">URLからスクリプトをインポートする</string>
+    <string name="ref_script_page_import">ファイルからスクリプトをインポートする</string>
+    <string name="ref_script_page_homepage">ホームページ</string>
+    <string name="ref_script_page_copy_link">アドレスをコピー</string>
+    <string name="ref_script_page_delete_message">%1$s を削除してもよろしいですか？</string>
+    <string name="ref_script_page_just_now">たった今</string>
+</resources>

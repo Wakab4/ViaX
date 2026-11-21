@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_bookmark_popup_add">添加书签</string>
+    <string name="ref_bookmark_popup_edit">编辑书签</string>
+    <string name="ref_bookmark_popup_title_hint">标题</string>
+    <string name="ref_bookmark_popup_url_hint">地址</string>
+    <string name="ref_bookmark_popup_folder_hint">文件夹</string>
+    <string name="ref_bookmark_popup_favorite">添加到主页收藏</string>
+    <string name="ref_bookmark_popup_delete">删除</string>
+    <string name="ref_bookmark_popup_up">向上导航</string>
+    <string name="ref_bookmark_popup_select_folder">选择文件夹</string>
+    <string name="ref_bookmark_popup_search">搜索</string>
+    <string name="ref_bookmark_popup_new">新建</string>
+    <string name="ref_bookmark_popup_empty">空空如也…</string>
+    <string name="ref_bookmark_popup_root">根目录</string>
+    <string name="ref_bookmark_popup_deleted">\"%1$s\" 已删除</string>
+    <string name="ref_bookmark_popup_added">已添加书签</string>
+</resources>

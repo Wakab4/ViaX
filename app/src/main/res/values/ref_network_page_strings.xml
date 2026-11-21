@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_network_page_resource_title">Resource sniffer</string>
+    <string name="ref_network_page_log_title">Network log</string>
+    <string name="ref_network_page_resources_hint">The following is the resource log on page load.</string>
+    <string name="ref_network_page_log_hint">Blocked list is in %1$s.\nYou can edit the list, or long-press the following item to enable/disable its blockade.</string>
+    <string name="ref_network_page_resources_empty">The page has no resource.</string>
+    <string name="ref_network_page_resources_note">\nIt is easier to detect media files while music or video is being played. Resource sniffer doesn\'t work on certain websites.</string>
+    <string name="ref_network_page_empty">Empty</string>
+</resources>

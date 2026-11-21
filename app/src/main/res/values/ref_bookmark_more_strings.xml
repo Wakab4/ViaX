@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_bookmark_more_add">Add bookmark</string>
+    <string name="ref_bookmark_more_folder">New folder</string>
+    <string name="ref_bookmark_more_sort">Sort order</string>
+    <string name="ref_bookmark_more_hide_details">Hide details</string>
+    <string name="ref_bookmark_more_show_details">Show details</string>
+    <string name="ref_bookmark_more_import">Import bookmarks</string>
+    <string name="ref_bookmark_more_export">Export bookmarks</string>
+    <string name="ref_bookmark_more_sort_oldest">Oldest first</string>
+    <string name="ref_bookmark_more_sort_newest">Newest first</string>
+    <string name="ref_bookmark_more_sort_name">Alphabetical order</string>
+    <string name="ref_bookmark_more_title">More</string>
+</resources>

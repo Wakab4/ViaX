@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_search_page_title">Search settings</string>
+    <string name="ref_search_page_engines">Search engine</string>
+    <string name="ref_search_page_suggestions">Search suggestions</string>
+    <string name="ref_search_page_suggestion_hint">When using the address bar, suggest</string>
+    <string name="ref_search_page_favorites">Favorites</string>
+    <string name="ref_search_page_bookmarks">Bookmarks</string>
+    <string name="ref_search_page_tabs">Open tabs</string>
+    <string name="ref_search_page_history">History</string>
+    <string name="ref_search_page_search_history">Search history</string>
+    <string name="ref_search_page_toolbar">Search toolbar</string>
+    <string name="ref_search_page_enabled">Enabled</string>
+    <string name="ref_search_page_disabled">Disabled</string>
+    <string name="ref_search_page_enable_toolbar">Enable search toolbar</string>
+    <string name="ref_search_page_engine_section">Search engines</string>
+    <string name="ref_search_page_default">Default</string>
+    <string name="ref_search_page_edit">Edit</string>
+    <string name="ref_search_page_new">New</string>
+    <string name="ref_search_page_delete">Delete</string>
+    <string name="ref_search_page_title_hint">Title</string>
+    <string name="ref_search_page_address_hint">URL</string>
+    <string name="ref_search_page_shortcut_hint">Search shortcut</string>
+    <string name="ref_search_page_shortcut_help">Enter “shortcut + space + query” to search with this engine, for example “g Via”. Use up to 16 characters without spaces, or leave it empty to disable the shortcut.</string>
+    <string name="ref_search_page_invalid_shortcut">Invalid shortcut</string>
+    <string name="ref_search_page_duplicate_shortcut">This shortcut is already in use</string>
+    <string name="ref_search_page_empty_title">The title can not be empty</string>
+    <string name="ref_search_page_required">%s is required</string>
+    <string name="ref_search_page_invalid_url">The URL is invalid.</string>
+</resources>

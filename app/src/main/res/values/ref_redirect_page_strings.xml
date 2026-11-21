@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_redirect_page_title">Page redirection</string>
+  <string name="ref_redirect_page_add_allow">Allow page redirection to any URL for a specific site.</string>
+  <string name="ref_redirect_page_add_ask">Ask first before cross-origin redirection for a specific site.</string>
+  <string name="ref_redirect_page_global_allow">Allow page redirection to any URL</string>
+  <string name="ref_redirect_page_global_ask">Ask first before page redirection to cross-origin URL</string>
+  <string name="ref_redirect_page_ask_section">Ask first</string>
+  <string name="ref_redirect_page_allowed">Allowed</string>
+  <string name="ref_redirect_page_exception">Exception</string>
+  <string name="ref_redirect_page_add">Add site exception</string>
+  <string name="ref_redirect_page_delete">Delete</string>
+  <string name="ref_redirect_page_default">%1$s (default)</string>
+</resources>

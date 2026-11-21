@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_library_history_other_year">EEE, MMM dd, yyyy</string>
+    <string name="ref_library_history_current_year">EEE, MMM dd</string>
+    <string name="ref_library_history_today">Today</string>
+    <string name="ref_library_history_yesterday">Yesterday</string>
+    <string name="ref_library_drag_description">Sort</string>
+</resources>

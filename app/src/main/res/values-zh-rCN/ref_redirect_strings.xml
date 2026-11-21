@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="ref_redirect_question">允许页面重定向吗？</string>
+    <string name="ref_redirect_target_question">允许页面重定向到 %1$s 吗？</string>
+    <string name="ref_redirect_allow">允许一次</string>
+</resources>

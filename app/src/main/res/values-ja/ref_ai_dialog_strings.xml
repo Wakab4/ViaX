@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="ref_ai_dialog_message">メッセージ</string>
+<string name="ref_ai_dialog_chat_any">カジュアルチャット</string>
+<string name="ref_ai_dialog_copy_all">すべてコピー</string>
+<string name="ref_ai_dialog_preview">プレビュー</string>
+<string name="ref_ai_dialog_clear_messages">メッセージをクリア</string>
+<string name="ref_ai_dialog_confirm_clear">メッセージをクリアしてもよろしいですか？</string>
+<string name="ref_ai_dialog_select_model">モデルを選択</string>
+<string name="ref_ai_dialog_untitled">空白のページ</string>
+<string name="ref_ai_dialog_no_messages">メッセージはありません</string>
+<string name="ref_ai_dialog_just_now">たった今</string>
+<string name="ref_ai_dialog_export_success">データのエクスポートが完了しました</string>
+<string name="ref_ai_dialog_markdown">Markdown（マークダウン）</string>
+<string name="ref_ai_dialog_plain">プレーンテキスト</string>
+<string name="ref_ai_dialog_missing_message">表示できる項目はありません</string>
+<string name="ref_ai_dialog_notice">メッセージ</string>
+<string name="ref_ai_dialog_export_path">エクスポート先: %1$s</string>
+<string name="ref_ai_dialog_delete">削除</string>
+<string name="ref_ai_dialog_copied">テキストをコピーしました</string>
+<string name="ref_ai_dialog_delete_message">%1$s を削除してもよろしいですか？</string>
+</resources>

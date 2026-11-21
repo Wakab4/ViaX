@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_text_editor_html">HTML コード</string>
+    <string name="ref_text_editor_css">カスタムCSSを追加</string>
+    <string name="ref_text_editor_untitled">空白のページ</string>
+    <string name="ref_text_editor_save">保存</string>
+    <string name="ref_text_editor_notice">メッセージ</string>
+    <string name="ref_text_editor_exit">終了</string>
+</resources>

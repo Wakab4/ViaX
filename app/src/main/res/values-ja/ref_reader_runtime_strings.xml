@@ -1,0 +1,5 @@
+<resources>
+<string name="ref_reader_requires_http">「http(s)」で始まるURLのみで動作します。</string>
+<string name="ref_reader_closed">リーダービューモードを終了しました</string>
+<string name="ref_reader_opened">リーダービューモードを有効にしました</string>
+</resources>

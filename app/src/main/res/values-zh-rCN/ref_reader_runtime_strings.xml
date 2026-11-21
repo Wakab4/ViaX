@@ -1,0 +1,8 @@
+<resources>
+<string name="ref_reader_unsupported_site">不支持该网站</string>
+<string name="ref_reader_requires_http">仅支持 \"http\" 或 \"https\" 开头的网址</string>
+<string name="ref_reader_requires_javascript">仅在允许 JavaScript 运行时支持</string>
+<string name="ref_reader_closed">阅读模式已关闭</string>
+<string name="ref_reader_opened">阅读模式已打开</string>
+<string name="ref_reader_page_incomplete">该页面未完全加载</string>
+</resources>

@@ -1,0 +1,5 @@
+<resources>
+<string name="ref_script_update_started">開始更新…</string>
+<string name="ref_script_update_completed">指令碼更新完成。</string>
+</resources>
+

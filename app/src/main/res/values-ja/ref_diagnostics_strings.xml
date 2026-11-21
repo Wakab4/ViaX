@@ -1,0 +1,7 @@
+<resources>
+    <string name="ref_diagnostics_title">デバッグ情報</string>
+    <string name="ref_diagnostics_delete">削除</string>
+    <string name="ref_diagnostics_delete_message">%1$s を削除してもよろしいですか？</string>
+    <string name="ref_diagnostics_wait">しばらくお待ちください…</string>
+    <string name="ref_diagnostics_share">共有</string>
+</resources>

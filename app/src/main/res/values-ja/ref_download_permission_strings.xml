@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="ref_download_manual_accept">ダウンロード</string>
+<string name="ref_download_manual_address">アドレス</string>
+<string name="ref_download_permission_denied">権限へのアクセス許可が必要です。</string>
+<string name="ref_download_manual_unsupported">「http(s)」で始まるURLのみで動作します。</string>
+<string name="ref_download_manual_name">ファイル名</string>
+</resources>

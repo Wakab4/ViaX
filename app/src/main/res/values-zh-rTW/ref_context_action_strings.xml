@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_context_action_link_copied">成功複製連結</string>
+    <string name="ref_context_action_text_copied">成功複製文字</string>
+</resources>

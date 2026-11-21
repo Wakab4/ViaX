@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_external_app_details_title">他のアプリを開く</string>
+    <string name="ref_external_app_question_name">ウェブサイトを %1$s で開きますか？</string>
+    <string name="ref_external_app_open">開く</string>
+    <string name="ref_external_app_copied">アドレスをコピーしました</string>
+    <string name="ref_external_app_failed">失敗しました</string>
+    <string name="ref_external_app_question">外部アプリの起動をしますか？</string>
+</resources>

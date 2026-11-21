@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_engine_title">Oops</string>
+    <string name="ref_engine_missing">Android System WebView isn\'t installed correctly. Would you like to install it now?</string>
+    <string name="ref_engine_install">Install</string>
+    <string name="ref_engine_exit">Close</string>
+    <string name="ref_engine_crash">We\'re sorry that the app crashed.</string>
+    <string name="ref_engine_restart">Restart</string>
+    <string name="ref_engine_open_with">App chooser</string>
+</resources>

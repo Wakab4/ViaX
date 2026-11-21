@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_download_not_selected">Not selected</string>
+    <string name="ref_download_selected">Selected</string>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_about_page_title">關於</string>
+    <string name="ref_about_page_licenses">開源許可協議</string>
+    <string name="ref_about_page_diagnostics">除錯資訊</string>
+    <string name="ref_about_page_name">ViaX</string>
+</resources>
+

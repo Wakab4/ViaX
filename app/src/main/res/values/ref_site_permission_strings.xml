@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_site_permission_title">%1$s would like to use</string>
+  <string name="ref_site_permission_unknown">Unknown website</string>
+  <string name="ref_site_permission_line">- %1$s</string>
+  <string name="ref_site_permission_remember">Remember my choice</string>
+  <string name="ref_site_permission_allow">Allow</string>
+  <string name="ref_site_permission_deny">Refuse</string>
+  <string name="ref_site_permission_location_title">Location access</string>
+  <string name="ref_site_permission_location_message">%1$s would like to use your location.</string>
+  <string name="ref_site_permission_resource">%1$s: %2$s</string>
+  <string name="ref_site_permission_microphone">Microphone</string>
+  <string name="ref_site_permission_microphone_detail">Used for voice input or audio recording on websites</string>
+  <string name="ref_site_permission_camera">Camera</string>
+  <string name="ref_site_permission_camera_detail">Used for taking photos or recording videos on websites</string>
+</resources>

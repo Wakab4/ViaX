@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_favorite_form_add_to">Add to homepage</string>
+    <string name="ref_favorite_form_add">Add favorite</string>
+    <string name="ref_favorite_form_added">Added to homepage successfully</string>
+    <string name="ref_favorite_context_sort">Sort</string>
+    <string name="ref_favorite_icon_label">Icon of a favorite</string>
+</resources>

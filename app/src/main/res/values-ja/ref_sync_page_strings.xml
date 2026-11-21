@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="ref_sync_page_webdav">WebDAV</string>
+<string name="ref_sync_page_oversize">ブックマークデータのサイズが大きすぎるため、アップロードできません。その他のデータはアップロードされます。続けますか？</string>
+<string name="ref_sync_page_webdav_user">%1$s (WebDAV)</string>
+<string name="ref_sync_page_upload_confirm">ブックマークと設定をアップロードしますか？</string>
+<string name="ref_sync_page_synced_time">%1$件 同期済み</string>
+<string name="ref_sync_page_upload_success">アップロード成功</string>
+<string name="ref_sync_page_agreement">%1$s と %2$sを事前に確認してください</string>
+<string name="ref_sync_page_download_success">同期成功</string>
+<string name="ref_sync_page_warning">警告</string>
+<string name="ref_sync_page_delete_detail">サーバからアカウントを削除する</string>
+<string name="ref_sync_page_delete_message">削除リクエストを送信すると、アカウントはログアウトされて15日間の猶予期間に入ります。その間に再度ログインすると削除リクエストはキャンセルされますが、ログインしない場合は猶予期間後にデータが削除されます。\nリクエストを送信するにはパスワードを入力してください。</string>
+<string name="ref_sync_page_delete_success">アカウント削除のリクエストが送信されました</string>
+<string name="ref_sync_page_required">%s が必要です</string>
+<string name="ref_sync_page_server_message">このサーバーではデータの同期はされていません。再度ログインする必要があります。</string>
+<string name="ref_sync_page_password">パスワード</string>
+<string name="ref_sync_page_separator">,</string>
+<string name="ref_sync_page_cloud">アカウント</string>
+<string name="ref_sync_page_automatic">自動同期</string>
+<string name="ref_sync_page_server">クラウドデータサーバー</string>
+<string name="ref_sync_page_server_error">サーバーエラー</string>
+<string name="ref_sync_page_password_required">パスワードを入力してください。</string>
+<string name="ref_sync_page_username_required">ユーザー名を入力してください。</string>
+<string name="ref_sync_page_delete_confirm">削除の確認</string>
+<string name="ref_sync_page_privacy">プライバシーポリシー（英語）</string>
+<string name="ref_sync_page_notice">メッセージ</string>
+<string name="ref_sync_page_logout">ログアウトしますか？</string>
+<string name="ref_sync_page_login">ログイン及び登録</string>
+<string name="ref_sync_page_no_configuration">設定が行われていません</string>
+<string name="ref_sync_page_password_wrong">パスワードが間違っています</string>
+<string name="ref_sync_page_download">ユーザーデータの同期</string>
+<string name="ref_sync_page_title">同期設定</string>
+<string name="ref_sync_page_upload">サーバーにアップロード</string>
+<string name="ref_sync_page_data">同期したデータ</string>
+<string name="ref_sync_page_bookmarks">ブックマーク</string>
+<string name="ref_sync_page_favorites">スピードダイヤル</string>
+<string name="ref_sync_page_none">なし</string>
+<string name="ref_sync_page_settings">設定</string>
+<string name="ref_sync_page_complete">同期完了</string>
+<string name="ref_sync_page_failed">同期失敗</string>
+<string name="ref_sync_page_manual">手動で同期する</string>
+<string name="ref_sync_page_merge">Merge local data with remote data</string>
+<string name="ref_sync_page_never">同期が行われていません</string>
+<string name="ref_sync_page_download_confirm">ブックマークと設定を上書きしますか？</string>
+<string name="ref_sync_page_terms">利用規約（英語）</string>
+<string name="ref_sync_page_registered">登録しました</string>
+<string name="ref_sync_page_pull_confirm">Are you sure you want to override local data with remote data?</string>
+<string name="ref_sync_page_pull">Overwrite local data with remote data</string>
+<string name="ref_sync_page_push_confirm">Are you sure you want to override remote data with local data?</string>
+<string name="ref_sync_page_delete">アカウントを削除する</string>
+<string name="ref_sync_page_push">Overwrite remote data with local data</string>
+<string name="ref_sync_page_wait">しばらくお待ちください…</string>
+<string name="ref_sync_page_login_caption">ログイン及び登録</string>
+<string name="ref_sync_page_username_hint">ユーザー名（登録していない場合は先に登録してください）</string>
+<string name="ref_sync_page_webdav_configuration">WebDAVの設定</string>
+<string name="ref_sync_page_digest">Digest認証を使用する</string>
+<string name="ref_sync_page_directory">フォルダー</string>
+<string name="ref_sync_page_username">ユーザー名</string>
+<string name="ref_sync_page_address">アドレス</string>
+<string name="ref_sync_page_form_settings">高度な設定</string>
+<string name="ref_sync_page_server_global">グローバル</string>
+<string name="ref_sync_page_server_domestic">中国</string>
+</resources>
+
+

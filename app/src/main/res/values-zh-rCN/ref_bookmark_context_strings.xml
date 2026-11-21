@@ -1,0 +1,6 @@
+<resources>
+    <string name="ref_bookmark_context_add_favorite">添加到主页收藏</string>
+    <string name="ref_bookmark_context_edit">编辑</string>
+    <string name="ref_bookmark_added_home">已添加到主页收藏</string>
+    <string name="ref_bookmark_context_delete_folder">你确定删除 %1$s 吗？</string>
+</resources>

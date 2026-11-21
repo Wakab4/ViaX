@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_qr_prompt_too_long">链接太长，无法生成二维码</string>
+  <string name="ref_qr_prompt_copy">复制链接</string>
+  <string name="ref_qr_prompt_copied">已复制链接</string>
+</resources>

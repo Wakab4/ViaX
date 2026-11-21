@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="ref_redirect_question">Allow page redirection?</string>
+    <string name="ref_redirect_target_question">Allow page redirection to %1$s?</string>
+    <string name="ref_redirect_allow">Allow once</string>
+</resources>

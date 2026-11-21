@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_first_run_logo_description">ViaX</string>
+    <string name="ref_first_run_hint">メッセージ</string>
+    <string name="ref_first_run_exit">終了</string>
+    <string name="ref_first_run_privacy">プライバシーポリシー（英語）</string>
+    <string name="ref_first_run_terms">利用規約（英語）</string>
+</resources>

@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="ref_search_input_size">16sp</dimen>
+    <dimen name="ref_search_secondary_size">11sp</dimen>
+</resources>

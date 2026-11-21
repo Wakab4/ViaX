@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_bookmark_popup_add">ブックマークに追加</string>
+    <string name="ref_bookmark_popup_edit">編集</string>
+    <string name="ref_bookmark_popup_title_hint">タイトル</string>
+    <string name="ref_bookmark_popup_url_hint">アドレス</string>
+    <string name="ref_bookmark_popup_folder_hint">フォルダー</string>
+    <string name="ref_bookmark_popup_favorite">ショートカットを追加</string>
+    <string name="ref_bookmark_popup_delete">削除</string>
+    <string name="ref_bookmark_popup_search">検索</string>
+    <string name="ref_bookmark_popup_new">新規作成</string>
+    <string name="ref_bookmark_popup_empty">表示できる項目はありません</string>
+    <string name="ref_bookmark_popup_root">ルートフォルダー</string>
+    <string name="ref_bookmark_popup_deleted">\"%1$s\" は削除されました</string>
+    <string name="ref_bookmark_popup_added">追加しました</string>
+</resources>

@@ -1,0 +1,8 @@
+<resources>
+<string name="ref_reader_unsupported_site">不支援該網站</string>
+<string name="ref_reader_requires_http">僅支援 \"http\" 或 \"https\" 開頭的網址</string>
+<string name="ref_reader_requires_javascript">僅在允許 JavaScript 執行時支援</string>
+<string name="ref_reader_closed">閱讀模式已關閉</string>
+<string name="ref_reader_opened">閱讀模式已開啟</string>
+<string name="ref_reader_page_incomplete">該網頁未完全載入</string>
+</resources>

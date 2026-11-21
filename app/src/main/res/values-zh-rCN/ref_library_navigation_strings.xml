@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_library_open_background">后台打开</string>
+    <string name="ref_library_open_new_tab">新标签打开</string>
+    <string name="ref_library_context_delete">删除</string>
+    <string name="ref_library_copy_link">复制链接</string>
+    <string name="ref_library_context_share">分享</string>
+    <string name="ref_library_opened_background">已在后台打开</string>
+    <string name="ref_library_link_copied">已复制链接</string>
+</resources>

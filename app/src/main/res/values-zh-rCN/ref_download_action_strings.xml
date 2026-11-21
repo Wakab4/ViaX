@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="ref_download_action_open">打开</string>
+<string name="ref_download_action_copy">复制文本</string>
+<string name="ref_download_action_unavailable">找不到相关应用来打开文件</string>
+<string name="ref_download_action_delete_bulk">你确定删除这些下载任务吗 (总共 %1$d 个任务)？</string>
+<string name="ref_download_action_delete_complete">删除这个下载任务吗？</string>
+<string name="ref_download_action_restart_body">你确定删除已下载的文件并重新下载 %1$s 吗？</string>
+<string name="ref_download_action_delete_partial">这会同时删除文件，你确定吗？</string>
+<string name="ref_download_action_missing">文件不存在</string>
+<string name="ref_download_action_delete_files">同时删除已下载的文件</string>
+<string name="ref_download_action_copied">已复制链接</string>
+</resources>

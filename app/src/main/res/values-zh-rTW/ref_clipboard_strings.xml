@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_clipboard_confirm_message" formatted="false">是否從 %DOMAIN% 複製文字？</string>
+</resources>

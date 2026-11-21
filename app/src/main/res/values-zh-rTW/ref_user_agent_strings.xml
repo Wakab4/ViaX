@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_ua_delete">刪除</string>
+    <string name="ref_ua_edit">編輯</string>
+    <string name="ref_ua_new">新增</string>
+    <string name="ref_ua_save">儲存</string>
+    <string name="ref_ua_title">使用者代理</string>
+    <string name="ref_ua_unsaved_title">訊息</string>
+    <string name="ref_ua_discard">關閉</string>
+    <string name="ref_ua_name_hint">標題</string>
+    <string name="ref_ua_unsaved_message">修改的內容未儲存，是否儲存？</string>
+    <string name="ref_ua_advanced">進階</string>
+    <string name="ref_ua_empty_name">標題不能為空</string>
+    <string name="ref_ua_empty_value">使用者代理不能為空</string>
+    <string name="ref_ua_desktop_title">電腦模式下的使用者代理</string>
+    <string name="ref_ua_reduction_title">簡化使用者代理</string>
+    <string name="ref_ua_reduction_detail">從使用者代理中移除裝置資訊及次要版本資訊</string>
+</resources>

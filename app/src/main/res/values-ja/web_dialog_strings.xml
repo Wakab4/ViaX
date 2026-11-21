@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="web_dialog_title">メッセージ</string>
+  <string name="web_dialog_site_title">%1$sからのメッセージ</string>
+  <string name="web_dialog_mute_minute">このサイトからのメッセージをしばらく表示しない</string>
+  <string name="web_dialog_leave_title">終了を確認</string>
+  <string name="web_dialog_leave">離れる</string>
+  <string name="web_dialog_stay">とどまる</string>
+  <string name="web_dialog_form_title">フォームの再送</string>
+  <string name="web_dialog_form_message">再送信しますか？</string>
+</resources>

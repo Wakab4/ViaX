@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+    <Space android:layout_width="0dp" android:layout_height="12dp" />
+    <TextView android:id="@+id/dialog_title" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:layout_marginBottom="6dp"
+        android:paddingTop="8dp" android:paddingBottom="8dp" android:textSize="16sp" android:textStyle="bold"
+        android:ellipsize="end" android:lines="1" android:textDirection="locale" android:visibility="gone" />
+    <moe.pure.browser.ui.dialog.DialogScrollView android:id="@+id/dialog_message_scroll"
+        android:layout_width="match_parent" android:layout_height="wrap_content" android:overScrollMode="never">
+        <TextView android:id="@+id/dialog_message" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:paddingStart="16dp" android:paddingEnd="16dp" android:paddingTop="8dp" android:paddingBottom="8dp"
+            android:textSize="14sp" android:lineSpacingExtra="4dp" android:textIsSelectable="true" android:textDirection="locale" android:visibility="gone" />
+    </moe.pure.browser.ui.dialog.DialogScrollView>
+    <moe.pure.browser.ui.dialog.DialogListView android:id="@+id/dialog_list"
+        android:layout_width="match_parent" android:layout_height="wrap_content" android:visibility="gone"
+        android:divider="@null" android:listSelector="@drawable/dialog_item_feedback"
+        android:scrollbars="none" android:requiresFadingEdge="vertical" android:fadingEdgeLength="32dp" />
+    <FrameLayout android:id="@+id/dialog_content" android:layout_width="match_parent" android:layout_height="wrap_content" android:visibility="gone" />
+    <LinearLayout android:id="@+id/dialog_checkbox_row" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginStart="16dp" android:layout_marginEnd="16dp">
+        <CheckBox android:id="@+id/dialog_checkbox" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical" android:layout_marginEnd="8dp" android:visibility="gone"
+            android:minWidth="0dp" android:minHeight="0dp" android:padding="0dp"
+            android:button="@drawable/dialog_checkbox" android:buttonTint="@null" />
+        <TextView android:id="@+id/dialog_checkbox_label" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="12dp" android:layout_marginBottom="12dp" android:textSize="12sp" android:textDirection="locale" android:visibility="gone" />
+    </LinearLayout>
+    <Space android:layout_width="0dp" android:layout_height="12dp" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="end">
+        <TextView android:id="@+id/dialog_neutral" style="@style/Widget.PureBrowser.DialogButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone" />
+        <Space android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1" />
+        <TextView android:id="@+id/dialog_negative" style="@style/Widget.PureBrowser.DialogButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone" />
+        <TextView android:id="@+id/dialog_positive" style="@style/Widget.PureBrowser.DialogButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone" />
+    </LinearLayout>
+</LinearLayout>

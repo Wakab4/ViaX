@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_favorite_form_add_to">添加到主页收藏</string>
+    <string name="ref_favorite_form_add">添加主页收藏</string>
+    <string name="ref_favorite_form_added">已添加到主页收藏</string>
+    <string name="ref_favorite_context_sort">排序</string>
+    <string name="ref_favorite_icon_label">收藏的图标</string>
+</resources>

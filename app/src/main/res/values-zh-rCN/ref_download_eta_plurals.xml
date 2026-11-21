@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="ref_download_eta_hours">
+        <item quantity="other">剩余 %d 小时</item>
+    </plurals>
+    <plurals name="ref_download_eta_minutes">
+        <item quantity="other">剩余 %d 分钟</item>
+    </plurals>
+    <plurals name="ref_download_eta_seconds">
+        <item quantity="other">剩余 %d 秒</item>
+    </plurals>
+</resources>

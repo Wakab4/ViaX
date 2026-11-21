@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_text_editor_html">HTML code</string>
+    <string name="ref_text_editor_css">Custom CSS</string>
+    <string name="ref_text_editor_untitled">Untitled</string>
+    <string name="ref_text_editor_save">Save</string>
+    <string name="ref_text_editor_notice">Message</string>
+    <string name="ref_text_editor_unsaved">The modified content has not been saved. Do you want to save it?</string>
+    <string name="ref_text_editor_save_exit">Save &amp; Exit</string>
+    <string name="ref_text_editor_exit">Exit</string>
+</resources>

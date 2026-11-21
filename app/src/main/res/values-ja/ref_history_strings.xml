@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_history_all">すべての履歴</string>
+    <string name="ref_history_clear_title">いつからの履歴を削除しますか？</string>
+    <string name="ref_history_delete_one">%1$s を削除してもよろしいですか？</string>
+    <string name="ref_history_last_hour">過去一時間</string>
+    <string name="ref_history_last_week">過去7日間</string>
+    <string name="ref_history_today">今日</string>
+    <string name="ref_history_yesterday">今日及び昨日</string>
+</resources>

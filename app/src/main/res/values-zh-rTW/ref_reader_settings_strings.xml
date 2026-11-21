@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_reader_settings_title">閱讀模式</string>
+    <string name="ref_reader_settings_confirmation">開啟閱讀模式需要二次確認</string>
+    <string name="ref_reader_settings_confirmation_on">當按下位址列閱讀模式圖示時，先展示選單</string>
+    <string name="ref_reader_settings_confirmation_off">當按下位址列閱讀模式圖示時，開啟閱讀模式</string>
+    <string name="ref_reader_settings_appearance">外觀</string>
+    <string name="ref_reader_settings_font_size">字型大小</string>
+    <string name="ref_reader_settings_css">自訂閱讀模式 CSS</string>
+</resources>

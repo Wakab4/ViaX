@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_first_run_reference_summary">%1$s: the linked %2$s and %3$s belong to the reference project Via.</string>
+    <string name="ref_first_run_document_failure">Unable to open this reference document. Check that a system WebView is available.</string>
+    <string name="ref_first_run_back">Back</string>
+</resources>

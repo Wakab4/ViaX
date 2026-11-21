@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_reader_settings_title">Reader mode</string>
+    <string name="ref_reader_settings_confirmation">Require confirmation to show reader</string>
+    <string name="ref_reader_settings_confirmation_on">Show menu first when clicking on the address bar\'s reader mode icon</string>
+    <string name="ref_reader_settings_confirmation_off">Show reader when clicking on the address bar\'s reader mode icon</string>
+    <string name="ref_reader_settings_appearance">Appearance</string>
+    <string name="ref_reader_settings_font_size">Text size</string>
+    <string name="ref_reader_settings_css">Custom reader CSS</string>
+</resources>

@@ -1,0 +1,6 @@
+<resources>
+    <item type="id" name="bookmark_popup_pager" />
+    <item type="id" name="bookmark_popup_title" />
+    <item type="id" name="bookmark_popup_url" />
+    <item type="id" name="bookmark_popup_favorite" />
+</resources>

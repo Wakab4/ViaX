@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_history_page_title">歷史記錄</string>
+    <string name="ref_history_page_empty">空空如也…</string>
+    <string name="ref_history_page_incognito">你處於無痕模式時歷史將不會被記錄。</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_engine_missing">Android System WebView 未正確安裝。立即去安裝？</string>
+    <string name="ref_engine_install">安裝</string>
+    <string name="ref_engine_exit">關閉</string>
+    <string name="ref_engine_crash">十分抱歉，程式發生當機</string>
+    <string name="ref_engine_restart">重新啟動</string>
+    <string name="ref_engine_open_with">選擇應用程式</string>
+</resources>

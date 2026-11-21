@@ -1,0 +1,22 @@
+<resources>
+    <string name="ref_script_popup_edit">编辑</string>
+    <string name="ref_script_popup_manager">在设置中查看</string>
+    <string name="ref_script_popup_add">添加脚本</string>
+    <string name="ref_script_popup_disabled">已禁用</string>
+    <string name="ref_script_popup_empty">空空如也…</string>
+    <string name="ref_script_popup_global">启用脚本</string>
+    <string name="ref_script_popup_enabled">已启用</string>
+    <string name="ref_script_popup_interval_15days">每 15 天</string>
+    <string name="ref_script_popup_interval_3days">每 3 天</string>
+    <string name="ref_script_popup_interval_daily">每天</string>
+    <string name="ref_script_popup_interval_weekly">每周</string>
+    <string name="ref_script_popup_exclude">排除 %1$s</string>
+    <string name="ref_script_popup_excluded">脚本 %1$s 将不会运行在 %2$s 上。</string>
+    <string name="ref_script_popup_back">向上导航</string>
+    <string name="ref_script_popup_interval_never">从不</string>
+    <string name="ref_script_popup_global_enabled">脚本已启用</string>
+    <string name="ref_script_popup_title">脚本</string>
+    <string name="ref_script_popup_for_site">作用于 %1$s 的脚本</string>
+    <string name="ref_script_popup_update">更新</string>
+    <string name="ref_script_popup_auto_update">自动更新</string>
+</resources>

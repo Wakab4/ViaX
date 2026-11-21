@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="ref_scan_page_title">扫描二维码</string>
+<string name="ref_scan_page_permission_hint">点按屏幕授予相机权限以扫码</string>
+<string name="ref_scan_page_no_camera">无相机</string>
+<string name="ref_scan_page_not_found">未检测到二维码</string>
+<string name="ref_scan_page_torch">开关闪光灯</string>
+<string name="ref_scan_page_gallery">扫描图片中的二维码</string>
+<string name="ref_scan_page_back">向上导航</string>
+<string name="ref_scan_page_permission_denied">没有权限。现在去设置它们吗？</string>
+<string name="ref_scan_page_result_title">二维码扫描结果</string>
+</resources>

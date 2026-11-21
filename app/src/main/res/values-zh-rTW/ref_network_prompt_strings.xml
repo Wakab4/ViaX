@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_network_prompt_no_logs">此網頁無網路記錄檔。</string>
+  <string name="ref_network_prompt_no_resources">此網頁無資源。</string>
+  <string name="ref_network_prompt_hint">\n在播放音樂或影片時，更容易偵測媒體檔案。在部分網站資源監聽無法運作。</string>
+</resources>

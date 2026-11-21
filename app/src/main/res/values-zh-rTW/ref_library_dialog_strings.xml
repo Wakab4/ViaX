@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_library_dialog_background">背景開啟</string>
+  <string name="ref_library_dialog_foreground">開啟新視窗</string>
+  <string name="ref_library_dialog_edit">編輯</string>
+  <string name="ref_library_dialog_favorite">新增至首頁</string>
+  <string name="ref_library_dialog_delete">刪除</string>
+  <string name="ref_library_dialog_copy">複製連結</string>
+  <string name="ref_library_dialog_delete_folder_title">你想要刪除此資料夾嗎？</string>
+  <string name="ref_library_dialog_delete_folder_message">這將同時刪除 %1$s 資料夾裡的書籤，確定要刪除嗎？</string>
+  <string name="ref_library_dialog_delete_item_message">你確定刪除 %1$s 嗎？</string>
+  <string name="ref_library_dialog_delete_selected_message">你確定繼續嗎？</string>
+  <string name="ref_library_dialog_copied">成功複製連結</string>
+  <string name="ref_library_dialog_added_home">成功新增至首頁</string>
+  <string name="ref_library_dialog_delete_multiple_message">你確定刪除 %1$d 個條目嗎？</string>
+  <string name="ref_library_dialog_share">分享</string>
+</resources>

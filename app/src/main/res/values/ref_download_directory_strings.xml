@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="ref_download_directory_default">Default location</string>
+<string name="ref_download_directory_choose">Choose a folder…</string>
+<string name="ref_download_directory_permission_body">The storage permission for the download location has been revoked. Please re-select the download folder location.</string>
+<string name="ref_download_directory_title">Download location</string>
+<string name="ref_download_directory_permission_title">Permission denied</string>
+</resources>

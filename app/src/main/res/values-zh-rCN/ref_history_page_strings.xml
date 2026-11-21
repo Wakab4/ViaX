@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_history_page_title">历史</string>
+    <string name="ref_history_page_empty">空空如也…</string>
+    <string name="ref_history_page_incognito">你处于隐身模式时浏览将不会被记录。</string>
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="ref_ai_dialog_all_topics">Threads</string>
+<string name="ref_ai_dialog_new_topic">New thread</string>
+<string name="ref_ai_dialog_message">Message</string>
+<string name="ref_ai_dialog_chat_any">Casual chat</string>
+<string name="ref_ai_dialog_send">Send</string>
+<string name="ref_ai_dialog_stop">Stop</string>
+<string name="ref_ai_dialog_copy_all">Copy all</string>
+<string name="ref_ai_dialog_preview">Preview</string>
+<string name="ref_ai_dialog_export_chat">Export thread</string>
+<string name="ref_ai_dialog_clear_messages">Clear messages</string>
+<string name="ref_ai_dialog_confirm_clear">Confirm to clear</string>
+<string name="ref_ai_dialog_select_model">Select model</string>
+<string name="ref_ai_dialog_untitled">Untitled</string>
+<string name="ref_ai_dialog_no_messages">No messages</string>
+<string name="ref_ai_dialog_just_now">just now</string>
+<string name="ref_ai_dialog_export_success">Data exported successfully</string>
+<string name="ref_ai_dialog_markdown">Markdown</string>
+<string name="ref_ai_dialog_plain">Plain text</string>
+<string name="ref_ai_dialog_missing_message">Empty</string>
+<string name="ref_ai_dialog_notice">Message</string>
+<string name="ref_ai_dialog_export_path">Export data to: %1$s</string>
+<string name="ref_ai_dialog_delete">Delete</string>
+<string name="ref_ai_dialog_copied">Text copied successfully</string>
+<string name="ref_ai_dialog_delete_message">Are you sure you want to delete %1$s?</string>
+<string name="ref_ai_dialog_delete_many">Are you sure you want to delete %1$d items?</string>
+</resources>

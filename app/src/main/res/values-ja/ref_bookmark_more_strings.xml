@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_bookmark_more_add">ブックマークに追加</string>
+    <string name="ref_bookmark_more_folder">新しいフォルダ</string>
+    <string name="ref_bookmark_more_sort">並び替え</string>
+    <string name="ref_bookmark_more_hide_details">詳細を非表示</string>
+    <string name="ref_bookmark_more_show_details">詳細を表示</string>
+    <string name="ref_bookmark_more_import">ブックマークをインポート</string>
+    <string name="ref_bookmark_more_export">ブックマークをエクスポート</string>
+    <string name="ref_bookmark_more_sort_oldest">登録が古い順</string>
+    <string name="ref_bookmark_more_sort_newest">登録が新しい順</string>
+    <string name="ref_bookmark_more_sort_name">アルファベット順</string>
+    <string name="ref_bookmark_more_title">その他</string>
+</resources>

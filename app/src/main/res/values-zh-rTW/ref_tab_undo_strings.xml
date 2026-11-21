@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="ref_tab_undo_closed_count">
+        <item quantity="other">已關閉 %d 個分頁</item>
+    </plurals>
+    <string name="ref_tab_undo_closed_title">已關閉 %1$s</string>
+    <string name="ref_tab_undo_action">復原</string>
+    <string name="ref_tab_undo_untitled">無標題</string>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_bookmark_popup_add">Add bookmark</string>
+    <string name="ref_bookmark_popup_edit">Edit bookmark</string>
+    <string name="ref_bookmark_popup_title_hint">Title</string>
+    <string name="ref_bookmark_popup_url_hint">URL</string>
+    <string name="ref_bookmark_popup_folder_hint">Folder</string>
+    <string name="ref_bookmark_popup_favorite">Add to homepage</string>
+    <string name="ref_bookmark_popup_delete">Delete</string>
+    <string name="ref_bookmark_popup_up">Navigation up</string>
+    <string name="ref_bookmark_popup_select_folder">Select folder</string>
+    <string name="ref_bookmark_popup_search">Search</string>
+    <string name="ref_bookmark_popup_new">New</string>
+    <string name="ref_bookmark_popup_empty">Empty</string>
+    <string name="ref_bookmark_popup_root">Root folder</string>
+    <string name="ref_bookmark_popup_deleted">\"%1$s\" has been deleted</string>
+    <string name="ref_bookmark_popup_added">Bookmark added successfully</string>
+</resources>

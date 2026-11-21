@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="ref_redirect_question">リダイレクトを許可しますか？</string>
+    <string name="ref_redirect_target_question">%1$s へのリダイレクトを許可しますか？</string>
+    <string name="ref_redirect_allow">今回のみ許可</string>
+</resources>

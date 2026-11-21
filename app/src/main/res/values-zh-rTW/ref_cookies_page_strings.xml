@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_cookie_page_block_third_party">封鎖第三方 Cookie</string>
+    <string name="ref_cookie_page_blocked">已禁止</string>
+    <string name="ref_cookie_page_title">Cookies</string>
+    <string name="ref_cookie_page_enabled_detail">允許網站儲存和讀取 Cookie 資料</string>
+</resources>

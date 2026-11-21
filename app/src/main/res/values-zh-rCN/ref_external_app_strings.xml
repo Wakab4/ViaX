@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_external_app_details_title">打开应用</string>
+    <string name="ref_external_app_question_name">允许网站打开 %1$s 吗？</string>
+    <string name="ref_external_app_open">打开</string>
+    <string name="ref_external_app_copied">已复制链接</string>
+    <string name="ref_external_app_failed">操作失败</string>
+    <string name="ref_external_app_question">该网站请求打开你的应用，是否继续？</string>
+</resources>

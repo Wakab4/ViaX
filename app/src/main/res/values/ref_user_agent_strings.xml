@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_ua_delete">Delete</string>
+    <string name="ref_ua_edit">Edit</string>
+    <string name="ref_ua_new">New</string>
+    <string name="ref_ua_save">Save</string>
+    <string name="ref_ua_title">User-agent</string>
+    <string name="ref_ua_unsaved_title">Message</string>
+    <string name="ref_ua_discard">Exit</string>
+    <string name="ref_ua_name_hint">Title</string>
+    <string name="ref_ua_unsaved_message">The modified content has not been saved. Do you want to save it?</string>
+    <string name="ref_ua_save_exit">Save &amp; Exit</string>
+    <string name="ref_ua_advanced">Advanced</string>
+    <string name="ref_ua_empty_name">The title can not be empty</string>
+    <string name="ref_ua_empty_value">The user-agent can not be empty</string>
+    <string name="ref_ua_desktop_title">User-agent in desktop mode</string>
+    <string name="ref_ua_reduction_title">User-agent reduction</string>
+    <string name="ref_ua_reduction_detail">Remove device information and minor version information from User-agent</string>
+</resources>

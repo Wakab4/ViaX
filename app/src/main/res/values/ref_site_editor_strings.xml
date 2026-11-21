@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="ref_site_all_edit">Edit</string>
+    <string name="ref_site_all_add">New</string>
+    <string name="ref_site_all_title">All sites</string>
+    <string name="ref_site_section_basic">Basics</string>
+    <string name="ref_site_section_content">Content</string>
+    <string name="ref_site_section_permissions">Permissions</string>
+    <string name="ref_site_editor_enable">Enable site configuration for %1$s</string>
+    <string name="ref_site_editor_reset_message">Are you sure you want to reset site configuration for %1$s?</string>
+    <string name="ref_page_font_site_hint">Only take effect for the current site</string>
+    <string name="ref_site_section_advanced">Advanced</string>
+    <string name="ref_site_editor_title">Site configuration</string>
+    <string name="ref_site_all_conflict">A site configuration for %1$s already exists.</string>
+    <string name="ref_site_editor_reset_title">Reset site configuration</string>
+</resources>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="ref_sync_page_webdav">WebDAV</string>
+<string name="ref_sync_page_oversize">Bookmarks data is too big to upload, but other data will be uploaded normally. Continue?</string>
+<string name="ref_sync_page_webdav_user">%1$s (WebDAV)</string>
+<string name="ref_sync_page_upload_confirm">Your current local bookmarks and settings will be uploaded. Continue?</string>
+<string name="ref_sync_page_synced_time">Synced %1$s</string>
+<string name="ref_sync_page_upload_success">Upload complete</string>
+<string name="ref_sync_page_agreement">Please read and agree to %1$s and %2$s</string>
+<string name="ref_sync_page_download_success">Sync complete</string>
+<string name="ref_sync_page_warning">Warning</string>
+<string name="ref_sync_page_delete_detail">Delete the account from the server</string>
+<string name="ref_sync_page_delete_message">After submitting the deletion request, the account will be logged out and enter a 15-day deletion waiting-period. If you log in to the account again and upload data during the waiting-period, your deletion request will be withdrawn. After the waiting-period expires, the account and related data will be completely deleted from the server.\nPlease enter your password to submit the request.</string>
+<string name="ref_sync_page_delete_success">The account deletion request has been submitted.</string>
+<string name="ref_sync_page_required">%s is required</string>
+<string name="ref_sync_page_server_message">The data of these servers are not synchronized. You will be required to log in again.</string>
+<string name="ref_sync_page_password">Password</string>
+<string name="ref_sync_page_password_unchanged">Password (Unchanged)</string>
+<string name="ref_sync_page_separator">,</string>
+<string name="ref_sync_page_cloud">Account</string>
+<string name="ref_sync_page_automatic">Auto sync</string>
+<string name="ref_sync_page_server">Cloud data server</string>
+<string name="ref_sync_page_server_error">Service unavailable.</string>
+<string name="ref_sync_page_password_required">Please input your password</string>
+<string name="ref_sync_page_username_required">Please input your username</string>
+<string name="ref_sync_page_delete_confirm">Confirm to delete</string>
+<string name="ref_sync_page_privacy">Privacy policy</string>
+<string name="ref_sync_page_notice">Message</string>
+<string name="ref_sync_page_logout">Log out?</string>
+<string name="ref_sync_page_login">Log in/Sign up</string>
+<string name="ref_sync_page_no_configuration">No configuration</string>
+<string name="ref_sync_page_password_wrong">Wrong password.</string>
+<string name="ref_sync_page_download">Sync</string>
+<string name="ref_sync_page_title">Sync</string>
+<string name="ref_sync_page_upload">Upload</string>
+<string name="ref_sync_page_data">Sync data</string>
+<string name="ref_sync_page_bookmarks">Bookmarks</string>
+<string name="ref_sync_page_favorites">Favorites</string>
+<string name="ref_sync_page_none">None</string>
+<string name="ref_sync_page_settings">Settings</string>
+<string name="ref_sync_page_complete">Sync done</string>
+<string name="ref_sync_page_failed">Sync failed</string>
+<string name="ref_sync_page_manual">Sync manually</string>
+<string name="ref_sync_page_merge">Merge local data with remote data</string>
+<string name="ref_sync_page_never">Has never been synced</string>
+<string name="ref_sync_page_download_confirm">Your current local bookmarks and settings will be overwritten. Continue?</string>
+<string name="ref_sync_page_terms">Terms of use</string>
+<string name="ref_sync_page_registered">Sign up successful</string>
+<string name="ref_sync_page_pull_confirm">Are you sure you want to override local data with remote data?</string>
+<string name="ref_sync_page_pull">Overwrite local data with remote data</string>
+<string name="ref_sync_page_push_confirm">Are you sure you want to override remote data with local data?</string>
+<string name="ref_sync_page_delete">Delete account</string>
+<string name="ref_sync_page_push">Overwrite remote data with local data</string>
+<string name="ref_sync_page_wait">Wait a moment…</string>
+<string name="ref_sync_page_login_caption">Log in/Sign up</string>
+<string name="ref_sync_page_username_hint">Username (the account will be created if not exist)</string>
+<string name="ref_sync_page_webdav_configuration">WebDAV configuration</string>
+<string name="ref_sync_page_digest">Uses digest access authentication</string>
+<string name="ref_sync_page_directory">Folder</string>
+<string name="ref_sync_page_remove">Log out</string>
+<string name="ref_sync_page_back">Navigation up</string>
+<string name="ref_sync_page_username">Username</string>
+<string name="ref_sync_page_address">URL</string>
+<string name="ref_sync_page_form_settings">Advanced</string>
+<array name="ref_sync_page_servers"><item>@string/ref_sync_page_server_global</item><item>@string/ref_sync_page_server_domestic</item></array>
+<string name="ref_sync_page_server_global">Global</string>
+<string name="ref_sync_page_server_domestic">Chinese</string>
+</resources>
+
+
+

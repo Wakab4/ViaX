@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_catalog_page_title">ViaX</string>
+    <string name="ref_catalog_page_bookmarks">Bookmarks</string>
+    <string name="ref_catalog_page_history">History</string>
+    <string name="ref_catalog_page_log">Network log</string>
+    <string name="ref_catalog_page_offline">Saved pages</string>
+    <string name="ref_catalog_page_home">Homepage</string>
+    <string name="ref_catalog_page_about">About</string>
+</resources>

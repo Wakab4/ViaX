@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_cookie_page_block_third_party">Block third-party cookies</string>
+    <string name="ref_cookie_page_blocked">Blocked</string>
+    <string name="ref_cookie_page_title">Cookies</string>
+    <string name="ref_cookie_page_enabled_detail">Allow sites to save and read cookie data</string>
+</resources>

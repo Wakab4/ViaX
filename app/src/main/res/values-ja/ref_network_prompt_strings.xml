@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_network_prompt_no_logs">このページにはネットワークログはありません。</string>
+  <string name="ref_network_prompt_no_resources">このページにはメディアがありません。</string>
+  <string name="ref_network_prompt_hint">\nPS: 見つからない場合は、動画や音声を再生してみてください。</string>
+</resources>

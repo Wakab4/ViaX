@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_reader_settings_title">阅读模式</string>
+    <string name="ref_reader_settings_confirmation">开启阅读模式需要二次确认</string>
+    <string name="ref_reader_settings_confirmation_on">当点击地址栏阅读模式图标时，先展示菜单</string>
+    <string name="ref_reader_settings_confirmation_off">当点击地址栏阅读模式图标时，开启阅读模式</string>
+    <string name="ref_reader_settings_appearance">外观</string>
+    <string name="ref_reader_settings_font_size">字体大小</string>
+    <string name="ref_reader_settings_css">自定义阅读模式 CSS</string>
+</resources>

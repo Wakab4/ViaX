@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_network_prompt_no_logs">The page has no network log.</string>
+  <string name="ref_network_prompt_no_resources">The page has no resource.</string>
+  <string name="ref_network_prompt_hint">\nIt is easier to detect media files while music or video is being played. Resource sniffer doesn\'t work on certain websites.</string>
+</resources>

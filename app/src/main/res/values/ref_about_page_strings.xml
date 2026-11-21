@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_about_page_title">About</string>
+    <string name="ref_about_page_licenses">Open source licenses</string>
+    <string name="ref_about_page_diagnostics">Debugging info</string>
+    <string name="ref_about_page_name">ViaX</string>
+</resources>
+

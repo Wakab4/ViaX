@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_incognito_exit_title">关闭所有标签</string>
+  <string name="ref_incognito_exit_message">你想要在退出隐身模式前，关闭所有标签吗？</string>
+  <string name="ref_incognito_exit_close">关闭</string>
+  <string name="ref_incognito_exit_keep">保留</string>
+</resources>

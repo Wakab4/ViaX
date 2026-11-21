@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<plurals name="ref_adblock_page_rule_count"><item quantity="other">%d 條篩選條件</item></plurals>
+<string name="ref_adblock_page_edit">編輯</string>
+<string name="ref_adblock_page_invalid_rules">下列篩選條件格式不正確：</string>
+<string name="ref_adblock_page_warning">警告</string>
+<string name="ref_adblock_page_invalid_url">網址無效。</string>
+<string name="ref_adblock_page_download_started">正在開始下載…</string>
+<string name="ref_adblock_page_delete_message">你確定刪除 %1$s 嗎？</string>
+<string name="ref_adblock_page_address">網址</string>
+<string name="ref_adblock_page_edit_subscription">編輯篩選訂閱</string>
+<string name="ref_adblock_page_unsaved">修改的內容未儲存，是否儲存？</string>
+<string name="ref_adblock_page_statistics">已啟用：封鎖了 %1$d 個廣告，共節省 %2$s</string>
+<string name="ref_adblock_page_copy_link">複製連結</string>
+<string name="ref_adblock_page_add_subscription">新增篩選訂閱</string>
+<string name="ref_adblock_page_builtin">啟用內建篩選條件</string>
+<string name="ref_adblock_page_title">封鎖廣告</string>
+<string name="ref_adblock_page_builtin_detail">內建篩選條件僅封鎖常見廣告</string>
+<string name="ref_adblock_page_more">瞭解更多</string>
+<string name="ref_adblock_page_notice">訊息</string>
+<string name="ref_adblock_page_exists">此篩選條件訂閱已存在。</string>
+<string name="ref_adblock_page_subscription_detail">%1$s，%2$s</string>
+<string name="ref_adblock_page_delete">刪除</string>
+<string name="ref_adblock_page_subscriptions">篩選條件訂閱</string>
+<string name="ref_adblock_page_subscriptions_detail">訂閱 Adblock Plus 篩選條件清單</string>
+<string name="ref_adblock_page_disabled">停用</string>
+<string name="ref_adblock_page_copied">成功複製連結</string>
+<string name="ref_adblock_page_custom_rules">自訂篩選條件</string>
+<string name="ref_adblock_page_custom_rules_detail">包括封鎖的篩選條件、標記的廣告</string>
+<string name="ref_adblock_page_new">新增</string>
+<string name="ref_adblock_page_exit">關閉</string>
+<string name="ref_adblock_page_custom">自訂網址</string>
+<string name="ref_adblock_page_fulltext">自動展開網頁全文</string>
+<string name="ref_adblock_page_fulltext_detail">開啟網頁時自動展開網頁中摺疊的內容</string>
+<string name="ref_adblock_page_update">更新</string>
+<string name="ref_adblock_page_updated">訂閱篩選條件更新完成。</string>
+<string name="ref_adblock_page_automatic">自動更新</string>
+<string name="ref_adblock_page_preview">預覽</string>
+<string name="ref_adblock_page_never">從未更新</string>
+<string name="ref_adblock_page_update_started">開始更新…</string>
+<string name="ref_adblock_page_rules_hint">一個篩選條件一行。</string>
+<string name="ref_adblock_page_help">說明</string>
+<string name="ref_adblock_page_save">儲存</string>
+<string name="ref_adblock_page_help_content">Via 幾乎支援所有的 Adblock Plus 篩選條件。 \n你可以這樣封鎖 example.com 的所有要求： \n||example.com^（或 example.com） \n\n萬用字元也可接受，如： \n||example.com/js/ads_*.js \n\n你也可以解除封鎖特殊的要求，如： \n@@||example.com^ \n\n對於網頁的元素，篩選條件類似： \nexample.com###ad</string>
+<string name="ref_adblock_page_updated_time">%1$s 已更新</string>
+</resources>

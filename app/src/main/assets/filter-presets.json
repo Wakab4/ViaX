@@ -1,0 +1,158 @@
+{
+  "base": [
+    {
+      "url": "https://easylist-downloads.adblockplus.org/easylist.txt",
+      "title": "Easylist"
+    },
+    {
+      "url": "https://easylist-downloads.adblockplus.org/easyprivacy.txt",
+      "title": "Easylist Privacy"
+    },
+    {
+      "url": "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt",
+      "title": "Easylist Warning Removal"
+    }
+  ],
+  "regions": {
+    "AR": [
+      {
+        "url": "https://easylist-downloads.adblockplus.org/Liste_AR.txt",
+        "title": "Easylist Arbic"
+      }
+    ],
+    "BG": [
+      {
+        "url": "https://easylist-downloads.adblockplus.org/bulgarian_list.txt",
+        "title": "Easylist Bulgarian"
+      }
+    ],
+    "CS": [
+      {
+        "url": "https://easylist-downloads.adblockplus.org/easylistczechslovak.txt",
+        "title": "Easylist Czech Slovak"
+      }
+    ],
+    "SK": [
+      {
+        "url": "https://easylist-downloads.adblockplus.org/easylistczechslovak.txt",
+        "title": "Easylist Czech Slovak"
+      }
+    ],
+    "DE": [
+      {
+        "url": "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_6_German/filter.txt",
+        "title": "Adguard filter (German)"
+      }
+    ],
+    "ES": [
+      {
+        "url": "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_9_Spanish/filter.txt",
+        "title": "Adguard filter (Spanish/Portuguese)"
+      }
+    ],
+    "PT": [
+      {
+        "url": "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_9_Spanish/filter.txt",
+        "title": "Adguard filter (Spanish/Portuguese)"
+      }
+    ],
+    "FR": [
+      {
+        "url": "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_16_French/filter.txt",
+        "title": "Adguard filter (French)"
+      }
+    ],
+    "IN": [
+      {
+        "url": "https://easylist-downloads.adblockplus.org/indianlist.txt",
+        "title": "Easylist Indian"
+      },
+      {
+        "url": "https://easylist-downloads.adblockplus.org/abpindo.txt",
+        "title": "Easylist Indonesian"
+      }
+    ],
+    "IT": [
+      {
+        "url": "https://easylist-downloads.adblockplus.org/easylistitaly.txt",
+        "title": "Easylist Italy"
+      }
+    ],
+    "IW": [
+      {
+        "url": "https://easylist-downloads.adblockplus.org/israellist.txt",
+        "title": "Easylist Heberw"
+      }
+    ],
+    "JA": [
+      {
+        "url": "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_7_Japanese/filter.txt",
+        "title": "Adguard filter (Japanese)"
+      }
+    ],
+    "KO": [
+      {
+        "url": "https://easylist-downloads.adblockplus.org/koreanlist.txt",
+        "title": "Korean List"
+      }
+    ],
+    "LT": [
+      {
+        "url": "https://easylist-downloads.adblockplus.org/easylistlithuania.txt",
+        "title": "Easylist Lithuania"
+      }
+    ],
+    "LV": [
+      {
+        "url": "https://easylist-downloads.adblockplus.org/latvianlist.txt",
+        "title": "Easylist Latvian"
+      }
+    ],
+    "NL": [
+      {
+        "url": "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_8_Dutch/filter.txt",
+        "title": "Adguard filter (Dutch)"
+      }
+    ],
+    "PL": [
+      {
+        "url": "https://easylist-downloads.adblockplus.org/easylistpolish.txt",
+        "title": "Easylist Polish"
+      }
+    ],
+    "RO": [
+      {
+        "url": "https://easylist-downloads.adblockplus.org/rolist.txt",
+        "title": "Romania List"
+      }
+    ],
+    "RU": [
+      {
+        "url": "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_1_Russian/filter.txt",
+        "title": "Adguard filter (Russian)"
+      }
+    ],
+    "TR": [
+      {
+        "url": "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_13_Turkish/filter.txt",
+        "title": "Adguard filter (Turkish)"
+      }
+    ],
+    "VI": [
+      {
+        "url": "https://easylist-downloads.adblockplus.org/abpvn.txt",
+        "title": "Vietnamese List"
+      }
+    ],
+    "ZH": [
+      {
+        "url": "https://easylist-downloads.adblockplus.org/easylistchina.txt",
+        "title": "Easylist China"
+      },
+      {
+        "url": "https://fastly.jsdelivr.net/gh/cjx82630/cjxlist/cjx-annoyance.txt",
+        "title": "CJX's Annoyance List"
+      }
+    ]
+  }
+}

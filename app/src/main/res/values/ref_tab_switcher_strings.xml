@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="ref_tab_switcher_close_all">Close all tabs</string>
+    <string name="ref_tab_switcher_close_others">Close other tabs</string>
+    <string name="ref_tab_switcher_close_below">Close tabs to the bottom</string>
+    <string name="ref_tab_switcher_close_above">Close tabs to the top</string>
+    <string name="ref_tab_switcher_copy_link">Copy link</string>
+    <string name="ref_tab_switcher_new_tab">New tab</string>
+    <string name="ref_tab_switcher_close_title">Close %s</string>
+    <string name="ref_tab_switcher_duplicate">Duplicate tab</string>
+    <string name="ref_tab_switcher_title">Tabs</string>
+    <string name="ref_tab_switcher_copied">Link copied successfully</string>
+    <string name="ref_tab_switcher_untitled">Untitled</string>
+</resources>

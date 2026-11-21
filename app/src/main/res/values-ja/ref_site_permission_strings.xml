@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_site_permission_allow">はい</string>
+  <string name="ref_site_permission_deny">いいえ</string>
+  <string name="ref_site_permission_location_title">位置情報へのアクセスを許可する</string>
+  <string name="ref_site_permission_resource">%1$s: %2$s</string>
+  <string name="ref_site_permission_microphone_detail">ウェブサイトでの音声入力または録音に使用されます</string>
+  <string name="ref_site_permission_camera_detail">ウェブサイトでの写真撮影またはビデオ録画に使用されます</string>
+</resources>

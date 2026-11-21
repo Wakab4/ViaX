@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingTop="12dp">
+    <TextView android:id="@+id/shortcut_title" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:layout_marginBottom="6dp"
+        android:paddingTop="8dp" android:paddingBottom="8dp" android:textSize="16sp" android:textStyle="bold"
+        android:lines="1" android:maxLines="2" android:ellipsize="end" android:text="添加桌面快捷方式" android:textDirection="locale" />
+    <ImageView android:id="@+id/shortcut_icon" android:layout_width="48dp" android:layout_height="48dp"
+        android:layout_marginStart="16dp" android:layout_marginTop="8dp" android:layout_below="@id/shortcut_title"
+        android:contentDescription="收藏的图标" />
+    <HorizontalScrollView android:id="@+id/shortcut_name_scroll" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_below="@id/shortcut_title" android:layout_toEndOf="@id/shortcut_icon"
+        android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:layout_marginBottom="16dp"
+        android:fillViewport="true" android:paddingTop="8dp" android:paddingBottom="8dp" android:scrollbars="none" android:background="@drawable/dialog_field_underline">
+        <EditText android:id="@+id/shortcut_name" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:background="@android:color/transparent" android:textSize="14sp" android:lines="1" android:maxLines="1"
+            android:hint="标题" android:inputType="textNoSuggestions" android:imeOptions="actionNext" android:textDirection="locale" />
+    </HorizontalScrollView>
+    <HorizontalScrollView android:id="@+id/shortcut_url_scroll" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_below="@id/shortcut_name_scroll" android:layout_toEndOf="@id/shortcut_icon"
+        android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:layout_marginBottom="16dp"
+        android:fillViewport="true" android:paddingTop="8dp" android:paddingBottom="8dp" android:scrollbars="none" android:background="@drawable/dialog_field_underline">
+        <EditText android:id="@+id/shortcut_url" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:background="@android:color/transparent" android:textSize="14sp" android:lines="1" android:maxLines="1"
+            android:hint="地址" android:inputType="textNoSuggestions" android:imeOptions="actionDone" />
+    </HorizontalScrollView>
+    <TextView android:id="@+id/shortcut_accept" style="@style/Widget.PureBrowser.DialogButton" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_below="@id/shortcut_url_scroll" android:layout_alignParentEnd="true" android:text="@android:string/ok" />
+    <TextView android:id="@+id/shortcut_cancel" style="@style/Widget.PureBrowser.DialogButton" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_alignTop="@id/shortcut_accept" android:layout_toStartOf="@id/shortcut_accept" android:text="@android:string/cancel" />
+</RelativeLayout>

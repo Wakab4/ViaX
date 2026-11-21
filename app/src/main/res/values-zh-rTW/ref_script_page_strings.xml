@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_script_page_editor_hint">程式碼 (JavaScript)</string>
+    <string name="ref_script_page_add">新增指令碼</string>
+    <string name="ref_script_page_help">說明</string>
+    <string name="ref_script_page_help_content">&lt;b&gt;Metadata 塊&lt;/b&gt;&lt;br /&gt; Metadata 必須使用如下格式:&lt;br /&gt; &lt;tt&gt; // ==UserScript==&lt;br /&gt; // @key value&lt;br /&gt; // ==/UserScript== &lt;/tt&gt; &lt;br /&gt;&lt;br /&gt; &lt;b&gt;&lt;tt&gt;@name&lt;/tt&gt;&lt;/b&gt;：指令碼名稱。 &lt;br /&gt;&lt;br /&gt; &lt;b&gt;&lt;tt&gt;@namespace&lt;/tt&gt;&lt;/b&gt;：&lt;tt&gt;@namespace&lt;/tt&gt; 和 &lt;tt&gt;@name&lt;/tt&gt; 是指令碼的唯一 ID。 &lt;br /&gt;&lt;br /&gt; &lt;b&gt;&lt;tt&gt;@match/@exclude-match&lt;/tt&gt;&lt;/b&gt;：定義了指令碼的作用域。推薦使用 &lt;tt&gt;@match&lt;/tt&gt; 而不是 &lt;tt&gt;@include&lt;/tt&gt;。 &lt;br /&gt;&lt;br /&gt; &lt;b&gt;&lt;tt&gt;@include/@exclude&lt;/tt&gt;&lt;/b&gt;：舊版本中定義作用域的方式。 &lt;br /&gt;&lt;br /&gt; &lt;b&gt;&lt;tt&gt;@version&lt;/tt&gt;&lt;/b&gt;：指令碼版本。 &lt;br /&gt;&lt;br /&gt; &lt;b&gt;&lt;tt&gt;@description&lt;/tt&gt;&lt;/b&gt;：指令碼描述。 &lt;br /&gt;&lt;br /&gt; &lt;b&gt;&lt;tt&gt;@author&lt;/tt&gt;&lt;/b&gt;：指令碼作者。 &lt;br /&gt;&lt;br /&gt; &lt;b&gt;&lt;tt&gt;@require&lt;/tt&gt;&lt;/b&gt;：指令碼的前置依賴，例如： &lt;br /&gt;&lt;tt&gt;// @require https://my.cdn.com/jquery.js&lt;/tt&gt;。 &lt;br /&gt;&lt;br /&gt; &lt;b&gt;&lt;tt&gt;@run-at&lt;/tt&gt;&lt;/b&gt;：指令碼的執行時機。 &lt;tt&gt;document-start&lt;/tt&gt; 用於在頁面 DOM 載入前注入指令碼， &lt;tt&gt;document-end&lt;/tt&gt; 用於在頁面 DOM 載入完成後注入指令碼， &lt;tt&gt;document-idle&lt;/tt&gt; 用於在頁面空閒後注入指令碼。 &lt;br /&gt;&lt;br /&gt; &lt;b&gt;&lt;tt&gt;@grant&lt;/tt&gt;&lt;/b&gt;：定義指令碼所使用和應被授權的特殊 GM_* API。&lt;br /&gt; &lt;br /&gt;&lt;br /&gt; &lt;b&gt;&lt;tt&gt;@downloadURL&lt;/tt&gt;&lt;/b&gt;：指令碼的下載網址。 &lt;br /&gt;&lt;br /&gt; &lt;b&gt;&lt;tt&gt;@supportURL&lt;/tt&gt;&lt;/b&gt;：指令碼的支援地址。 &lt;br /&gt;&lt;br /&gt; &lt;b&gt;&lt;tt&gt;@homepageURL&lt;/tt&gt;&lt;/b&gt;：指令碼的首頁。 &lt;br /&gt;&lt;br /&gt; &lt;b&gt;GM_* API&lt;/b&gt;&lt;br /&gt; &lt;tt&gt;GM_*&lt;/tt&gt; 是一組 Via 提供的特殊 API 集合。目前支援的特殊 API 包括：&lt;br/&gt; &lt;tt&gt;GM_getValue/GM_setValue/GM_deleteValue/GM_listValues/GM_getResourceText/GM_getResourceURL/GM_addElement/GM_addStyle/GM_setClipboard/GM_xmlhttpRequest/GM_download/GM_registerMenuCommand/GM_unregisterMenuCommand&lt;/tt&gt;. &lt;br /&gt;&lt;br /&gt; &lt;b&gt;匹配&lt;/b&gt;&lt;br /&gt; &lt;tt&gt;@match&lt;/tt&gt; 定義了指令碼生效的作用域。 &lt;tt&gt;@exclude-match&lt;/tt&gt; 定義了指令碼不應生效的作用域，類似 &lt;tt&gt;@exclude&lt;/tt&gt;。 &lt;br /&gt;&lt;br /&gt; 例如:&lt;br /&gt; &lt;tt&gt; // @match https://www.google.com/something &lt;br /&gt; // @match https://www.google.com/any/* &lt;br /&gt; // @exclude-match https://www.google.com/any/not_me &lt;/tt&gt; &lt;br /&gt;&lt;br /&gt;</string>
+    <string name="ref_script_page_more">瞭解更多</string>
+    <string name="ref_script_page_metadata_title">新增 Metadata 塊</string>
+    <string name="ref_script_page_metadata_message">此指令碼沒有 Metadata 塊所以無法儲存。您想要為其新增一個預設的 Metadata 塊嗎？</string>
+    <string name="ref_script_page_default">預設值</string>
+    <string name="ref_script_page_default_format">%1$s（預設）</string>
+    <string name="ref_script_page_run_at">執行時機</string>
+    <string name="ref_script_page_matches">匹配</string>
+    <string name="ref_script_page_excludes">排除</string>
+    <string name="ref_script_page_add_match">新增匹配</string>
+    <string name="ref_script_page_add_exclude">新增排除</string>
+    <string name="ref_script_page_dependencies">依賴</string>
+    <string name="ref_script_page_resources">資源</string>
+    <string name="ref_script_page_advanced">進階</string>
+    <string name="ref_script_page_source">編輯原始碼</string>
+    <string name="ref_script_page_reset">重設</string>
+    <string name="ref_script_page_reset_message">你確認重置指令碼嗎？</string>
+    <string name="ref_script_page_download">下載指令碼</string>
+    <string name="ref_script_page_import">匯入指令碼</string>
+    <string name="ref_script_page_homepage">首頁</string>
+    <string name="ref_script_page_copy_link">複製連結</string>
+    <string name="ref_script_page_delete_message">你確定刪除 %1$s 嗎？</string>
+    <string name="ref_script_page_update_one">你確認更新 %1$s 嗎？</string>
+    <string name="ref_script_page_info_name">名稱</string>
+    <string name="ref_script_page_info_version">版本</string>
+    <string name="ref_script_page_info_homepage">首頁連結</string>
+    <string name="ref_script_page_info_support">支援連結</string>
+    <string name="ref_script_page_info_download">下載連結</string>
+    <string name="ref_script_page_info_updated">更新於</string>
+    <string name="ref_script_page_info_created">建立於</string>
+    <string name="ref_script_page_info_size">大小</string>
+    <string name="ref_script_page_information">指令碼資訊</string>
+    <string name="ref_script_page_just_now">剛剛</string>
+</resources>

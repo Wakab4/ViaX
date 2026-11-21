@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_page_orientation_title">螢幕方向</string>
+  <string name="ref_page_orientation_follow">系統預設值</string>
+  <string name="ref_page_orientation_auto">自動</string>
+  <string name="ref_page_orientation_portrait">縱向</string>
+  <string name="ref_page_orientation_landscape">橫向</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_history_footer_tabs">Tabs</string>
+    <string name="ref_history_footer_edit">Edit</string>
+    <string name="ref_history_footer_select_all">Select all</string>
+    <string name="ref_history_footer_cancel_all">Cancel all</string>
+    <string name="ref_history_footer_delete_count">Delete (%1$d)</string>
+    <string name="ref_history_footer_done">Done</string>
+</resources>

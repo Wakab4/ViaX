@@ -1,0 +1,7 @@
+<resources>
+    <string name="ref_diagnostics_title">调试信息</string>
+    <string name="ref_diagnostics_delete">删除</string>
+    <string name="ref_diagnostics_delete_message">你确定删除 %1$s 吗？</string>
+    <string name="ref_diagnostics_wait">稍等片刻…</string>
+    <string name="ref_diagnostics_share">分享</string>
+</resources>

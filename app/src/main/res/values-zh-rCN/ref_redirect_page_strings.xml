@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_redirect_page_title">页面重定向</string>
+  <string name="ref_redirect_page_add_allow">允许特定网站重定向到任何页面。</string>
+  <string name="ref_redirect_page_add_ask">在特定网站重定向到非同源页面前先询问。</string>
+  <string name="ref_redirect_page_global_allow">允许页面重定向到任何页面</string>
+  <string name="ref_redirect_page_global_ask">当页面重定向到非同源页面前先询问</string>
+  <string name="ref_redirect_page_ask_section">优先询问</string>
+  <string name="ref_redirect_page_allowed">允许</string>
+  <string name="ref_redirect_page_exception">例外</string>
+  <string name="ref_redirect_page_add">添加例外网站</string>
+  <string name="ref_redirect_page_delete">删除</string>
+  <string name="ref_redirect_page_default">%1$s（默认）</string>
+</resources>

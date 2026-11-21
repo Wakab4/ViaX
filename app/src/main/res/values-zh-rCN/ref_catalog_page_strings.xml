@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_catalog_page_title">ViaX</string>
+    <string name="ref_catalog_page_bookmarks">书签</string>
+    <string name="ref_catalog_page_history">历史</string>
+    <string name="ref_catalog_page_log">网络日志</string>
+    <string name="ref_catalog_page_offline">离线页面</string>
+    <string name="ref_catalog_page_home">主页</string>
+    <string name="ref_catalog_page_about">关于</string>
+</resources>

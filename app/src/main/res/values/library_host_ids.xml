@@ -1,0 +1,4 @@
+<resources>
+    <item name="library_host_pager" type="id" />
+    <item name="library_host_tabs" type="id" />
+</resources>

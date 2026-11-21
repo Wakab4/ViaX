@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_catalog_page_title">ViaX</string>
+    <string name="ref_catalog_page_bookmarks">ブックマーク</string>
+    <string name="ref_catalog_page_history">履歴</string>
+    <string name="ref_catalog_page_log">ネットワークログ</string>
+    <string name="ref_catalog_page_offline">保存済みページ</string>
+    <string name="ref_catalog_page_home">ホームページ</string>
+    <string name="ref_catalog_page_about">Via について</string>
+</resources>

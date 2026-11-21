@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="ref_download_manual_accept">下載</string>
+<string name="ref_download_manual_address">網址</string>
+<string name="ref_download_permission_denied">無權限。立即設定嗎？</string>
+<string name="ref_download_manual_unsupported">僅支援 \"http\" 或 \"https\" 開頭的網址</string>
+<string name="ref_download_manual_name">檔名</string>
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_closed_tabs_title">Closed tabs</string>
+    <string name="ref_closed_tabs_background">Open in background</string>
+    <string name="ref_closed_tabs_foreground">Open in new tab</string>
+    <string name="ref_closed_tabs_delete">Delete</string>
+    <string name="ref_closed_tabs_copy_link">Copy link</string>
+    <string name="ref_closed_tabs_share">Share</string>
+    <string name="ref_closed_tabs_more">More</string>
+    <string name="ref_closed_tabs_clear">Delete all</string>
+    <string name="ref_closed_tabs_confirm_clear">Are you sure you want to proceed?</string>
+    <string name="ref_closed_tabs_opened_background">New tab opened in the background</string>
+    <string name="ref_closed_tabs_search">Search</string>
+    <string name="ref_closed_tabs_settings_title">Tab settings</string>
+    <string name="ref_closed_tabs_restore_setting">Restore tabs on startup</string>
+    <string name="ref_closed_tabs_undo_prompt">Show toast to undo closing tab</string>
+    <string name="ref_closed_tabs_undo_prompt_description">The toast will not be shown if incognito mode is on</string>
+    <string name="ref_closed_tabs_private_restore_notice">Tabs will not be restored when you are in \"Incognito mode\".</string>
+    <string name="ref_closed_tabs_untitled">Untitled</string>
+    <string name="ref_closed_tabs_failure">Operation failed</string>
+    <string name="ref_closed_tabs_hint">Message</string>
+    <string name="ref_closed_tabs_restore_0">Don\'t restore</string>
+    <string name="ref_closed_tabs_restore_1">Always restore</string>
+    <string name="ref_closed_tabs_restore_2">Ask first</string>
+    <string name="ref_closed_tabs_empty_description">Empty</string>
+    <string name="ref_closed_tabs_copied">Link copied successfully</string>
+</resources>

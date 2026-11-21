@@ -1,0 +1,12 @@
+<resources>
+    <string name="ref_skin_default">預設值</string>
+    <string name="ref_skin_title">面板</string>
+    <string name="ref_skin_import">載入面板</string>
+    <string name="ref_skin_import_failed">載入面板失敗</string>
+    <string name="ref_skin_delete">刪除</string>
+    <string name="ref_skin_delete_message">你確定刪除 %1$s 嗎？</string>
+    <string name="ref_skin_changed">面板已變更</string>
+    <string name="ref_skin_restart_message">這將在下次啟動應用程式時生效，你希望立即重新啟動應用程式以生效嗎？</string>
+    <string name="ref_skin_restart">重新啟動</string>
+    <string name="ref_document_picker_error">操作失敗</string>
+</resources>

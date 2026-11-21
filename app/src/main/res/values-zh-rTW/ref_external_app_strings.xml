@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_external_app_details_title">開啟應用程式</string>
+    <string name="ref_external_app_question_name">允許網站開啟 %1$s 嗎？</string>
+    <string name="ref_external_app_open">開啟</string>
+    <string name="ref_external_app_copied">成功複製連結</string>
+    <string name="ref_external_app_failed">操作失敗</string>
+    <string name="ref_external_app_question">允許網站開啟你的應用程式嗎？</string>
+</resources>

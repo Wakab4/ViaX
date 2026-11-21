@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_network_prompt_no_logs">这个页面没有网络日志。</string>
+  <string name="ref_network_prompt_no_resources">这个页面没有资源。</string>
+  <string name="ref_network_prompt_hint">\n注：音乐或视频在播放时更容易被获取。资源嗅探不支持部分网站。</string>
+</resources>

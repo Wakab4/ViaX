@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_download_ui_title">Downloads</string>
+    <string name="ref_download_ui_search">Search</string>
+    <string name="ref_download_ui_new">New</string>
+    <string name="ref_download_ui_edit">Edit</string>
+    <string name="ref_download_ui_done">Done</string>
+    <string name="ref_download_ui_select_all">Select all</string>
+    <string name="ref_download_ui_cancel_all">Cancel all</string>
+    <string name="ref_download_ui_delete">Delete</string>
+    <string name="ref_download_ui_delete_count">Delete (%1$d)</string>
+    <string name="ref_download_ui_all">All</string>
+    <string name="ref_download_ui_document">Documents</string>
+    <string name="ref_download_ui_archive">Archives</string>
+    <string name="ref_download_ui_apk">APK</string>
+    <string name="ref_download_ui_image">Images</string>
+    <string name="ref_download_ui_video">Video</string>
+    <string name="ref_download_ui_audio">Audio</string>
+    <string name="ref_download_ui_other">Others</string>
+    <string name="ref_download_ui_open_with">Open with</string>
+    <string name="ref_download_ui_rename">Rename</string>
+    <string name="ref_download_ui_restart">Re-download</string>
+    <string name="ref_download_ui_copy_link">Copy download link</string>
+    <string name="ref_download_ui_share">Share</string>
+    <string name="ref_download_ui_scan">Scan QR code</string>
+    <string name="ref_download_ui_size_only">%1$s</string>
+    <string name="ref_download_ui_size_total">%1$s/%2$s</string>
+    <string name="ref_download_ui_size_status">%1$s • %2$s</string>
+    <string name="ref_download_ui_paused">Paused</string>
+    <string name="ref_download_ui_waiting_network">Waiting for network</string>
+    <string name="ref_download_ui_not_available">N/A</string>
+    <string name="ref_download_ui_size_speed_time">%1$s • %2$s • %3$s</string>
+    <string name="ref_download_ui_size_speed">%1$s • %2$s</string>
+    <string name="ref_download_ui_pause">Pause</string>
+    <string name="ref_download_ui_resume">Resume</string>
+    <string name="ref_download_ui_unknown_time">-</string>
+    <string name="ref_download_ui_failed">Download failed</string>
+    <string name="ref_download_ui_failed_detail">Download failed: %1$s</string>
+    <string name="ref_download_ui_up">Navigation up</string>
+</resources>

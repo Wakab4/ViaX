@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_image_page_delete">削除</string>
+    <string name="ref_image_page_add">例外設定を追加します</string>
+    <string name="ref_image_page_allow">許可</string>
+    <string name="ref_image_page_allowed">許可</string>
+    <string name="ref_image_page_block">ブロック</string>
+    <string name="ref_image_page_blocked">ブロック</string>
+    <string name="ref_image_page_exception">例外</string>
+    <string name="ref_image_page_mode_wifi">Wi-Fi接続時のみ</string>
+    <string name="ref_image_page_mode_block">画像を非表示</string>
+    <string name="ref_image_page_mode_show">画像を表示</string>
+    <string name="ref_image_page_title">画像</string>
+    <string name="ref_image_page_add_allow">画像を表示するサイトを追加します</string>
+    <string name="ref_image_page_add_block">画像をブロックするサイトを追加します</string>
+    <string name="ref_image_page_show_detail">サイト上で画像を表示します</string>
+    <string name="ref_image_page_wifi_detail">Wi-Fi接続時のみサイト上で画像を表示します</string>
+</resources>

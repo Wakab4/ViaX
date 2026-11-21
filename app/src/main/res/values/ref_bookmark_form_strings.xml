@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_bookmark_form_edit_bookmark">Edit bookmark</string>
+  <string name="ref_bookmark_form_edit_folder">Edit folder</string>
+  <string name="ref_bookmark_form_done">Done</string>
+  <string name="ref_bookmark_form_select_folder">Select folder</string>
+  <string name="ref_bookmark_form_root">Root folder</string>
+  <string name="ref_bookmark_form_title_hint">Title</string>
+  <string name="ref_bookmark_form_url_hint">URL</string>
+  <string name="ref_bookmark_form_folder_hint">Folder</string>
+  <string name="ref_bookmark_form_favorite">Add to homepage</string>
+  <string name="ref_bookmark_form_added">Bookmark added successfully</string>
+  <string name="ref_bookmark_form_new_folder">New folder</string>
+  <string name="ref_bookmark_form_add_bookmark">Add bookmark</string>
+  <string name="ref_bookmark_form_required">%s is required</string>
+</resources>

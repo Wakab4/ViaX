@@ -1,0 +1,12 @@
+<resources>
+    <item type="id" name="script_popup_pager" />
+    <item type="id" name="script_popup_header" />
+    <item type="id" name="script_popup_empty" />
+    <string-array name="ref_script_popup_intervals">
+        <item>@string/ref_script_popup_interval_never</item>
+        <item>@string/ref_script_popup_interval_daily</item>
+        <item>@string/ref_script_popup_interval_3days</item>
+        <item>@string/ref_script_popup_interval_weekly</item>
+        <item>@string/ref_script_popup_interval_15days</item>
+    </string-array>
+</resources>

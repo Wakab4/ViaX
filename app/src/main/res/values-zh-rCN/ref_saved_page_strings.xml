@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_saved_save_title">保存网页</string>
+    <string name="ref_saved_page_title">离线页面</string>
+    <string name="ref_saved_local_error">仅支持 \"http\" 或 \"https\" 开头的网址</string>
+    <string name="ref_saved_delete_failed_prefix">删除失败，文件位于下载目录：</string>
+    <string name="ref_saved_page_empty">空空如也…</string>
+    <string name="ref_saved_name_hint">标题</string>
+    <string name="ref_saved_page_hint">下列为保存的网页，无论手机是否联网你都可以浏览它们。</string>
+    <string name="ref_saved_as_pdf">保存为 PDF</string>
+    <string name="ref_saved_notice">网页已保存至：书签 &gt; 离线页面</string>
+    <string name="ref_saved_view">查看</string>
+</resources>

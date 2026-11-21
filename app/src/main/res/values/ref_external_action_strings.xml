@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_external_share_title">Share</string>
+  <string name="ref_external_open_title">Open with</string>
+  <string name="ref_external_unavailable">Unable to find associated app to open the link</string>
+</resources>

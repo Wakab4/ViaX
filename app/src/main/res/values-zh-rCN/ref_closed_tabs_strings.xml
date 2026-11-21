@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_closed_tabs_title">关闭的标签页</string>
+    <string name="ref_closed_tabs_background">后台打开</string>
+    <string name="ref_closed_tabs_foreground">新标签打开</string>
+    <string name="ref_closed_tabs_delete">删除</string>
+    <string name="ref_closed_tabs_copy_link">复制链接</string>
+    <string name="ref_closed_tabs_share">分享</string>
+    <string name="ref_closed_tabs_more">更多</string>
+    <string name="ref_closed_tabs_clear">清空</string>
+    <string name="ref_closed_tabs_confirm_clear">你确定继续吗？</string>
+    <string name="ref_closed_tabs_opened_background">已在后台打开</string>
+    <string name="ref_closed_tabs_search">搜索</string>
+    <string name="ref_closed_tabs_settings_title">标签页设置</string>
+    <string name="ref_closed_tabs_restore_setting">启动时恢复未关闭标签</string>
+    <string name="ref_closed_tabs_undo_prompt">显示撤销关闭标签的提示</string>
+    <string name="ref_closed_tabs_undo_prompt_description">如果开启了隐身模式，则不会显示提示</string>
+    <string name="ref_closed_tabs_private_restore_notice">开启\"隐身模式\"时不会恢复未关闭标签。</string>
+    <string name="ref_closed_tabs_untitled">无标题</string>
+    <string name="ref_closed_tabs_failure">操作失败</string>
+    <string name="ref_closed_tabs_hint">提示</string>
+    <string name="ref_closed_tabs_restore_0">禁用恢复</string>
+    <string name="ref_closed_tabs_restore_1">总是恢复</string>
+    <string name="ref_closed_tabs_restore_2">优先询问</string>
+    <string name="ref_closed_tabs_empty_description">空空如也…</string>
+    <string name="ref_closed_tabs_copied">已复制链接</string>
+</resources>

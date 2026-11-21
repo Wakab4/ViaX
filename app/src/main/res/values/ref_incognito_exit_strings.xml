@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_incognito_exit_title">Close all tabs</string>
+  <string name="ref_incognito_exit_message">Do you want to close all tabs before disabling incognito mode?</string>
+  <string name="ref_incognito_exit_close">Close</string>
+  <string name="ref_incognito_exit_keep">Keep</string>
+</resources>

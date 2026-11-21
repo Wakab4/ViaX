@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_home_design_title">カスタマイズ</string>
+    <string name="ref_home_design_homepage_hint">ホームページに設定しますか？</string>
+    <string name="ref_home_design_logo">ロゴ</string>
+    <string name="ref_home_design_search">検索バー</string>
+    <string name="ref_home_design_background">背景</string>
+    <string name="ref_home_design_favorites">スピードダイヤル</string>
+    <string name="ref_home_design_advanced">高度な設定</string>
+</resources>

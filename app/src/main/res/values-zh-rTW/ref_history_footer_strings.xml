@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_history_footer_tabs">分頁</string>
+    <string name="ref_history_footer_edit">編輯</string>
+    <string name="ref_history_footer_select_all">全選</string>
+    <string name="ref_history_footer_cancel_all">取消全選</string>
+    <string name="ref_history_footer_delete_count">刪除(%1$d)</string>
+    <string name="ref_history_footer_done">完成</string>
+</resources>

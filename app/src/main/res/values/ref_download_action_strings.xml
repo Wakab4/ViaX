@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="ref_download_action_open">Open</string>
+<string name="ref_download_action_copy">Copy text</string>
+<string name="ref_download_action_unavailable">Unable to find associated app to open file</string>
+<string name="ref_download_action_delete_bulk">Delete these download tasks (%1$d in total)?</string>
+<string name="ref_download_action_delete_complete">Delete this downloaded task?</string>
+<string name="ref_download_action_restart_body">Are you sure you want to delete the downloaded file and re-download %1$s?</string>
+<string name="ref_download_action_delete_partial">Downloaded file will also be deleted. Are you sure?</string>
+<string name="ref_download_action_missing">The file does not exist</string>
+<string name="ref_download_action_delete_files">Including the downloaded file</string>
+<string name="ref_download_action_copied">Link copied successfully</string>
+</resources>

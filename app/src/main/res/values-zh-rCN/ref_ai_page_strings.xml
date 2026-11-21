@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_ai_page_settings">AI 设置</string>
+    <string name="ref_ai_page_backends">AI 服务提供商</string>
+    <string name="ref_ai_page_prompts">AI 提示词</string>
+    <string name="ref_ai_page_none">无</string>
+    <string name="ref_ai_page_custom">自定义</string>
+    <string name="ref_ai_page_system">系统提示词</string>
+    <string name="ref_ai_page_message">消息模板</string>
+    <string name="ref_ai_page_variables">可用变量</string>
+    <string name="ref_ai_page_page_url">当前网页的链接。</string>
+    <string name="ref_ai_page_page_title">当前网页的标题。</string>
+    <string name="ref_ai_page_page_content">当前网页的纯文本内容。</string>
+    <string name="ref_ai_page_input">输入框内容。</string>
+    <string name="ref_ai_page_time">当前时间 yyyy-MM-dd HH:mm:ss EEEE (ZZZZ)。</string>
+    <string name="ref_ai_page_model">模型 ID</string>
+    <string name="ref_ai_page_key">API 密钥</string>
+    <string name="ref_ai_page_management">打开 API 密钥生成和管理页面</string>
+    <string name="ref_ai_page_content">内容</string>
+    <string name="ref_ai_page_verify">验证</string>
+    <string name="ref_ai_page_failed">验证失败</string>
+    <string name="ref_ai_page_verified">验证成功</string>
+    <string name="ref_ai_page_wait">稍等片刻…</string>
+    <string name="ref_ai_page_add_model">添加模型</string>
+    <string name="ref_ai_page_empty">空空如也…</string>
+    <string name="ref_ai_page_error_empty">无消息</string>
+    <string name="ref_ai_page_error_backend">未配置 AI 服务提供商</string>
+    <string name="ref_ai_page_error_incomplete">请求未完成</string>
+    <string name="ref_ai_page_error_configuration">AI 服务提供商未正确配置</string>
+    <string name="ref_ai_page_error_unknown">未知错误：%1$s</string>
+    <string name="ref_ai_page_error_http">HTTP 错误：%1$d\n\n%2$s</string>
+</resources>

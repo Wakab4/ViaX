@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_image_page_delete">刪除</string>
+    <string name="ref_image_page_add">新增例外網站</string>
+    <string name="ref_image_page_allow">允許</string>
+    <string name="ref_image_page_allowed">允許</string>
+    <string name="ref_image_page_block">禁止</string>
+    <string name="ref_image_page_blocked">已禁止</string>
+    <string name="ref_image_page_exception">例外</string>
+    <string name="ref_image_page_mode_wifi">僅 Wi-Fi 連線時顯示圖片</string>
+    <string name="ref_image_page_mode_block">封鎖圖片</string>
+    <string name="ref_image_page_mode_show">顯示圖片</string>
+    <string name="ref_image_page_title">影像</string>
+    <string name="ref_image_page_add_allow">允許特定網站顯示影像。</string>
+    <string name="ref_image_page_add_block">禁止特定網站載入影像。</string>
+    <string name="ref_image_page_show_detail">允許網站顯示影像</string>
+    <string name="ref_image_page_wifi_detail">僅在 Wi-Fi 連線時允許網頁顯示影像</string>
+</resources>

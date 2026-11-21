@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_home_page_title">首頁</string>
+  <string name="ref_home_bookmarks_title">書籤</string>
+  <string name="ref_home_search_title">搜尋</string>
+</resources>

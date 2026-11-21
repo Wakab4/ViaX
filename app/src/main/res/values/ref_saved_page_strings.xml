@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_saved_save_title">Save page</string>
+    <string name="ref_saved_page_title">Saved pages</string>
+    <string name="ref_saved_local_error">It can only work with \"http\" or \"https\" URLs.</string>
+    <string name="ref_saved_delete_failed_prefix">Failed to delete. The file is located in download path:</string>
+    <string name="ref_saved_page_empty">Empty</string>
+    <string name="ref_saved_name_hint">Title</string>
+    <string name="ref_saved_page_hint">These are saved webpages. You can open them even when you are offline.</string>
+    <string name="ref_saved_as_pdf">Save as PDF</string>
+    <string name="ref_saved_notice">Webpage has been saved to: Bookmarks &gt; Saved pages</string>
+    <string name="ref_saved_view">View</string>
+</resources>

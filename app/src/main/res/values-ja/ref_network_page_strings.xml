@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_network_page_resource_title">メディア検知</string>
+    <string name="ref_network_page_log_title">ネットワークログ</string>
+    <string name="ref_network_page_resources_hint">アイテムを表示するにはタップ、ダウンロードするには長押ししてください。</string>
+    <string name="ref_network_page_log_hint">アドレスもしくはドメインをコピーし %1$s に貼り付けて広告ブロックリストを作成できます。</string>
+    <string name="ref_network_page_resources_empty">このページにはメディアがありません。</string>
+    <string name="ref_network_page_resources_note">\nPS: 見つからない場合は、動画や音声を再生してみてください。</string>
+    <string name="ref_network_page_empty">表示できる項目はありません</string>
+</resources>

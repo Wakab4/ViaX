@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="web_dialog_title">訊息</string>
+  <string name="web_dialog_site_title">來自 %1$s 的訊息</string>
+  <string name="web_dialog_mute_minute">忽略此網站訊息一分鐘</string>
+  <string name="web_dialog_leave_title">確定離開</string>
+  <string name="web_dialog_leave">離開此網頁</string>
+  <string name="web_dialog_stay">留在此網頁</string>
+  <string name="web_dialog_form_title">重新送出表單</string>
+  <string name="web_dialog_form_message">你確定重新傳送資料嗎？</string>
+</resources>

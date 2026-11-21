@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="ref_library_host_bookmarks">ブックマーク</string>
+<string name="ref_library_host_history">履歴</string>
+<string name="ref_library_host_offline">保存済みページ</string>
+<string name="ref_library_host_move">移動</string>
+<string name="ref_library_host_open">オン</string>
+</resources>

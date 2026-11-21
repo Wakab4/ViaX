@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_redirect_setting_allow">Allow</string>
+  <string name="ref_redirect_setting_ask">Ask first before cross-origin redirection</string>
+</resources>

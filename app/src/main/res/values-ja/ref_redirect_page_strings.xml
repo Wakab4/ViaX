@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_redirect_page_title">ページのリダイレクト</string>
+  <string name="ref_redirect_page_add_allow">特定のサイトで任意のURLへのリダイレクトを許可します</string>
+  <string name="ref_redirect_page_add_ask">特定のサイトで別のドメインへのリダイレクト前に確認します</string>
+  <string name="ref_redirect_page_global_allow">任意のURLへのリダイレクトを許可する</string>
+  <string name="ref_redirect_page_global_ask">別のドメインへのリダイレクト前に確認する</string>
+  <string name="ref_redirect_page_ask_section">確認時にポップアップを表示する</string>
+  <string name="ref_redirect_page_allowed">許可</string>
+  <string name="ref_redirect_page_exception">例外</string>
+  <string name="ref_redirect_page_add">例外設定を追加します</string>
+  <string name="ref_redirect_page_delete">削除</string>
+  <string name="ref_redirect_page_default">%1$s （デフォルト）</string>
+</resources>

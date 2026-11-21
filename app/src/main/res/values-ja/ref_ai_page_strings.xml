@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_ai_page_settings">AI利用設定</string>
+    <string name="ref_ai_page_backends">AIサービスプロバイダー</string>
+    <string name="ref_ai_page_prompts">AIプロンプト</string>
+    <string name="ref_ai_page_none">なし</string>
+    <string name="ref_ai_page_custom">カスタム設定</string>
+    <string name="ref_ai_page_system">システムプロンプト</string>
+    <string name="ref_ai_page_message">メッセージテンプレート</string>
+    <string name="ref_ai_page_variables">利用可能な変数</string>
+    <string name="ref_ai_page_page_url">ウェブページのURL</string>
+    <string name="ref_ai_page_page_title">ウェブページのタイトル</string>
+    <string name="ref_ai_page_page_content">ウェブページのプレーンテキスト内容</string>
+    <string name="ref_ai_page_input">入力ボックスの内容</string>
+    <string name="ref_ai_page_time">現在の時刻 yyyy-MM-dd HH:mm:ss EEEE (ZZZZ).</string>
+    <string name="ref_ai_page_model">モデルID</string>
+    <string name="ref_ai_page_key">APIキー</string>
+    <string name="ref_ai_page_management">APIキーの生成と管理ページを開く</string>
+    <string name="ref_ai_page_content">コンテンツ</string>
+    <string name="ref_ai_page_verify">検証</string>
+    <string name="ref_ai_page_failed">検証に失敗しました</string>
+    <string name="ref_ai_page_verified">検証に成功しました</string>
+    <string name="ref_ai_page_wait">しばらくお待ちください…</string>
+    <string name="ref_ai_page_empty">表示できる項目はありません</string>
+    <string name="ref_ai_page_error_empty">メッセージはありません</string>
+    <string name="ref_ai_page_error_backend">AIサービスプロバイダーがありません</string>
+    <string name="ref_ai_page_error_incomplete">完了していません</string>
+    <string name="ref_ai_page_error_configuration">AIサービスプロバイダーが無効です</string>
+    <string name="ref_ai_page_error_unknown">不明なエラー: %1$s</string>
+    <string name="ref_ai_page_error_http">HTTPエラー: %1$d\n\n%2$s</string>
+</resources>

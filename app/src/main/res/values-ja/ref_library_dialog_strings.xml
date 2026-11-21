@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_library_dialog_background">バックグラウンドタブで開く</string>
+  <string name="ref_library_dialog_foreground">新しいタブで開く</string>
+  <string name="ref_library_dialog_edit">編集</string>
+  <string name="ref_library_dialog_favorite">ショートカットを追加</string>
+  <string name="ref_library_dialog_delete">削除</string>
+  <string name="ref_library_dialog_copy">アドレスをコピー</string>
+  <string name="ref_library_dialog_delete_folder_title">削除しますか？</string>
+  <string name="ref_library_dialog_delete_item_message">%1$s を削除してもよろしいですか？</string>
+  <string name="ref_library_dialog_delete_selected_message">よろしいですか？</string>
+  <string name="ref_library_dialog_copied">アドレスをコピーしました</string>
+  <string name="ref_library_dialog_added_home">スピードダイヤルに追加しました。</string>
+  <string name="ref_library_dialog_share">共有</string>
+</resources>

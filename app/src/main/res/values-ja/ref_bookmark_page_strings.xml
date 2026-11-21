@@ -1,0 +1,4 @@
+<resources>
+    <string name="ref_bookmark_page_title">ブックマーク</string>
+    <string name="ref_bookmark_page_empty">表示できる項目はありません</string>
+</resources>

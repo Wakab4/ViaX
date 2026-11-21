@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<plurals name="ref_adblock_page_rule_count"><item quantity="other">%d 条规则</item></plurals>
+<string name="ref_adblock_page_edit">编辑</string>
+<string name="ref_adblock_page_invalid_rules">下列规则格式不正确：</string>
+<string name="ref_adblock_page_warning">警告</string>
+<string name="ref_adblock_page_invalid_url">链接无效。</string>
+<string name="ref_adblock_page_download_started">正在开始下载…</string>
+<string name="ref_adblock_page_delete_message">你确定删除 %1$s 吗？</string>
+<string name="ref_adblock_page_address">地址</string>
+<string name="ref_adblock_page_edit_subscription">编辑规则订阅</string>
+<string name="ref_adblock_page_unsaved">修改的内容未保存，是否保存？</string>
+<string name="ref_adblock_page_save_exit">保存并退出</string>
+<string name="ref_adblock_page_statistics">已拦截 %1$d 个广告，共节省 %2$s</string>
+<string name="ref_adblock_page_copy_link">复制链接</string>
+<string name="ref_adblock_page_add_subscription">添加规则订阅</string>
+<string name="ref_adblock_page_builtin">启用内建规则</string>
+<string name="ref_adblock_page_title">广告拦截</string>
+<string name="ref_adblock_page_builtin_detail">内建规则仅拦截常见广告</string>
+<string name="ref_adblock_page_more">了解更多</string>
+<string name="ref_adblock_page_notice">提示</string>
+<string name="ref_adblock_page_exists">此规则订阅已存在。</string>
+<string name="ref_adblock_page_subscription_detail">%1$s，%2$s</string>
+<string name="ref_adblock_page_delete">删除</string>
+<string name="ref_adblock_page_subscriptions">规则订阅</string>
+<string name="ref_adblock_page_subscriptions_detail">订阅 Adblock Plus 规则列表</string>
+<string name="ref_adblock_page_disabled">未启用</string>
+<string name="ref_adblock_page_copied">已复制链接</string>
+<string name="ref_adblock_page_custom_rules">自定义规则</string>
+<string name="ref_adblock_page_custom_rules_detail">包括拦截的规则、标记的广告</string>
+<string name="ref_adblock_page_new">新建</string>
+<string name="ref_adblock_page_exit">退出</string>
+<string name="ref_adblock_page_custom">自定义</string>
+<string name="ref_adblock_page_fulltext">自动展开网页全文</string>
+<string name="ref_adblock_page_fulltext_detail">打开网页时自动展开网页中折叠的内容</string>
+<string name="ref_adblock_page_update">更新</string>
+<string name="ref_adblock_page_updated">订阅规则更新完成。</string>
+<string name="ref_adblock_page_automatic">自动更新</string>
+<string name="ref_adblock_page_preview">预览</string>
+<string name="ref_adblock_page_never">从未更新</string>
+<string name="ref_adblock_page_update_started">开始更新…</string>
+<string name="ref_adblock_page_rules_hint">一个过滤规则一行。</string>
+<string name="ref_adblock_page_help">帮助</string>
+<string name="ref_adblock_page_save">保存</string>
+<string name="ref_adblock_page_help_content">Via 几乎支持所有的 Adblock Plus 规则。 \n你可以这样拦截 example.com 的所有请求： \n||example.com^（或 example.com） \n\n通配符也是支持的，比如： \n||example.com/js/ads_*.js \n\n你也可以允许指定的请求，例如： \n@@||example.com^ \n\n对于网页的元素，规则类似： \nexample.com###ad</string>
+<string name="ref_adblock_page_updated_time">%1$s 已更新</string>
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="ref_generated_history_context_copy_link">アドレスをコピー</string>
+    <string name="ref_generated_history_context_delete">削除</string>
+    <string name="ref_generated_history_context_clear">全て削除</string>
+    <string name="ref_generated_history_context_background">バックグラウンドタブで開く</string>
+    <string name="ref_generated_history_context_new_tab">新しいタブで開く</string>
+    <string name="ref_generated_history_context_share">共有</string>
+    <string name="ref_generated_history_context_customize">メニューのカスタマイズ</string>
+    <string name="ref_generated_history_context_confirm">よろしいですか？</string>
+    <string name="ref_generated_history_context_more">その他のオプション</string>
+</resources>

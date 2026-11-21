@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_script_page_editor_hint">Code (JavaScript)</string>
+    <string name="ref_script_page_add">New script</string>
+    <string name="ref_script_page_help">Help</string>
+    <string name="ref_script_page_help_content">&lt;b&gt;Metadata block&lt;/b&gt;&lt;br /&gt; The metadata must follow the format:&lt;br /&gt; &lt;tt&gt; // ==UserScript==&lt;br /&gt; // @key value&lt;br /&gt; // ==/UserScript== &lt;/tt&gt; &lt;br /&gt;&lt;br /&gt; &lt;b&gt;&lt;tt&gt;@name&lt;/tt&gt;&lt;/b&gt;: The name of the userscript. &lt;br /&gt;&lt;br /&gt; &lt;b&gt;&lt;tt&gt;@namespace&lt;/tt&gt;&lt;/b&gt;: The combination of &lt;tt&gt;@namespace&lt;/tt&gt; and &lt;tt&gt;@name&lt;/tt&gt; is the unique identifier for a userscript. &lt;br /&gt;&lt;br /&gt; &lt;b&gt;&lt;tt&gt;@match/@exclude-match&lt;/tt&gt;&lt;/b&gt;: Define rules to decide whether a script should be executed. It is recommended to use &lt;tt&gt;@match&lt;/tt&gt; instead of &lt;tt&gt;@include&lt;/tt&gt;. &lt;br /&gt;&lt;br /&gt; &lt;b&gt;&lt;tt&gt;@include/@exclude&lt;/tt&gt;&lt;/b&gt;: The old way to decide whether a script should be executed. &lt;br /&gt;&lt;br /&gt; &lt;b&gt;&lt;tt&gt;@version&lt;/tt&gt;&lt;/b&gt;: The version of the userscript. &lt;br /&gt;&lt;br /&gt; &lt;b&gt;&lt;tt&gt;@description&lt;/tt&gt;&lt;/b&gt;: The description of the userscript. &lt;br /&gt;&lt;br /&gt; &lt;b&gt;&lt;tt&gt;@author&lt;/tt&gt;&lt;/b&gt;: The author of the userscript. &lt;br /&gt;&lt;br /&gt; &lt;b&gt;&lt;tt&gt;@require&lt;/tt&gt;&lt;/b&gt;: The require of the userscript. For example, &lt;br /&gt;&lt;tt&gt;// @require https://my.cdn.com/jquery.js&lt;/tt&gt;. &lt;br /&gt;&lt;br /&gt; &lt;b&gt;&lt;tt&gt;@run-at&lt;/tt&gt;&lt;/b&gt;: Decide when the script will execute. &lt;tt&gt;document-start&lt;/tt&gt; is used to inject scripts before the page loads, &lt;tt&gt;document-end&lt;/tt&gt; is used to inject scripts after page load, &lt;tt&gt;document-idle&lt;/tt&gt; is used to inject scripts after page is idle. &lt;br /&gt;&lt;br /&gt; &lt;b&gt;&lt;tt&gt;@grant&lt;/tt&gt;&lt;/b&gt;: Specify which special GM_* APIs should be granted and can be used when the script executes.&lt;br /&gt; &lt;br /&gt;&lt;br /&gt; &lt;b&gt;&lt;tt&gt;@downloadURL&lt;/tt&gt;&lt;/b&gt;: The URL the script can be downloaded from. &lt;br /&gt;&lt;br /&gt; &lt;b&gt;&lt;tt&gt;@supportURL&lt;/tt&gt;&lt;/b&gt;: The support URL of the userscript. &lt;br /&gt;&lt;br /&gt; &lt;b&gt;&lt;tt&gt;@homepageURL&lt;/tt&gt;&lt;/b&gt;: The homepage URL of the userscript. &lt;br /&gt;&lt;br /&gt; &lt;b&gt;GM_* APIs&lt;/b&gt;&lt;br /&gt; &lt;tt&gt;GM_*&lt;/tt&gt; are a group of special APIs provided by Via. Currently supported special APIs include: &lt;br/&gt; &lt;tt&gt;GM_getValue/GM_setValue/GM_deleteValue/GM_listValues/GM_getResourceText/GM_getResourceURL/GM_addElement/GM_addStyle/GM_setClipboard/GM_xmlhttpRequest/GM_download/GM_registerMenuCommand/GM_unregisterMenuCommand&lt;/tt&gt;. &lt;br /&gt;&lt;br /&gt; &lt;b&gt;Matching&lt;/b&gt;&lt;br /&gt; &lt;tt&gt;@match&lt;/tt&gt; defines a URL matching rule. &lt;tt&gt;@exclude-match&lt;/tt&gt; defines a match rule but used to exclude the matched URLs, similar to &lt;tt&gt;@exclude&lt;/tt&gt;. &lt;br /&gt;&lt;br /&gt; For example:&lt;br /&gt; &lt;tt&gt; // @match https://www.google.com/something &lt;br /&gt; // @match https://www.google.com/any/* &lt;br /&gt; // @exclude-match https://www.google.com/any/not_me &lt;/tt&gt; &lt;br /&gt;&lt;br /&gt;</string>
+    <string name="ref_script_page_more">Learn more</string>
+    <string name="ref_script_page_metadata_title">Add metadata block</string>
+    <string name="ref_script_page_metadata_message">This script has no metadata block so it cannot be saved. Do you want to add a default metadata block to it?</string>
+    <string name="ref_script_page_default">Default</string>
+    <string name="ref_script_page_default_format">%1$s (default)</string>
+    <string name="ref_script_page_run_at">Run at</string>
+    <string name="ref_script_page_matches">Matches</string>
+    <string name="ref_script_page_excludes">Excludes</string>
+    <string name="ref_script_page_add_match">Add match</string>
+    <string name="ref_script_page_add_exclude">Add exclude</string>
+    <string name="ref_script_page_dependencies">Requires</string>
+    <string name="ref_script_page_resources">Resources</string>
+    <string name="ref_script_page_advanced">Advanced</string>
+    <string name="ref_script_page_source">Edit source code</string>
+    <string name="ref_script_page_reset">Reset</string>
+    <string name="ref_script_page_reset_message">Are you sure you want to reset this script?</string>
+    <string name="ref_script_page_download">Import script from URL</string>
+    <string name="ref_script_page_import">Import script from file</string>
+    <string name="ref_script_page_homepage">Homepage</string>
+    <string name="ref_script_page_copy_link">Copy link</string>
+    <string name="ref_script_page_delete_message">Are you sure you want to delete %1$s?</string>
+    <string name="ref_script_page_update_one">Are you sure you want to update %1$s?</string>
+    <string name="ref_script_page_info_name">Name</string>
+    <string name="ref_script_page_info_version">Version</string>
+    <string name="ref_script_page_info_homepage">Homepage URL</string>
+    <string name="ref_script_page_info_support">Support URL</string>
+    <string name="ref_script_page_info_download">Download URL</string>
+    <string name="ref_script_page_info_updated">Updated</string>
+    <string name="ref_script_page_info_created">Created</string>
+    <string name="ref_script_page_info_size">Size</string>
+    <string name="ref_script_page_information">Script info</string>
+    <string name="ref_script_page_just_now">just now</string>
+</resources>

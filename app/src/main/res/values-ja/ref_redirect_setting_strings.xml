@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_redirect_setting_allow">許可</string>
+  <string name="ref_redirect_setting_ask">別のドメインへのリダイレクト前に確認する</string>
+</resources>

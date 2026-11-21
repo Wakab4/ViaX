@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_start_restore_prompt">你想要恢复上次会话未关闭的标签页吗？</string>
+</resources>

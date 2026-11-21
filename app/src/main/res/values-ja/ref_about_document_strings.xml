@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_about_document_contact">開発者に連絡</string>
+    <string name="ref_about_document_glean">落穂拾い</string>
+    <string name="ref_about_document_translate">翻訳に協力する・不具合報告 (GitHub)</string>
+    <string name="ref_about_document_website">公式サイト</string>
+    <string name="ref_about_document_privacy">プライバシーポリシー（英語）</string>
+    <string name="ref_about_document_title">Via について</string>
+    <string name="ref_about_document_terms">利用規約（英語）</string>
+</resources>

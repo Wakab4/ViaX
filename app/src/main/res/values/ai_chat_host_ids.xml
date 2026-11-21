@@ -1,0 +1,14 @@
+<resources>
+    <item name="ai_chat_dialog_pager" type="id" />
+    <item name="ai_chat_message_surface" type="id" />
+    <item name="ai_preview_markdown_action" type="id" />
+    <item name="ai_preview_plain_action" type="id" />
+    <item name="ai_chat_messages_list" type="id" />
+    <item name="ai_chat_threads_list" type="id" />
+    <item name="ai_chat_toolbar" type="id" />
+    <item name="ai_chat_prompt_list" type="id" />
+    <item name="ai_chat_input_row" type="id" />
+    <item name="ai_chat_thread_icon" type="id" />
+    <item name="ai_chat_thread_title" type="id" />
+    <item name="ai_chat_thread_time" type="id" />
+</resources>

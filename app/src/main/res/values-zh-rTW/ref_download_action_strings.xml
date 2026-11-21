@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="ref_download_action_open">開啟</string>
+<string name="ref_download_action_copy">複製文字</string>
+<string name="ref_download_action_unavailable">無關聯的應用程式以開啟檔案</string>
+<string name="ref_download_action_delete_bulk">你確定刪除這些下載任務嗎 (總共 %1$d 個任務)？</string>
+<string name="ref_download_action_delete_complete">刪除這個下載工作嗎？</string>
+<string name="ref_download_action_restart_body">你確定刪除已下載的檔案並重新下載 %1$s 嗎？</string>
+<string name="ref_download_action_delete_partial">這將同時刪除檔案，你確定嗎？</string>
+<string name="ref_download_action_missing">檔案不存在</string>
+<string name="ref_download_action_delete_files">同時刪除已下載的檔案</string>
+<string name="ref_download_action_copied">成功複製連結</string>
+</resources>

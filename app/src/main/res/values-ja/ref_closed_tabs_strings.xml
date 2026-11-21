@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_closed_tabs_title">最近閉じたタブ</string>
+    <string name="ref_closed_tabs_background">バックグラウンドタブで開く</string>
+    <string name="ref_closed_tabs_foreground">新しいタブで開く</string>
+    <string name="ref_closed_tabs_delete">削除</string>
+    <string name="ref_closed_tabs_copy_link">アドレスをコピー</string>
+    <string name="ref_closed_tabs_share">共有</string>
+    <string name="ref_closed_tabs_more">その他</string>
+    <string name="ref_closed_tabs_clear">全て削除</string>
+    <string name="ref_closed_tabs_confirm_clear">よろしいですか？</string>
+    <string name="ref_closed_tabs_search">検索</string>
+    <string name="ref_closed_tabs_settings_title">タブ設定</string>
+    <string name="ref_closed_tabs_restore_setting">前回開いていたページを開く</string>
+    <string name="ref_closed_tabs_undo_prompt">タブを閉じたときに取り消すポップアップを表示する</string>
+    <string name="ref_closed_tabs_undo_prompt_description">シークレットモード時には表示されません</string>
+    <string name="ref_closed_tabs_private_restore_notice">シークレットモードになったため、タブは復元されません。</string>
+    <string name="ref_closed_tabs_untitled">空白のページ</string>
+    <string name="ref_closed_tabs_failure">失敗しました</string>
+    <string name="ref_closed_tabs_hint">メッセージ</string>
+    <string name="ref_closed_tabs_restore_0">タブを復元しない</string>
+    <string name="ref_closed_tabs_restore_1">常にタブを復元する</string>
+    <string name="ref_closed_tabs_restore_2">確認時にポップアップを表示する</string>
+    <string name="ref_closed_tabs_empty_description">表示できる項目はありません</string>
+    <string name="ref_closed_tabs_copied">アドレスをコピーしました</string>
+</resources>

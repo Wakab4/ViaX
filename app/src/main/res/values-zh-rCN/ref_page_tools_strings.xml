@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_page_orientation_title">屏幕方向</string>
+  <string name="ref_page_tool_changed">已设置 %1$s 为 %2$s</string>
+  <string name="ref_page_orientation_follow">跟随系统</string>
+  <string name="ref_page_orientation_auto">自动</string>
+  <string name="ref_page_orientation_portrait">竖屏</string>
+  <string name="ref_page_orientation_landscape">横屏</string>
+</resources>

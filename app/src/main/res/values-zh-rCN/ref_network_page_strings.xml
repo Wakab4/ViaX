@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ref_network_page_resource_title">资源嗅探</string>
+    <string name="ref_network_page_log_title">网络日志</string>
+    <string name="ref_network_page_resources_hint">下列是网页加载中的资源日志。</string>
+    <string name="ref_network_page_log_hint">所有拦截规则存储在 %1$s\n你可以手动编辑它来修改规则，或长按下列任一条目来选择是否拦截。</string>
+    <string name="ref_network_page_resources_empty">这个页面没有资源。</string>
+    <string name="ref_network_page_resources_note">\n注：音乐或视频在播放时更容易被获取。资源嗅探不支持部分网站。</string>
+    <string name="ref_network_page_empty">空空如也…</string>
+</resources>

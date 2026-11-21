@@ -1,0 +1,5 @@
+<resources>
+<string name="ref_script_update_started">开始更新…</string>
+<string name="ref_script_update_completed">脚本更新完成。</string>
+</resources>
+

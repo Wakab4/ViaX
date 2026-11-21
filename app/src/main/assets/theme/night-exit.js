@@ -1,0 +1,1 @@
+(function(){if(document.getElementById("via_inject_css_night")){var night_e=document.getElementById("via_inject_css_night");night_e.parentNode.removeChild(night_e)};})();

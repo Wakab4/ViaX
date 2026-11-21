@@ -1,0 +1,1 @@
+<resources><array name="ref_home_tool_logo_modes"><item>@string/ref_home_tool_mode_default</item><item>@string/ref_home_tool_mode_image</item><item>@string/ref_home_tool_mode_text</item><item>@string/ref_home_tool_mode_html</item><item>@string/ref_home_tool_mode_none</item></array></resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ref_library_dialog_background">后台打开</string>
+  <string name="ref_library_dialog_foreground">新标签打开</string>
+  <string name="ref_library_dialog_edit">编辑</string>
+  <string name="ref_library_dialog_favorite">添加到主页收藏</string>
+  <string name="ref_library_dialog_delete">删除</string>
+  <string name="ref_library_dialog_copy">复制链接</string>
+  <string name="ref_library_dialog_delete_folder_title">你想要删除此文件夹吗？</string>
+  <string name="ref_library_dialog_delete_folder_message">这会同时删除 %1$s 文件夹内的书签，确定要删除吗？</string>
+  <string name="ref_library_dialog_delete_item_message">你确定删除 %1$s 吗？</string>
+  <string name="ref_library_dialog_delete_selected_message">你确定继续吗？</string>
+  <string name="ref_library_dialog_copied">已复制链接</string>
+  <string name="ref_library_dialog_added_home">已添加到主页收藏</string>
+  <string name="ref_library_dialog_delete_multiple_message">你确定删除 %1$d 个条目吗?</string>
+  <string name="ref_library_dialog_share">分享</string>
+</resources>

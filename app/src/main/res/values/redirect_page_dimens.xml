@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="ref_redirect_page_body_size">14sp</dimen>
+    <dimen name="ref_redirect_page_detail_size">12sp</dimen>
+</resources>

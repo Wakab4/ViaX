@@ -1,0 +1,10 @@
+<resources>
+<string name="ref_font_delete">削除</string>
+<string name="ref_font_edit">編集</string>
+<string name="ref_font_new">新規作成</string>
+<string name="ref_font_default">デフォルト</string>
+<string name="ref_font_title">フォント設定</string>
+<string name="ref_font_rename">リネーム</string>
+<string name="ref_font_operation_failed">失敗しました</string>
+<string name="ref_font_import_error">フォントを追加できませんでした。エラーコード: %1$d</string>
+</resources>
