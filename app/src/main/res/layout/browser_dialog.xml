@@ -6,13 +6,13 @@
         android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:layout_marginBottom="6dp"
         android:paddingTop="8dp" android:paddingBottom="8dp" android:textSize="16sp" android:textStyle="bold"
         android:ellipsize="end" android:lines="1" android:textDirection="locale" android:visibility="gone" />
-    <moe.pure.browser.ui.dialog.DialogScrollView android:id="@+id/dialog_message_scroll"
+    <moe.via.browser.ui.dialog.DialogScrollView android:id="@+id/dialog_message_scroll"
         android:layout_width="match_parent" android:layout_height="wrap_content" android:overScrollMode="never">
         <TextView android:id="@+id/dialog_message" android:layout_width="match_parent" android:layout_height="wrap_content"
             android:paddingStart="16dp" android:paddingEnd="16dp" android:paddingTop="8dp" android:paddingBottom="8dp"
             android:textSize="14sp" android:lineSpacingExtra="4dp" android:textIsSelectable="true" android:textDirection="locale" android:visibility="gone" />
-    </moe.pure.browser.ui.dialog.DialogScrollView>
-    <moe.pure.browser.ui.dialog.DialogListView android:id="@+id/dialog_list"
+    </moe.via.browser.ui.dialog.DialogScrollView>
+    <moe.via.browser.ui.dialog.DialogListView android:id="@+id/dialog_list"
         android:layout_width="match_parent" android:layout_height="wrap_content" android:visibility="gone"
         android:divider="@null" android:listSelector="@drawable/dialog_item_feedback"
         android:scrollbars="none" android:requiresFadingEdge="vertical" android:fadingEdgeLength="32dp" />
@@ -28,9 +28,9 @@
     </LinearLayout>
     <Space android:layout_width="0dp" android:layout_height="12dp" />
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="end">
-        <TextView android:id="@+id/dialog_neutral" style="@style/Widget.PureBrowser.DialogButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone" />
+        <TextView android:id="@+id/dialog_neutral" style="@style/Widget.ViaBrowser.DialogButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone" />
         <Space android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1" />
-        <TextView android:id="@+id/dialog_negative" style="@style/Widget.PureBrowser.DialogButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone" />
-        <TextView android:id="@+id/dialog_positive" style="@style/Widget.PureBrowser.DialogButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone" />
+        <TextView android:id="@+id/dialog_negative" style="@style/Widget.ViaBrowser.DialogButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone" />
+        <TextView android:id="@+id/dialog_positive" style="@style/Widget.ViaBrowser.DialogButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:visibility="gone" />
     </LinearLayout>
 </LinearLayout>

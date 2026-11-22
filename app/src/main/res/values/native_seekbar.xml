@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Widget.Pure.NativeSeekBar" parent="">
+    <style name="Widget.Via.NativeSeekBar" parent="">
         <item name="android:minHeight">3dp</item>
         <item name="android:maxHeight">3dp</item>
     </style>

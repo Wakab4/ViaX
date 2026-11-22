@@ -14,10 +14,10 @@
     <TextView android:id="@+id/web_download_size" android:layout_width="match_parent" android:layout_height="wrap_content"
         android:layout_below="@id/web_download_name_scroll" android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:layout_marginBottom="12dp"
         android:textSize="12sp" android:minLines="1" android:ellipsize="end" android:textDirection="locale" />
-    <TextView android:id="@+id/web_download_accept" style="@style/Widget.PureBrowser.DialogButton" android:layout_width="wrap_content" android:layout_height="wrap_content"
+    <TextView android:id="@+id/web_download_accept" style="@style/Widget.ViaBrowser.DialogButton" android:layout_width="wrap_content" android:layout_height="wrap_content"
         android:layout_below="@id/web_download_size" android:layout_alignParentEnd="true" android:text="@android:string/ok" />
-    <TextView android:id="@+id/web_download_copy" style="@style/Widget.PureBrowser.DialogButton" android:layout_width="wrap_content" android:layout_height="wrap_content"
+    <TextView android:id="@+id/web_download_copy" style="@style/Widget.ViaBrowser.DialogButton" android:layout_width="wrap_content" android:layout_height="wrap_content"
         android:layout_alignTop="@id/web_download_accept" android:layout_alignParentStart="true" android:text="复制链接" />
-    <TextView android:id="@+id/web_download_cancel" style="@style/Widget.PureBrowser.DialogButton" android:layout_width="wrap_content" android:layout_height="wrap_content"
+    <TextView android:id="@+id/web_download_cancel" style="@style/Widget.ViaBrowser.DialogButton" android:layout_width="wrap_content" android:layout_height="wrap_content"
         android:layout_alignTop="@id/web_download_accept" android:layout_toStartOf="@id/web_download_accept" android:text="@android:string/cancel" />
 </RelativeLayout>

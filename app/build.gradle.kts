@@ -3,13 +3,13 @@ plugins {
 }
 
 android {
-    namespace = "moe.pure.browser"
+    namespace = "moe.via.browser"
     compileSdk {
         version = release(37) { minorApiLevel = 0 }
     }
 
     defaultConfig {
-        applicationId = "moe.pure.browser"
+        applicationId = "moe.via.browser"
         minSdk = 28
         targetSdk = 36
         versionCode = 20261028

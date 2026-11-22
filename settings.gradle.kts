@@ -14,6 +14,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Pure"
+rootProject.name = "Via"
 include(":app")
 

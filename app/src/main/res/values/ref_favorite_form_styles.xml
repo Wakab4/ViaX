@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Widget.PureBrowser.FavoriteDialogCaption" parent="">
+    <style name="Widget.ViaBrowser.FavoriteDialogCaption" parent="">
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/ref_favorite_field_text</item>
@@ -13,7 +13,7 @@
         <item name="android:layout_marginRight">16dp</item>
         <item name="android:layout_marginBottom">6dp</item>
     </style>
-    <style name="Widget.PureBrowser.FavoriteDialogField" parent="">
+    <style name="Widget.ViaBrowser.FavoriteDialogField" parent="">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/ref_favorite_field_text</item>
         <item name="android:textColorHint">@color/ref_favorite_field_hint</item>
@@ -21,7 +21,7 @@
         <item name="android:maxLines">1</item>
         <item name="android:lines">1</item>
     </style>
-    <style name="Widget.PureBrowser.FavoriteDialogFieldScroll" parent="">
+    <style name="Widget.ViaBrowser.FavoriteDialogFieldScroll" parent="">
         <item name="android:background">@drawable/dialog_field_underline</item>
         <item name="android:paddingTop">8dp</item>
         <item name="android:paddingBottom">8dp</item>
@@ -30,7 +30,7 @@
         <item name="android:layout_marginRight">16dp</item>
         <item name="android:layout_marginBottom">12dp</item>
     </style>
-    <style name="Widget.PureBrowser.FavoriteDialogAction" parent="">
+    <style name="Widget.ViaBrowser.FavoriteDialogAction" parent="">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">#6F8DE1</item>
         <item name="android:gravity">center</item>

@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:text="@string/ref_favorite_edit"
         android:textDirection="locale"
-        style="@style/Widget.PureBrowser.FavoriteDialogCaption"/>
+        style="@style/Widget.ViaBrowser.FavoriteDialogCaption"/>
     <ImageView
         android:id="@+id/home_favorite_icon"
         android:layout_width="36dp"
@@ -47,7 +47,7 @@
         android:layout_toRightOf="@+id/home_favorite_icon"
         android:layout_below="@+id/home_favorite_caption"
         android:layout_toEndOf="@+id/home_favorite_icon"
-        style="@style/Widget.PureBrowser.FavoriteDialogFieldScroll">
+        style="@style/Widget.ViaBrowser.FavoriteDialogFieldScroll">
         <EditText
             android:id="@+id/home_favorite_title"
             android:layout_width="wrap_content"
@@ -56,7 +56,7 @@
             android:inputType="textNoSuggestions"
             android:imeOptions="actionNext"
             android:textDirection="locale"
-            style="@style/Widget.PureBrowser.FavoriteDialogField"/>
+            style="@style/Widget.ViaBrowser.FavoriteDialogField"/>
     </HorizontalScrollView>
     <HorizontalScrollView
         android:id="@+id/home_favorite_url_scroll"
@@ -67,7 +67,7 @@
         android:layout_toRightOf="@+id/home_favorite_icon"
         android:layout_below="@+id/home_favorite_title_scroll"
         android:layout_toEndOf="@+id/home_favorite_icon"
-        style="@style/Widget.PureBrowser.FavoriteDialogFieldScroll">
+        style="@style/Widget.ViaBrowser.FavoriteDialogFieldScroll">
         <EditText
             android:id="@+id/home_favorite_url"
             android:layout_width="wrap_content"
@@ -75,7 +75,7 @@
             android:hint="@string/ref_bookmark_form_url_hint"
             android:inputType="textNoSuggestions"
             android:imeOptions="actionDone"
-            style="@style/Widget.PureBrowser.FavoriteDialogField"/>
+            style="@style/Widget.ViaBrowser.FavoriteDialogField"/>
     </HorizontalScrollView>
     <TextView
         android:id="@+id/home_favorite_positive"
@@ -85,7 +85,7 @@
         android:layout_below="@+id/home_favorite_url_scroll"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        style="@style/Widget.PureBrowser.FavoriteDialogAction"/>
+        style="@style/Widget.ViaBrowser.FavoriteDialogAction"/>
     <TextView
         android:id="@+id/home_favorite_negative"
         android:layout_width="wrap_content"
@@ -94,5 +94,5 @@
         android:layout_toLeftOf="@+id/home_favorite_positive"
         android:layout_below="@+id/home_favorite_url_scroll"
         android:layout_toStartOf="@+id/home_favorite_positive"
-        style="@style/Widget.PureBrowser.FavoriteDialogAction"/>
+        style="@style/Widget.ViaBrowser.FavoriteDialogAction"/>
 </RelativeLayout>

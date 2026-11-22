@@ -1,5 +1,5 @@
 <resources>
-    <style name="Theme.PureBrowser" parent="android:style/Theme.Material.Light.NoActionBar">
+    <style name="Theme.ViaBrowser" parent="android:style/Theme.Material.Light.NoActionBar">
         <item name="android:fontFamily">sans</item>
         <item name="android:colorAccent">#6F8DE1</item>
         <item name="android:statusBarColor">#F7F8FA</item>
@@ -8,7 +8,7 @@
         <item name="android:windowLightNavigationBar">true</item>
         <item name="android:windowActionModeOverlay">true</item>
     </style>
-    <style name="Theme.PureBrowser.Night" parent="android:style/Theme.Material.NoActionBar">
+    <style name="Theme.ViaBrowser.Night" parent="android:style/Theme.Material.NoActionBar">
         <item name="android:fontFamily">sans</item>
         <item name="android:colorAccent">#617AC1</item>
         <item name="android:windowBackground">#000000</item>

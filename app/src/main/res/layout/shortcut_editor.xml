@@ -23,8 +23,8 @@
             android:background="@android:color/transparent" android:textSize="14sp" android:lines="1" android:maxLines="1"
             android:hint="地址" android:inputType="textNoSuggestions" android:imeOptions="actionDone" />
     </HorizontalScrollView>
-    <TextView android:id="@+id/shortcut_accept" style="@style/Widget.PureBrowser.DialogButton" android:layout_width="wrap_content" android:layout_height="wrap_content"
+    <TextView android:id="@+id/shortcut_accept" style="@style/Widget.ViaBrowser.DialogButton" android:layout_width="wrap_content" android:layout_height="wrap_content"
         android:layout_below="@id/shortcut_url_scroll" android:layout_alignParentEnd="true" android:text="@android:string/ok" />
-    <TextView android:id="@+id/shortcut_cancel" style="@style/Widget.PureBrowser.DialogButton" android:layout_width="wrap_content" android:layout_height="wrap_content"
+    <TextView android:id="@+id/shortcut_cancel" style="@style/Widget.ViaBrowser.DialogButton" android:layout_width="wrap_content" android:layout_height="wrap_content"
         android:layout_alignTop="@id/shortcut_accept" android:layout_toStartOf="@id/shortcut_accept" android:text="@android:string/cancel" />
 </RelativeLayout>

@@ -1,6 +1,6 @@
 <resources>
     <color name="ref_home_design_accent">#6F8DE1</color>
-    <style name="Widget.PureBrowser.HomeDesignTab" parent="">
+    <style name="Widget.ViaBrowser.HomeDesignTab" parent="">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/ref_home_design_tab_text</item>
         <item name="android:ellipsize">end</item>

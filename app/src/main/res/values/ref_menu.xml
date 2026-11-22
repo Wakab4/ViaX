@@ -7,11 +7,11 @@
         <item>@string/ref_menu_orientation_portrait</item>
         <item>@string/ref_menu_orientation_landscape</item>
     </string-array>
-    <style name="Animation.PureBrowser.MenuBottom" parent="">
+    <style name="Animation.ViaBrowser.MenuBottom" parent="">
         <item name="android:windowEnterAnimation">@anim/ref_menu_bottom_enter</item>
         <item name="android:windowExitAnimation">@anim/ref_menu_bottom_exit</item>
     </style>
-    <style name="Animation.PureBrowser.MenuTop" parent="">
+    <style name="Animation.ViaBrowser.MenuTop" parent="">
         <item name="android:windowEnterAnimation">@anim/ref_menu_top_enter</item>
         <item name="android:windowExitAnimation">@anim/ref_menu_top_exit</item>
     </style>

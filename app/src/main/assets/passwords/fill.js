@@ -62,4 +62,4 @@
     setValue(found.username, credentials.user);
     setValue(found.password, credentials.pass);
     return 1;
-})(__PURE_PASSWORD_ARGUMENTS__);
+})(__VIA_PASSWORD_ARGUMENTS__);
