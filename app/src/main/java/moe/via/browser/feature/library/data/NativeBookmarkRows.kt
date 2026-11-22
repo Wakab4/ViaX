@@ -154,12 +154,13 @@ class NativeBookmarkRows(private val db: SQLiteDatabase) {
         return result
     }
 
-    fun deleteFolders(ids: List<String>) {
-        val all = ids.flatMap(::descendants).map { it.id }.filter { it.isNotEmpty() }.toSet().toList()
-        if (all.isEmpty()) return
+    fun deleteFolders(ids: List<String>): Set<String> {
+        val all = ids.flatMap(::descendants).map { it.id }.filter { it.isNotEmpty() }.toSet()
+        if (all.isEmpty()) return all
         db.delete("bookmark_folders", "_id IN (${marks(all.size)})", all.toTypedArray())
         db.delete("bookmark_items", "folder_id IN (${marks(all.size)})", all.toTypedArray())
         synchronized(cache) { all.forEach(cache.values::remove) }
+        return all
     }
 
     fun moveFolder(id: String, parent: String, order: Int, nowSeconds: Long) {

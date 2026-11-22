@@ -29,6 +29,7 @@ abstract class LibraryItemsPageFragment : LibraryChildFragment() {
     internal lateinit var range: NativeRangeSelection
     protected var entries: List<Entry> = emptyList()
     protected var editing = false
+    protected open val showHiddenFolders = false
     private var rowContext: LibraryContextMenuController? = null
     private val main = Handler(Looper.getMainLooper())
     private val queryWork = Runnable { reload() }
@@ -48,7 +49,12 @@ abstract class LibraryItemsPageFragment : LibraryChildFragment() {
         rowContext = LibraryContextMenuController(requireActivity(), object : LibraryContextMenuController.Host {
             override fun open(entry: Entry, where: LibraryOpenWhere) {
                 if (!entry.isFolder) model.open(entry.url, where)
-                else work({ repository.bookmarkUrls(entry.id) }) { urls -> model.open(urls.mapIndexed { index, url -> LibraryOpenRequest(url, if (index == 0) where else LibraryOpenWhere.FORCE_CURRENT) }) }
+                else {
+                    val showHidden = showHiddenFolders
+                    work({ repository.bookmarkUrls(entry.id, showHidden) }) { urls ->
+                        model.open(urls.mapIndexed { index, url -> LibraryOpenRequest(url, if (index == 0) where else LibraryOpenWhere.FORCE_CURRENT) })
+                    }
+                }
             }
             override fun edit(entry: Entry) = editEntry(entry)
             override fun favorite(entry: Entry) {
@@ -64,6 +70,9 @@ abstract class LibraryItemsPageFragment : LibraryChildFragment() {
                 BrowserMessages.show(requireActivity(), R.string.ref_library_dialog_copied)
             }
             override fun share(entry: Entry) { startActivity(Intent.createChooser(Intent(Intent.ACTION_SEND).apply { type = "text/plain"; putExtra(Intent.EXTRA_TEXT, entry.url) }, null)) }
+            override fun toggleFolderHidden(entry: Entry) {
+                work({ repository.setBookmarkFolderHidden(entry.id, !entry.hidden) }) { reload() }
+            }
         })
     }
     protected abstract fun reload()
@@ -100,7 +109,8 @@ abstract class LibraryItemsPageFragment : LibraryChildFragment() {
     override fun footerMove() = Unit
     override fun footerOpen() {
         val selected = adapter.selectedEntries()
-        work({ selected.flatMap { if (it.isFolder) repository.bookmarks(it.id).filterNot(Entry::isFolder) else listOf(it) } }) { pages ->
+        val showHidden = showHiddenFolders
+        work({ selected.flatMap { if (it.isFolder) repository.bookmarks(it.id, showHidden = showHidden).filterNot(Entry::isFolder) else listOf(it) } }) { pages ->
             model.open(pages.filterNot(Entry::isFolder).map { LibraryOpenRequest(if (it.kind == LibraryKind.OFFLINE) Uri.fromFile(java.io.File(it.path)).toString() else it.url, LibraryOpenWhere.FOREGROUND) })
         }
     }

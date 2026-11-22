@@ -21,6 +21,9 @@ class BookmarksPageFragment : LibraryItemsPageFragment() {
     private val preferences by lazy { requireContext().getSharedPreferences("browser", android.content.Context.MODE_PRIVATE) }
     private var folder = ""
     private var folderParent = ""
+    override var showHiddenFolders = false
+        private set
+    private var loadVersion = 0L
     private var forms: BookmarkDialogs? = null
     private var more: BookmarkMoreMenuController? = null
     private var drag: LibraryDragController? = null
@@ -30,14 +33,19 @@ class BookmarksPageFragment : LibraryItemsPageFragment() {
         forms = BookmarkDialogs(parent, repository, viewLifecycleOwner); documents.bind()
         adapter.details = BookmarkDisplayMode.details(preferences)
         more = BookmarkMoreMenuController(requireActivity(), object : BookmarkMoreMenuController.Host {
-            override fun state() = BookmarkMoreMenuController.State(folder.isEmpty(), adapter.details, BookmarkOrdering.preferredOrder(preferences))
-            override fun addBookmark() { forms?.edit("", "", folder, onSaved = ::reload) }
-            override fun addFolder() { forms?.folder(folder, onSaved = ::reload) }
+            override fun state() = BookmarkMoreMenuController.State(folder.isEmpty(), adapter.details,
+                BookmarkOrdering.preferredOrder(preferences), repository.hasHiddenFolders(), showHiddenFolders)
+            override fun addBookmark() { forms?.edit("", "", folder, showHidden = showHiddenFolders, onSaved = ::reload) }
+            override fun addFolder() { forms?.folder(folder, showHidden = showHiddenFolders, onSaved = ::reload) }
             override fun setOrder(order: Int) {
                 if (BookmarkOrdering.preferredOrder(preferences) == order) return
                 BookmarkOrdering.setOrder(preferences, order); GeneratedPageDirtyState.markDirty(GeneratedPageDirtyState.BOOKMARKS); reload()
             }
             override fun setDetails(details: Boolean) { adapter.details = details; BookmarkDisplayMode.setDetails(preferences, details); update() }
+            override fun toggleHiddenFolders() {
+                showHiddenFolders = !showHiddenFolders
+                reload()
+            }
             override fun importBookmarks() = documents.import()
             override fun exportBookmarks() = documents.export()
         })
@@ -54,8 +62,16 @@ class BookmarksPageFragment : LibraryItemsPageFragment() {
         reload()
     }
     override fun reload() {
-        val currentFolder = folder; val currentQuery = query; val sort = BookmarkSort.entries[BookmarkOrdering.preferredOrder(preferences)]
-        work({ val directory = repository.findFolder(currentFolder); directory to repository.bookmarks(directory?.id.orEmpty(), currentQuery.trim(), sort, includeFolderCounts = true) }) { (directory, rows) ->
+        val version = ++loadVersion
+        val currentFolder = folder
+        val currentQuery = query
+        val showHidden = showHiddenFolders
+        val sort = BookmarkSort.entries[BookmarkOrdering.preferredOrder(preferences)]
+        work({
+            val directory = repository.findFolder(currentFolder, showHidden)
+            directory to repository.bookmarks(directory?.id.orEmpty(), currentQuery.trim(), sort, includeFolderCounts = true, showHidden = showHidden)
+        }) { (directory, rows) ->
+            if (version != loadVersion) return@work
             folder = directory?.id.orEmpty(); folderParent = directory?.parentId.orEmpty()
             adapter.draggingAllowed = currentQuery.isEmpty() && sort != BookmarkSort.NAME
             val up = directory?.takeIf { it.id.isNotEmpty() && currentQuery.isBlank() }?.let { Entry(it.parentId, LibraryKind.FOLDER, "..") }
@@ -64,14 +80,19 @@ class BookmarksPageFragment : LibraryItemsPageFragment() {
     }
     override fun openFolder(entry: Entry) { range.finish(); folder = entry.id; setQueryText(""); reload() }
     override fun editEntry(entry: Entry) {
-        if (entry.isFolder) forms?.folder(entry.parentId, entry, ::reload) else forms?.edit(entry.title, entry.url, entry.parentId, entry, onSaved = ::reload)
+        if (entry.isFolder) forms?.folder(entry.parentId, entry, showHidden = showHiddenFolders, onSaved = ::reload)
+        else forms?.edit(entry.title, entry.url, entry.parentId, entry, showHidden = showHiddenFolders, onSaved = ::reload)
     }
     override fun drag(holder: RecyclerView.ViewHolder) { drag?.start(holder) }
     override fun footerLeft() { if (editing) super.footerLeft() else page?.bookmarkMoreAnchor?.let { more?.show(it) } }
-    override fun footerMove() { forms?.move(adapter.selectedEntries(), folder, ::reload) }
+    override fun footerMove() { forms?.move(adapter.selectedEntries(), folder, showHidden = showHiddenFolders, onMoved = ::reload) }
     override fun folderState() = folder
     internal override fun canSwipeBack() = folder.isEmpty() && super.canSwipeBack()
     internal override fun back(): Boolean { if (super.back()) return true; if (folder.isEmpty()) return false; folder = folderParent; reload(); return true }
-    override fun onDestroyView() { drag?.close(); drag = null; more?.close(); more = null; forms?.close(); forms = null; documents.close(); super.onDestroyView() }
+    override fun onDestroyView() {
+        showHiddenFolders = false
+        drag?.close(); drag = null; more?.close(); more = null
+        forms?.close(); forms = null; documents.close(); super.onDestroyView()
+    }
 }
 

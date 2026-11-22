@@ -48,7 +48,9 @@ class BookmarksDocument(context: Context) {
                 if (rootRequest) GeneratedPageDirtyState.clear(GeneratedPageDirtyState.BOOKMARKS)
             } catch (error: Exception) { Log.warn("BookmarkDocument", "Generate bookmarks", error) }
         }
-        // An invalid explicit key writes folder.html with root rows but still returns bookmarks.html.
+        if (!rootRequest && resolved.isNullOrEmpty() && GeneratedPageDirtyState.isDirty(GeneratedPageDirtyState.BOOKMARKS)) {
+            return generate(options)
+        }
         return url(app, resolved)
     }
 

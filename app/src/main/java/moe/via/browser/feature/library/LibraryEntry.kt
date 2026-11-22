@@ -16,7 +16,8 @@ data class LibraryEntry(
     val size: Long = 0,
     /** Bookmark/history use seconds; folders preserve Native caller values, including m0's millis/100. */
     val updatedAt: Long = 0,
-    val childCount: Int = 0
+    val childCount: Int = 0,
+    val hidden: Boolean = false
 ) {
     /** Only the independent INTEGER history and favorite stores consume this projection. */
     val numericId: Long get() {

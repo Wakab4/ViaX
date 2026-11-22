@@ -10,12 +10,14 @@ internal data class BookmarkFormRequest(
     val url: String? = null,
     val folder: String = "",
     val favoriteEnabled: Boolean = false,
-    val creationEnabled: Boolean = false
+    val creationEnabled: Boolean = false,
+    val showHidden: Boolean = false
 ) {
     companion object {
         fun read(kind: BookmarkFormKind, args: Bundle?) = BookmarkFormRequest(kind, args?.getString("id"),
             args?.getString("title").orEmpty(), args?.getString("url"),
             args?.getString(when (kind) { BookmarkFormKind.BOOKMARK -> "folderId"; BookmarkFormKind.FOLDER -> "parent_folder_id"; BookmarkFormKind.MOVE -> "selected_id" }).orEmpty(),
-            args?.getBoolean("favorite_enabled") == true, args?.getBoolean("creation_enabled") == true)
+            args?.getBoolean("favorite_enabled") == true, args?.getBoolean("creation_enabled") == true,
+            args?.getBoolean("show_hidden_folders") == true)
     }
 }

@@ -68,7 +68,9 @@ class SettingsRenderer(private val activity: Activity) {
             is SettingRow.Link -> row.onClick()
             is SettingRow.Radio -> row.onClick()
             is SettingRow.Toggle -> (view as NativeSettingViews.Global).check.let {
-                it.isChecked = !it.isChecked; row.onChanged(it.isChecked)
+                val checked = !it.isChecked
+                if (row.updateCheckOnClick) it.isChecked = checked
+                row.onChanged(checked)
             }
             else -> Unit
         }

@@ -34,9 +34,10 @@ internal class BookmarkFormModel(context: Context, val request: BookmarkFormRequ
     private fun load() {
         submit({ repository ->
             val entry = request.id?.takeIf(String::isNotEmpty)?.let {
-                if (request.kind == BookmarkFormKind.FOLDER) repository.findFolder(it) else repository.findBookmarkById(it)
+                if (request.kind == BookmarkFormKind.FOLDER) repository.findFolder(it, request.showHidden) else repository.findBookmarkById(it)
             }
-            Triple(entry, repository.findFolder(entry?.parentId ?: selected), BookmarkFolderChoices.read(app, repository.folders()))
+            val parent = repository.findFolder(entry?.parentId ?: selected, showHidden = request.showHidden || entry != null)
+            Triple(entry, parent, folderChoices(repository))
         }) { (entry, parent, choices) ->
             editingId = entry?.id; isNew = entry == null
             if (entry != null) { title = entry.title; url = entry.url }
@@ -45,12 +46,13 @@ internal class BookmarkFormModel(context: Context, val request: BookmarkFormRequ
     }
     fun select(id: String) {
         selected = id; changed()
-        submit({ BookmarkFolderChoices.read(app, it.folders()) }) { folders = it; changed() }
+        submit(::folderChoices) { folders = it; changed() }
     }
     fun child(id: String) {
         folderCreated = true; selected = id
-        submit({ BookmarkFolderChoices.read(app, it.folders()) }) { folders = it; changed() }
+        submit(::folderChoices) { folders = it; changed() }
     }
+    private fun folderChoices(repository: LibraryRepository) = BookmarkFolderChoices.read(app, repository.folders(request.showHidden))
     fun save() {
         if (!ready || SystemClock.elapsedRealtime() - lastSubmit < 300) return
         lastSubmit = SystemClock.elapsedRealtime()

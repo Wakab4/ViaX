@@ -17,11 +17,13 @@ internal class LibraryContextMenuController(private val activity: Activity, priv
         fun delete(entries: List<LibraryEntry>)
         fun copy(entry: LibraryEntry)
         fun share(entry: LibraryEntry)
+        fun toggleFolderHidden(entry: LibraryEntry)
     }
     private enum class Action(val label: Int) {
         BACKGROUND(R.string.ref_library_dialog_background), FOREGROUND(R.string.ref_library_dialog_foreground),
         EDIT(R.string.ref_library_dialog_edit), FAVORITE(R.string.ref_library_dialog_favorite),
-        DELETE(R.string.ref_library_dialog_delete), COPY(R.string.ref_library_dialog_copy), SHARE(R.string.ref_library_dialog_share)
+        DELETE(R.string.ref_library_dialog_delete), COPY(R.string.ref_library_dialog_copy), SHARE(R.string.ref_library_dialog_share),
+        TOGGLE_HIDDEN(R.string.bookmark_folder_hide)
     }
     private val scope = DialogScope()
     private var closed = false
@@ -29,12 +31,15 @@ internal class LibraryContextMenuController(private val activity: Activity, priv
     fun show(anchor: View, entry: LibraryEntry) {
         if (closed || activity.isFinishing || activity.isDestroyed) return
         val actions = when (entry.kind) {
-            LibraryKind.FOLDER -> listOf(Action.BACKGROUND, Action.FOREGROUND, Action.EDIT, Action.FAVORITE, Action.DELETE)
+            LibraryKind.FOLDER -> listOf(Action.BACKGROUND, Action.FOREGROUND, Action.EDIT, Action.FAVORITE, Action.TOGGLE_HIDDEN, Action.DELETE)
             LibraryKind.BOOKMARK -> listOf(Action.BACKGROUND, Action.FOREGROUND, Action.EDIT, Action.FAVORITE, Action.DELETE, Action.COPY, Action.SHARE)
             // Keep the existing offline actions; PDF/export and its file-sharing protocol are separate missing work.
             else -> listOf(Action.FOREGROUND, Action.SHARE, Action.DELETE)
         }
-        scope.show(BrowserDialog(activity).items(actions.map { activity.getString(it.label) }) { index ->
+        val labels = actions.map { action ->
+            activity.getString(if (action == Action.TOGGLE_HIDDEN && entry.hidden) R.string.bookmark_folder_unhide else action.label)
+        }
+        scope.show(BrowserDialog(activity).items(labels) { index ->
             if (closed) return@items
             when (actions[index]) {
                 Action.BACKGROUND -> host.open(entry, LibraryOpenWhere.BACKGROUND)
@@ -44,6 +49,7 @@ internal class LibraryContextMenuController(private val activity: Activity, priv
                 Action.DELETE -> deleteOne(entry)
                 Action.COPY -> host.copy(entry)
                 Action.SHARE -> host.share(entry)
+                Action.TOGGLE_HIDDEN -> host.toggleFolderHidden(entry)
             }
         }.anchoredTo(anchor))
     }

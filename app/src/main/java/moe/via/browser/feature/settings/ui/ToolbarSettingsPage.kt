@@ -11,7 +11,7 @@ internal class ToolbarSettingsPage(private val host: SettingsHost) {
     fun rows(): List<SettingsItem> = with(host) {
         val preview = ToolbarPreviewState(layout, prefs.tabBar && layout in 1..2, prefs.addressContent)
         listOf(
-        SettingsItem.content(ToolbarPreviewState::class, preview) { ToolbarPreview(activity, preview.layout, preview.tabs, preview.address) },
+        SettingsItem.content(ToolbarPreviewState::class, preview) { ToolbarPreview(activity, preview) },
         choice(1, "应用布局", listOf("传统", "工具栏在上", "工具栏在下", "双行工具栏"), layout) {
             prefs.toolbarLayout = it
             if (it !in 1..2) prefs.tabBar = false
@@ -22,12 +22,12 @@ internal class ToolbarSettingsPage(private val host: SettingsHost) {
             preview.onSelected = { selected -> prefs.autoHide = selected; dialog.dismiss(); refresh() }
             activity.dialogScope.show(dialog)
         },
-        SettingsItem.toggle(3, "启用标签栏", prefs.tabBar && layout in 1..2) { toggleTabs() },
+        SettingsItem.toggle(3, "启用标签栏", prefs.tabBar && layout in 1..2, updateCheckOnClick = layout in 1..2) { toggleTabs() },
         choice(4, "地址栏内容", listOf("标题", "地址", "域名"), prefs.addressContent) { prefs.addressContent = it },
         toggle(5, "色彩模式", prefs.colorMode, "浏览网页时操作栏自适应色彩") { prefs.colorMode = it }
     ) }
     private fun toggleTabs() {
-        if (!prefs.tabBar && layout !in 1..2) {
+        if (layout !in 1..2) {
             host.activity.dialogScope.show(BrowserDialog(host.activity, "应用布局", "请选择另一种应用布局以启用标签栏")
                 .singleChoice(listOf("工具栏在上", "工具栏在下"), -1) {
                     prefs.toolbarLayout = it + 1; prefs.tabBar = true; host.refresh()

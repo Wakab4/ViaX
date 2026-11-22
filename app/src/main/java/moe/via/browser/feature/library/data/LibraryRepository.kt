@@ -22,6 +22,7 @@ import moe.via.browser.feature.library.LibraryKind
 
 class LibraryRepository(context: Context, private val store: BrowserDatabase = BrowserDatabase(context)) : AutoCloseable {
     private val app = context.applicationContext
+    private val folderVisibility = BookmarkFolderVisibility(app)
     private val db get() = store.writableDatabase
     private val homeFavorites = HomeFavoritesRepository(context, store, closeStore = false)
     private val homePreferences = HomePreferences(context)
@@ -31,38 +32,83 @@ class LibraryRepository(context: Context, private val store: BrowserDatabase = B
     private val nativeRows get() = moe.via.browser.feature.library.data.NativeBookmarkRows(db)
 
     fun bookmarks(folder: String = "", query: String = "", sort: BookmarkSort = BookmarkSort.OLDEST,
-        includeFolderCounts: Boolean = false): List<LibraryEntry> {
-        val folders = if (query.isBlank()) nativeRows.children(folder)
-            else nativeRows.folders().filter { containsAsciiNoCase(it.title.orEmpty(), query) }
-        val items = if (query.isBlank()) nativeRows.items(folder)
-            else nativeRows.items().filter { containsAsciiNoCase(it.title.orEmpty(), query) || containsAsciiNoCase(it.url.orEmpty(), query) }
-        val counts = if (includeFolderCounts) folderChildCounts() else emptyMap()
-        val values = folders.map { it.entry().copy(childCount = counts[it.id] ?: 0) } + items.map { it.entry() }
+        includeFolderCounts: Boolean = false, showHidden: Boolean = false): List<LibraryEntry> {
+        val rows = nativeRows
+        val excluded = if (showHidden) emptySet() else folderVisibility.excludedIds(rows)
+        if (folder in excluded) return emptyList()
+        val hidden = if (showHidden) folderVisibility.explicitIds() else emptySet()
+        val folders = (if (query.isBlank()) rows.children(folder)
+            else rows.folders().filter { containsAsciiNoCase(it.title.orEmpty(), query) }).filterNot { it.id in excluded }
+        val items = (if (query.isBlank()) rows.items(folder)
+            else rows.items().filter { containsAsciiNoCase(it.title.orEmpty(), query) || containsAsciiNoCase(it.url.orEmpty(), query) })
+            .filterNot { it.folderId in excluded }
+        val counts = if (includeFolderCounts) folderChildCounts(excluded) else emptyMap()
+        val values = folders.map { it.entry(hidden = it.id in hidden).copy(childCount = counts[it.id] ?: 0) } + items.map { it.entry() }
         return ordering.sort(values, sort.ordinal)
     }
 
-    private fun folderChildCounts(): Map<String, Int> = db.rawQuery("""
+    private fun folderChildCounts(excluded: Set<String>): Map<String, Int> = db.rawQuery("""
         SELECT folder_id,SUM(total) FROM (
             SELECT folder_id,COUNT(*) AS total FROM bookmark_items GROUP BY folder_id
             UNION ALL
             SELECT parent_folder_id AS folder_id,COUNT(*) AS total FROM bookmark_folders GROUP BY parent_folder_id
         ) GROUP BY folder_id
     """.trimIndent(), null).use { cursor ->
-        buildMap { while (cursor.moveToNext()) put(cursor.getString(0).orEmpty(), cursor.getInt(1)) }
+        buildMap {
+            while (cursor.moveToNext()) put(cursor.getString(0).orEmpty(), cursor.getInt(1))
+            if (excluded.isNotEmpty()) for (folder in nativeRows.folders()) {
+                if (folder.id in excluded) computeIfPresent(folder.parentId) { _, count -> count - 1 }
+            }
+        }
     }
 
-    fun findFolder(id: String): LibraryEntry? = nativeRows.folder(id)?.entry()
+    fun findFolder(id: String, showHidden: Boolean = false): LibraryEntry? {
+        val rows = nativeRows
+        if (!showHidden && id in folderVisibility.excludedIds(rows)) return null
+        return rows.folder(id)?.entry(hidden = showHidden && id in folderVisibility.explicitIds())
+    }
+
+    fun hasHiddenFolders(): Boolean = folderVisibility.explicitIds().isNotEmpty()
+
+    fun setBookmarkFolderHidden(id: String, hidden: Boolean) {
+        if (id.isEmpty() || nativeRows.folder(id) == null) return
+        if (folderVisibility.setHidden(id, hidden)) {
+            markBookmarksChanged()
+            homePreferences.markDirty(html = true, style = false)
+        }
+    }
+
     fun isBookmarked(url: String): Boolean = store.readableDatabase.rawQuery(
         "SELECT 1 FROM bookmark_items WHERE url = ? LIMIT 1", arrayOf(url)
     ).use { it.moveToFirst() }
 
-    fun folders(): List<LibraryEntry> = listOf(LibraryEntry("", LibraryKind.FOLDER, "")) + nativeRows.folders().map { it.entry() }
+    fun folders(showHidden: Boolean = false): List<LibraryEntry> {
+        val rows = nativeRows
+        val excluded = if (showHidden) emptySet() else folderVisibility.excludedIds(rows)
+        val hidden = if (showHidden) folderVisibility.explicitIds() else emptySet()
+        return listOf(LibraryEntry("", LibraryKind.FOLDER, "")) +
+            rows.folders().filterNot { it.id in excluded }.map { it.entry(hidden = it.id in hidden) }
+    }
     fun findBookmark(url: String): LibraryEntry? = nativeRows.itemByUrl(listOf(url))?.entry()
     fun findBookmarkById(id: String): LibraryEntry? = nativeRows.item(id)?.entry()
-    fun bookmarkUrls(folder: String): List<String> = nativeRows.items(folder).mapNotNull { it.url }
+    fun bookmarkUrls(folder: String, showHidden: Boolean = false): List<String> {
+        val rows = nativeRows
+        return if (!showHidden && folder in folderVisibility.excludedIds(rows)) emptyList()
+        else rows.items(folder).mapNotNull { it.url }
+    }
     fun findNativeBookmark(url: String): LibraryEntry? = nativeRows.itemByUrl(HomeFavoriteUrls.equivalents(url))?.entry()
-    fun findFolderByTitle(title: String): LibraryEntry? = nativeRows.folderByTitle(title)?.entry()
-    fun searchFolders(raw: String): List<LibraryEntry> = nativeRows.searchFolders(raw).map { it.entry() }
+    fun findFolderByTitle(title: String): LibraryEntry? {
+        val rows = nativeRows
+        val found = rows.folderByTitle(title) ?: return null
+        val excluded = folderVisibility.excludedIds(rows)
+        return if (found.id !in excluded) found.entry()
+        else rows.folders().firstOrNull { it.id !in excluded && title.equals(it.title, ignoreCase = true) }?.entry()
+    }
+    fun searchFolders(raw: String): List<LibraryEntry> {
+        val rows = nativeRows
+        val excluded = folderVisibility.excludedIds(rows)
+        return rows.searchFolders(raw).filterNot { it.id in excluded }.map { it.entry() }
+    }
     fun nativeBookmarks(): moe.via.browser.feature.library.data.NativeBookmarkSnapshot = nativeRows.readAll()
     fun importNativeBookmarks(snapshot: moe.via.browser.feature.library.data.NativeBookmarkSnapshot): Int = nativeRows.importBatch(snapshot)
 
@@ -151,6 +197,7 @@ class LibraryRepository(context: Context, private val store: BrowserDatabase = B
 
     fun delete(entries: List<LibraryEntry>) {
         var bookmarkChange = false
+        val deletedFolders = mutableSetOf<String>()
         transaction {
             val historyIds = entries.filter { it.kind == LibraryKind.HISTORY }.map { it.numericId }.toLongArray()
             if (historyIds.isNotEmpty()) deleteHistory(historyIds)
@@ -160,13 +207,17 @@ class LibraryRepository(context: Context, private val store: BrowserDatabase = B
                     val url = "file://${file.parent}/${android.net.Uri.encode(file.name)}"
                     SavedArchiveFiles.delete(app, url)
                 } else if (entry.isFolder && entry.id.isNotEmpty()) {
-                    nativeRows.deleteFolders(listOf(entry.id)); bookmarkChange = true
+                    deletedFolders.addAll(nativeRows.deleteFolders(listOf(entry.id)))
+                    bookmarkChange = true
                 } else if (entry.kind == LibraryKind.BOOKMARK) {
                     nativeRows.deleteItems(listOf(entry.id)); bookmarkChange = true
                 } else if (entry.kind != LibraryKind.HISTORY && !entry.isFolder) {
                     db.delete(table(entry), if (entry.kind == LibraryKind.FAVORITE) "f_id=?" else "_id=?", arrayOf(entry.id))
                 }
             }
+        }
+        if (deletedFolders.isNotEmpty() && folderVisibility.forget(deletedFolders)) {
+            homePreferences.markDirty(html = true, style = false)
         }
         if (bookmarkChange) markBookmarksChanged()
         if (entries.any { it.kind == LibraryKind.FAVORITE }) homePreferences.markDirty(html = true, style = false)
@@ -205,7 +256,7 @@ class LibraryRepository(context: Context, private val store: BrowserDatabase = B
 
     fun canMoveFolder(id: String, destination: String): Boolean {
         if (id.isEmpty() || id == destination) return false
-        val parents = folders().associate { it.id to it.parentId }
+        val parents = nativeRows.folders().associate { it.id to it.parentId }
         val seen = mutableSetOf<String>()
         var current = destination
         while (current.isNotEmpty() && seen.add(current)) {
@@ -229,8 +280,9 @@ class LibraryRepository(context: Context, private val store: BrowserDatabase = B
     private fun like(query: String) = "%" + query.replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_") + "%"
     private fun Cursor.string(column: String) = getString(getColumnIndexOrThrow(column))
     private fun Cursor.long(column: String) = getLong(getColumnIndexOrThrow(column))
-    private fun moe.via.browser.feature.library.data.NativeBookmarkFolder.entry() = LibraryEntry(id, LibraryKind.FOLDER,
-        title.orEmpty(), parentId = parentId, position = order.toLong(), createdAt = createdAtSeconds, updatedAt = updatedAtSeconds)
+    private fun NativeBookmarkFolder.entry(hidden: Boolean = false) = LibraryEntry(id, LibraryKind.FOLDER,
+        title.orEmpty(), parentId = parentId, position = order.toLong(), createdAt = createdAtSeconds, updatedAt = updatedAtSeconds,
+        hidden = hidden)
     private fun moe.via.browser.feature.library.data.NativeBookmarkItem.entry() = LibraryEntry(id, LibraryKind.BOOKMARK,
         title.orEmpty(), url.orEmpty(), folderId, order.toLong(), createdAtSeconds, updatedAt = updatedAtSeconds)
     private fun HistoryRecord.libraryEntry() = LibraryEntry(id.toString(), LibraryKind.HISTORY, title.orEmpty(), url.orEmpty(), updatedAt = updatedAtSeconds)

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bookmark_folder_hide">隱藏資料夾</string>
+    <string name="bookmark_folder_unhide">取消隱藏</string>
+    <string name="bookmark_folders_show_hidden">顯示隱藏的資料夾</string>
+    <string name="bookmark_folders_stop_showing_hidden">停止顯示隱藏的資料夾</string>
+    <string name="bookmark_folder_hidden_name">%1$s（已隱藏）</string>
+</resources>

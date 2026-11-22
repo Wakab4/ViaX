@@ -1,86 +1,188 @@
 package moe.via.browser.feature.settings.ui
 
-import moe.via.browser.ui.theme.fonts.NativeTypography
-
 import android.app.Activity
 import android.content.res.ColorStateList
+import android.graphics.Typeface
 import android.graphics.drawable.GradientDrawable
+import android.text.TextUtils
 import android.view.Gravity
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.TextView
 import moe.via.browser.R
+import moe.via.browser.feature.settings.ToolbarPreviewState
 import moe.via.browser.ui.components.dp
+import moe.via.browser.ui.theme.fonts.NativeTypography
 import moe.via.browser.ui.theme.palette
+import moe.via.browser.ui.theme.window.ChromeMode
 
-/** Native ib.i0 preview: a 300 dp browser frame scaled to 80%, without a WebView. */
-internal class ToolbarPreview(activity: Activity, layout: Int, tabs: Boolean, address: Int) : FrameLayout(activity) {
+internal class ToolbarPreview(activity: Activity, state: ToolbarPreviewState) : FrameLayout(activity) {
+    private val previewPalette = activity.palette
+    private val address = when (state.address) {
+        1 -> "https://example.com/"
+        2 -> "example.com"
+        else -> SAMPLE_TITLE
+    }
+
     init {
-        val shell = LinearLayout(activity).apply {
-            orientation = LinearLayout.VERTICAL
-            background = GradientDrawable().apply { cornerRadius = dp(18).toFloat(); setColor(activity.palette.panel); setStroke(dp(2), activity.palette.border) }
-            scaleX = .8f; scaleY = .8f
+        val shell = column().apply {
+            background = GradientDrawable().apply {
+                cornerRadius = dp(18).toFloat()
+                setColor(previewPalette.panel)
+                setStroke(dp(2), previewPalette.border)
+            }
+            scaleX = .8f
+            scaleY = .8f
             clipToOutline = true
         }
-        fun icon(id: Int, weight: Float = 1f) = ImageView(activity).apply {
-            setImageResource(id); imageTintList = ColorStateList.valueOf(activity.palette.icon)
-            scaleType = ImageView.ScaleType.CENTER_INSIDE; setPadding(dp(13), dp(13), dp(13), dp(13))
-            layoutParams = LinearLayout.LayoutParams(0, dp(48), weight)
-        }
-        fun addressBar() = LinearLayout(activity).apply {
-            gravity = Gravity.CENTER_VERTICAL
-            addView(icon(R.drawable.ref_ic_menu_site_conf), LinearLayout.LayoutParams(dp(48), dp(48)))
-            addView(NativeTypography.text(activity).apply {
-                text = when (address) { 1 -> "https://example.com/"; 2 -> "example.com"; else -> "网页" }
-                textSize = 16f; setTextColor(activity.palette.text); maxLines = 1
-                gravity = Gravity.CENTER_VERTICAL
-            }, LinearLayout.LayoutParams(0, dp(48), 1f))
-            addView(icon(R.drawable.ref_ic_menu_reload), LinearLayout.LayoutParams(dp(48), dp(48)))
-            if (layout != 0) {
-                val radius = dp(18).toFloat()
-                background = GradientDrawable().apply { cornerRadius = radius; setColor(if (activity.palette.night) 0x22FFFFFF else 0x10000000) }
+        val page = View(activity).apply { setBackgroundColor(0x18808080) }
+        val pageHeight = LinearLayout.LayoutParams(-1, 0, 1f)
+        val mode = ChromeMode.entries[state.layout]
+        when (mode) {
+            ChromeMode.TRADITIONAL -> {
+                shell.addView(addressBar(pill = false), barParams())
+                shell.addView(page, pageHeight)
+                shell.addView(navigationBar(), barParams())
+            }
+            ChromeMode.TOP -> {
+                shell.addView(combinedBar(), barParams())
+                if (state.tabs) shell.addView(tabStrip(), barParams(36))
+                shell.addView(page, pageHeight)
+            }
+            ChromeMode.BOTTOM -> {
+                shell.addView(page, pageHeight)
+                if (state.tabs) shell.addView(tabStrip(), barParams(36))
+                shell.addView(combinedBar(), barParams())
+            }
+            ChromeMode.DOUBLE_BOTTOM -> {
+                shell.addView(page, pageHeight)
+                shell.addView(addressBar(pill = true, endInset = 12), barParams())
+                shell.addView(navigationBar(), barParams())
             }
         }
-        fun tabButton() = FrameLayout(activity).apply {
-            addView(icon(R.drawable.ref_ic_tabs), LayoutParams(-1, -1))
-            addView(NativeTypography.text(activity).apply { text = "1"; textSize = 11f; NativeTypography.style(this, android.graphics.Typeface.BOLD); gravity = Gravity.CENTER; setTextColor(activity.palette.icon) }, LayoutParams(-1, -1))
-            layoutParams = LinearLayout.LayoutParams(0, dp(48), 1f)
+        addView(shell, LayoutParams(-1, dp(300), Gravity.CENTER))
+        isEnabled = false
+        importantForAccessibility = IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS
+    }
+
+    private fun addressBar(pill: Boolean, endInset: Int = 0): View {
+        val contents = row().apply {
+            addView(icon(R.drawable.ref_ic_search), LinearLayout.LayoutParams(dp(40), -1))
+            addView(label(address, 16), LinearLayout.LayoutParams(0, -1, 1f))
+            addView(icon(R.drawable.ref_ic_menu_reload), LinearLayout.LayoutParams(dp(40), -1))
+            if (pill) background = GradientDrawable().apply {
+                cornerRadius = dp(18).toFloat()
+                setColor(previewPalette.input)
+            }
         }
-        fun tools(combined: Boolean) = object : LinearLayout(activity) {
-            override fun onSizeChanged(width: Int, height: Int, oldWidth: Int, oldHeight: Int) {
-                super.onSizeChanged(width, height, oldWidth, oldHeight)
-                if (!combined || childCount < 6) return
-                val widthDp = (width / resources.displayMetrics.density).toInt()
-                val unit = when { widthDp < 420 -> widthDp / 7; widthDp > 900 -> 72; else -> 60 }
-                val columns = if (unit > 0) widthDp / unit else 6
+        return FrameLayout(context).apply {
+            addView(contents, LayoutParams(-1, if (pill) dp(42) else -1, Gravity.CENTER_VERTICAL).apply {
+                if (pill) {
+                    marginStart = dp(12)
+                    marginEnd = dp(endInset)
+                }
+            })
+        }
+    }
+
+    private fun navigationBar() = row().apply {
+        addView(icon(R.drawable.ref_ic_back), slot())
+        addView(icon(R.drawable.ref_ic_forward), slot())
+        addView(icon(R.drawable.ref_ic_home), slot())
+        addView(tabButton(), slot())
+        addView(icon(R.drawable.ref_ic_menu), slot())
+    }
+
+    private fun combinedBar(): View {
+        val addressSlot = slot(4f)
+        val back = icon(R.drawable.ref_ic_back)
+        val forward = icon(R.drawable.ref_ic_forward)
+        return object : LinearLayout(context) {
+            override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+                val columns = toolbarColumns(MeasureSpec.getSize(widthMeasureSpec))
                 val arrows = columns > 8
-                getChildAt(1).visibility = if (arrows) View.VISIBLE else View.GONE
-                getChildAt(2).visibility = if (arrows) View.VISIBLE else View.GONE
-                getChildAt(0).layoutParams = (getChildAt(0).layoutParams as LinearLayout.LayoutParams).apply { weight = (columns - 3 - if (arrows) 2 else 0).coerceAtLeast(1).toFloat() }
+                back.visibility = if (arrows) View.VISIBLE else View.GONE
+                forward.visibility = back.visibility
+                // Set visibility and weights before LinearLayout allocates the current row's width.
+                addressSlot.weight = (columns - if (arrows) 5 else 3).coerceAtLeast(1).toFloat()
+                super.onMeasure(widthMeasureSpec, heightMeasureSpec)
             }
         }.apply {
             gravity = Gravity.CENTER_VERTICAL
-            if (combined) addView(addressBar(), LinearLayout.LayoutParams(0, -2, 4f))
-            addView(icon(R.drawable.ref_ic_back)); addView(icon(R.drawable.ref_ic_forward))
-            addView(icon(R.drawable.ref_ic_home))
-            addView(tabButton()); addView(icon(R.drawable.ref_ic_menu))
+            addView(addressBar(pill = true), addressSlot)
+            addView(back, slot())
+            addView(forward, slot())
+            addView(icon(R.drawable.ref_ic_home), slot())
+            addView(tabButton(), slot())
+            addView(icon(R.drawable.ref_ic_menu), slot())
         }
-        fun tabBar() = LinearLayout(activity).apply {
+    }
+
+    private fun tabStrip(): View {
+        val tabParams = LinearLayout.LayoutParams(dp(160), -1)
+        val addParams = LinearLayout.LayoutParams(dp(48), -1)
+        val sample = row().apply {
+            addView(icon(R.drawable.ref_ic_webpage, size = 17, tint = previewPalette.accent), LinearLayout.LayoutParams(dp(40), -1))
+            addView(label(SAMPLE_TITLE, 13), LinearLayout.LayoutParams(0, -1, 1f))
+            addView(icon(R.drawable.ref_ic_close, size = 16), LinearLayout.LayoutParams(dp(36), -1))
+        }
+        return object : LinearLayout(context) {
+            override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+                val width = MeasureSpec.getSize(widthMeasureSpec)
+                val buttonWidth = width / toolbarColumns(width).coerceAtLeast(2)
+                val available = width - buttonWidth
+                addParams.width = buttonWidth
+                tabParams.width = (available / 2).coerceIn(dp(100), dp(180)).coerceAtMost(available)
+                super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+            }
+        }.apply {
             gravity = Gravity.CENTER_VERTICAL
-            addView(NativeTypography.text(activity).apply { text = "  网页   ×"; textSize = 11f; setTextColor(activity.palette.text) }, LinearLayout.LayoutParams(0, dp(36), 1f))
-            addView(NativeTypography.text(activity).apply { text = "+"; textSize = 20f; gravity = Gravity.CENTER; setTextColor(activity.palette.icon) }, LinearLayout.LayoutParams(dp(48), dp(36)))
+            addView(sample, tabParams)
+            addView(View(context), slot())
+            addView(icon(R.drawable.ref_ic_add, size = 20), addParams)
         }
-        if (layout == 0) shell.addView(addressBar())
-        if (layout == 1) { shell.addView(tools(true)); if (tabs) shell.addView(tabBar()) }
-        shell.addView(android.view.View(activity).apply {
-            setBackgroundColor(0x18808080)
-        }, LinearLayout.LayoutParams(-1, 0, 1f))
-        if (layout == 2 && tabs) shell.addView(tabBar())
-        if (layout == 3) shell.addView(addressBar())
-        if (layout != 1) shell.addView(tools(layout == 2))
-        addView(shell, LayoutParams(-1, dp(300), Gravity.CENTER))
-        isEnabled = false; importantForAccessibility = IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS
+    }
+
+    private fun tabButton() = icon(R.drawable.ref_ic_tabs).apply {
+        addView(label("1", 11).apply {
+            gravity = Gravity.CENTER
+            NativeTypography.style(this, Typeface.BOLD)
+        }, LayoutParams(-1, -1))
+    }
+
+    private fun icon(resource: Int, size: Int = 21, tint: Int = previewPalette.icon) = FrameLayout(context).apply {
+        addView(ImageView(context).apply {
+            setImageResource(resource)
+            imageTintList = ColorStateList.valueOf(tint)
+        }, LayoutParams(dp(size), dp(size), Gravity.CENTER))
+    }
+
+    private fun label(value: String, size: Int) = NativeTypography.text(context).apply {
+        text = value
+        textSize = size.toFloat()
+        gravity = Gravity.CENTER_VERTICAL
+        setSingleLine()
+        ellipsize = TextUtils.TruncateAt.END
+        setTextColor(previewPalette.text)
+    }
+
+    private fun toolbarColumns(width: Int): Int {
+        val widthDp = (width / resources.displayMetrics.density).toInt()
+        val unit = when {
+            widthDp < 420 -> (widthDp / 7).coerceAtLeast(1)
+            widthDp > 900 -> 72
+            else -> 60
+        }
+        return widthDp / unit
+    }
+
+    private fun row() = LinearLayout(context).apply { gravity = Gravity.CENTER_VERTICAL }
+    private fun column() = LinearLayout(context).apply { orientation = LinearLayout.VERTICAL }
+    private fun slot(weight: Float = 1f) = LinearLayout.LayoutParams(0, -1, weight)
+    private fun barParams(height: Int = 48) = LinearLayout.LayoutParams(-1, dp(height))
+
+    private companion object {
+        const val SAMPLE_TITLE = "网页"
     }
 }

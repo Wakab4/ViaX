@@ -66,7 +66,7 @@ abstract class BookmarkRecordForm : SettingsRecordPage() {
     }
     private fun createFolder() {
         val value = model ?: return
-        BookmarkFormNavigation.folder(this, viewLifecycleOwner, null, value.selected, true) { id -> id?.let(value::child) }
+        BookmarkFormNavigation.folder(this, viewLifecycleOwner, null, value.selected, true, value.request.showHidden) { id -> id?.let(value::child) }
     }
     private fun key() = when (kind) { BookmarkFormKind.BOOKMARK -> BookmarkFormNavigation.BOOKMARK; BookmarkFormKind.FOLDER -> BookmarkFormNavigation.FOLDER; BookmarkFormKind.MOVE -> BookmarkFormNavigation.PICKER }
     override fun onDestroyView() {

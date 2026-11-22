@@ -23,7 +23,7 @@ internal object BookmarkPopupOperations {
     fun load(repository: LibraryRepository, request: BookmarkPopupRequest): Outcome.Loaded {
         val entry = if (request.id != null) repository.findBookmarkById(request.id)
             else request.url?.let(repository::findNativeBookmark)
-        val folder = entry?.parentId?.takeIf { it.isNotEmpty() }?.let(repository::findFolder)
+        val folder = entry?.parentId?.takeIf { it.isNotEmpty() }?.let { repository.findFolder(it, showHidden = true) }
             ?: RecentFolder.get()?.takeIf { it.isNotEmpty() }?.let(repository::findFolder)
             ?: root()
         return Outcome.Loaded(entry ?: LibraryEntry("", LibraryKind.BOOKMARK,

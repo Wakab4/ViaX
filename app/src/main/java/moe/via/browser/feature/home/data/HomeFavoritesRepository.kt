@@ -5,6 +5,8 @@ import android.database.sqlite.SQLiteDatabase
 import moe.via.browser.storage.database.BrowserDatabase
 import moe.via.browser.feature.home.model.HomeFavorite
 import moe.via.browser.feature.home.model.HomeFavoriteTile
+import moe.via.browser.feature.internalpages.GeneratedAddress
+import moe.via.browser.feature.library.data.BookmarkFolderVisibility
 import java.io.Closeable
 import java.security.MessageDigest
 
@@ -15,6 +17,7 @@ class HomeFavoritesRepository(
     private val closeStore: Boolean = true
 ) : Closeable {
     private val icons = HomeIconStore(context)
+    private val folderVisibility = BookmarkFolderVisibility(context)
     private val db: SQLiteDatabase get() = store.writableDatabase
     private val rows get() = NativeFavoriteRows(db)
 
@@ -27,11 +30,14 @@ class HomeFavoritesRepository(
     fun delete(id: Int) { rows.delete(id) }
     fun deleteUrl(url: String) = rows.deleteUrl(url)
 
-    fun tiles(): List<HomeFavoriteTile> = all().map { item ->
-        val title = item.title.trim { it <= ' ' }.replace(Regex("<.*?>"), "")
-        HomeFavoriteTile(HomeFavoriteUrls.href(item.url).replace("\"", "&quot;"), title,
-            title.takeIf(String::isNotEmpty)?.let { String(Character.toChars(it.codePointAt(0))) }.orEmpty(),
-            icons.relativePath(item.url), color(item.url))
+    fun tiles(): List<HomeFavoriteTile> {
+        val hidden = folderVisibility.excludedIds(db)
+        return all().filterNot { GeneratedAddress.folder(GeneratedAddress.normalize(it.url)) in hidden }.map { item ->
+            val title = item.title.trim { it <= ' ' }.replace(Regex("<.*?>"), "")
+            HomeFavoriteTile(HomeFavoriteUrls.href(item.url).replace("\"", "&quot;"), title,
+                title.takeIf(String::isNotEmpty)?.let { String(Character.toChars(it.codePointAt(0))) }.orEmpty(),
+                icons.relativePath(item.url), color(item.url))
+        }
     }
 
     override fun close() { if (closeStore) store.close() }

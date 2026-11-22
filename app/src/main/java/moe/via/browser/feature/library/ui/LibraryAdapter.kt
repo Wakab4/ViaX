@@ -75,9 +75,12 @@ internal class LibraryAdapter(private val context: Context, private val actions:
         val entry = item.entry; val row = holder.row
         row.bindNativeItemClick { holder.bindingAdapterPosition.takeIf { it != RecyclerView.NO_POSITION }?.let(actions::click) }
         icons.bind(row.icon, entry)
-        val title = LibraryDisplayText.title(entry.title)
-        row.title.text = title
-        row.title.contentDescription = if (entry.isFolder) context.getString(R.string.ref_library_folder_description, title) else null
+        val name = LibraryDisplayText.title(entry.title)
+        val hidden = entry.isFolder && entry.hidden
+        row.title.text = name
+        row.markHidden(hidden)
+        val spokenName = if (hidden) context.getString(R.string.bookmark_folder_hidden_name, name) else name
+        row.title.contentDescription = if (entry.isFolder) context.getString(R.string.ref_library_folder_description, spokenName) else null
         row.check.visibility = if (editing && !item.immutable) View.VISIBLE else View.GONE
         row.check.isChecked = isSelected(position)
         row.handle.visibility = if (row.bookmark && editing && draggingAllowed && !item.immutable) View.VISIBLE else View.GONE
@@ -122,7 +125,8 @@ internal class LibraryAdapter(private val context: Context, private val actions:
         }
         override fun areContentsTheSame(a: Int, b: Int): Boolean {
             val first = (old[a] as LibraryRow.Item).entry; val second = (new[b] as LibraryRow.Item).entry
-            return first.isFolder == second.isFolder && first.title == second.title && first.url == second.url && first.childCount == second.childCount
+            return first.isFolder == second.isFolder && first.title == second.title && first.url == second.url &&
+                first.childCount == second.childCount && first.hidden == second.hidden
         }
     }
 }

@@ -3,6 +3,7 @@ package moe.via.browser.feature.library.ui.recycler
 import moe.via.browser.ui.theme.fonts.NativeTypography
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.view.Gravity
 import android.view.View
 import android.widget.CheckBox
@@ -28,9 +29,17 @@ internal class LibraryItemView(context: Context, val bookmark: Boolean, history:
     }
     val handle = ImageView(context).apply {
         id = View.generateViewId(); setImageResource(R.drawable.ref_library_drag_handle)
-        imageTintList = android.content.res.ColorStateList.valueOf(context.palette.icon)
+        imageTintList = ColorStateList.valueOf(context.palette.icon)
         setPadding(dp(15), dp(15), dp(15), dp(15)); contentDescription = context.getString(R.string.ref_library_drag_description)
     }
+    private val hiddenMarker = if (bookmark) ImageView(context).apply {
+        id = View.generateViewId()
+        setImageResource(R.drawable.ref_ai_eye_off)
+        imageTintList = ColorStateList.valueOf(context.palette.secondary)
+        importantForAccessibility = View.IMPORTANT_FOR_ACCESSIBILITY_NO
+        visibility = View.GONE
+    } else null
+
     init {
         layoutParams = RecyclerView.LayoutParams(-1, -2)
         background = context.touchFeedback()
@@ -43,13 +52,20 @@ internal class LibraryItemView(context: Context, val bookmark: Boolean, history:
             icon.scaleType = ImageView.ScaleType.CENTER_CROP
             addView(icon, LayoutParams(dp(22), dp(22)).apply { addRule(CENTER_VERTICAL); marginEnd = dp(16) })
             addView(handle, LayoutParams(dp(48), -1).apply { addRule(START_OF, check.id); setMargins(dp(16), 0, dp(16), 0) })
+            val marker = requireNotNull(hiddenMarker)
+            addView(marker, LayoutParams(dp(16), dp(16)).apply {
+                addRule(START_OF, handle.id)
+                addRule(CENTER_VERTICAL)
+                alignWithParent = true
+                marginStart = dp(8)
+            })
             val labels = LinearLayout(context).apply {
                 orientation = LinearLayout.VERTICAL; gravity = Gravity.CENTER_VERTICAL
                 addView(title, LinearLayout.LayoutParams(-2, -2))
                 addView(subtitle, LinearLayout.LayoutParams(-2, -2).apply { topMargin = dp(2) })
             }
             addView(labels, LayoutParams(-2, -2).apply {
-                addRule(END_OF, icon.id); addRule(START_OF, handle.id); addRule(CENTER_VERTICAL); alignWithParent = true
+                addRule(END_OF, icon.id); addRule(START_OF, marker.id); addRule(CENTER_VERTICAL); alignWithParent = true
             })
         } else if (history) {
             handle.visibility = View.GONE
@@ -65,6 +81,10 @@ internal class LibraryItemView(context: Context, val bookmark: Boolean, history:
             }, LayoutParams(-1, -2).apply { addRule(END_OF, icon.id); addRule(START_OF, check.id); addRule(CENTER_VERTICAL); marginStart = dp(16) })
         }
     }
+    fun markHidden(hidden: Boolean) {
+        hiddenMarker?.visibility = if (hidden) View.VISIBLE else View.GONE
+    }
+
     private fun label(size: Float, color: Int) = NativeTypography.text(context).apply {
         id = View.generateViewId(); textSize = size; setTextColor(color)
         setSingleLine(); ellipsize = null; isHorizontalFadingEdgeEnabled = true; setFadingEdgeLength(dp(24))

@@ -16,7 +16,8 @@ internal sealed interface SettingsItem {
             Entry(id, SettingRow.Link(title, detail, enabled, highlighted = highlighted, onClick = onClick))
 
         fun toggle(id: Int, title: String, checked: Boolean, detail: String = "", enabled: Boolean = true,
-            changed: (Boolean) -> Unit) = Entry(id, SettingRow.Toggle(title, checked, detail, enabled, changed))
+            updateCheckOnClick: Boolean = true, changed: (Boolean) -> Unit) =
+            Entry(id, SettingRow.Toggle(title, checked, detail, enabled, updateCheckOnClick, changed))
 
         fun radio(id: Int, title: String, checked: Boolean, onLongClick: (() -> Unit)? = null,
             detail: String = "", onClick: () -> Unit) =

@@ -8,13 +8,14 @@ import moe.via.browser.ui.dialog.DialogScope
 
 /** cb.e0.a4/b4: both lists use the left footer action's original raw anchor offset. */
 internal class BookmarkMoreMenuController(private val activity: Activity, private val host: Host) : AutoCloseable {
-    data class State(val root: Boolean, val details: Boolean, val order: Int)
+    data class State(val root: Boolean, val details: Boolean, val order: Int, val hasHidden: Boolean, val showHidden: Boolean)
     interface Host {
         fun state(): State
         fun addBookmark()
         fun addFolder()
         fun setOrder(order: Int)
         fun setDetails(details: Boolean)
+        fun toggleHiddenFolders()
         fun importBookmarks()
         fun exportBookmarks()
     }
@@ -22,7 +23,8 @@ internal class BookmarkMoreMenuController(private val activity: Activity, privat
         ADD(R.string.ref_bookmark_more_add), FOLDER(R.string.ref_bookmark_more_folder),
         SORT(R.string.ref_bookmark_more_sort), HIDE_DETAILS(R.string.ref_bookmark_more_hide_details),
         SHOW_DETAILS(R.string.ref_bookmark_more_show_details), IMPORT(R.string.ref_bookmark_more_import),
-        EXPORT(R.string.ref_bookmark_more_export)
+        EXPORT(R.string.ref_bookmark_more_export),
+        SHOW_HIDDEN(R.string.bookmark_folders_show_hidden), HIDE_HIDDEN(R.string.bookmark_folders_stop_showing_hidden)
     }
     private val scope = DialogScope()
     private var closed = false
@@ -33,6 +35,8 @@ internal class BookmarkMoreMenuController(private val activity: Activity, privat
         val actions = buildList {
             add(Action.ADD); add(Action.FOLDER); add(Action.SORT)
             add(if (state.details) Action.HIDE_DETAILS else Action.SHOW_DETAILS)
+            if (state.showHidden) add(Action.HIDE_HIDDEN)
+            else if (state.hasHidden) add(Action.SHOW_HIDDEN)
             if (state.root) { add(Action.IMPORT); add(Action.EXPORT) }
         }
         scope.show(position(BrowserDialog(activity).items(actions.map { activity.getString(it.label) }) { index ->
@@ -45,6 +49,7 @@ internal class BookmarkMoreMenuController(private val activity: Activity, privat
                 Action.SHOW_DETAILS -> host.setDetails(true)
                 Action.IMPORT -> host.importBookmarks()
                 Action.EXPORT -> host.exportBookmarks()
+                Action.SHOW_HIDDEN, Action.HIDE_HIDDEN -> host.toggleHiddenFolders()
             }
         }, anchor))
     }
