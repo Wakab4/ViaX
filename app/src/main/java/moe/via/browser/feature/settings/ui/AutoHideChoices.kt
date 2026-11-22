@@ -1,5 +1,6 @@
 package moe.via.browser.feature.settings.ui
 
+import moe.via.browser.R
 import moe.via.browser.ui.theme.fonts.NativeTypography
 
 import android.app.Activity
@@ -18,7 +19,7 @@ internal class AutoHideChoices(activity: Activity, selected: Int, selectedAction
     var onSelected: (Int) -> Unit = selectedAction
     init {
         orientation = HORIZONTAL
-        listOf("总是显示", "滑动来显示/隐藏", "点击来显示/隐藏").forEachIndexed { index, label ->
+        listOf(activity.getString(R.string.settings_show_always), activity.getString(R.string.settings_show_on_swipe), activity.getString(R.string.settings_show_on_tap)).forEachIndexed { index, label ->
             val item = LinearLayout(activity).apply {
                 orientation = VERTICAL; gravity = Gravity.CENTER
                 setPadding(dp(4), dp(10), dp(4), dp(10)); background = activity.touchFeedback()

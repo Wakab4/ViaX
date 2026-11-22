@@ -65,7 +65,8 @@ class BrowserDialog(private val activity: Activity, title: CharSequence? = null,
         return check
     }
     fun positive(label: CharSequence, action: (BrowserDialog) -> Boolean = { true }): BrowserDialog = button(R.id.dialog_positive, label, action)
-    fun negative(label: CharSequence = "取消", action: (BrowserDialog) -> Boolean = { true }): BrowserDialog = button(R.id.dialog_negative, label, action)
+    fun negative(label: CharSequence = activity.getString(android.R.string.cancel), action: (BrowserDialog) -> Boolean = { true }): BrowserDialog =
+        button(R.id.dialog_negative, label, action)
     fun neutral(label: CharSequence, action: (BrowserDialog) -> Boolean = { true }): BrowserDialog = button(R.id.dialog_neutral, label, action)
     val selectedIndices get() = choices?.selection.orEmpty()
     fun items(labels: List<CharSequence>, action: (Int) -> Unit): BrowserDialog = configureChoices(labels, DialogChoiceMode.ACTION, emptySet(), action)

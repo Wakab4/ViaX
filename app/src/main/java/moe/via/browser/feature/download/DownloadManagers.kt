@@ -1,5 +1,6 @@
 package moe.via.browser.feature.download
 
+import moe.via.browser.R
 import android.app.Activity
 import android.app.DownloadManager
 import android.content.ComponentName
@@ -20,17 +21,17 @@ class DownloadManagers(private val context: Context) {
     private val values = context.getSharedPreferences("browser", Context.MODE_PRIVATE)
     val selected get() = values.getString("download_manager", "").orEmpty()
     fun choices(): List<DownloadManagerChoice> = buildList {
-        add(DownloadManagerChoice("", "内建下载器")); add(DownloadManagerChoice("system", "系统下载器"))
+        add(DownloadManagerChoice("", context.getString(R.string.settings_download_builtin))); add(DownloadManagerChoice("system", context.getString(R.string.settings_download_system)))
         APPS.forEach { app ->
             val info = runCatching { @Suppress("DEPRECATION") context.packageManager.getApplicationInfo(app.packageName, 0) }.getOrNull()
             if (info?.enabled == true) add(DownloadManagerChoice(app.packageName, context.packageManager.getApplicationLabel(info).toString()))
         }
     }
-    fun label() = choices().firstOrNull { it.id == selected }?.label ?: "内建下载器"
+    fun label() = choices().firstOrNull { it.id == selected }?.label ?: context.getString(R.string.settings_download_builtin)
     fun choose(activity: Activity, changed: () -> Unit = {}) {
         val options = choices()
         val dialogs = (activity as? ThemedActivity)?.dialogScope ?: DialogScope()
-        dialogs.show(BrowserDialog(activity, "下载管理").singleChoice(options.map { it.label }, options.indexOfFirst { it.id == selected }.coerceAtLeast(0)) { index ->
+        dialogs.show(BrowserDialog(activity, context.getString(R.string.settings_download_manager)).singleChoice(options.map { it.label }, options.indexOfFirst { it.id == selected }.coerceAtLeast(0)) { index ->
             values.edit().putString("download_manager", options[index].id).apply(); changed()
         })
     }

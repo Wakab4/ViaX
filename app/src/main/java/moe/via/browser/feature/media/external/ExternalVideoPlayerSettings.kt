@@ -1,5 +1,6 @@
 package moe.via.browser.feature.media.external
 
+import moe.via.browser.R
 import android.app.Activity
 import android.content.pm.PackageManager
 import android.os.Handler
@@ -26,7 +27,7 @@ class ExternalVideoPlayerSettings(
         BrowserExecutors.persistence.execute {
             val players = runCatching {
                 val manager = app.packageManager
-                val result = mutableListOf(Player("", "系统分享"))
+                val result = mutableListOf(Player("", activity.getString(R.string.settings_share_system)))
                 val intent = ExternalVideoPlayer.intent("https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_480_1_5MG.mp4")
                 @Suppress("DEPRECATION")
                 val handlers = manager.queryIntentActivities(intent, 0)
@@ -35,11 +36,11 @@ class ExternalVideoPlayerSettings(
                     if (component.enabled) result += Player(component.packageName, component.loadLabel(manager).toString())
                 }
                 result
-            }.getOrDefault(listOf(Player("", "系统分享")))
+            }.getOrDefault(listOf(Player("", activity.getString(R.string.settings_share_system))))
             handler.post {
                 if (generation != request || activity.isFinishing || activity.isDestroyed) return@post
                 dialog?.dismiss()
-                dialog = BrowserDialog(activity, "外置视频播放器").singleChoice(players.map { it.label }, players.indexOfFirst { it.packageName == selected }.coerceAtLeast(0)) { index ->
+                dialog = BrowserDialog(activity, activity.getString(R.string.settings_player)).singleChoice(players.map { it.label }, players.indexOfFirst { it.packageName == selected }.coerceAtLeast(0)) { index ->
                     val player = players[index]
                     write(player.packageName)
                     onChanged(player.label)
@@ -50,11 +51,11 @@ class ExternalVideoPlayerSettings(
 
     fun label(): String {
         val selected = read()
-        if (selected.isEmpty()) return "系统分享"
+        if (selected.isEmpty()) return activity.getString(R.string.settings_share_system)
         return try {
             @Suppress("DEPRECATION")
             activity.packageManager.getApplicationInfo(selected, 0).loadLabel(activity.packageManager).toString()
-        } catch (_: PackageManager.NameNotFoundException) { "系统分享" }
+        } catch (_: PackageManager.NameNotFoundException) { activity.getString(R.string.settings_share_system) }
     }
 
     fun dispose() {

@@ -1,8 +1,10 @@
 package moe.via.browser.feature.settings.ui
 
+import moe.via.browser.R
 import moe.via.browser.ui.theme.window.applyActivityOrientation
 
 import android.os.Build
+import moe.via.browser.core.localization.AppLanguages
 import moe.via.browser.feature.adblock.ui.AdblockNavigation
 import moe.via.browser.feature.ai.ui.settings.AiSettingsEntry
 import moe.via.browser.feature.download.directory.DownloadDirectories
@@ -21,42 +23,41 @@ internal class GeneralSettingsPage(private val host: SettingsHost) {
     private val activity get() = host.activity
     private val prefs get() = host.preferences
     fun rows(): List<SettingsItem> = with(host) {
-        val orientation = listOf("跟随系统", "自动", "竖屏", "横屏")
+        val orientation = listOf(host.text(R.string.settings_follow_system), host.text(R.string.settings_automatic), host.text(R.string.settings_portrait), host.text(R.string.settings_landscape))
         val canOrient = Build.VERSION.SDK_INT < 36 || activity.resources.configuration.smallestScreenWidthDp < 600
         listOf(
-            SettingsItem.link(26, "同步") { command(SettingsCommand.SYNC) },
-            link(2, "浏览器标识", SettingsRoute.USER_AGENT),
-            SettingsItem.link(3, "清除数据") { command(SettingsCommand.CLEAR_DATA) },
-            SettingsItem.link(4, "广告拦截") { AdblockNavigation.settings(activity) },
-            SettingsItem.link(5, "网站设定") { SiteSettingsNavigation.open(activity) },
-            SettingsItem.link(36, "密码管理器") { PasswordSettingsEntry.open(activity) },
-            link(6, "夜间模式", SettingsRoute.NIGHT),
-            SettingsItem.link(30, "阅读模式") { ReaderSettingsEntry.open(activity) },
-            link(32, "工具栏设置", SettingsRoute.TOOLBAR),
-            SettingsItem.link(28, "定制菜单") { MenuCustomizationEntry.open(activity) },
-            link(37, "定制长按菜单", SettingsRoute.LONG_PRESS_MENU),
-            SettingsItem.link(9, "语言", LanguageSettingsDialog.label(prefs.language)) { command(SettingsCommand.LANGUAGE) },
-            SettingsItem.link(10, "主页", homepageLabel(prefs.homepage)) { command(SettingsCommand.HOMEPAGE) },
-            SettingsItem.link(31, "搜索设置") { SearchSettingsEntry.open(activity) },
-            SettingsItem.link(34, "AI 设置") { AiSettingsEntry.open(activity) },
-            SettingsItem.link(13, "屏幕方向", orientation.getOrElse(if (canOrient) settings.orientation else 0) { orientation[0] }, canOrient) {
-                choose("屏幕方向", orientation, settings.orientation) { settings.orientation = it; applyActivityOrientation(activity, it) }
+            SettingsItem.link(26, host.text(R.string.settings_sync)) { command(SettingsCommand.SYNC) },
+            link(2, host.text(R.string.ref_ua_title), SettingsRoute.USER_AGENT),
+            SettingsItem.link(4, host.text(R.string.ref_adblock_page_title)) { AdblockNavigation.settings(activity) },
+            SettingsItem.link(5, host.text(R.string.ref_site_editor_title)) { SiteSettingsNavigation.open(activity) },
+            SettingsItem.link(36, host.text(R.string.ref_password_csv_settings_title)) { PasswordSettingsEntry.open(activity) },
+            link(6, host.text(R.string.ref_menu_night), SettingsRoute.NIGHT),
+            SettingsItem.link(30, host.text(R.string.ref_reader_settings_title)) { ReaderSettingsEntry.open(activity) },
+            link(32, host.text(R.string.settings_toolbar), SettingsRoute.TOOLBAR),
+            SettingsItem.link(28, host.text(R.string.settings_menu_customize)) { MenuCustomizationEntry.open(activity) },
+            link(37, host.text(R.string.settings_long_press_menu), SettingsRoute.LONG_PRESS_MENU),
+            SettingsItem.link(9, host.text(R.string.settings_language), AppLanguages.label(activity, prefs.language)) { command(SettingsCommand.LANGUAGE) },
+            SettingsItem.link(10, host.text(R.string.ref_home_page_title), homepageLabel(prefs.homepage)) { command(SettingsCommand.HOMEPAGE) },
+            SettingsItem.link(31, host.text(R.string.ref_search_page_title)) { SearchSettingsEntry.open(activity) },
+            SettingsItem.link(34, host.text(R.string.ref_ai_page_settings)) { AiSettingsEntry.open(activity) },
+            SettingsItem.link(13, host.text(R.string.settings_orientation), orientation.getOrElse(if (canOrient) settings.orientation else 0) { orientation[0] }, canOrient) {
+                choose(host.text(R.string.settings_orientation), orientation, settings.orientation) { settings.orientation = it; applyActivityOrientation(activity, it) }
             },
-            SettingsItem.link(14, "下载目录", DownloadDirectories(activity).summary()) { command(SettingsCommand.DOWNLOAD_DIRECTORY) },
-            SettingsItem.link(15, "下载管理", DownloadManagers(activity).label()) { command(SettingsCommand.DOWNLOAD_MANAGER) },
-            SettingsItem.link(27, "外置视频播放器", ExternalVideoPlayerSettings(activity, { prefs.externalVideoPlayer }, { prefs.externalVideoPlayer = it }).label()) { command(SettingsCommand.EXTERNAL_PLAYER) },
-            SettingsItem.link(18, "退出时清除数据") { command(SettingsCommand.EXIT_CLEAR) },
-            link(35, "字体", SettingsRoute.FONT, prefs.uiFont),
-            link(19, "操作设定", SettingsRoute.OPERATIONS, "手势，快捷方式，功能键"),
-            SettingsItem.link(20, "导入/备份书签") { command(SettingsCommand.BOOKMARK_DOCUMENTS) },
-            SettingsItem.link(21, "导入数据") { command(SettingsCommand.IMPORT_DATA) },
-            SettingsItem.link(22, "导出数据", "导出书签、设置、脚本和广告规则") { command(SettingsCommand.EXPORT_DATA) },
-            choice(23, "启动时恢复未关闭标签", listOf("禁用恢复", "总是恢复", "优先询问"), prefs.restoreTabs) { prefs.restoreTabs = it },
-            toggle(33, "显示撤销关闭标签的提示", prefs.undoClosePrompt, "如果开启了隐身模式，则不会显示提示") { prefs.undoClosePrompt = it },
-            SettingsItem.link(24, "设置默认浏览器") { command(SettingsCommand.DEFAULT_BROWSER) }
+            SettingsItem.link(14, host.text(R.string.ref_download_directory_title), DownloadDirectories(activity).summary()) { command(SettingsCommand.DOWNLOAD_DIRECTORY) },
+            SettingsItem.link(15, host.text(R.string.settings_download_manager), DownloadManagers(activity).label()) { command(SettingsCommand.DOWNLOAD_MANAGER) },
+            SettingsItem.link(27, host.text(R.string.settings_player), ExternalVideoPlayerSettings(activity, { prefs.externalVideoPlayer }, { prefs.externalVideoPlayer = it }).label()) { command(SettingsCommand.EXTERNAL_PLAYER) },
+            SettingsItem.link(18, host.text(R.string.settings_clear_exit)) { command(SettingsCommand.EXIT_CLEAR) },
+            link(35, host.text(R.string.ref_font_title), SettingsRoute.FONT, prefs.uiFont),
+            link(19, host.text(R.string.settings_operations), SettingsRoute.OPERATIONS, host.text(R.string.settings_controls_detail)),
+            SettingsItem.link(20, host.text(R.string.settings_bookmark_documents)) { command(SettingsCommand.BOOKMARK_DOCUMENTS) },
+            SettingsItem.link(21, host.text(R.string.settings_data_import)) { command(SettingsCommand.IMPORT_DATA) },
+            SettingsItem.link(22, host.text(R.string.settings_data_export), host.text(R.string.settings_data_export_detail)) { command(SettingsCommand.EXPORT_DATA) },
+            choice(23, host.text(R.string.ref_closed_tabs_restore_setting), listOf(host.text(R.string.ref_closed_tabs_restore_0), host.text(R.string.ref_closed_tabs_restore_1), host.text(R.string.ref_closed_tabs_restore_2)), prefs.restoreTabs) { prefs.restoreTabs = it },
+            toggle(33, host.text(R.string.ref_closed_tabs_undo_prompt), prefs.undoClosePrompt, host.text(R.string.ref_closed_tabs_undo_prompt_description)) { prefs.undoClosePrompt = it },
+            SettingsItem.link(24, host.text(R.string.settings_make_default)) { command(SettingsCommand.DEFAULT_BROWSER) }
         )
     }
     private fun homepageLabel(url: String) = when (url) {
-        "about:home" -> "默认"; "about:blank" -> "空白页"; "about:bookmarks" -> "书签"; else -> url
+        "about:home" -> host.text(R.string.ref_font_default); "about:blank" -> host.text(R.string.ref_blank_page_title); "about:bookmarks" -> host.text(R.string.ref_menu_bookmarks); else -> url
     }
 }

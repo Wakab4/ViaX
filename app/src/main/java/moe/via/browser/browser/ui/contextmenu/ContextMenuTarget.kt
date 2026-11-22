@@ -23,10 +23,11 @@ internal data class ContextMenuTarget(
     val state: ContextMenuPageState,
 )
 
-internal enum class PageContextAction(val nativeId: Int, val label: String = "", private val labelResource: Int = 0) {
-    BACKGROUND(0, "后台打开"), NEW_TAB(1, "新标签打开"), IMAGE(2, "查看图片"),
-    COPY_LINK(3, "复制链接"), SAVE_IMAGE(6, "保存图片"), IMAGE_SEARCH(7, "以图搜图"),
-    IMAGE_MODE(8, "看图模式"),
+internal enum class PageContextAction(val nativeId: Int, private val labelResource: Int) {
+    BACKGROUND(0, R.string.ref_library_open_background),
+    NEW_TAB(1, R.string.ref_library_open_new_tab), IMAGE(2, R.string.settings_context_view_image),
+    COPY_LINK(3, R.string.ref_closed_tabs_copy_link), SAVE_IMAGE(6, R.string.settings_context_save_image),
+    IMAGE_SEARCH(7, R.string.settings_context_image_search), IMAGE_MODE(8, R.string.settings_context_image_mode),
     EDIT_BOOKMARK(9, labelResource = R.string.ref_bookmark_context_edit),
     ADD_BOOKMARK_FAVORITE(10, labelResource = R.string.ref_bookmark_context_add_favorite),
     DELETE_BOOKMARK(11, labelResource = R.string.ref_generated_history_context_delete),
@@ -37,10 +38,10 @@ internal enum class PageContextAction(val nativeId: Int, val label: String = "",
     DELETE_HISTORY(16, labelResource = R.string.ref_generated_history_context_delete),
     CLEAR_HISTORY(17, labelResource = R.string.ref_generated_history_context_clear),
     DELETE_SAVED_PAGE(18, labelResource = R.string.ref_generated_history_context_delete),
-    INFO(22, "页面信息"), MARK_AD(23, "标记广告"),
-    COPY_TEXT(29, "复制链接文本"), SHARE_LINK(31, "分享"),
-    SORT_FAVORITES(32, labelResource = R.string.ref_favorite_context_sort), SHARE_IMAGE(33, "分享图片"),
-    SCAN_IMAGE(34, "扫描二维码"), MORE(36, "更多选项"), CUSTOMIZE(37, "定制菜单"),
-    DOWNLOAD_IMAGE(38, "下载图片");
-    fun label(context: Context) = if (labelResource != 0) context.getString(labelResource) else label
+    INFO(22, R.string.settings_context_page_info), MARK_AD(23, R.string.ref_menu_mark_ad),
+    COPY_TEXT(29, R.string.settings_context_copy_link_text), SHARE_LINK(31, R.string.ref_menu_share),
+    SORT_FAVORITES(32, labelResource = R.string.ref_favorite_context_sort), SHARE_IMAGE(33, R.string.settings_context_share_image),
+    SCAN_IMAGE(34, R.string.ref_menu_scan), MORE(36, R.string.settings_context_more), CUSTOMIZE(37, R.string.ref_menu_customize),
+    DOWNLOAD_IMAGE(38, R.string.settings_context_download_image);
+    fun label(context: Context) = context.getString(labelResource)
 }

@@ -19,10 +19,11 @@ import moe.via.browser.ui.theme.window.ChromeMode
 
 internal class ToolbarPreview(activity: Activity, state: ToolbarPreviewState) : FrameLayout(activity) {
     private val previewPalette = activity.palette
+    private val sampleTitle = activity.getString(R.string.settings_sample_page)
     private val address = when (state.address) {
         1 -> "https://example.com/"
         2 -> "example.com"
-        else -> SAMPLE_TITLE
+        else -> sampleTitle
     }
 
     init {
@@ -124,7 +125,7 @@ internal class ToolbarPreview(activity: Activity, state: ToolbarPreviewState) : 
         val addParams = LinearLayout.LayoutParams(dp(48), -1)
         val sample = row().apply {
             addView(icon(R.drawable.ref_ic_webpage, size = 17, tint = previewPalette.accent), LinearLayout.LayoutParams(dp(40), -1))
-            addView(label(SAMPLE_TITLE, 13), LinearLayout.LayoutParams(0, -1, 1f))
+            addView(label(sampleTitle, 13), LinearLayout.LayoutParams(0, -1, 1f))
             addView(icon(R.drawable.ref_ic_close, size = 16), LinearLayout.LayoutParams(dp(36), -1))
         }
         return object : LinearLayout(context) {
@@ -182,7 +183,4 @@ internal class ToolbarPreview(activity: Activity, state: ToolbarPreviewState) : 
     private fun slot(weight: Float = 1f) = LinearLayout.LayoutParams(0, -1, weight)
     private fun barParams(height: Int = 48) = LinearLayout.LayoutParams(-1, dp(height))
 
-    private companion object {
-        const val SAMPLE_TITLE = "网页"
-    }
 }

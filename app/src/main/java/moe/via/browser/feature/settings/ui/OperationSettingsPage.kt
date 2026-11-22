@@ -21,17 +21,17 @@ import moe.via.browser.ui.theme.palette
 internal class OperationSettingsPage(private val host: SettingsHost, private val selectAction: (ActionBinding) -> Unit) {
     private val prefs get() = host.preferences
     fun rows(): List<SettingsItem> = with(host) { listOf(
-        toggle(1, "滑动屏幕前进后退", prefs.swipeNavigation) { prefs.swipeNavigation = it },
-        toggle(2, "使用音量键翻页", prefs.volumePaging) { prefs.volumePaging = it },
-        toggle(4, "启用视频播放器手势", prefs.videoGestures, "如果可能，在全屏播放视频时允许滑动屏幕以调整视频进度、屏幕亮度、设备音量") { prefs.videoGestures = it },
-        link(3, "键盘快捷键", SettingsRoute.KEYBOARD),
+        toggle(1, host.text(R.string.settings_swipe_navigation), prefs.swipeNavigation) { prefs.swipeNavigation = it },
+        toggle(2, host.text(R.string.settings_volume_paging), prefs.volumePaging) { prefs.volumePaging = it },
+        toggle(4, host.text(R.string.settings_video_gestures), prefs.videoGestures, host.text(R.string.settings_video_gestures_detail)) { prefs.videoGestures = it },
+        link(3, host.text(R.string.settings_keyboard), SettingsRoute.KEYBOARD),
         SettingsItem.content("", "") { bindingPreview() }
     ) }
     private fun bindingPreview(): LinearLayout {
         val activity = host.activity
         val body = LinearLayout(activity).apply { orientation = LinearLayout.VERTICAL }
         body.addView(NativeTypography.text(activity).apply {
-            text = "点击下列按钮来设置它的长按事件，长按查看它的事件。你也可以滑动工具栏来设置滑动事件。"
+            text = host.text(R.string.settings_gesture_preview_help)
             textSize = 12f; setTextColor(activity.palette.secondary); setPadding(dp(16), dp(10), dp(16), dp(10))
         }, LinearLayout.LayoutParams(-1, -2))
         val bar = LinearLayout(activity).apply { gravity = Gravity.CENTER_VERTICAL }
@@ -41,10 +41,10 @@ internal class OperationSettingsPage(private val host: SettingsHost, private val
             bar.addView(ImageView(activity).apply {
                 setImageResource(icon); imageTintList = ColorStateList.valueOf(activity.palette.icon)
                 setPadding(dp(13), dp(13), dp(13), dp(13)); background = activity.touchFeedback()
-                contentDescription = bindings[index].label
+                contentDescription = host.text(bindings[index].labelRes)
                 setOnClickListener { selectAction(bindings[index]) }
                 setOnLongClickListener {
-                    BrowserMessage(activity).show(prefs.action(bindings[index]).label, "编辑") { selectAction(bindings[index]) }; true
+                    BrowserMessage(activity).show(host.text(prefs.action(bindings[index]).labelRes), host.text(R.string.ref_library_dialog_edit)) { selectAction(bindings[index]) }; true
                 }
             }, LinearLayout.LayoutParams(0, activity.dp(48), 1f))
         }
@@ -55,15 +55,15 @@ internal class OperationSettingsPage(private val host: SettingsHost, private val
     }
     fun actions(binding: ActionBinding): List<SettingsItem> = buildList {
         val groups = listOf(
-            "" to listOf(0), "标签页行为" to listOf(5, 10, 11, 12, 13, 9, 16, 27),
-            "特性行为" to listOf(7, 30, 8, 28, 26, 14, 15, 24, 25, 29),
-            "地址栏行为" to listOf(4), "网页行为" to listOf(19, 1, 20, 6, 18, 17, 2, 3)
+            "" to listOf(0), host.text(R.string.settings_tab_actions) to listOf(5, 10, 11, 12, 13, 9, 16, 27),
+            host.text(R.string.settings_feature_actions) to listOf(7, 30, 8, 28, 26, 14, 15, 24, 25, 29),
+            host.text(R.string.settings_address_actions) to listOf(4), host.text(R.string.settings_page_actions) to listOf(19, 1, 20, 6, 18, 17, 2, 3)
         )
         groups.forEach { (name, ids) ->
             if (name.isNotEmpty()) add(SettingsItem.section(name))
             ids.forEach { id ->
                 val action = NativeAction.fromId(id)
-                add(SettingsItem.radio(id, action.label, prefs.action(binding) == action) {
+                add(SettingsItem.radio(id, host.text(action.labelRes), prefs.action(binding) == action) {
                     prefs.setAction(binding, action)
                     host.command(SettingsCommand.ACTION_CHOSEN)
                 })
@@ -71,11 +71,11 @@ internal class OperationSettingsPage(private val host: SettingsHost, private val
         }
     }
     fun keyboard(): List<SettingsItem> = listOf(
-        "Ctrl + t" to "新建标签", "Ctrl + Tab" to "下一个标签", "Ctrl + Shift + Tab" to "上一个标签",
-        "Alt + ←" to "网页后退", "Alt + →" to "网页前进", "Ctrl + w" to "关闭标签",
-        "Alt + f" to "菜单", "Ctrl + Shift + b" to "书签", "Ctrl + h" to "历史",
-        "Ctrl + f" to "页内查找", "Ctrl + l" to "输入网址", "F5 / Ctrl + r" to "刷新网页",
-        "Ctrl + u" to "源码", "Ctrl + d" to "添加书签"
+        "Ctrl + t" to host.text(R.string.ref_tab_switcher_new_tab), "Ctrl + Tab" to host.text(R.string.settings_action_next), "Ctrl + Shift + Tab" to host.text(R.string.settings_action_previous),
+        "Alt + ←" to host.text(R.string.settings_action_back), "Alt + →" to host.text(R.string.settings_action_forward), "Ctrl + w" to host.text(R.string.settings_action_close_tab),
+        "Alt + f" to host.text(R.string.settings_menu), "Ctrl + Shift + b" to host.text(R.string.ref_menu_bookmarks), "Ctrl + h" to host.text(R.string.ref_menu_history),
+        "Ctrl + f" to host.text(R.string.ref_menu_find), "Ctrl + l" to host.text(R.string.settings_action_address), "F5 / Ctrl + r" to host.text(R.string.ref_menu_reload),
+        "Ctrl + u" to host.text(R.string.ref_menu_source), "Ctrl + d" to host.text(R.string.ref_menu_add_bookmark)
     ).map { (key, action) -> SettingsItem.content(key, key to action) {
         LinearLayout(host.activity).apply {
             gravity = Gravity.CENTER_VERTICAL; setPadding(dp(16), dp(20), dp(16), dp(20))

@@ -19,7 +19,7 @@ internal class SettingsPageContent(private val activity: ThemedActivity, private
     private val binding: ActionBinding?, applyInsets: Boolean, private val back: () -> Unit,
     private val navigate: (SettingsRoute, ActionBinding?) -> Unit, private val external: (SettingsCommand) -> Unit) : AutoCloseable {
     private val settings = BrowserSettings(activity)
-    private val page = PageScaffold(activity, route.title, back, applyInsets)
+    private val page = PageScaffold(activity, activity.getString(route.titleRes), back, applyInsets)
     private val host: SettingsHost = SettingsHost(activity, settings, { navigate(it, null) }, ::render, ::command)
     private val adapter: SettingsRowAdapter = SettingsRowAdapter(activity, ::render)
     private val list = NativeRecyclerView(activity).apply {
@@ -47,8 +47,8 @@ internal class SettingsPageContent(private val activity: ThemedActivity, private
         }
         NativeToolbarTap.bind(page.toolbar) { list.smoothScrollToPosition(0) }
         if (route == SettingsRoute.ROOT) page.titleView.setOnClickListener { headerTapped() }
-        if (route == SettingsRoute.SSL) page.addTextAction("帮助", ssl::help)
-        if (route == SettingsRoute.LONG_PRESS_MENU) page.addTextAction("重置", longPressMenu::reset)
+        if (route == SettingsRoute.SSL) page.addTextAction(activity.getString(R.string.settings_help), ssl::help)
+        if (route == SettingsRoute.LONG_PRESS_MENU) page.addTextAction(activity.getString(R.string.ref_menu_reset), longPressMenu::reset)
     }
     fun render() {
         val rows = when (route) {

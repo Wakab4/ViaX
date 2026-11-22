@@ -1,5 +1,6 @@
 package moe.via.browser.feature.settings.ui
 
+import moe.via.browser.R
 import android.webkit.CookieManager
 import android.webkit.WebStorage
 import android.webkit.WebView
@@ -24,14 +25,14 @@ class ClearDataController(
     private val clearClosedTabs: (() -> Unit)? = null
 ) {
     private val preferences get() = settings.preferences
-    fun show() = choose("清除数据", preferences.clearDataMask) { mask ->
+    fun show() = choose(activity.getString(R.string.ref_menu_clear_data), preferences.clearDataMask) { mask ->
         preferences.clearDataMask = mask; clear(mask, notify = true)
     }
-    fun showExit() = choose("退出时清除数据", preferences.exitClearMask) { preferences.exitClearMask = it }
+    fun showExit() = choose(activity.getString(R.string.settings_clear_exit), preferences.exitClearMask) { preferences.exitClearMask = it }
     private fun choose(title: String, mask: Int, apply: (Int) -> Unit) {
         activity.dialogScope.show(BrowserDialog(activity, title)
-            .multipleChoice(LABELS, BITS.indices.filterTo(mutableSetOf()) { mask and BITS[it] != 0 })
-            .positive("确定") { dialog -> apply(dialog.selectedIndices.fold(0) { value, index -> value or BITS[index] }); true }
+            .multipleChoice(LABELS.map(activity::getString), BITS.indices.filterTo(mutableSetOf()) { mask and BITS[it] != 0 })
+            .positive(activity.getString(android.R.string.ok)) { dialog -> apply(dialog.selectedIndices.fold(0) { value, index -> value or BITS[index] }); true }
             .negative())
     }
     fun clear(mask: Int, notify: Boolean = false, exiting: Boolean = false) {
@@ -73,10 +74,11 @@ class ClearDataController(
         if (mask and 32 != 0) BrowserExecutors.io.execute {
             try { BrowserCaches.clearApp(app) } finally { BookmarkFaviconStore.evictMemory() }
         }
-        if (notify && mask and 127 != 0) BrowserMessage(activity).show("数据已清除")
+        if (notify && mask and 127 != 0) BrowserMessage(activity).show(activity.getString(R.string.settings_cleared))
     }
     companion object {
-        val LABELS = listOf("缓存", "表单数据", "历史", "关闭的标签页", "网页存储", "Cookies (登录状态)", "应用缓存")
+        private val LABELS = listOf(R.string.settings_clear_cache, R.string.settings_clear_forms, R.string.ref_menu_history,
+            R.string.ref_closed_tabs_title, R.string.settings_clear_storage, R.string.settings_clear_cookies, R.string.settings_clear_app_cache)
         val BITS = intArrayOf(1, 2, 4, 64, 8, 16, 32)
     }
 }

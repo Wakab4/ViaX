@@ -8,6 +8,7 @@ import moe.via.browser.feature.settings.pages.SettingsPageFragment
 import moe.via.browser.feature.settings.pages.UserAgentEditorFragment
 import moe.via.browser.feature.settings.pages.UserAgentSettingsFragment
 import moe.via.browser.feature.settings.skin.ui.SkinSettingsFragment
+import moe.via.browser.feature.site.ui.data.SiteDataSettingsFragment
 import moe.via.browser.ui.pages.RecordPageFragment
 import moe.via.browser.ui.pages.RecordPageScope
 import moe.via.browser.ui.theme.ThemedActivity
@@ -20,6 +21,7 @@ internal object SettingsNavigation {
     const val USER_AGENT_EDITED = "settings.ua.edited"
 
     private fun type(route: SettingsRoute): Class<out RecordPageFragment> = when (route) {
+        SettingsRoute.SITE_DATA -> SiteDataSettingsFragment::class.java
         SettingsRoute.FONT -> FontSettingsFragment::class.java
         SettingsRoute.SKINS -> SkinSettingsFragment::class.java
         SettingsRoute.USER_AGENT -> UserAgentSettingsFragment::class.java

@@ -1,5 +1,6 @@
 package moe.via.browser.feature.settings.ui
 
+import androidx.annotation.StringRes
 import moe.via.browser.storage.preferences.BrowserSettings
 import moe.via.browser.feature.settings.SettingsItem
 import moe.via.browser.feature.settings.SettingsRoute
@@ -15,6 +16,7 @@ internal class SettingsHost(
     val command: (SettingsCommand) -> Unit
 ) {
     val preferences get() = settings.preferences
+    fun text(@StringRes resource: Int): String = activity.getString(resource)
     fun link(id: Int, title: String, next: SettingsRoute, detail: String = "") = SettingsItem.link(id, title, detail) { open(next) }
     fun choose(title: String, labels: List<String>, selected: Int, changed: (Int) -> Unit) {
         activity.dialogScope.show(BrowserDialog(activity, title).singleChoice(labels, selected) { changed(it); refresh() })
@@ -24,7 +26,7 @@ internal class SettingsHost(
     fun toggle(id: Int, title: String, checked: Boolean, detail: String = "", changed: (Boolean) -> Unit): SettingsItem =
         SettingsItem.toggle(id, title, checked, detail) { changed(it) }
     fun message(title: String, text: String) {
-        activity.dialogScope.show(BrowserDialog(activity, title, text).positive("确定"))
+        activity.dialogScope.show(BrowserDialog(activity, title, text).positive(activity.getString(android.R.string.ok)))
     }
 }
 

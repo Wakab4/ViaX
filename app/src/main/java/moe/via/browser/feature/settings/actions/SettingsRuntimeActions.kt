@@ -1,5 +1,6 @@
 package moe.via.browser.feature.settings.actions
 
+import moe.via.browser.R
 import android.app.role.RoleManager
 import android.content.ActivityNotFoundException
 import android.content.Intent
@@ -48,8 +49,8 @@ internal class SettingsRuntimeActions(private val activity: ThemedActivity, priv
             SettingsCommand.DOWNLOAD_DIRECTORY -> directory.show()
             SettingsCommand.DOWNLOAD_MANAGER -> managers.choose(activity, changed)
             SettingsCommand.EXTERNAL_PLAYER -> external.show { changed() }
-            SettingsCommand.BOOKMARK_DOCUMENTS -> activity.dialogScope.show(BrowserDialog(activity, "导入/备份书签")
-                .items(listOf("备份书签", "导入书签")) { if (it == 0) documents.export() else documents.import("") })
+            SettingsCommand.BOOKMARK_DOCUMENTS -> activity.dialogScope.show(BrowserDialog(activity, activity.getString(R.string.settings_bookmark_documents))
+                .items(listOf(activity.getString(R.string.ref_bookmark_more_export), activity.getString(R.string.ref_bookmark_more_import))) { if (it == 0) documents.export() else documents.import("") })
             SettingsCommand.IMPORT_DATA -> backup.showImport()
             SettingsCommand.EXPORT_DATA -> backup.showExport()
             SettingsCommand.DEFAULT_BROWSER -> defaultBrowser()
