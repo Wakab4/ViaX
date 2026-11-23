@@ -75,12 +75,12 @@ abstract class ThemedActivity : FragmentActivity(), BrowserThemeOwner {
     }
     override fun attachBaseContext(newBase: Context) {
         if (BrowserNightMode.synchronize(newBase)) onSystemNightModeSynchronized()
-        val localized = SettingsContext.wrap(newBase)
+        val night = newBase.palette.night
+        val localized = SettingsContext.wrap(newBase, night)
         attachedLanguage = SettingsContext.signature(localized)
-        val night = localized.palette.night
         attachedNight = night
-        val override = Configuration().apply { uiMode = if (night) Configuration.UI_MODE_NIGHT_YES else Configuration.UI_MODE_NIGHT_NO }
-        super.attachBaseContext(localized.createConfigurationContext(override))
+        SettingsContext.applyProcessLocale(localized)
+        super.attachBaseContext(localized)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         updateWindowResources()
@@ -114,7 +114,7 @@ abstract class ThemedActivity : FragmentActivity(), BrowserThemeOwner {
         }
     }
 
-    private fun recreateForSettings() {
+    internal fun recreateForSettings() {
         if (recreatingForSettings || isFinishing || isDestroyed) return
         recreatingForSettings = true
         window.decorView.post { if (!isFinishing && !isDestroyed) recreate() }
@@ -133,9 +133,11 @@ abstract class ThemedActivity : FragmentActivity(), BrowserThemeOwner {
         super.onConfigurationChanged(newConfig)
         if (BrowserNightMode.synchronize(this)) onSystemNightModeSynchronized()
         updateWindowResources()
-        if (attachedNight != palette.night && !onBrowserNightChanged(palette.night)) recreateForSettings()
-        val requested = SettingsContext.language(this)
-        if (requested.isNotEmpty() && resources.configuration.locales[0] != java.util.Locale.forLanguageTag(requested.replace('_', '-'))) recreateForSettings()
+        if (attachedLanguage != SettingsContext.signature(this)) {
+            recreateForSettings()
+        } else if (attachedNight != palette.night && !onBrowserNightChanged(palette.night)) {
+            recreateForSettings()
+        }
         window.decorView.post { if (!isDestroyed) dialogScope.updateGeometry() }
     }
     // API 28–32 still dispatch this method; newer Android uses the registered platform callback.

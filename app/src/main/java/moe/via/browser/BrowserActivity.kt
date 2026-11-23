@@ -533,7 +533,7 @@ open class BrowserActivity : ThemedActivity(), moe.via.browser.ui.theme.window.B
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         rootHost.prepare()
-        GeneratedPageDirtyState.initialize(applicationContext)
+        GeneratedPageDirtyState.synchronizeLanguage(applicationContext)
         startup.create(savedInstanceState)
     }
 

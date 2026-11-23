@@ -52,8 +52,6 @@
     <string name="settings_settings_background_hint">下次開啟設定時生效</string>
     <string name="settings_homepage_custom">自訂首頁</string>
     <string name="settings_sample_page">網頁</string>
-    <string name="settings_restart_language">下次啟動 ViaX 時會套用新語言。可立即重新啟動以套用。</string>
-    <string name="settings_restart">重新啟動應用程式</string>
     <string name="settings_layout">應用程式版面</string>
     <string name="settings_layout_traditional">傳統</string>
     <string name="settings_layout_top">工具列在上方</string>

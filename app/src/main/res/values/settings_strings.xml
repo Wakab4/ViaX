@@ -52,8 +52,6 @@
     <string name="settings_settings_background_hint">Applies the next time you open settings</string>
     <string name="settings_homepage_custom">Custom homepage</string>
     <string name="settings_sample_page">Web page</string>
-    <string name="settings_restart_language">The language will change the next time ViaX starts. Restart now to apply it.</string>
-    <string name="settings_restart">Restart app</string>
     <string name="settings_layout">App layout</string>
     <string name="settings_layout_traditional">Traditional</string>
     <string name="settings_layout_top">Toolbar at top</string>

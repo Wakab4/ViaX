@@ -28,6 +28,7 @@ internal class GeneralSettingsPage(private val host: SettingsHost) {
         listOf(
             SettingsItem.link(26, host.text(R.string.settings_sync)) { command(SettingsCommand.SYNC) },
             link(2, host.text(R.string.ref_ua_title), SettingsRoute.USER_AGENT),
+            SettingsItem.link(3, host.text(R.string.ref_menu_clear_data)) { command(SettingsCommand.CLEAR_DATA) },
             SettingsItem.link(4, host.text(R.string.ref_adblock_page_title)) { AdblockNavigation.settings(activity) },
             SettingsItem.link(5, host.text(R.string.ref_site_editor_title)) { SiteSettingsNavigation.open(activity) },
             SettingsItem.link(36, host.text(R.string.ref_password_csv_settings_title)) { PasswordSettingsEntry.open(activity) },

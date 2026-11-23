@@ -1,6 +1,7 @@
 package moe.via.browser.feature.internalpages
 
 import android.content.Context
+import moe.via.browser.core.localization.SettingsContext
 
 /** w9.n's process word includes generated-page and page-policy flags, with unknown bits intact. */
 object GeneratedPageDirtyState {
@@ -26,6 +27,15 @@ object GeneratedPageDirtyState {
         flags = (saved and pendingMask.inv()) or (flags and pendingMask)
         pendingMask = 0
         initialized = true
+    }
+
+    @Synchronized fun synchronizeLanguage(context: Context) {
+        initialize(context)
+        val values = context.getSharedPreferences("browser", Context.MODE_PRIVATE)
+        val language = SettingsContext.signature(context)
+        if (values.getString("generated_page_language", null) == language) return
+        markAll()
+        values.edit().putString("generated_page_language", language).putInt("datachecker2", flags).apply()
     }
 
     /** ua.p1/k2 persist the shared word, rather than separate last-writer page booleans. */

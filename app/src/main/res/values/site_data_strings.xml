@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="site_data_title">Website data</string>
-    <string name="site_data_refresh">Refresh sites</string>
-    <string name="site_data_global_clear">Global cleanup</string>
     <string name="site_data_search">Search sites</string>
-    <string name="site_data_open_address">Manage a URL</string>
-    <string name="site_data_list_source">The list combines recent visits with storage origins reported by WebView.</string>
     <string name="site_data_loading">Loading sites…</string>
     <string name="site_data_load_failed">Could not load sites.</string>
     <string name="site_data_empty">No matching sites</string>
-    <string name="site_data_storage_reported">Storage reported by WebView: %1$s</string>
-    <string name="site_data_recent">Recently visited</string>
-    <string name="site_data_invalid_address">Enter a valid HTTP or HTTPS URL.</string>
-    <string name="site_data_cookies">Cookies for this URL</string>
+    <string name="site_data_cookies">Cookies</string>
     <string name="site_data_clear_site">Clear all data for this site</string>
     <string name="site_data_site_clear_unavailable">This WebView does not support clearing all data for one site.</string>
     <string name="site_data_no_cookies">No cookies are available for this URL.</string>
@@ -26,16 +19,19 @@
     <string name="site_data_clear">Clear data</string>
     <string name="site_data_site_cleared">Site data cleared.</string>
     <string name="site_data_operation_failed">Could not complete the operation.</string>
-    <string name="site_data_actions">Website data options</string>
+    <string name="site_data_order_name">By name</string>
+    <string name="site_data_order_size">By size</string>
     <string name="site_data_sort_size">Sort by size (largest first)</string>
-    <string name="site_data_sort_recent">Sort by recent visits</string>
-    <string name="site_data_unknown_size">Size unknown</string>
-    <string name="site_data_select_sites">Select sites to clear</string>
+    <string name="site_data_sort_name">Sort by site name</string>
+    <string name="site_data_shared_storage">Shared storage</string>
+    <string name="site_data_http_cache_size">Web cache: %1$s</string>
+    <string name="site_data_local_storage_size">Local storage: %1$s</string>
+    <string name="site_data_session_storage_size">Session storage: %1$s</string>
+    <string name="site_data_select_sites">Select</string>
     <string name="site_data_select_sites_message">Clear cookies, cache, and website storage for the selected sites and their subdomains. You may need to sign in again.</string>
     <string name="site_data_clear_selected">Clear selected</string>
     <string name="site_data_clearing">Clearing website data…</string>
     <string name="site_data_batch_result">Cleared data for %1$d of %2$d selected sites.</string>
     <string name="site_data_selected_count">%1$d selected</string>
-    <string name="site_data_selection_hint">Subdomains of the same site are selected together.</string>
     <string name="site_data_cancel_selection">Cancel selection</string>
 </resources>

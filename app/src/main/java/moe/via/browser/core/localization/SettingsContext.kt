@@ -6,7 +6,6 @@ import android.content.res.Resources
 import android.os.LocaleList
 import java.util.Locale
 
-/** Native Shell places the selected language before the existing locale fallbacks. */
 object SettingsContext {
     fun language(context: Context): String = context.getSharedPreferences("browser", Context.MODE_PRIVATE)
         .getString("language", "").orEmpty().trim().let(AppLanguages::selected)
@@ -15,25 +14,18 @@ object SettingsContext {
         if (selected.isEmpty()) "system:${Resources.getSystem().configuration.locales.toLanguageTags()}" else selected
     }
 
-    fun wrap(base: Context): Context {
+    fun wrap(base: Context, night: Boolean? = null): Context {
         val selected = language(base)
-        val system = Resources.getSystem().configuration.locales
-        val fallbacks = base.resources.configuration.locales
-        val locales = if (selected.isEmpty()) system else {
-            val primary = Locale.forLanguageTag(selected.replace('_', '-'))
-            if (primary.language.isEmpty()) system else {
-                val ordered = mutableListOf(primary)
-                for (index in 0 until fallbacks.size()) fallbacks[index].takeUnless { it in ordered }?.let(ordered::add)
-                LocaleList(*ordered.toTypedArray())
-            }
-        }
+        val locales = if (selected.isEmpty()) Resources.getSystem().configuration.locales
+            else LocaleList(Locale.forLanguageTag(selected))
         val configuration = Configuration().apply {
             setLocales(locales)
-            if (!locales.isEmpty) setLayoutDirection(locales[0])
+            if (night != null) {
+                val mode = if (night) Configuration.UI_MODE_NIGHT_YES else Configuration.UI_MODE_NIGHT_NO
+                uiMode = (base.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK.inv()) or mode
+            }
         }
-        val wrapped = base.createConfigurationContext(configuration)
-        applyProcessLocale(wrapped)
-        return wrapped
+        return base.createConfigurationContext(configuration)
     }
 
     fun applyProcessLocale(context: Context) {

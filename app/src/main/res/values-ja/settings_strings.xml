@@ -52,8 +52,6 @@
     <string name="settings_settings_background_hint">次回設定を開くと反映されます</string>
     <string name="settings_homepage_custom">カスタム ホームページ</string>
     <string name="settings_sample_page">ウェブページ</string>
-    <string name="settings_restart_language">次回の ViaX 起動時に言語が変わります。今すぐ再起動するとすぐに反映されます。</string>
-    <string name="settings_restart">アプリを再起動</string>
     <string name="settings_layout">アプリのレイアウト</string>
     <string name="settings_layout_traditional">標準</string>
     <string name="settings_layout_top">ツールバーを上に表示</string>

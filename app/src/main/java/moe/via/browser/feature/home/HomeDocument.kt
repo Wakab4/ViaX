@@ -3,6 +3,7 @@ package moe.via.browser.feature.home
 import android.content.Context
 import android.net.Uri
 import android.webkit.WebResourceResponse
+import moe.via.browser.core.localization.SettingsContext
 import moe.via.browser.feature.home.data.HomePreferences
 import moe.via.browser.feature.home.render.HomeDocumentCache
 import moe.via.browser.feature.home.render.HomeDocumentFiles
@@ -48,9 +49,10 @@ object HomeDocument {
     /** Called by WebView's resource worker, or the persistence worker for view-source. */
     private fun files(context: Context, night: Boolean? = null): HomeDocumentFiles {
         val app = context.applicationContext
+        val localized = SettingsContext.wrap(app)
         val preferences = HomePreferences(app)
-        val options = HomeRenderContext.options(context)
-        val isRtl = HomeRenderContext.isRtl(context)
+        val options = HomeRenderContext.options(localized)
+        val isRtl = HomeRenderContext.isRtl(localized)
         val config = preferences.config(night, isRtl = isRtl)
         return HomeDocumentCache(app).render(config, options) { HomeHtmlSource.read(app) }
     }

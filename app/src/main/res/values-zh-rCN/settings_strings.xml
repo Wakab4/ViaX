@@ -52,8 +52,6 @@
     <string name="settings_settings_background_hint">将在下次打开设置时生效</string>
     <string name="settings_homepage_custom">自定义主页</string>
     <string name="settings_sample_page">网页</string>
-    <string name="settings_restart_language">这将在下次启动应用时生效，你希望立即重启应用以生效吗？</string>
-    <string name="settings_restart">重启应用</string>
     <string name="settings_layout">应用布局</string>
     <string name="settings_layout_traditional">传统</string>
     <string name="settings_layout_top">工具栏在上</string>
