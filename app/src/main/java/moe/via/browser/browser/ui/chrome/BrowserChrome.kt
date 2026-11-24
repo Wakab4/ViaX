@@ -26,6 +26,7 @@ import moe.via.browser.storage.preferences.ActionBinding
 import moe.via.browser.storage.preferences.BrowserPreferences
 import moe.via.browser.ui.components.SkinIconBinder
 import moe.via.browser.ui.components.dp
+import moe.via.browser.ui.components.touchFeedback
 import moe.via.browser.ui.theme.window.ChromeLayoutPolicy
 import moe.via.browser.ui.theme.window.ChromeMode
 
@@ -134,6 +135,7 @@ class BrowserChrome(private val activity: Activity, private val actions: Actions
             imageTintList = android.content.res.ColorStateList.valueOf(activity.palette.icon)
             contentDescription = "搜索"
             setPadding(dp(13), 0, dp(13), 0)
+            applyIconFeedback()
             setOnClickListener { actions.onPageInfo() }
             setOnLongClickListener { actions.onSearchEngine(this); true }
         }
@@ -157,6 +159,7 @@ class BrowserChrome(private val activity: Activity, private val actions: Actions
             imageTintList = android.content.res.ColorStateList.valueOf(activity.palette.icon)
             contentDescription = "刷新"
             setPadding(dp(13), 0, dp(13), 0)
+            applyIconFeedback()
             setOnClickListener {
                 when {
                     home -> actions.onScan()
@@ -514,6 +517,7 @@ class BrowserChrome(private val activity: Activity, private val actions: Actions
             isClickable = true
             isFocusable = true
             contentDescription = label
+            applyIconFeedback()
             setOnClickListener { action() }
         }
         button.addView(ImageView(activity).apply {
@@ -530,6 +534,7 @@ class BrowserChrome(private val activity: Activity, private val actions: Actions
             isClickable = true
             isFocusable = true
             contentDescription = "标签页"
+            applyIconFeedback()
             setOnClickListener { actions.onTabs() }
         }
         button.addView(ImageView(activity).apply {
@@ -548,6 +553,11 @@ class BrowserChrome(private val activity: Activity, private val actions: Actions
         button.addView(count, FrameLayout.LayoutParams(dp(22), dp(22), Gravity.CENTER))
         addView(button, LinearLayout.LayoutParams(0, dp(48), 1f))
         return count
+    }
+
+    private fun View.applyIconFeedback() {
+        background = activity.touchFeedback(24)
+        defaultFocusHighlightEnabled = false
     }
 
     private fun dp(value: Int) = (value * activity.resources.displayMetrics.density + 0.5f).toInt()

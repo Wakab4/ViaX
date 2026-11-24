@@ -36,6 +36,8 @@ class BookmarkPopupDialogFragment : DialogFragment() {
             id = R.id.bookmark_popup_pager
             layoutParams = ViewGroup.LayoutParams(-1, requireContext().dp(300))
             isUserInputEnabled = false
+            // Navigation changes pages explicitly. The scrolling container is not a keyboard target.
+            getChildAt(0)?.isFocusable = false
             offscreenPageLimit = 1
             adapter = object : FragmentStateAdapter(this@BookmarkPopupDialogFragment) {
                 override fun getItemCount() = 2

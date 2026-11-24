@@ -83,7 +83,7 @@ class FindInPageController(private val activity: Activity, private val parent: F
             when (val child = row.getChildAt(index)) {
                 is EditText -> { child.setTextColor(activity.palette.text); child.setHintTextColor(activity.palette.hint) }
                 is TextView -> child.setTextColor(activity.palette.secondary)
-                is ImageView -> { child.imageTintList = android.content.res.ColorStateList.valueOf(activity.palette.icon); child.background = activity.touchFeedback() }
+                is ImageView -> { child.imageTintList = android.content.res.ColorStateList.valueOf(activity.palette.icon); child.background = activity.touchFeedback(18) }
             }
         }
     }
@@ -95,7 +95,7 @@ class FindInPageController(private val activity: Activity, private val parent: F
         rotation = angle
         setPadding(dp(8), dp(13), dp(8), dp(13))
         layoutParams = LinearLayout.LayoutParams(dp(36), -1)
-        background = activity.touchFeedback()
+        background = activity.touchFeedback(18)
         setOnClickListener { action() }
     }
 }

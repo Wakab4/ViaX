@@ -74,7 +74,7 @@ class ClosedTabsPage(private val activity: ThemedActivity, applyInsets: Boolean,
     private fun button(resource: Int, action: () -> Unit) = NativeTypography.text(activity).apply {
         setText(resource); textSize = 14f; gravity = Gravity.CENTER
         setTextColor(ColorStateList(arrayOf(intArrayOf(-android.R.attr.state_enabled), intArrayOf()), intArrayOf((activity.palette.text and 0xFFFFFF) or 0x80000000.toInt(), activity.palette.text)))
-        setPadding(dp(16), 0, dp(16), 0); minimumHeight = dp(48); background = activity.touchFeedback(); setOnClickListener { action() }
+        setPadding(dp(16), 0, dp(16), 0); minimumHeight = dp(48); background = activity.touchFeedback(18); setOnClickListener { action() }
         layoutParams = LinearLayout.LayoutParams(-2, -2)
     }
     override fun close() { search.close(); list.dispose(); list.adapter = null; adapter.close() }

@@ -29,6 +29,7 @@ internal class DownloadCategoryStrip(context: Context, initial: DownloadCategory
     init {
         id = R.id.download_manager_categories
         isHorizontalScrollBarEnabled = false; isVerticalScrollBarEnabled = false
+        isFocusable = false
         addView(group, LayoutParams(-1, -1))
         for (category in DownloadCategory.entries) group.addView(RadioButton(context).apply {
             id = categoryId(category); tag = category

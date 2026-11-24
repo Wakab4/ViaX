@@ -2,4 +2,7 @@
     <item android:state_enabled="true" android:state_pressed="true"><shape>
         <corners android:radius="18dp" /><solid android:color="#30808080" />
     </shape></item>
+    <item android:state_enabled="true" android:state_focused="true"><shape>
+        <corners android:radius="18dp" /><solid android:color="#20808080" />
+    </shape></item>
 </selector>

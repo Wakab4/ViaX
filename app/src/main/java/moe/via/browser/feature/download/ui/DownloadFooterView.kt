@@ -54,7 +54,7 @@ internal class DownloadFooterView(context: Context, private val state: DownloadP
             intArrayOf((color and 0xffffff) or 0x80000000.toInt(),
                 if (destructive) 0xffd64146.toInt() else color, color)))
         setPadding(dp(16), 0, dp(16), 0); minHeight = dp(48)
-        background = context.touchFeedback()
+        background = context.touchFeedback(18)
         setOnClickListener { action() }
         layoutParams = LayoutParams(-2, -2)
     }

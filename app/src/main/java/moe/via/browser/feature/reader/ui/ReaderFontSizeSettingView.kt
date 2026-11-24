@@ -30,7 +30,8 @@ internal class ReaderFontSizeSettingView(context: Context, initialSize: Int, com
         text = if (Locale.getDefault().country.equals("CN", true)) "莫忧世事兼身事，须著人间比梦间。" else "Less is more."
         setTextColor(context.palette.text)
         setTextSize(TypedValue.COMPLEX_UNIT_PX, resources.getDimensionPixelSize(R.dimen.page_info_title_size).toFloat())
-        setPadding(dp(16), 0, dp(16), 0)
+        val inset = dp(16)
+        setPadding(inset, inset, inset, inset)
         background = GradientDrawable().apply { setColor(0x30808080); cornerRadius = resources.getDimensionPixelSize(R.dimen.ref_reader_preview_radius).toFloat() }
     }
     private val slider = NativeSeekBar(context).apply { id = SLIDER_ID }

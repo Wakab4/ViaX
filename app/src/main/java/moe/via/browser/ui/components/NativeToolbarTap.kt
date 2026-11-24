@@ -11,5 +11,6 @@ internal object NativeToolbarTap {
             val now = SystemClock.elapsedRealtime()
             if (now - last >= 300) last = now else { last = 0; action() }
         }
+        view.isFocusable = false
     }
 }

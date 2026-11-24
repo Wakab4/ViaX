@@ -54,7 +54,7 @@ internal class HistoryFooterView(context: Context, select: () -> Unit, delete: (
         setTextColor(ColorStateList(arrayOf(intArrayOf(-android.R.attr.state_enabled), intArrayOf(android.R.attr.state_enabled, android.R.attr.state_selected), intArrayOf()),
             intArrayOf((normal and 0xFFFFFF) or 0x80000000.toInt(), if (destructive) 0xFFD64146.toInt() else context.palette.accent, normal)))
         setPadding(context.dp(16), 0, context.dp(16), 0); minimumHeight = context.dp(48)
-        background = context.touchFeedback(); setOnClickListener { action() }; layoutParams = LayoutParams(-2, -2)
+        background = context.touchFeedback(18); setOnClickListener { action() }; layoutParams = LayoutParams(-2, -2)
     }
     override fun onDraw(canvas: Canvas) { super.onDraw(canvas); canvas.drawRect(0f, 0f, width.toFloat(), 2f, line) }
 }

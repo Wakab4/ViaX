@@ -26,7 +26,6 @@ import moe.via.browser.feature.library.ui.NativeLibrarySearch
 import moe.via.browser.ui.components.DividerLayout
 import moe.via.browser.ui.components.SkinIconBinder
 import moe.via.browser.ui.components.dp
-import moe.via.browser.ui.components.touchFeedback
 import moe.via.browser.ui.theme.palette
 
 /** o8.h/z + b1.X2: a complete page, with no browser panel or browser navigation ancestor. */
@@ -51,6 +50,7 @@ class DownloadManagerPage(private val activity: Activity, private val state: Dow
         orientation = LinearLayout.VERTICAL
         setBackgroundColor(activity.palette.canvas)
         isFocusableInTouchMode = true
+        defaultFocusHighlightEnabled = false
         if (applyInsets && Build.VERSION.SDK_INT >= 30) setOnApplyWindowInsetsListener { view, insets ->
             val bars = insets.getInsets(WindowInsets.Type.systemBars() or WindowInsets.Type.displayCutout())
             val ime = insets.getInsets(WindowInsets.Type.ime())
@@ -109,7 +109,7 @@ class DownloadManagerPage(private val activity: Activity, private val state: Dow
             imageTintList = ColorStateList.valueOf(activity.palette.icon)
             setPadding(dp(13), dp(13), dp(13), dp(13))
             contentDescription = activity.getString(R.string.ref_download_ui_up)
-            background = activity.touchFeedback()
+            setBackgroundResource(R.drawable.dialog_button_feedback)
             icons.image(this, R.drawable.ref_ic_back)
             setOnClickListener { actions.back() }
         }, LinearLayout.LayoutParams(activity.dp(48), -1).apply {

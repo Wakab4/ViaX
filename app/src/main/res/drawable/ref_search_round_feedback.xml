@@ -3,4 +3,7 @@
     <item android:state_enabled="true" android:state_pressed="true">
         <shape android:shape="oval"><solid android:color="#30808080" /></shape>
     </item>
+    <item android:state_enabled="true" android:state_focused="true">
+        <shape android:shape="oval"><solid android:color="#20808080" /></shape>
+    </item>
 </selector>
