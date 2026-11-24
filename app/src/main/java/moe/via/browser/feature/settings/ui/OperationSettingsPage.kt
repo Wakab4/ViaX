@@ -40,7 +40,7 @@ internal class OperationSettingsPage(private val host: SettingsHost, private val
         resources.forEachIndexed { index, icon ->
             bar.addView(ImageView(activity).apply {
                 setImageResource(icon); imageTintList = ColorStateList.valueOf(activity.palette.icon)
-                setPadding(dp(13), dp(13), dp(13), dp(13)); background = activity.touchFeedback()
+                setPadding(dp(13), dp(13), dp(13), dp(13)); background = activity.touchFeedback(18)
                 contentDescription = host.text(bindings[index].labelRes)
                 setOnClickListener { selectAction(bindings[index]) }
                 setOnLongClickListener {
