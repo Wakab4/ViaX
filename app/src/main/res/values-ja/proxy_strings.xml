@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="proxy_title">プロキシ</string>
+    <string name="proxy_enable">プロキシを有効にする</string>
+    <string name="proxy_disable">プロキシを無効にする</string>
+    <string name="proxy_scope">ウェブページと内蔵ダウンロードに適用</string>
+    <string name="proxy_type">プロトコル</string>
+    <string name="proxy_host">サーバーアドレス</string>
+    <string name="proxy_port">ポート</string>
+    <string name="proxy_username">ユーザー名</string>
+    <string name="proxy_password">パスワード</string>
+    <string name="proxy_auth_help">認証が不要な場合は両方とも空欄にしてください。</string>
+    <string name="proxy_invalid_port">1～65535 のポートを入力してください。</string>
+    <string name="proxy_host_required">プロキシサーバーのアドレスを入力してください。</string>
+    <string name="proxy_invalid_settings">アドレスと認証情報を確認してください。SOCKS5 認証にはユーザー名とパスワードが必要です。</string>
+    <string name="proxy_unsupported">現在の WebView はアプリ内プロキシに対応していません。</string>
+    <string name="proxy_apply_failed">プロキシ設定を適用できませんでした。</string>
+    <string name="proxy_busy">プロキシ設定を適用しています。</string>
+    <string name="proxy_saved">プロキシ設定を保存しました。</string>
+    <string name="proxy_enabled">プロキシが有効になりました。</string>
+    <string name="proxy_disabled">プロキシが無効になりました。</string>
+</resources>

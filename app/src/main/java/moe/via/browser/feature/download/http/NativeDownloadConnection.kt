@@ -4,6 +4,7 @@ import android.webkit.CookieManager
 import java.net.HttpURLConnection
 import java.net.URL
 import javax.net.ssl.HttpsURLConnection
+import moe.via.browser.feature.proxy.BrowserProxy
 import moe.via.browser.feature.download.transfer.DownloadControl
 import moe.via.browser.feature.download.transfer.DownloadFailure
 
@@ -15,7 +16,7 @@ internal class NativeDownloadConnection(private val control: DownloadControl) {
         repeat(4) { request ->
             control.check()
             if (url.protocol != "http" && url.protocol != "https") throw DownloadFailure(2)
-            val connection = url.openConnection() as HttpURLConnection
+            val connection = BrowserProxy.openDownload(url)
             control.attach(connection)
             try {
                 connection.instanceFollowRedirects = false

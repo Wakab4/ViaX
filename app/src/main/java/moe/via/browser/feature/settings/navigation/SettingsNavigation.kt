@@ -2,6 +2,7 @@ package moe.via.browser.feature.settings.navigation
 
 import android.os.Bundle
 import moe.via.browser.feature.fonts.ui.FontSettingsFragment
+import moe.via.browser.feature.proxy.ProxySettingsFragment
 import moe.via.browser.feature.settings.SettingsRoute
 import moe.via.browser.storage.preferences.ActionBinding
 import moe.via.browser.feature.settings.pages.SettingsPageFragment
@@ -22,6 +23,7 @@ internal object SettingsNavigation {
 
     private fun type(route: SettingsRoute): Class<out RecordPageFragment> = when (route) {
         SettingsRoute.SITE_DATA -> SiteDataSettingsFragment::class.java
+        SettingsRoute.PROXY -> ProxySettingsFragment::class.java
         SettingsRoute.FONT -> FontSettingsFragment::class.java
         SettingsRoute.SKINS -> SkinSettingsFragment::class.java
         SettingsRoute.USER_AGENT -> UserAgentSettingsFragment::class.java

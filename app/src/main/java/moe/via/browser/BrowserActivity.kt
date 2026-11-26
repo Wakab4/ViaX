@@ -25,6 +25,10 @@ import moe.via.browser.browser.ui.BrowserInteractionController
 import moe.via.browser.browser.ui.gestures.BrowserInputState
 import moe.via.browser.storage.preferences.ActionBinding
 import moe.via.browser.feature.settings.SettingsEntry
+import moe.via.browser.feature.settings.SettingsRoute
+import moe.via.browser.feature.proxy.BrowserProxy
+import moe.via.browser.feature.proxy.ProxyChange
+import moe.via.browser.feature.proxy.messageResource
 import moe.via.browser.feature.settings.ui.ClearDataController
 import moe.via.browser.feature.appearance.PageAppearanceController
 import moe.via.browser.browser.ui.contextmenu.BrowserPageContextMenu
@@ -534,6 +538,9 @@ open class BrowserActivity : ThemedActivity(), moe.via.browser.ui.theme.window.B
         super.onCreate(savedInstanceState)
         rootHost.prepare()
         GeneratedPageDirtyState.synchronizeLanguage(applicationContext)
+        BrowserProxy.updates.observe(this) { proxy ->
+            if (::chrome.isInitialized) chrome.setProxyState(proxy.endpoint != null, proxy.enabled)
+        }
         startup.create(savedInstanceState)
     }
 
@@ -673,6 +680,18 @@ open class BrowserActivity : ThemedActivity(), moe.via.browser.ui.theme.window.B
             override fun onMenu() = showMenu()
             override fun onReload() { currentTab()?.let { if (it.progress < 100) it.stop() else it.reload() } }
             override fun onScan() = performMenuAction(MenuAction.SCAN, false)
+            override fun onProxyToggle() {
+                val proxy = BrowserProxy.configuration()
+                val endpoint = proxy.endpoint ?: return onProxySettings()
+                val enabled = !proxy.enabled
+                BrowserProxy.configure(endpoint, enabled) { result ->
+                    val message = if (result == ProxyChange.APPLIED) {
+                        if (enabled) R.string.proxy_enabled else R.string.proxy_disabled
+                    } else result.messageResource()
+                    toast(getString(message))
+                }
+            }
+            override fun onProxySettings() = SettingsEntry.open(this@BrowserActivity, SettingsRoute.PROXY)
             override fun onPageInfo() {
                 if (translationDelegate.isInitialized()) translation.close()
                 if (downloadsDelegate.isInitialized()) downloads.close()
@@ -683,6 +702,7 @@ open class BrowserActivity : ThemedActivity(), moe.via.browser.ui.theme.window.B
             override fun toolbarHost() = if (customTabMode) android.widget.FrameLayout(this@BrowserActivity) else interactions.input.createToolbarLayout()
             override fun onInsetsChanged() { if (::chrome.isInitialized) interactions.updateChromeControls() }
         }, if (customTabMode) customTabs.toolbar else null, rootHost.inlineContainer)
+        BrowserProxy.updates.value?.let { chrome.setProxyState(it.endpoint != null, it.enabled) }
         addressText?.let(chrome::restoreAddressText)
         find = FindInPageController(this, chrome.content)
         undoClose = UndoCloseController(this)

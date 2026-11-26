@@ -10,11 +10,12 @@ import moe.via.browser.feature.download.model.DownloadHead
 import moe.via.browser.feature.download.model.DownloadPart
 import moe.via.browser.feature.download.model.DownloadTask
 import moe.via.browser.feature.download.transfer.DownloadControl
+import moe.via.browser.feature.proxy.BrowserProxy
 
 /** Confirmation HEAD and task GET retain their distinct Native owners and connection policies. */
 internal class DownloadHttp(private val control: DownloadControl) {
     fun head(url: String, headers: Map<String, String>): DownloadHead? {
-        val connection = URL(url).openConnection() as HttpURLConnection
+        val connection = BrowserProxy.openDownload(URL(url))
         control.attach(connection)
         try {
             connection.requestMethod = "HEAD"

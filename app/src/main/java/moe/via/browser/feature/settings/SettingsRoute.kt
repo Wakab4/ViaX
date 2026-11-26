@@ -7,6 +7,7 @@ enum class SettingsRoute(@StringRes val titleRes: Int) {
     ROOT(R.string.ref_menu_settings),
     GENERAL(R.string.settings_general),
     SITE_DATA(R.string.site_data_title),
+    PROXY(R.string.proxy_title),
     CUSTOMIZE(R.string.ref_home_design_title),
     PRIVACY(R.string.settings_privacy),
     ADVANCED(R.string.settings_advanced),

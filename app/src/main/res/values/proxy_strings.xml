@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="proxy_title">Proxy</string>
+    <string name="proxy_enable">Enable proxy</string>
+    <string name="proxy_disable">Disable proxy</string>
+    <string name="proxy_scope">Applies to web pages and built-in downloads</string>
+    <string name="proxy_type">Protocol</string>
+    <string name="proxy_host">Server address</string>
+    <string name="proxy_port">Port</string>
+    <string name="proxy_username">Username</string>
+    <string name="proxy_password">Password</string>
+    <string name="proxy_auth_help">Leave both fields blank for a proxy that does not require authentication.</string>
+    <string name="proxy_invalid_port">Enter a port from 1 to 65535.</string>
+    <string name="proxy_host_required">Enter the proxy server address.</string>
+    <string name="proxy_invalid_settings">Check the address and credentials. SOCKS5 authentication requires both a username and a password.</string>
+    <string name="proxy_unsupported">The current WebView does not support app-level proxy configuration.</string>
+    <string name="proxy_apply_failed">Could not apply the proxy configuration.</string>
+    <string name="proxy_busy">Proxy settings are being applied.</string>
+    <string name="proxy_saved">Proxy settings saved.</string>
+    <string name="proxy_enabled">Proxy enabled.</string>
+    <string name="proxy_disabled">Proxy disabled.</string>
+</resources>

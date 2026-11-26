@@ -4,6 +4,7 @@ import android.app.Application
 import moe.via.browser.core.logging.NativeLog
 import moe.via.browser.app.lifecycle.NativeLogVersion
 import moe.via.browser.app.lifecycle.NativeApplicationErrors
+import moe.via.browser.feature.proxy.BrowserProxy
 import moe.via.browser.webview.compat.NativeWebViewProcess
 import moe.via.browser.feature.settings.data.updates.NativePreferenceUpdates
 
@@ -14,6 +15,7 @@ class ViaApplication : Application() {
         NativeLog.initialize(this)?.let { NativeLogVersion.clearAfterUpgrade(this, it) }
         NativeApplicationErrors.install(this)
         NativeWebViewProcess.configure(this)
+        BrowserProxy.initialize(this)
         NativePreferenceUpdates.apply(this)
     }
 }

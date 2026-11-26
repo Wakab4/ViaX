@@ -4,6 +4,7 @@ import android.content.Context
 import android.net.Uri
 import android.os.ParcelFileDescriptor
 import java.io.File
+import java.io.FileNotFoundException
 import java.io.FileOutputStream
 import java.io.IOException
 import java.io.RandomAccessFile
@@ -40,7 +41,12 @@ class FileDownloadSink(private val file: File) : DownloadSink {
     }
 }
 class ContentDownloadSink(private val context: Context, private val uri: Uri) : DownloadSink {
-    override fun size(): Long = context.contentResolver.openFileDescriptor(uri, "r")?.use { it.statSize } ?: 0
+    override fun size(): Long = try {
+        context.contentResolver.openFileDescriptor(uri, "r")?.use { it.statSize } ?: 0
+    } catch (_: FileNotFoundException) {
+        // A new MediaStore target may not have a file until the first writable open.
+        0
+    }
     override fun truncate(length: Long) {
         val descriptor = context.contentResolver.openFileDescriptor(uri, "rw") ?: throw IOException("Cannot open destination")
         descriptor.use { try { android.system.Os.ftruncate(it.fileDescriptor, length) }

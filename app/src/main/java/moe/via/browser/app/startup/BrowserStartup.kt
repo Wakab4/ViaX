@@ -5,11 +5,15 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import kotlin.system.exitProcess
+import moe.via.browser.R
 import moe.via.browser.app.lifecycle.NativeAppRestart
 import moe.via.browser.browser.ui.engine.EngineAvailabilityController
 import moe.via.browser.core.logging.NativeLog
 import moe.via.browser.feature.firstrun.FirstRunController
+import moe.via.browser.feature.proxy.BrowserProxy
+import moe.via.browser.feature.proxy.ProxyChange
 import moe.via.browser.feature.search.data.remote.RemoteSearchConfig
+import moe.via.browser.ui.message.BrowserMessages
 import moe.via.browser.webview.compat.WebEngineStartupException
 
 internal class BrowserStartup(
@@ -26,6 +30,7 @@ internal class BrowserStartup(
         private set
 
     private var pendingState: Bundle? = null
+    private var preparingProxy = false
     private val database = lazy { BrowserDatabaseStartup(activity.applicationContext) }
     private val remoteSearch = lazy { RemoteSearchConfig(activity.applicationContext) }
     private val firstRun = lazy {
@@ -53,7 +58,7 @@ internal class BrowserStartup(
         started && generation == expectedGeneration && !activity.isFinishing && !activity.isDestroyed
 
     private fun start(state: Bundle?) {
-        if (started || activity.isFinishing || activity.isDestroyed) return
+        if (started || preparingProxy || activity.isFinishing || activity.isDestroyed) return
         startRemoteSearch()
         if (!database.value.ready) {
             database.value.prepare({ start(state) }) { error ->
@@ -64,9 +69,20 @@ internal class BrowserStartup(
             return
         }
         if (engine.value.showIfUnavailable(state)) return
-        started = true
-        generation++
-        initialize(state)
+        preparingProxy = true
+        val expectedGeneration = generation
+        BrowserProxy.prepareWebView { result ->
+            preparingProxy = false
+            if (expectedGeneration != generation || activity.isFinishing || activity.isDestroyed) return@prepareWebView
+            started = true
+            generation++
+            initialize(state)
+            when (result) {
+                ProxyChange.UNSUPPORTED -> BrowserMessages.show(activity, activity.getString(R.string.proxy_unsupported))
+                ProxyChange.FAILED -> BrowserMessages.show(activity, activity.getString(R.string.proxy_apply_failed))
+                else -> Unit
+            }
+        }
     }
 
     private fun startRemoteSearch() {

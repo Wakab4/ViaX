@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="proxy_title">代理</string>
+    <string name="proxy_enable">啟用代理</string>
+    <string name="proxy_disable">關閉代理</string>
+    <string name="proxy_scope">適用於網頁與內建下載</string>
+    <string name="proxy_type">協定</string>
+    <string name="proxy_host">伺服器位址</string>
+    <string name="proxy_port">連接埠</string>
+    <string name="proxy_username">使用者名稱</string>
+    <string name="proxy_password">密碼</string>
+    <string name="proxy_auth_help">無需驗證時，使用者名稱與密碼都留空。</string>
+    <string name="proxy_invalid_port">請輸入 1 至 65535 之間的連接埠。</string>
+    <string name="proxy_host_required">請輸入代理伺服器位址。</string>
+    <string name="proxy_invalid_settings">請檢查伺服器位址與憑據。SOCKS5 驗證需要使用者名稱與密碼。</string>
+    <string name="proxy_unsupported">目前的 WebView 不支援應用程式內代理。</string>
+    <string name="proxy_apply_failed">無法套用代理設定。</string>
+    <string name="proxy_busy">正在套用代理設定。</string>
+    <string name="proxy_saved">代理設定已儲存。</string>
+    <string name="proxy_enabled">代理已啟用。</string>
+    <string name="proxy_disabled">代理已關閉。</string>
+</resources>
