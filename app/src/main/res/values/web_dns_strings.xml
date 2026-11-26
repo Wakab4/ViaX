@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="web_dns_title" translatable="false">DNS</string>
+    <string name="web_dns_proxy">The proxy server is resolving website domains</string>
+    <string name="web_dns_add">Add</string>
+    <string name="web_dns_edit">Edit server</string>
+    <string name="web_dns_name">Server name (optional)</string>
+    <string name="web_dns_url">DoH address (https://)</string>
+    <string name="web_dns_invalid_url">Enter a DoH address starting with https://.</string>
+    <string name="web_dns_delete">Delete</string>
+    <string name="web_dns_unsupported">This WebView does not support custom website DNS.</string>
+    <string name="web_dns_apply_failed">Could not apply the website DNS setting.</string>
+</resources>

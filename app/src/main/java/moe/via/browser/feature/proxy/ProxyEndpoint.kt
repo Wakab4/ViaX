@@ -2,6 +2,7 @@ package moe.via.browser.feature.proxy
 
 import android.util.Base64
 import okhttp3.HttpUrl
+import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 
 internal enum class ProxyProtocol(val scheme: String) {
     HTTP("http"), HTTPS("https"), SOCKS5("socks5");
@@ -54,6 +55,19 @@ internal data class ProxyEndpoint private constructor(
     override fun toString() = "$protocol ${proxyAuthority(host, port)}"
 
     companion object {
+        fun fromLink(value: String): ProxyEndpoint? {
+            val link = value.trim()
+            val protocol = ProxyProtocol.fromAddress(link) ?: return null
+            val authority = link.substringAfter("://").removeSuffix("/")
+            if (authority.any { it.isWhitespace() || it.isISOControl() || it in "/?#\\" }) return null
+            val address = ProxyServerAddress.parse(authority.substringAfterLast('@')) ?: return null
+            val port = address.port ?: return null
+            val url = "http://$authority".toHttpUrlOrNull() ?: return null
+            return try {
+                create(protocol, address.host, port, url.username, url.password)
+            } catch (_: IllegalArgumentException) { null }
+        }
+
         fun create(protocol: ProxyProtocol, host: String, port: Int, username: String, password: String): ProxyEndpoint {
             val address = HttpUrl.Builder().scheme("http").host(host.trim()).port(port).build()
             require(username.isNotEmpty() || password.isEmpty())

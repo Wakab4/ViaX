@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="proxy_title">プロキシ</string>
+    <string name="proxy_import">インポート</string>
+    <string name="proxy_import_title">プロキシをインポート</string>
+    <string name="proxy_import_hint">https://ユーザー名:パスワード@ホスト:ポート</string>
+    <string name="proxy_import_enable">有効にする</string>
+    <string name="proxy_import_invalid">プロキシ URL のプロトコル、アドレス、ポート、認証情報を確認してください。</string>
     <string name="proxy_enable">プロキシを有効にする</string>
     <string name="proxy_disable">プロキシを無効にする</string>
     <string name="proxy_scope">ウェブページと内蔵ダウンロードに適用</string>
@@ -9,7 +14,6 @@
     <string name="proxy_port">ポート</string>
     <string name="proxy_username">ユーザー名</string>
     <string name="proxy_password">パスワード</string>
-    <string name="proxy_auth_help">認証が不要な場合は両方とも空欄にしてください。</string>
     <string name="proxy_invalid_port">1～65535 のポートを入力してください。</string>
     <string name="proxy_host_required">プロキシサーバーのアドレスを入力してください。</string>
     <string name="proxy_host_hint">ホスト名またはプロキシの URL</string>

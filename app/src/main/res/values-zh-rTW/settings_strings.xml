@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="settings_group_browser">瀏覽器</string>
+    <string name="settings_search_hint">搜尋設定</string>
+    <string name="settings_search_empty">找不到相符的設定</string>
+    <string name="settings_group_network">網路</string>
+    <string name="settings_group_more">更多</string>
+    <string name="settings_group_common">常用</string>
+    <string name="settings_group_display">顯示</string>
+    <string name="settings_group_controls_tabs">操作與分頁</string>
+    <string name="settings_group_webpages">網頁</string>
+    <string name="settings_group_tools">工具</string>
+    <string name="settings_group_data_sync">資料與同步</string>
     <string name="settings_general">一般</string>
+    <string name="settings_site_data">資料</string>
     <string name="settings_privacy">隱私</string>
     <string name="settings_advanced">進階</string>
     <string name="settings_toolbar">工具列設定</string>

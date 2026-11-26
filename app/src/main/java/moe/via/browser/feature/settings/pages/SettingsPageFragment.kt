@@ -16,12 +16,14 @@ class SettingsPageFragment : SettingsRecordPage() {
     override fun createPage(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val activity = requireActivity() as ThemedActivity
         val runtime = SettingsRuntimeFragment.of(activity)
-        val route = SettingsRoute.valueOf(requireNotNull(requireArguments().getString(SettingsNavigation.ROUTE)))
-        val binding = arguments?.getString(SettingsNavigation.BINDING)?.let(ActionBinding::valueOf)
-        return SettingsPageContent(activity, route, binding, appliesWindowInsets, ::closePage,
-            { next, selected ->
+        val args = requireArguments()
+        val route = SettingsRoute.valueOf(requireNotNull(args.getString(SettingsNavigation.ROUTE)))
+        val binding = args.getString(SettingsNavigation.BINDING)?.let(ActionBinding::valueOf)
+        val entry = args.takeIf { it.containsKey(SettingsNavigation.ENTRY) }?.getInt(SettingsNavigation.ENTRY)
+        return SettingsPageContent(activity, route, binding, entry, appliesWindowInsets, ::closePage,
+            { next, selected, target ->
                 if (next == SettingsRoute.CUSTOMIZE) runtime.customize()
-                else SettingsNavigation.open(this, next, selected)
+                else SettingsNavigation.open(this, next, selected, target)
             }, runtime::perform)
             .also { content = it }.view
     }

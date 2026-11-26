@@ -7,10 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import androidx.core.graphics.ColorUtils
 import moe.via.browser.feature.settings.SettingRow
 import moe.via.browser.feature.settings.SettingsItem
 import moe.via.browser.feature.settings.SettingsRenderer
 import moe.via.browser.feature.settings.ToolbarPreviewState
+import moe.via.browser.ui.components.surface
+import moe.via.browser.ui.theme.palette
 
 /** Standard settings keep one recycled widget per row kind; callbacks resolve the live position. */
 internal class SettingsRowAdapter(activity: Activity, private val changed: () -> Unit) : RecyclerView.Adapter<SettingsRowAdapter.Holder>() {
@@ -31,6 +34,7 @@ internal class SettingsRowAdapter(activity: Activity, private val changed: () ->
     class Holder(view: View) : RecyclerView.ViewHolder(view)
     private val renderer = SettingsRenderer(activity)
     private var rows: List<Item> = emptyList()
+    var searchTarget: Int? = null
 
     fun submit(value: List<SettingsItem>) {
         val before = rows
@@ -69,8 +73,15 @@ internal class SettingsRowAdapter(activity: Activity, private val changed: () ->
         layoutParams = RecyclerView.LayoutParams(-1, -2)
     })
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        val row = rows[position].row
+        val item = rows[position]
+        val row = item.row
         renderer.bind(holder.itemView, row)
+        searchTarget?.let { target ->
+            val view = holder.itemView
+            view.foreground = if ((item.source as? SettingsItem.Entry)?.id == target) {
+                view.context.surface(ColorUtils.setAlphaComponent(view.context.palette.accent, 30), 12)
+            } else null
+        }
         if (row is SettingRow.Section || row is SettingRow.Custom) {
             holder.itemView.setOnClickListener(null); holder.itemView.setOnLongClickListener(null)
             return
@@ -91,5 +102,6 @@ internal class SettingsRowAdapter(activity: Activity, private val changed: () ->
             current != RecyclerView.NO_POSITION && renderer.longClick(rows[current].row)
         }
     }
+    fun positionOf(entry: Int) = rows.indexOfFirst { (it.source as? SettingsItem.Entry)?.id == entry }
     fun selectedPosition() = rows.indexOfFirst { it.row is SettingRow.Radio && it.visual.checked }
 }

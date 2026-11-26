@@ -22,5 +22,6 @@ enum class SettingsRoute(@StringRes val titleRes: Int) {
     LONG_PRESS_MENU(R.string.settings_long_press_menu),
     SSL(R.string.settings_ssl),
     LABS(R.string.settings_labs),
-    SKINS(R.string.ref_skin_title)
+    SKINS(R.string.ref_skin_title),
+    WEB_DNS(R.string.web_dns_title),
 }

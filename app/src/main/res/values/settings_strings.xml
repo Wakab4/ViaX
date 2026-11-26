@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="settings_group_browser">Browser</string>
+    <string name="settings_search_hint">Search settings</string>
+    <string name="settings_search_empty">No matching settings</string>
+    <string name="settings_group_network">Network</string>
+    <string name="settings_group_more">More</string>
+    <string name="settings_group_common">Common</string>
+    <string name="settings_group_display">Display</string>
+    <string name="settings_group_controls_tabs">Controls &amp; tabs</string>
+    <string name="settings_group_webpages">Webpages</string>
+    <string name="settings_group_tools">Tools</string>
+    <string name="settings_group_data_sync">Data &amp; sync</string>
     <string name="settings_general">General</string>
+    <item type="string" name="settings_site_data">@string/site_data_title</item>
     <string name="settings_privacy">Privacy</string>
     <string name="settings_advanced">Advanced</string>
     <string name="settings_toolbar">Toolbar settings</string>

@@ -8,11 +8,12 @@
     <string name="site_data_cookies">Cookie</string>
     <string name="site_data_clear_site">清除此網站的所有資料</string>
     <string name="site_data_site_clear_unavailable">目前的 WebView 不支援按網站清除所有資料。</string>
-    <string name="site_data_no_cookies">此網址沒有可讀取的 Cookie。</string>
+    <string name="site_data_no_cookies">此網站沒有可讀取的 Cookie。</string>
+    <string name="site_data_cookies_loading">正在讀取 Cookie…</string>
+    <string name="site_data_cookies_load_failed">無法讀取 Cookie。</string>
     <string name="site_data_cookie_delete_unavailable">目前的 WebView 不支援逐筆刪除 Cookie。</string>
     <string name="site_data_unnamed_cookie">未命名 Cookie</string>
     <string name="site_data_partitioned_cookie">分割 Cookie</string>
-    <string name="site_data_cookie_selection">選取要刪除的 Cookie。</string>
     <string name="site_data_delete_selected">刪除所選</string>
     <string name="site_data_cookie_result">已刪除 %2$d 項中的 %1$d 項 Cookie。</string>
     <string name="site_data_clear_site_message">清除 %1$s 及其子網域的 Cookie、快取和網頁儲存空間。清理後可能需要重新登入。</string>

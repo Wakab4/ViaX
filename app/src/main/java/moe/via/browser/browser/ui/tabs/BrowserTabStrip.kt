@@ -156,7 +156,7 @@ class BrowserTabStrip(private val activity: Activity, private val actions: Actio
     fun render(tabs: List<BrowserTab>, selectedIndex: Int) {
         if (disposed) return
         val oldSelection = selectedId
-        this.tabs = tabs.map(TabStripPresentation::capture)
+        this.tabs = tabs.map { TabStripPresentation.capture(activity, it) }
         selectedId = this.tabs.getOrNull(selectedIndex)?.id
         drag?.id?.let { id -> if (this.tabs.none { it.id == id }) endDrag() }
         val ids = this.tabs.map(TabStripPresentation::id).toSet()

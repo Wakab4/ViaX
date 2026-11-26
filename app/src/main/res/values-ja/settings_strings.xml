@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="settings_group_browser">ブラウザー</string>
+    <string name="settings_search_hint">設定を検索</string>
+    <string name="settings_search_empty">一致する設定が見つかりません</string>
+    <string name="settings_group_network">ネットワーク</string>
+    <string name="settings_group_more">その他</string>
+    <string name="settings_group_common">基本</string>
+    <string name="settings_group_display">表示</string>
+    <string name="settings_group_controls_tabs">操作とタブ</string>
+    <string name="settings_group_webpages">ウェブページ</string>
+    <string name="settings_group_tools">ツール</string>
+    <string name="settings_group_data_sync">データと同期</string>
     <string name="settings_general">一般</string>
     <string name="settings_privacy">プライバシー</string>
     <string name="settings_advanced">詳細設定</string>

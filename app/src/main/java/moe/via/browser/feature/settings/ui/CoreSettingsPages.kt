@@ -10,13 +10,19 @@ internal class CoreSettingsPages(private val host: SettingsHost) {
     private val prefs get() = host.preferences
     fun root(): List<SettingsItem> = with(host) {
         buildList {
+            add(SettingsItem.section(host.text(R.string.settings_group_browser)))
             add(link(1, host.text(R.string.settings_general), SettingsRoute.GENERAL))
             add(SettingsItem.link(8, host.text(R.string.ref_home_design_title)) { command(SettingsCommand.CUSTOMIZE) })
-            add(link(2, host.text(R.string.settings_privacy), SettingsRoute.PRIVACY))
-            add(link(13, host.text(R.string.site_data_title), SettingsRoute.SITE_DATA))
             add(link(3, host.text(R.string.settings_advanced), SettingsRoute.ADVANCED))
-            add(link(14, host.text(R.string.proxy_title), SettingsRoute.PROXY))
             add(SettingsItem.link(9, host.text(R.string.ref_menu_scripts)) { command(SettingsCommand.SCRIPTS) })
+
+            add(SettingsItem.section(host.text(R.string.settings_group_network)))
+            add(link(14, host.text(R.string.proxy_title), SettingsRoute.PROXY))
+            add(link(15, host.text(R.string.web_dns_title), SettingsRoute.WEB_DNS))
+
+            add(SettingsItem.section(host.text(R.string.settings_group_more)))
+            add(link(2, host.text(R.string.settings_privacy), SettingsRoute.PRIVACY))
+            add(link(13, host.text(R.string.settings_site_data), SettingsRoute.SITE_DATA))
             if (prefs.labsEnabled) add(link(12, host.text(R.string.settings_labs), SettingsRoute.LABS))
             add(SettingsItem.link(5, host.text(R.string.ref_about_page_title)) { command(SettingsCommand.ABOUT) })
         }

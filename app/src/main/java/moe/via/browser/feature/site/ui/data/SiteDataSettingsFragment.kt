@@ -9,17 +9,17 @@ import android.text.format.Formatter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import moe.via.browser.R
-import moe.via.browser.feature.pageinfo.SiteCookies
 import moe.via.browser.feature.settings.SettingRow
 import moe.via.browser.feature.settings.SettingsItem
 import moe.via.browser.feature.settings.pages.SettingsRecordPage
 import moe.via.browser.feature.settings.ui.SettingsRowAdapter
 import moe.via.browser.feature.site.data.SharedSiteData
-import moe.via.browser.feature.site.data.SiteDataAddress
 import moe.via.browser.feature.site.data.SiteDataEntry
 import moe.via.browser.feature.site.data.SiteDataStore
 import moe.via.browser.ui.components.NativeToolbarTap
@@ -31,6 +31,7 @@ import moe.via.browser.ui.components.surface
 import moe.via.browser.ui.dialog.BrowserDialog
 import moe.via.browser.ui.dialog.DialogScope
 import moe.via.browser.ui.message.BrowserMessages
+import moe.via.browser.ui.pages.RecordPageScope
 import moe.via.browser.ui.tasks.NativeViewJobs
 import moe.via.browser.ui.theme.ThemedActivity
 import moe.via.browser.ui.theme.fonts.NativeTypography
@@ -130,6 +131,11 @@ class SiteDataSettingsFragment : SettingsRecordPage() {
         super.onViewCreated(view, savedInstanceState)
         jobs = NativeViewJobs()
         reload()
+    }
+
+    override fun onHiddenChanged(hidden: Boolean) {
+        super.onHiddenChanged(hidden)
+        if (!hidden) reload()
     }
 
     private fun reload() {
@@ -263,114 +269,12 @@ class SiteDataSettingsFragment : SettingsRecordPage() {
 
     private fun showSite(entry: SiteDataEntry) {
         if (clearing) return
-        val canClear = store.canClearSite
-        val actions = buildList {
-            add(getString(R.string.site_data_cookies))
-            if (canClear) add(getString(R.string.site_data_clear_site))
+        (view?.findFocus() as? EditText)?.let { input ->
+            window.getSystemService(InputMethodManager::class.java)?.hideSoftInputFromWindow(input.windowToken, 0)
+            input.clearFocus()
         }
-        val note = if (canClear) null else getString(R.string.site_data_site_clear_unavailable)
-        dialogs?.show(BrowserDialog(window, entry.site, note).items(actions) { index ->
-            if (index == 0) chooseCookieHost(entry.addresses) else confirmClearSite(entry.site)
-        })
+        RecordPageScope.of(this)?.push(SiteDataDetailsFragment::class.java, SiteDataDetailsFragment.arguments(entry))
     }
-
-    private fun chooseCookieHost(addresses: List<SiteDataAddress>) {
-        val address = addresses.singleOrNull()
-        if (address != null) {
-            showCookies(address)
-            return
-        }
-        dialogs?.show(BrowserDialog(window, getString(R.string.site_data_cookies))
-            .items(addresses.map { it.host }) { index -> showCookies(addresses[index]) })
-    }
-
-    private fun showCookies(address: SiteDataAddress) {
-        val title = getString(R.string.site_data_cookies)
-        if (!SiteCookies.supportsDetails) {
-            runCatching { SiteCookies.names(address.url) }.onSuccess { names ->
-                val summary = if (names.isEmpty()) getString(R.string.site_data_no_cookies)
-                else names.joinToString("\n") { it.ifEmpty { getString(R.string.site_data_unnamed_cookie) } }
-                dialogs?.show(BrowserDialog(window, title,
-                    "${address.url}\n\n$summary\n\n${getString(R.string.site_data_cookie_delete_unavailable)}")
-                    .positive(getString(android.R.string.ok)))
-            }.onFailure { notify(R.string.site_data_operation_failed) }
-            return
-        }
-        runCatching { SiteCookies.entries(address.url) }.onSuccess { cookies ->
-            if (cookies.isEmpty()) {
-                dialogs?.show(BrowserDialog(window, title, "${address.url}\n\n${getString(R.string.site_data_no_cookies)}")
-                    .positive(getString(android.R.string.ok)))
-                return@onSuccess
-            }
-            val labels = cookies.map { cookie ->
-                val name = cookie.name.ifEmpty { getString(R.string.site_data_unnamed_cookie) }
-                val partition = if (cookie.partitioned) " · ${getString(R.string.site_data_partitioned_cookie)}" else ""
-                "$name\n${cookie.domain}${cookie.path}$partition"
-            }
-            val message = "${address.url}\n${getString(R.string.site_data_cookie_selection)}"
-            dialogs?.show(BrowserDialog(window, title, message)
-                .multipleChoice(labels, emptySet())
-                .positive(getString(R.string.site_data_delete_selected)) { dialog ->
-                    val selected = dialog.selectedIndices.mapNotNull(cookies::getOrNull)
-                    if (selected.isEmpty()) false else { deleteCookies(address, selected); true }
-                }
-                .negative(getString(android.R.string.cancel)))
-        }.onFailure { notify(R.string.site_data_operation_failed) }
-    }
-
-    private fun deleteCookies(address: SiteDataAddress, selected: List<SiteCookies.Entry>) {
-        val owner = view ?: return
-        clearing = true
-        render()
-        runCatching {
-            SiteCookies.delete(address.url, selected) {
-                if (view === owner) {
-                    clearing = false
-                    render()
-                    runCatching { SiteCookies.entries(address.url) }.onSuccess { remaining ->
-                        val count = selected.count { deleted -> remaining.none {
-                            it.name == deleted.name && it.domain == deleted.domain && it.path == deleted.path &&
-                                it.partitioned == deleted.partitioned
-                        } }
-                        BrowserMessages.show(window, getString(R.string.site_data_cookie_result, count, selected.size))
-                    }.onFailure { notify(R.string.site_data_operation_failed) }
-                    reload()
-                }
-            }
-        }.onFailure {
-            clearing = false
-            render()
-            notify(R.string.site_data_operation_failed)
-        }
-    }
-
-    private fun confirmClearSite(site: String) {
-        dialogs?.show(BrowserDialog(window, getString(R.string.site_data_clear_site),
-            getString(R.string.site_data_clear_site_message, site))
-            .positive(getString(R.string.site_data_clear)) { clearSite(site); true }
-            .negative(getString(android.R.string.cancel)))
-    }
-
-    private fun clearSite(site: String) {
-        val owner = view ?: return
-        clearing = true
-        render()
-        runCatching {
-            store.clearSite(site) {
-                if (view === owner) {
-                    clearing = false
-                    notify(R.string.site_data_site_cleared)
-                    reload()
-                }
-            }
-        }.onFailure {
-            clearing = false
-            render()
-            notify(R.string.site_data_operation_failed)
-        }
-    }
-
-    private fun notify(message: Int) = BrowserMessages.show(window, message)
 
     override fun onDestroyView() {
         request++

@@ -2,9 +2,14 @@ package moe.via.browser.feature.proxy
 
 import android.os.Bundle
 import android.text.InputType
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.AbsoluteSizeSpan
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.LinearLayout
 import androidx.core.widget.doAfterTextChanged
@@ -13,6 +18,8 @@ import moe.via.browser.feature.settings.pages.SettingsRecordPage
 import moe.via.browser.ui.components.PageScaffold
 import moe.via.browser.ui.components.dp
 import moe.via.browser.ui.dialog.BrowserDialog
+import moe.via.browser.ui.dialog.DialogField
+import moe.via.browser.ui.editor.NativePasswordVisibility
 import moe.via.browser.ui.message.BrowserMessages
 import moe.via.browser.ui.settings.NativeSettingViews
 import moe.via.browser.ui.theme.ThemedActivity
@@ -47,14 +54,20 @@ class ProxySettingsFragment : SettingsRecordPage() {
         }
         page.body.addView(form, LinearLayout.LayoutParams(-1, -2))
         val host = field(form, R.string.proxy_host, endpoint?.host.orEmpty(), InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_URI)
-            .apply { setHint(R.string.proxy_host_hint); setHintTextColor(activity.palette.hint) }
+            .apply {
+                hint = SpannableString(context.getText(R.string.proxy_host_hint)).apply {
+                    val size = resources.getDimensionPixelSize(R.dimen.ref_redirect_page_body_size)
+                    setSpan(AbsoluteSizeSpan(size), 0, length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+                }
+                setHintTextColor(activity.palette.hint)
+            }
         val port = field(form, R.string.proxy_port, endpoint?.port?.toString().orEmpty(), InputType.TYPE_CLASS_NUMBER)
         val username = field(form, R.string.proxy_username, endpoint?.username.orEmpty(), InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS)
         val password = field(form, R.string.proxy_password, endpoint?.password.orEmpty(), InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD)
-        form.addView(NativeSettingViews.label(activity, detail = true).apply {
-            setText(R.string.proxy_auth_help)
-            setPadding(0, dp(12), 0, 0)
-        })
+            .apply {
+                compoundDrawablePadding = dp(8)
+                NativePasswordVisibility.attach(this)
+            }
 
         fun selectProtocol(next: ProxyProtocol) {
             protocol = next
@@ -77,6 +90,7 @@ class ProxySettingsFragment : SettingsRecordPage() {
                 })
         }
 
+        page.toolbar.addTextAction(getString(R.string.proxy_import)) { importProxy(activity) }
         lateinit var save: View
         save = page.toolbar.addTextAction(getString(R.string.ref_ua_save)) {
             if (host.text.isNullOrBlank()) {
@@ -122,6 +136,41 @@ class ProxySettingsFragment : SettingsRecordPage() {
         return page.root
     }
 
+    private fun importProxy(activity: ThemedActivity) {
+        val owner = view ?: return
+        val dialog = BrowserDialog(activity, getString(R.string.proxy_import_title))
+        val link = dialog.field(hint = getString(R.string.proxy_import_hint)).apply {
+            inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_URI or InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS
+            imeOptions = EditorInfo.IME_ACTION_DONE or EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING
+            importantForAutofill = View.IMPORTANT_FOR_AUTOFILL_NO
+            isSaveEnabled = false
+        }
+        var applying = false
+        dialog.positive(getString(R.string.proxy_import_enable)) {
+            if (applying) return@positive false
+            val endpoint = ProxyEndpoint.fromLink(link.text.toString())
+            if (endpoint == null) {
+                link.error = getString(R.string.proxy_import_invalid)
+                return@positive false
+            }
+            applying = true
+            BrowserProxy.configure(endpoint, enabled = true) { result ->
+                applying = false
+                if (view === owner) {
+                    if (result == ProxyChange.APPLIED) {
+                        dialog.dismiss()
+                        closePage()
+                        BrowserMessages.show(activity, getString(R.string.proxy_enabled))
+                    } else {
+                        BrowserMessages.show(activity, getString(result.messageResource()))
+                    }
+                }
+            }
+            false
+        }.negative()
+        activity.dialogScope.show(dialog)
+    }
+
     private fun field(form: LinearLayout, label: Int, value: String, input: Int): EditText {
         val context = form.context
         val id = View.generateViewId()
@@ -129,12 +178,15 @@ class ProxySettingsFragment : SettingsRecordPage() {
             labelFor = id
             setText(label)
         }, LinearLayout.LayoutParams(-1, -2).apply { topMargin = context.dp(12) })
-        return NativeTypography.edit(context).apply {
+        return DialogField.createEditor(context, value).apply {
             this.id = id
             setSingleLine(true)
             inputType = input
-            setTextColor(context.palette.text)
-            setText(value)
+            NativeTypography.bind(this)
+            gravity = Gravity.CENTER_VERTICAL
+            setSelectAllOnFocus(false)
+            setBackgroundResource(R.drawable.dialog_field_underline)
+            setPadding(0, 0, 0, 0)
             isSaveEnabled = false
             form.addView(this, LinearLayout.LayoutParams(-1, context.dp(46)))
         }

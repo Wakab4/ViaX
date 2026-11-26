@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="web_dns_proxy">ウェブサイトの名前解決はプロキシサーバーが行います</string>
+    <string name="web_dns_add">追加</string>
+    <string name="web_dns_edit">サーバーを編集</string>
+    <string name="web_dns_name">サーバー名（省略可）</string>
+    <string name="web_dns_url">DoH アドレス（https://）</string>
+    <string name="web_dns_invalid_url">https:// で始まる DoH アドレスを入力してください。</string>
+    <string name="web_dns_delete">削除</string>
+    <string name="web_dns_unsupported">この WebView はウェブページの DNS 設定に対応していません。</string>
+    <string name="web_dns_apply_failed">ウェブページの DNS 設定を適用できませんでした。</string>
+</resources>

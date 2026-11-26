@@ -8,11 +8,12 @@
     <string name="site_data_cookies">Cookies</string>
     <string name="site_data_clear_site">Clear all data for this site</string>
     <string name="site_data_site_clear_unavailable">This WebView does not support clearing all data for one site.</string>
-    <string name="site_data_no_cookies">No cookies are available for this URL.</string>
+    <string name="site_data_no_cookies">No cookies are available for this site.</string>
+    <string name="site_data_cookies_loading">Loading cookies…</string>
+    <string name="site_data_cookies_load_failed">Could not load cookies.</string>
     <string name="site_data_cookie_delete_unavailable">This WebView does not support deleting individual cookies.</string>
     <string name="site_data_unnamed_cookie">Unnamed cookie</string>
     <string name="site_data_partitioned_cookie">Partitioned</string>
-    <string name="site_data_cookie_selection">Select the cookies to delete.</string>
     <string name="site_data_delete_selected">Delete selected</string>
     <string name="site_data_cookie_result">Removed %1$d of %2$d selected cookies.</string>
     <string name="site_data_clear_site_message">Clear cookies, cache, and website storage for %1$s and its subdomains? You may need to sign in again.</string>

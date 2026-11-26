@@ -77,10 +77,15 @@ internal class BrowserStartup(
             started = true
             generation++
             initialize(state)
-            when (result) {
-                ProxyChange.UNSUPPORTED -> BrowserMessages.show(activity, activity.getString(R.string.proxy_unsupported))
-                ProxyChange.FAILED -> BrowserMessages.show(activity, activity.getString(R.string.proxy_apply_failed))
-                else -> Unit
+            if (result == ProxyChange.UNSUPPORTED || result == ProxyChange.FAILED) {
+                val doh = !BrowserProxy.configuration().enabled && BrowserProxy.dnsConfiguration().selected != null
+                val message = when {
+                    result == ProxyChange.UNSUPPORTED && doh -> R.string.web_dns_unsupported
+                    result == ProxyChange.UNSUPPORTED -> R.string.proxy_unsupported
+                    doh -> R.string.web_dns_apply_failed
+                    else -> R.string.proxy_apply_failed
+                }
+                BrowserMessages.show(activity, activity.getString(message))
             }
         }
     }

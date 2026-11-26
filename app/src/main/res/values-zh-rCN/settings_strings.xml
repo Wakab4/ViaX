@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="settings_group_browser">浏览器</string>
+    <string name="settings_search_hint">搜索设置</string>
+    <string name="settings_search_empty">没有找到相关设置</string>
+    <string name="settings_group_network">网络</string>
+    <string name="settings_group_more">更多</string>
+    <string name="settings_group_common">常用</string>
+    <string name="settings_group_display">显示</string>
+    <string name="settings_group_controls_tabs">操作与标签</string>
+    <string name="settings_group_webpages">网页</string>
+    <string name="settings_group_tools">工具</string>
+    <string name="settings_group_data_sync">数据与同步</string>
     <string name="settings_general">通用</string>
+    <string name="settings_site_data">数据</string>
     <string name="settings_privacy">隐私</string>
     <string name="settings_advanced">高级</string>
     <string name="settings_toolbar">工具栏设置</string>

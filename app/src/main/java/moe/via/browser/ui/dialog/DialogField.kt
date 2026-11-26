@@ -3,6 +3,7 @@ package moe.via.browser.ui.dialog
 import moe.via.browser.ui.theme.fonts.NativeTypography
 
 import android.app.Activity
+import android.content.Context
 import android.os.Build
 import android.text.TextUtils
 import android.view.Gravity
@@ -14,20 +15,23 @@ import moe.via.browser.R
 import moe.via.browser.ui.theme.palette
 
 object DialogField {
-    fun append(activity: Activity, parent: LinearLayout, value: String, hint: String, lines: Int): EditText {
-        fun pixels(dp: Int) = (dp * activity.resources.displayMetrics.density).toInt()
-        val editor = NativeTypography.edit(activity).apply {
+    internal fun createEditor(context: Context, value: String, hint: String = "", lines: Int = 1): EditText =
+        NativeTypography.edit(context).apply {
             setText(value); this.hint = hint
             minLines = lines; maxLines = lines; setLines(lines); ellipsize = TextUtils.TruncateAt.END
             inputType = if (lines > 1) 671745 else 524289
             imeOptions = if (lines > 1) EditorInfo.IME_ACTION_NONE else EditorInfo.IME_ACTION_NEXT
-            setTextColor(activity.palette.text); setHintTextColor(activity.palette.secondary)
+            setTextColor(context.palette.text); setHintTextColor(context.palette.secondary)
             setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, resources.getDimensionPixelSize(R.dimen.dialog_body_size).toFloat())
             gravity = Gravity.TOP; setSelectAllOnFocus(lines <= 3)
-            setPadding(0, if (lines == 1) 0 else pixels(8), 0, if (lines == 1) 0 else pixels(8))
             if (Build.VERSION.SDK_INT >= 35) setLocalePreferredLineHeightForMinimumUsed(false)
         }
+
+    fun append(activity: Activity, parent: LinearLayout, value: String, hint: String, lines: Int): EditText {
+        fun pixels(dp: Int) = (dp * activity.resources.displayMetrics.density).toInt()
+        val editor = createEditor(activity, value, hint, lines)
         if (lines == 1) {
+            editor.setPadding(0, 0, 0, 0)
             val wrapper = HorizontalScrollView(activity).apply {
                 isFillViewport = true; isHorizontalScrollBarEnabled = false; isVerticalScrollBarEnabled = false
                 overScrollMode = android.view.View.OVER_SCROLL_NEVER

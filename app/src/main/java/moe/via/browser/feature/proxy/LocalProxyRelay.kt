@@ -1,7 +1,10 @@
 package moe.via.browser.feature.proxy
 
 import android.os.Build
+import android.os.SystemClock
 import moe.via.browser.core.concurrent.BrowserExecutors
+import moe.via.browser.feature.dns.DohResolver
+import moe.via.browser.feature.dns.DohServer
 import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import java.io.BufferedInputStream
 import java.io.EOFException
@@ -18,8 +21,14 @@ import java.util.concurrent.Semaphore
 import javax.net.ssl.SSLSocket
 import javax.net.ssl.SSLSocketFactory
 
-/** Both WebView and the built-in downloader reach this loopback HTTP proxy. */
-internal class LocalProxyRelay(val upstream: ProxyEndpoint) : AutoCloseable {
+internal sealed interface RelayRoute {
+    data class Upstream(val endpoint: ProxyEndpoint) : RelayRoute
+    data class SecureDns(val server: DohServer) : RelayRoute
+}
+
+internal class LocalProxyRelay(val route: RelayRoute) : AutoCloseable {
+    private val upstream = (route as? RelayRoute.Upstream)?.endpoint
+    private val resolver = (route as? RelayRoute.SecureDns)?.let { DohResolver(it.server) }
     private val clients = Semaphore(128)
     private val server = listen()
     val address: InetSocketAddress get() = server.localSocketAddress as InetSocketAddress
@@ -53,16 +62,20 @@ internal class LocalProxyRelay(val upstream: ProxyEndpoint) : AutoCloseable {
         }
         var startedResponse = false
         try {
-            connectUpstream().use { remote ->
+            val httpProxy = upstream != null && upstream.protocol != ProxyProtocol.SOCKS5
+            val remoteSocket = if (upstream == null) connectDirect(target) else connectUpstream(upstream)
+            remoteSocket.use { remote ->
                 val remoteInput = BufferedInputStream(remote.getInputStream())
                 val remoteOutput = remote.getOutputStream()
-                val socks = upstream.protocol == ProxyProtocol.SOCKS5
-                if (socks) Socks5Tunnel.connect(remoteInput, remoteOutput, upstream, target.host, target.port)
+                if (upstream?.protocol == ProxyProtocol.SOCKS5) {
+                    Socks5Tunnel.connect(remoteInput, remoteOutput, upstream, target.host, target.port)
+                }
+                val authorization = if (httpProxy) upstream?.basicAuthorization() else null
 
                 if (target.connect) {
-                    if (!socks) {
+                    if (httpProxy) {
                         val headers = listOfNotNull(ProxyHeader("Host", target.authority),
-                            upstream.basicAuthorization()?.let { ProxyHeader("Proxy-Authorization", it) })
+                            authorization?.let { ProxyHeader("Proxy-Authorization", it) })
                         writeProxyHead(remoteOutput, "CONNECT ${target.authority} HTTP/1.1", headers)
                         if (response(remoteInput).second !in 200..299) throw IOException("Proxy CONNECT rejected")
                     }
@@ -73,9 +86,9 @@ internal class LocalProxyRelay(val upstream: ProxyEndpoint) : AutoCloseable {
                 }
 
                 val upload = request.hasRequestBody
-                val requestTarget = if (socks) target.originForm else target.absoluteForm
+                val requestTarget = if (httpProxy) target.absoluteForm else target.originForm
                 request.forward(remoteOutput, "${target.method} $requestTarget HTTP/1.1", target.hostHeader,
-                    if (socks) null else upstream.basicAuthorization(), keepUpgrade = request.upgrading)
+                    authorization, keepUpgrade = request.upgrading)
                 client.soTimeout = BODY_TIMEOUT
                 remote.soTimeout = BODY_TIMEOUT
                 if (upload) BrowserExecutors.io.execute {
@@ -84,7 +97,7 @@ internal class LocalProxyRelay(val upstream: ProxyEndpoint) : AutoCloseable {
                 }
 
                 val (head, status) = response(remoteInput) { interim -> interim.forward(clientOutput, interim = true) }
-                if (!socks && status == 407) throw IOException("HTTP proxy authentication rejected")
+                if (httpProxy && status == 407) throw IOException("HTTP proxy authentication rejected")
                 val switching = status == 101 && request.upgrading && head.upgrading && !upload
                 startedResponse = true
                 head.forward(clientOutput, keepUpgrade = switching)
@@ -98,7 +111,28 @@ internal class LocalProxyRelay(val upstream: ProxyEndpoint) : AutoCloseable {
         }
     }
 
-    private fun connectUpstream(): Socket {
+    private fun connectDirect(target: Target): Socket {
+        val addresses = requireNotNull(resolver).lookup(target.host)
+        val deadline = SystemClock.elapsedRealtime() + CONNECT_TIMEOUT
+        var failure: IOException? = null
+        for (address in addresses) {
+            val remaining = deadline - SystemClock.elapsedRealtime()
+            if (remaining <= 0) break
+            val timeout = if (addresses.size == 1) remaining else minOf(remaining, 5_000L)
+            val socket = Socket(Proxy.NO_PROXY)
+            try {
+                socket.connect(InetSocketAddress(address, target.port), timeout.toInt())
+                socket.soTimeout = CONNECT_TIMEOUT
+                return socket
+            } catch (error: IOException) {
+                runCatching { socket.close() }
+                failure = error
+            }
+        }
+        throw IOException("Unable to connect to ${target.host}", failure)
+    }
+
+    private fun connectUpstream(upstream: ProxyEndpoint): Socket {
         val socket = Socket(Proxy.NO_PROXY)
         try {
             socket.connect(InetSocketAddress(upstream.host, upstream.port), CONNECT_TIMEOUT)

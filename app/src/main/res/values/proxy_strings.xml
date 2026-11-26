@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="proxy_title">Proxy</string>
+    <string name="proxy_import">Import</string>
+    <string name="proxy_import_title">Import proxy</string>
+    <string name="proxy_import_hint">https://user:password@host:port</string>
+    <string name="proxy_import_enable">Enable</string>
+    <string name="proxy_import_invalid">Check the proxy link’s protocol, address, port, and credentials.</string>
     <string name="proxy_enable">Enable proxy</string>
     <string name="proxy_disable">Disable proxy</string>
     <string name="proxy_scope">Applies to web pages and built-in downloads</string>
@@ -9,7 +14,6 @@
     <string name="proxy_port">Port</string>
     <string name="proxy_username">Username</string>
     <string name="proxy_password">Password</string>
-    <string name="proxy_auth_help">Leave both fields blank for a proxy that does not require authentication.</string>
     <string name="proxy_invalid_port">Enter a port from 1 to 65535.</string>
     <string name="proxy_host_required">Enter the proxy server address.</string>
     <string name="proxy_host_hint">Host name or full proxy URL</string>

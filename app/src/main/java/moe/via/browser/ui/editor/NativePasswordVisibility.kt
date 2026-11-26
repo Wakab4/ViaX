@@ -23,7 +23,7 @@ internal object NativePasswordVisibility {
             else if (event.actionMasked == MotionEvent.ACTION_UP && touched) {
                 val cursor = editor.selectionStart
                 editor.inputType = if (editor.inputType and 144 == 144) (editor.inputType and -145) or 128 else (editor.inputType and -129) or 144
-                update(); editor.setSelection(cursor)
+                update(); editor.setSelection(cursor.coerceIn(0, editor.length()))
             }
             touched
         }

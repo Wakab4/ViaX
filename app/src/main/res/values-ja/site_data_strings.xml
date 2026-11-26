@@ -8,11 +8,12 @@
     <string name="site_data_cookies">Cookie</string>
     <string name="site_data_clear_site">このサイトのすべてのデータを消去</string>
     <string name="site_data_site_clear_unavailable">この WebView ではサイト単位のデータ消去に対応していません。</string>
-    <string name="site_data_no_cookies">この URL で取得できる Cookie はありません。</string>
+    <string name="site_data_no_cookies">このサイトで取得できる Cookie はありません。</string>
+    <string name="site_data_cookies_loading">Cookie を読み込んでいます…</string>
+    <string name="site_data_cookies_load_failed">Cookie を読み込めませんでした。</string>
     <string name="site_data_cookie_delete_unavailable">この WebView では Cookie の個別削除に対応していません。</string>
     <string name="site_data_unnamed_cookie">名前のない Cookie</string>
     <string name="site_data_partitioned_cookie">パーティション化</string>
-    <string name="site_data_cookie_selection">削除する Cookie を選択してください。</string>
     <string name="site_data_delete_selected">選択項目を削除</string>
     <string name="site_data_cookie_result">選択した %2$d 件のうち %1$d 件の Cookie を削除しました。</string>
     <string name="site_data_clear_site_message">%1$s とそのサブドメインの Cookie、キャッシュ、サイトのストレージを消去します。再ログインが必要になる場合があります。</string>

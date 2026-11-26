@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="proxy_title">代理</string>
+    <string name="proxy_import">导入</string>
+    <string name="proxy_import_title">导入代理</string>
+    <string name="proxy_import_hint">https://用户名:密码@主机:端口</string>
+    <string name="proxy_import_enable">启用</string>
+    <string name="proxy_import_invalid">请检查代理链接的协议、地址、端口和认证信息。</string>
     <string name="proxy_enable">启用代理</string>
     <string name="proxy_disable">关闭代理</string>
     <string name="proxy_scope">用于网页和内置下载</string>
@@ -9,7 +14,6 @@
     <string name="proxy_port">端口</string>
     <string name="proxy_username">用户名</string>
     <string name="proxy_password">密码</string>
-    <string name="proxy_auth_help">无需认证时，用户名和密码都留空。</string>
     <string name="proxy_invalid_port">请输入 1 至 65535 之间的端口。</string>
     <string name="proxy_host_required">请输入代理服务器地址。</string>
     <string name="proxy_host_hint">主机名或带协议的代理地址</string>

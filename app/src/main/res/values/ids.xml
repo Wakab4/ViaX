@@ -1,6 +1,7 @@
 <resources>
     <item type="id" name="page_fullscreen_request" />
     <item type="id" name="settings_page_list" />
+    <item type="id" name="settings_search_field" />
     <item type="id" name="font_settings_list" />
     <item type="id" name="browser_root_container" />
     <item type="id" name="browser_inline_panels" />

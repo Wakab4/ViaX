@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="web_dns_proxy">目前由代理伺服器解析網頁網域</string>
+    <string name="web_dns_add">新增</string>
+    <string name="web_dns_edit">編輯伺服器</string>
+    <string name="web_dns_name">伺服器名稱（選填）</string>
+    <string name="web_dns_url">DoH 位址（https://）</string>
+    <string name="web_dns_invalid_url">請輸入以 https:// 開頭的 DoH 位址。</string>
+    <string name="web_dns_delete">刪除</string>
+    <string name="web_dns_unsupported">目前的 WebView 不支援自訂網頁 DNS。</string>
+    <string name="web_dns_apply_failed">無法套用網頁 DNS 設定。</string>
+</resources>
