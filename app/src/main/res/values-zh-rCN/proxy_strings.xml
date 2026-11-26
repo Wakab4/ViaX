@@ -12,7 +12,11 @@
     <string name="proxy_auth_help">无需认证时，用户名和密码都留空。</string>
     <string name="proxy_invalid_port">请输入 1 至 65535 之间的端口。</string>
     <string name="proxy_host_required">请输入代理服务器地址。</string>
-    <string name="proxy_invalid_settings">请检查服务器地址和凭据。SOCKS5 认证需要同时填写用户名和密码。</string>
+    <string name="proxy_host_hint">主机名或带协议的代理地址</string>
+    <string name="proxy_invalid_host">请输入主机名，或以 http://、https://、socks5:// 开头的代理地址。</string>
+    <string name="proxy_port_mismatch">这里的端口与服务器地址中的端口不一致。</string>
+    <string name="proxy_invalid_basic_credentials">使用密码时需填写用户名，且用户名不能包含冒号。</string>
+    <string name="proxy_invalid_socks_credentials">SOCKS5 认证的用户名和密码各需 1 至 255 字节。</string>
     <string name="proxy_unsupported">当前 WebView 不支持应用内代理。</string>
     <string name="proxy_apply_failed">无法应用代理设置。</string>
     <string name="proxy_busy">正在应用代理设置。</string>

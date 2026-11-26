@@ -1,5 +1,6 @@
 package moe.via.browser.feature.proxy
 
+import android.os.Build
 import moe.via.browser.core.concurrent.BrowserExecutors
 import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import java.io.BufferedInputStream
@@ -14,6 +15,8 @@ import java.net.Socket
 import java.net.URI
 import java.security.SecureRandom
 import java.util.concurrent.Semaphore
+import javax.net.ssl.SSLSocket
+import javax.net.ssl.SSLSocketFactory
 
 /** Both WebView and the built-in downloader reach this loopback HTTP proxy. */
 internal class LocalProxyRelay(val upstream: ProxyEndpoint) : AutoCloseable {
@@ -50,9 +53,7 @@ internal class LocalProxyRelay(val upstream: ProxyEndpoint) : AutoCloseable {
         }
         var startedResponse = false
         try {
-            Socket(Proxy.NO_PROXY).use { remote ->
-                remote.connect(InetSocketAddress(upstream.host, upstream.port), CONNECT_TIMEOUT)
-                remote.soTimeout = CONNECT_TIMEOUT
+            connectUpstream().use { remote ->
                 val remoteInput = BufferedInputStream(remote.getInputStream())
                 val remoteOutput = remote.getOutputStream()
                 val socks = upstream.protocol == ProxyProtocol.SOCKS5
@@ -79,7 +80,7 @@ internal class LocalProxyRelay(val upstream: ProxyEndpoint) : AutoCloseable {
                 remote.soTimeout = BODY_TIMEOUT
                 if (upload) BrowserExecutors.io.execute {
                     try { request.copyBody(clientInput, remoteOutput, throughEof = false) }
-                    catch (_: IOException) { runCatching { remote.shutdownOutput() } }
+                    catch (_: IOException) { runCatching { finishRemoteOutput(remote) } }
                 }
 
                 val (head, status) = response(remoteInput) { interim -> interim.forward(clientOutput, interim = true) }
@@ -94,6 +95,29 @@ internal class LocalProxyRelay(val upstream: ProxyEndpoint) : AutoCloseable {
             }
         } catch (failure: IOException) {
             if (!startedResponse) error(client, "502 Bad Gateway") else throw failure
+        }
+    }
+
+    private fun connectUpstream(): Socket {
+        val socket = Socket(Proxy.NO_PROXY)
+        try {
+            socket.connect(InetSocketAddress(upstream.host, upstream.port), CONNECT_TIMEOUT)
+            socket.soTimeout = CONNECT_TIMEOUT
+            if (upstream.protocol != ProxyProtocol.HTTPS) return socket
+
+            val factory = SSLSocketFactory.getDefault() as SSLSocketFactory
+            return (factory.createSocket(socket, upstream.host, upstream.port, true) as SSLSocket).apply {
+                soTimeout = CONNECT_TIMEOUT
+                sslParameters = sslParameters.apply {
+                    endpointIdentificationAlgorithm = "HTTPS"
+                    if (Build.VERSION.SDK_INT >= 29) applicationProtocols = arrayOf("http/1.1")
+                }
+                startHandshake()
+            }
+        } catch (failure: Exception) {
+            runCatching { socket.close() }
+            if (failure is IOException) throw failure
+            throw IOException("Unable to open proxy connection", failure)
         }
     }
 
@@ -114,7 +138,7 @@ internal class LocalProxyRelay(val upstream: ProxyEndpoint) : AutoCloseable {
         val uplink = BrowserExecutors.io.submit {
             try {
                 clientInput.copyTo(remote.getOutputStream(), 16_384)
-                remote.shutdownOutput()
+                finishRemoteOutput(remote)
             } catch (_: IOException) {
                 runCatching { remote.close() }
                 runCatching { client.close() }
@@ -127,6 +151,10 @@ internal class LocalProxyRelay(val upstream: ProxyEndpoint) : AutoCloseable {
         } catch (_: IOException) {
             // Closing either socket releases the peer copy.
         }
+    }
+
+    private fun finishRemoteOutput(socket: Socket) {
+        if (socket is SSLSocket) socket.close() else socket.shutdownOutput()
     }
 
     // Stop accepting new connections. Existing transfers can finish on their original route.

@@ -3,7 +3,39 @@ package moe.via.browser.feature.proxy
 import android.util.Base64
 import okhttp3.HttpUrl
 
-internal enum class ProxyProtocol { HTTP, SOCKS5 }
+internal enum class ProxyProtocol(val scheme: String) {
+    HTTP("http"), HTTPS("https"), SOCKS5("socks5");
+
+    companion object {
+        fun fromAddress(address: String): ProxyProtocol? {
+            val scheme = address.trim().substringBefore("://", "").lowercase()
+            return if (scheme == "socks") SOCKS5 else entries.firstOrNull { it.scheme == scheme }
+        }
+    }
+}
+
+internal data class ProxyServerAddress(val protocol: ProxyProtocol?, val host: String, val port: Int?) {
+    companion object {
+        fun parse(value: String): ProxyServerAddress? {
+            val address = value.trim()
+            val scheme = ProxyProtocol.fromAddress(address)
+            if ("://" in address && scheme == null) return null
+            val authority = address.substringAfter("://").removeSuffix("/")
+            if (authority.isEmpty() || authority.any { it.isWhitespace() || it.isISOControl() || it in "/?#@\\" }) return null
+
+            // Try a bare host first, so unbracketed IPv6 addresses are not mistaken for a port.
+            canonicalHost(authority)?.let { return ProxyServerAddress(scheme, it, null) }
+            val host = authority.substringBeforeLast(':', "")
+            if (':' in host && !(host.startsWith('[') && host.endsWith(']'))) return null
+            val port = authority.substringAfterLast(':', "").toIntOrNull()?.takeIf { it in 1..65535 } ?: return null
+            return ProxyServerAddress(scheme, canonicalHost(host) ?: return null, port)
+        }
+
+        private fun canonicalHost(host: String): String? = try {
+            HttpUrl.Builder().scheme("http").host(host).build().host
+        } catch (_: IllegalArgumentException) { null }
+    }
+}
 
 @ConsistentCopyVisibility
 internal data class ProxyEndpoint private constructor(
@@ -26,7 +58,7 @@ internal data class ProxyEndpoint private constructor(
             val address = HttpUrl.Builder().scheme("http").host(host.trim()).port(port).build()
             require(username.isNotEmpty() || password.isEmpty())
             require((username + password).none(Char::isISOControl))
-            if (protocol == ProxyProtocol.HTTP) require(':' !in username)
+            if (protocol != ProxyProtocol.SOCKS5) require(':' !in username)
             if (protocol == ProxyProtocol.SOCKS5 && username.isNotEmpty()) {
                 require(username.toByteArray(Charsets.UTF_8).size in 1..255)
                 require(password.toByteArray(Charsets.UTF_8).size in 1..255)

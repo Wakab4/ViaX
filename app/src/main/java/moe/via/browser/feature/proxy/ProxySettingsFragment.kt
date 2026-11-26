@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.LinearLayout
+import androidx.core.widget.doAfterTextChanged
 import moe.via.browser.R
 import moe.via.browser.feature.settings.pages.SettingsRecordPage
 import moe.via.browser.ui.components.PageScaffold
@@ -39,13 +40,6 @@ class ProxySettingsFragment : SettingsRecordPage() {
             text = protocol.name
             visibility = View.VISIBLE
         }
-        protocolRow.setOnClickListener {
-            activity.dialogScope.show(BrowserDialog(activity, getString(R.string.proxy_type))
-                .singleChoice(ProxyProtocol.entries.map { it.name }, protocol.ordinal) { index ->
-                    protocol = ProxyProtocol.entries[index]
-                    protocolLabel.text = protocol.name
-                })
-        }
         page.body.addView(protocolRow, LinearLayout.LayoutParams(-1, -2))
         val form = LinearLayout(activity).apply {
             orientation = LinearLayout.VERTICAL
@@ -53,6 +47,7 @@ class ProxySettingsFragment : SettingsRecordPage() {
         }
         page.body.addView(form, LinearLayout.LayoutParams(-1, -2))
         val host = field(form, R.string.proxy_host, endpoint?.host.orEmpty(), InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_URI)
+            .apply { setHint(R.string.proxy_host_hint); setHintTextColor(activity.palette.hint) }
         val port = field(form, R.string.proxy_port, endpoint?.port?.toString().orEmpty(), InputType.TYPE_CLASS_NUMBER)
         val username = field(form, R.string.proxy_username, endpoint?.username.orEmpty(), InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS)
         val password = field(form, R.string.proxy_password, endpoint?.password.orEmpty(), InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD)
@@ -61,21 +56,54 @@ class ProxySettingsFragment : SettingsRecordPage() {
             setPadding(0, dp(12), 0, 0)
         })
 
+        fun selectProtocol(next: ProxyProtocol) {
+            protocol = next
+            protocolLabel.text = next.name
+        }
+        host.doAfterTextChanged { value ->
+            val address = value.toString()
+            ProxyProtocol.fromAddress(address)?.let(::selectProtocol)
+            ProxyServerAddress.parse(address)?.port?.toString()?.takeUnless { it == port.text.toString() }?.let { port.setText(it) }
+        }
+        protocolRow.setOnClickListener {
+            activity.dialogScope.show(BrowserDialog(activity, getString(R.string.proxy_type))
+                .singleChoice(ProxyProtocol.entries.map { it.name }, protocol.ordinal) { index ->
+                    val next = ProxyProtocol.entries[index]
+                    selectProtocol(next)
+                    val address = host.text.toString().trim()
+                    if ("://" in address && ProxyProtocol.fromAddress(address) != next) {
+                        host.setText("${next.scheme}://${address.substringAfter("://")}")
+                    }
+                })
+        }
+
         lateinit var save: View
         save = page.toolbar.addTextAction(getString(R.string.ref_ua_save)) {
-            val number = port.text.toString().toIntOrNull()
-            if (number == null || number !in 1..65535) {
-                port.error = getString(R.string.proxy_invalid_port)
-                return@addTextAction
-            }
             if (host.text.isNullOrBlank()) {
                 host.error = getString(R.string.proxy_host_required)
                 return@addTextAction
             }
+            val address = ProxyServerAddress.parse(host.text.toString()) ?: run {
+                host.error = getString(R.string.proxy_invalid_host)
+                return@addTextAction
+            }
+            val portText = port.text.toString()
+            val number = if (portText.isBlank()) address.port else portText.toIntOrNull()
+            if (number == null || number !in 1..65535) {
+                port.error = getString(R.string.proxy_invalid_port)
+                return@addTextAction
+            }
+            if (address.port != null && address.port != number) {
+                port.error = getString(R.string.proxy_port_mismatch)
+                return@addTextAction
+            }
+            val selectedProtocol = address.protocol ?: protocol
             val proxy = try {
-                ProxyEndpoint.create(protocol, host.text.toString(), number, username.text.toString(), password.text.toString())
+                ProxyEndpoint.create(selectedProtocol, address.host, number, username.text.toString(), password.text.toString())
             } catch (_: IllegalArgumentException) {
-                BrowserMessages.show(activity, getString(R.string.proxy_invalid_settings))
+                BrowserMessages.show(activity, getString(if (selectedProtocol == ProxyProtocol.SOCKS5) {
+                    R.string.proxy_invalid_socks_credentials
+                } else R.string.proxy_invalid_basic_credentials))
                 return@addTextAction
             }
             val owner = view ?: return@addTextAction
