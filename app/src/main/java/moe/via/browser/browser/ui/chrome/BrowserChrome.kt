@@ -46,8 +46,6 @@ class BrowserChrome(private val activity: Activity, private val actions: Actions
         fun onReload()
         fun onScan()
         fun onPageInfo()
-        fun onProxyToggle()
-        fun onProxySettings()
         fun onLongPress(binding: ActionBinding): Boolean = false
         fun toolbarHost(): FrameLayout
         fun onInsetsChanged() {}
@@ -73,7 +71,6 @@ class BrowserChrome(private val activity: Activity, private val actions: Actions
     private val topLeft: ImageView
     private val readerPulse by lazy { moe.via.browser.browser.ui.chrome.address.ReaderHintAnimation(topLeft) }
     private val topRight: ImageView
-    private val proxyButton: ImageView
     private val addressBar: LinearLayout
     private val progress: ProgressBar
     private val loadingProgress: NativePageProgress
@@ -158,16 +155,6 @@ class BrowserChrome(private val activity: Activity, private val actions: Actions
         }
         addressText = NativeAddressTextController(activity) { pageTitle.text = it }
         top.addView(pageTitle, LinearLayout.LayoutParams(0, dp(48), 1f))
-        proxyButton = ImageView(activity).apply {
-            icons.image(this, R.drawable.ic_browser_proxy)
-            imageTintList = proxyTint(activity.palette.icon)
-            setPadding(dp(9), 0, dp(9), 0)
-            applyIconFeedback()
-            visibility = View.GONE
-            setOnClickListener { actions.onProxyToggle() }
-            setOnLongClickListener { actions.onProxySettings(); true }
-        }
-        top.addView(proxyButton, LinearLayout.LayoutParams(dp(40), dp(48)))
         topRight = ImageView(activity).apply {
             icons.image(this, R.drawable.ref_ic_reload)
             imageTintList = android.content.res.ColorStateList.valueOf(activity.palette.icon)
@@ -332,26 +319,13 @@ class BrowserChrome(private val activity: Activity, private val actions: Actions
         backgroundSurfaces.forEach { it.setBackgroundColor(surface) }
         fun color(view: View) {
             when (view) {
-                is ImageView -> {
-                    val color = foreground ?: activity.palette.icon
-                    view.imageTintList = if (view === proxyButton) proxyTint(color) else ColorStateList.valueOf(color)
-                }
+                is ImageView -> view.imageTintList = ColorStateList.valueOf(foreground ?: activity.palette.icon)
                 is TextView -> view.setTextColor(when (foreground) { null -> activity.palette.text; 0xFF232323.toInt() -> 0xDE000000.toInt(); else -> foreground })
                 is ViewGroup -> for (index in 0 until view.childCount) color(view.getChildAt(index))
             }
         }
         foregroundSurfaces.forEach(::color)
     }
-
-    fun setProxyState(configured: Boolean, enabled: Boolean) {
-        proxyButton.visibility = if (configured && customToolbar == null) View.VISIBLE else View.GONE
-        proxyButton.isSelected = enabled
-        proxyButton.contentDescription = activity.getString(if (enabled) R.string.proxy_disable else R.string.proxy_enable)
-        proxyButton.tooltipText = proxyButton.contentDescription
-    }
-
-    private fun proxyTint(normal: Int) = ColorStateList(arrayOf(intArrayOf(android.R.attr.state_selected), intArrayOf()),
-        intArrayOf(activity.palette.accent, normal))
 
     fun externalPanel(edge: Int?, active: Boolean = edge != null) {
         externalPanel = active; viewport.externalOverlay(edge); actions.onInsetsChanged()

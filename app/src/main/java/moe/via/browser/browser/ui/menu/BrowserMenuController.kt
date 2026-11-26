@@ -1,10 +1,14 @@
 package moe.via.browser.browser.ui.menu
 
 import android.app.Activity
-import android.content.Intent
-import moe.via.browser.storage.preferences.BrowserSettings
+import moe.via.browser.R
+import moe.via.browser.feature.proxy.BrowserProxy
+import moe.via.browser.feature.proxy.ProxyChange
+import moe.via.browser.feature.proxy.messageResource
 import moe.via.browser.feature.settings.SettingsEntry
 import moe.via.browser.feature.settings.SettingsRoute
+import moe.via.browser.storage.preferences.BrowserSettings
+import moe.via.browser.ui.message.BrowserMessages
 
 /** Dispatches commands; neither the view nor the catalog needs access to a WebView. */
 class BrowserMenuController(private val activity: Activity, private val callbacks: Callbacks) {
@@ -26,9 +30,31 @@ class BrowserMenuController(private val activity: Activity, private val callback
     fun show() {
         val context = callbacks.context()
         val entries = MenuState.entries(activity, preferences.displayed(), context)
-        menu.show(entries, context, { entry, longPress ->
-            if (longPress) longPress(entry) else click(entry)
-        }, callbacks::exit)
+        val proxy = BrowserProxy.configuration()
+        menu.show(
+            entries,
+            context,
+            proxyEnabled = proxy.enabled.takeIf { proxy.endpoint != null },
+            onAction = { entry, longPress -> if (longPress) longPress(entry) else click(entry) },
+            onProxy = ::proxyAction,
+            onExit = callbacks::exit,
+        )
+    }
+
+    private fun proxyAction(longPress: Boolean) {
+        val proxy = BrowserProxy.configuration()
+        val endpoint = proxy.endpoint
+        if (longPress || endpoint == null) {
+            SettingsEntry.open(activity, SettingsRoute.PROXY)
+            return
+        }
+        val enabled = !proxy.enabled
+        BrowserProxy.configure(endpoint, enabled) { result ->
+            val message = if (result == ProxyChange.APPLIED) {
+                if (enabled) R.string.proxy_enabled else R.string.proxy_disabled
+            } else result.messageResource()
+            BrowserMessages.show(activity, activity.getString(message))
+        }
     }
 
     private fun click(entry: MenuEntry) {

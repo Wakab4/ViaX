@@ -50,7 +50,14 @@ class BrowserMenu(private val activity: Activity) {
         })
     }
 
-    fun show(entries: List<MenuEntry?>, context: MenuContext, onAction: (MenuEntry, Boolean) -> Unit, onExit: () -> Unit) {
+    fun show(
+        entries: List<MenuEntry?>,
+        context: MenuContext,
+        proxyEnabled: Boolean?,
+        onAction: (MenuEntry, Boolean) -> Unit,
+        onProxy: (longPress: Boolean) -> Unit,
+        onExit: () -> Unit,
+    ) {
         close()
         val icons = SkinIconBinder(activity)
         val spec = ChromeLayoutPolicy.resolve(activity)
@@ -74,7 +81,24 @@ class BrowserMenu(private val activity: Activity) {
         })
         currentPager = pager
         val header = LinearLayout(activity)
-        header.addView(Space(activity), LinearLayout.LayoutParams(0, -2, 3f))
+        if (proxyEnabled != null) {
+            val label = activity.getString(if (proxyEnabled) R.string.proxy_disable else R.string.proxy_enable)
+            val proxyButton = headerButton(R.drawable.ic_browser_proxy, label, icons) {
+                dialog.dismiss()
+                onProxy(false)
+            }.apply {
+                isSelected = proxyEnabled
+                if (proxyEnabled) imageTintList = ColorStateList.valueOf(activity.palette.accent)
+                tooltipText = label
+                setOnLongClickListener {
+                    dialog.dismiss()
+                    onProxy(true)
+                    true
+                }
+            }
+            header.addView(proxyButton, LinearLayout.LayoutParams(0, activity.dp(48), 1f))
+        }
+        header.addView(Space(activity), LinearLayout.LayoutParams(0, -2, if (proxyEnabled == null) 3f else 2f))
         header.addView(headerButton(R.drawable.ref_ic_exit, activity.getString(R.string.ref_menu_exit), icons) { dialog.dismiss(); onExit() }, LinearLayout.LayoutParams(0, activity.dp(48), 1f))
         header.addView(headerButton(R.drawable.ref_ic_next, activity.getString(android.R.string.cancel), icons) { dialog.dismiss() }.apply {
             rotation = if (spec.topAnchored) 180f else 0f

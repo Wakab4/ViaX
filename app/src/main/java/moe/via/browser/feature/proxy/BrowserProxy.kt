@@ -2,8 +2,6 @@ package moe.via.browser.feature.proxy
 
 import android.content.Context
 import androidx.annotation.MainThread
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.webkit.ProxyConfig
 import androidx.webkit.ProxyController
 import androidx.webkit.WebViewFeature
@@ -22,8 +20,6 @@ internal object BrowserProxy {
     private var webRelay: LocalProxyRelay? = null
     private var applying = false
     private val startupWaiters = mutableListOf<(ProxyChange) -> Unit>()
-    private val state = MutableLiveData(ProxySettings())
-    val updates: LiveData<ProxySettings> get() = state
 
     fun initialize(context: Context) {
         this.context = context.applicationContext
@@ -52,7 +48,6 @@ internal object BrowserProxy {
         }
         val settings = try { savedSettings() } catch (_: Exception) { completed(ProxyChange.FAILED); return }
         if (!settings.enabled || webRelay != null) {
-            state.value = settings
             completed(ProxyChange.APPLIED)
         } else apply(settings, persist = false, completed)
     }
@@ -92,7 +87,6 @@ internal object BrowserProxy {
                     webRelay = next
                     saved = settings
                 }
-                state.value = settings
                 finish(ProxyChange.APPLIED)
             }
             when {
