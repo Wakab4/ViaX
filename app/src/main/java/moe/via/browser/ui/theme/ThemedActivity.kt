@@ -18,7 +18,6 @@ import moe.via.browser.ui.components.insets.NativePageInsets
 import moe.via.browser.ui.components.insets.NativeSystemBarAppearance
 import moe.via.browser.ui.pages.PageStackController
 import moe.via.browser.ui.pages.PageBackDispatcher
-import moe.via.browser.ui.pages.PredictiveBackPreview
 import java.lang.ref.WeakReference
 import moe.via.browser.storage.preferences.BrowserNightMode
 import moe.via.browser.storage.preferences.BrowserThemeOwner
@@ -58,7 +57,7 @@ abstract class ThemedActivity : FragmentActivity(), BrowserThemeOwner {
         super.setTheme(resId)
     }
     protected open fun onSystemBack() { finish() }
-    internal open fun beginBrowserPredictiveBack(): PredictiveBackPreview? = null
+    internal open fun prepareBrowserBackGesture(): (() -> Unit)? = null
     protected open fun onRecordPageVisibilityChanged(showing: Boolean) { applySystemBarAppearance() }
     internal fun recordPageVisibilityChanged(showing: Boolean) = onRecordPageVisibilityChanged(showing)
     /** Return true only when the existing page has repainted its own views for this theme. */

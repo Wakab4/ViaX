@@ -2,6 +2,7 @@ package moe.via.browser.browser.ui.chrome
 
 import moe.via.browser.ui.theme.fonts.NativeTypography
 
+import android.animation.ObjectAnimator
 import android.app.Activity
 import android.content.res.ColorStateList
 import android.graphics.Color
@@ -77,6 +78,7 @@ class BrowserChrome(private val activity: Activity, private val actions: Actions
     private val backButton: View
     private val forwardButton: View
     private val tabsCount: TextView
+    private var tabsBounce: ObjectAnimator? = null
     private var home = true
     private var currentUrl = ""
     private var readerHint = false
@@ -205,7 +207,11 @@ class BrowserChrome(private val activity: Activity, private val actions: Actions
         bottom.icon(R.drawable.ref_ic_home, "主页") { actions.onHome() }
             .setOnLongClickListener { actions.onLongPress(ActionBinding.LONG_PRESS_HOME) }
         tabsCount = bottom.tabIcon()
-        (tabsCount.parent as View).setOnLongClickListener { actions.onLongPress(ActionBinding.LONG_PRESS_TAB) }
+        (tabsCount.parent as View).setOnLongClickListener { button ->
+            val handled = actions.onLongPress(ActionBinding.LONG_PRESS_TAB)
+            if (handled && !disposed && button.isShown) bounceTabsButton(button)
+            handled
+        }
         bottom.icon(R.drawable.ref_ic_menu, "菜单") { actions.onMenu() }
             .setOnLongClickListener { actions.onLongPress(ActionBinding.LONG_PRESS_MENU) }
         bottomHolder.addView(bottom, FrameLayout.LayoutParams(
@@ -501,6 +507,8 @@ class BrowserChrome(private val activity: Activity, private val actions: Actions
     fun dispose() {
         if (disposed) return
         disposed = true
+        tabsBounce?.cancel()
+        tabsBounce = null
         readerPulse.cancel()
         panelBlur(false)
         icons.close()
@@ -554,6 +562,14 @@ class BrowserChrome(private val activity: Activity, private val actions: Actions
         button.addView(count, FrameLayout.LayoutParams(dp(22), dp(22), Gravity.CENTER))
         addView(button, LinearLayout.LayoutParams(0, dp(48), 1f))
         return count
+    }
+
+    private fun bounceTabsButton(button: View) {
+        tabsBounce?.cancel()
+        tabsBounce = ObjectAnimator.ofFloat(button, View.TRANSLATION_Y, 0f, -dp(14).toFloat(), 0f).apply {
+            duration = 270L
+            start()
+        }
     }
 
     private fun View.applyIconFeedback() {

@@ -88,8 +88,6 @@ import moe.via.browser.browser.navigation.external.BrowserExternalActions
 import moe.via.browser.browser.page.BrowserPageBinder
 import moe.via.browser.browser.navigation.redirect.PageRedirectController
 import moe.via.browser.browser.ui.host.BrowserRootHost
-import moe.via.browser.ui.pages.PredictiveBackPreview
-import moe.via.browser.browser.ui.WebBackPreview
 import moe.via.browser.ui.theme.window.applyActivityOrientation
 
 open class BrowserActivity : ThemedActivity(), moe.via.browser.ui.theme.window.BrowserWindowMode {
@@ -1343,12 +1341,12 @@ open class BrowserActivity : ThemedActivity(), moe.via.browser.ui.theme.window.B
         handleBack()
     }
 
-    internal override fun beginBrowserPredictiveBack(): PredictiveBackPreview? {
+    internal override fun prepareBrowserBackGesture(): (() -> Unit)? {
         if (!browserReady() || !rootHost.isPresented || !::chrome.isInitialized || chrome.hasContentOverlay ||
             searchDelegate.isInitialized() && search.isShowing || menuDelegate.isInitialized() && menu.isShowing) return null
         val tab = currentTab()?.takeIf { it.canGoBack() } ?: return null
-        val page = chrome.pageFocusHost.takeIf { it.isShown && it.width > 0 } ?: return null
-        return WebBackPreview(page) { if (browserReady() && currentTab() === tab) navigateBack() }
+        if (!chrome.pageFocusHost.isShown) return null
+        return { if (browserReady() && currentTab() === tab) navigateBack() }
     }
 
     override fun onRecordPageVisibilityChanged(showing: Boolean) {
